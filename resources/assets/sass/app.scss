@@ -1,6 +1,6 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url('https://fonts.googleapis.com/css?family=Lato:900|Open+Sans');
 
 // Variables
 @import "variables";
@@ -44,9 +44,8 @@ html,body,h1,h2,h3,ul,li,a,p,article,aside,footer,header,main,nav,section{
     margin-top: 30px;
     font-size: x-large;
 }
-@import url('https://fonts.googleapis.com/css?family=Lato:900');
 .title{
-    font-family: 'Lato', sans-serif;
+    font-family: $font-family-Lato;
     margin-top: 554px;
     color: black;
     text-align: center;
@@ -66,7 +65,7 @@ html,body,h1,h2,h3,ul,li,a,p,article,aside,footer,header,main,nav,section{
 
 .form-input::before{
     position: absolute;
-    font-family: "FontAwesome";
+    font-family: $font-family-open-sans;
     font-size: 30px;
 }
 
@@ -161,6 +160,7 @@ div .wristband{
     background-color: orange;
     color: #000;
     margin-top: 600px;
+    font-family: $font-family-open-sans;
     float: left;
     text-align: center;
 }
