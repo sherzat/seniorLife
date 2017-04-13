@@ -1,0 +1,41 @@
+/* login username password and login button setting up --*/
+.signin_input{
+
+  height: 50px;
+  width: 250px;
+}
+.signin_button{
+
+  background-color: $primary-color;
+  border-radius: 0;
+  color: white;
+  font-size: 28px;
+  padding: 0px;
+  width: 96px;
+  height: 50px;
+}
+
+.signin_form_width{
+  width: 622px;
+  padding: 0px 0px;
+  margin-bottom: 0px;
+}
+
+.navbar-brand{
+  font-size: 64px;
+  color: white;
+}
+.sect{
+  height:100%;
+  background-size: cover;
+}
+.navSettings{
+  position: fixed;
+  background-color: $primary-color-dark;
+  height: 120px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+}

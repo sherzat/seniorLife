@@ -1,0 +1,229 @@
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import "seniorlife";
+@import "navHeader";
+@import "footerHome";
+@import "registrationForm";
+article,aside,footer,header,main,nav,section {
+    display: block;
+}
+
+html,body,h1,h2,h3,ul,li,a,p,article,aside,footer,header,main,nav,section{
+    padding: 0px;
+    margin: 0px;
+}
+
+#home_page {
+
+    position: relative;
+    width: 100%;
+    background-position: center;
+    background-image: url('../img/home_page.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media (min-width: 768px) {
+        min-height: 1080px;
+    }
+}
+
+
+#grid{
+    display: grid;
+}
+.navbar-form{
+    margin-top: 30px;
+    font-size: x-large;
+}
+//@import url('https://fonts.googleapis.com/css?family=Lato:900');
+.title{
+    margin-top: 554px;
+    color: black;
+    text-align: center;
+}
+.button{
+    background-color: orange;
+    border: none;
+    color: black;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.form-input::before{
+    position: absolute;
+    font-size: 30px;
+}
+
+
+h1{
+    font-size:$font-size-h1;
+
+}
+
+.img_class_login{
+    width: 320px;
+    height: 300px;
+}
+
+h2{
+    font-size: 36px;
+    padding-left: 16px;
+    margin-right: 16px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+h4{
+    font-size: x-large;
+    text-align: center;
+}
+/* navigation bar settings */
+
+li{
+    display: inline;
+    margin-left: 16px;
+    margin-right: 16px;
+    font-size: 48px;
+    font-variant: small-caps;
+    font-weight: bold;
+
+}
+aside{
+
+    width: 400px;
+    height: 950px;
+    float: right;
+    margin-top: 5px;
+
+}
+
+main{
+    width: 1495px;
+    height: 950px;
+
+    float: left;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.fixsize{
+    height: 234px;
+    background-color: teal;
+}
+
+div .overAllresult{
+    width: 1520px;
+    background-color: teal;
+    height: 500px;
+}
+
+div .wristband{
+    width: 1520px;
+    background-color: teal;
+    height: 500px;
+}
+
+footer{
+    margin-top: 5px;
+    width: 100%;
+    position: absolute;
+    height: 120px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    clear: both;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.footerClass{
+
+    background-color: teal;
+    height: 120px;
+    color: white;
+    width: 636px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.navbar-brand{
+    font-size: 64px;
+    margin-top: 35px;
+}
+.container-fluid{
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+
+
+.side-menu {
+    height: 248px;
+    color: $primary-color-text;
+    background-color: $primary-color;
+    margin-bottom:16px;
+    margin-right:0px;
+    margin-left:0px;
+}
+
+.signup{
+    background-color: orange;
+    color: #000;
+    margin-top: 600px;
+    float: left;
+    text-align: center;
+}
+
+
+//Parallalax Scrolling
+
+*{
+    margin: 0px;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin-bottom: 20px;
+}
+
+html,body{
+    height:100%;
+}
+
+
+
+.homeImage{
+    height: 100%;
+    background-size: cover;
+    background-image: url('/img/women.jpg');
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+section{
+    height: 473px;
+    background-color: teal;
+}
+
+p{
+    font-size: 24px;
+    color: white;
+}
+
+
+#content {
+    img{float: left;}
+    padding-top: 60px;
+}
