@@ -154,14 +154,15 @@
     </div>
 @else
 <footer class="footerClass">
-{{--     <div class="container">
+    <!--<div class="container">
             <div class="row">
                 <div class="col-sm-4 footerClass">footer 1</div>
                 <div class="col-sm-4 footerClass" style="margin-left: 5px;">footer 2</div>
                 <div class="col-sm-4 footerClass" style="margin-left: 5px">footer 3</div>
             </div>
-        </div>--}}
-    </footer>
+    </div>
+    -->
+</footer>
     @endif
 
 
