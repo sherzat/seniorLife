@@ -14,7 +14,7 @@ class PagesController extends Controller
     }
     public function getIndex()
     {
-    	return view('pages.welcome');
+    	return view('home');
     }
 
     public function getAbout()
