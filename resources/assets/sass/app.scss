@@ -12,6 +12,8 @@
 @import "navHeader";
 @import "footerHome";
 @import "registrationForm";
+@import "footer-and-header";
+
 article,aside,footer,header,main,nav,section {
     display: block;
 }
@@ -42,8 +44,9 @@ html,body,h1,h2,h3,ul,li,a,p,article,aside,footer,header,main,nav,section{
     margin-top: 30px;
     font-size: x-large;
 }
-//@import url('https://fonts.googleapis.com/css?family=Lato:900');
+@import url('https://fonts.googleapis.com/css?family=Lato:900');
 .title{
+    font-family: 'Lato', sans-serif;
     margin-top: 554px;
     color: black;
     text-align: center;
@@ -63,6 +66,7 @@ html,body,h1,h2,h3,ul,li,a,p,article,aside,footer,header,main,nav,section{
 
 .form-input::before{
     position: absolute;
+    font-family: "FontAwesome";
     font-size: 30px;
 }
 
@@ -89,38 +93,34 @@ h4{
     font-size: x-large;
     text-align: center;
 }
-/* navigation bar settings */
 
 li{
     display: inline;
-    margin-left: 16px;
-    margin-right: 16px;
-    font-size: 48px;
-    font-variant: small-caps;
-    font-weight: bold;
-
+    font-size: 42px;
 }
 aside{
 
     width: 400px;
     height: 950px;
+    margin-top: 136px;
     float: right;
-    margin-top: 5px;
+    background: orange;
 
 }
 
 main{
     width: 1495px;
-    height: 950px;
-
+    height: 948px;
     float: left;
-    margin-top: 5px;
+    margin-top: 136px;
     margin-left: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 16px;
+    background-color: black ;
 }
 
 .fixsize{
     height: 234px;
+    margin-bottom: 5px;
     background-color: teal;
 }
 
@@ -136,32 +136,11 @@ div .wristband{
     height: 500px;
 }
 
-footer{
-    margin-top: 5px;
-    width: 100%;
-    position: absolute;
-    height: 120px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-    clear: both;
-    padding-right: 0px;
-    padding-left: 0px;
-}
-.footerClass{
-
-    background-color: teal;
-    height: 120px;
-    color: white;
-    width: 636px;
-    padding-left: 0px;
-    padding-right: 0px;
-}
 .navbar-brand{
     font-size: 64px;
     margin-top: 35px;
 }
+
 .container-fluid{
     margin-left: 16px;
     margin-right: 16px;
@@ -227,3 +206,7 @@ p{
     img{float: left;}
     padding-top: 60px;
 }
+
+
+
+a.foo:focus { background-color: orange; }

@@ -13,7 +13,8 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-    <link href="/node_modules/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/graceage.css" rel="stylesheet">
+    <link href="/node_modules/font-awesome-4.7.0/scss/font-awesome.scss" rel="stylesheet">
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -26,7 +27,7 @@
 <div class="container">
     <nav class="navSettings">
 
-        <div class="container-fluid">
+        <div class="container-fluid settings-for-container">
 
             <div class="navbar-header">
                 <!-- Branding Image -->
@@ -43,19 +44,37 @@
 
             </div>
 
-           <div class="collapse navbar-collapse" id="app-navbar-collapse">
+           <div class="collapse navbar-collapse settings-for-container" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-               <ul class="nav navbar-nav">
+              {{-- <ul>
                     &nbsp;
-               </ul>
+               </ul>--}}
 
                 @if (Auth::guest())
                 @else
-                    <ul class="nav navbar-nav">
+                    <ul>
                         <li><a href="/">Feedback</a></li>
                         <li><a href="/self_assessment">Self-assessment</a></li>
                         <li><a href="/about">Challenges</a></li>
                         <li><a href="/">Quality Of Life</a></li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle profile-image" data-toggle="dropdown">
+                                <img src="img/Pressure_64.png" class="img-circle special-img"> {{ Auth::user()->name }} <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><i class="fa fa-cog"></i> Account</a></li>
+                                <li class="divider"></li>
+                                <li><a href="{{ url('/logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <i class="fa fa-sign-out"></i> Sign-out</a>
+
+                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                  @endif
 
@@ -93,27 +112,6 @@
                                 </button>
                             </div>
                         </form>
-
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ url('/logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
                     @endif
                 </ul>
             </div>
@@ -156,15 +154,15 @@
 
     </div>
 @else
-    <footer>
-        <div class="container">
+{{-- <footer class="footerClass">
+--}}{{--     <div class="container">
             <div class="row">
                 <div class="col-sm-4 footerClass">footer 1</div>
                 <div class="col-sm-4 footerClass" style="margin-left: 5px;">footer 2</div>
                 <div class="col-sm-4 footerClass" style="margin-left: 5px">footer 3</div>
             </div>
-        </div>
-    </footer>
+        </div>--}}{{--
+    </footer>--}}
     @endif
 
 
