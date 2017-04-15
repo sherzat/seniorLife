@@ -23,7 +23,6 @@
 </head>
 
 <body>
-<div class="container">
     <nav class="navSettings">
 
         <div class="container-fluid settings-for-container">
@@ -117,7 +116,6 @@
         </div>
 
     </nav>
-</div>
     @yield('content')
 
 

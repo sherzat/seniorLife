@@ -64,7 +64,6 @@ html,body,h1,h2,h3,ul,li,a,p,article,aside,footer,header,main,nav,section{
 }
 
 .form-input::before{
-    position: absolute;
     font-family: $font-family-open-sans;
     font-size: 30px;
 }
@@ -167,11 +166,11 @@ div .wristband{
 
 
 //Parallalax Scrolling
-
+/*
 *{
     margin: 0px;
 }
-
+*/
 h1,h2,h3,h4,h5,h6,p{
     margin-bottom: 20px;
 }

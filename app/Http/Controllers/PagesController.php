@@ -35,5 +35,9 @@ class PagesController extends Controller
     {
         return view('pages.self_assessment');
     }
+    public function getSurvey_cake()
+    {
+        return view('pages.survey_cake');
+    }
 }
 

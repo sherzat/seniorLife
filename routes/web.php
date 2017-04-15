@@ -16,6 +16,7 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('about', 'PagesController@getAbout');
 Route::get('contact', 'PagesController@getContact');
+Route::get('survey_cake', 'PagesController@getSurvey_cake');
 
 
 Route::get('self_assessment', 'Self_assessmentController@index');
