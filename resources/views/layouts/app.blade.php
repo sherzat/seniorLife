@@ -23,27 +23,18 @@
 </head>
 
 <body>
-<div class="container">
-    <nav class="navSettings">
+<div class="nav-header-setting">
+    <nav class="nav-header-setting navbar navbar-inverse">
 
-        <div class="container-fluid settings-for-container">
 
-            <div class="navbar-header">
+            <div class="header-height navbar-header ">
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
             </div>
 
-           <div class="collapse navbar-collapse settings-for-container" id="app-navbar-collapse">
+
                 <!-- Left Side Of Navbar -->
               {{-- <ul>
                     &nbsp;
@@ -51,13 +42,13 @@
 
                 @if (Auth::guest())
                 @else
-                    <ul>
-                        <li><a href="/">Feedback</a></li>
-                        <li><a href="/self_assessment">Self-assessment</a></li>
-                        <li><a href="/about">Challenges</a></li>
-                        <li><a href="/">Quality Of Life</a></li>
+                    <ul class="header-height nav navbar-nav">
+                        <li class ="header-height"><a href="/">Feedback</a></li>
+                        <li class = "header-height"><a href="/self_assessment">Self-assessment</a></li>
+                        <li class="header-height"><a href="/about">Challenges</a></li>
+                        <li class="header-height"><a href="/">Quality Of Life</a></li>
 
-                        <li class="dropdown">
+                       <li class="dropdown logout-width-setting">
                             <a href="#" class="dropdown-toggle profile-image" data-toggle="dropdown">
                                 <img src="img/Pressure_64.png" class="img-circle special-img"> {{ Auth::user()->name }} <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -114,13 +105,9 @@
                 </ul>
                     @endif
             </div>
-        </div>
-
     </nav>
 </div>
     @yield('content')
-
-
 
 @if (Auth::guest())
 
@@ -154,16 +141,18 @@
     </div>
 @else
 <footer class="footerClass">
-    <div class="container">
-            <div class="row">
-                <div class="col-sm-4 footerClass">footer 1</div>
-                <div class="col-sm-4 footerClass" style="margin-left: 5px;">footer 2</div>
-                <div class="col-sm-4 footerClass" style="margin-left: 5px">footer 3</div>
-            </div>
-    </div>
+    <ul class="footer-height footer-setting ">
+        <li class ="footer-height"><a href="/" class="anchor-setting">Level 1</a></li>
+        <li class = "footer-height"><a href="/" class="anchor-setting">Start</a></li>
+
+    </ul>
+    {{--<div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">Start</div>
+        </div>
+    </div>--}}
 </footer>
     @endif
-
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
