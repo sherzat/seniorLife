@@ -78,10 +78,10 @@
                  @endif
 
             <!-- Right Side Of Navbar -->
+                    @if (Auth::guest())
                <ul class="nav navbar-nav navbar-right">
 
                     <!-- Authentication Links -->
-                    @if (Auth::guest())
                         <form class="navbar-form navbar-left signin_form_width" role="form" method="POST" action="{{ url('/login') }}">
                             {{ csrf_field() }}
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -111,8 +111,8 @@
                                 </button>
                             </div>
                         </form>
-                    @endif
                 </ul>
+                    @endif
             </div>
         </div>
 
