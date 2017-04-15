@@ -8,11 +8,16 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+@import "node_modules/font-awesome/scss/font-awesome";
+
 @import "seniorlife";
 @import "navHeader";
 @import "footerHome";
 @import "registrationForm";
 @import "footer-and-header";
+@import "aside";
+@import "main";
+@import "footer-after-login";
 
 article,aside,footer,header,main,nav,section {
     display: block;
@@ -35,7 +40,6 @@ html,body,h1,h2,h3,ul,li,a,p,article,aside,footer,header,main,nav,section{
         min-height: 1080px;
     }
 }
-
 
 #grid{
     display: grid;
@@ -68,7 +72,6 @@ html,body,h1,h2,h3,ul,li,a,p,article,aside,footer,header,main,nav,section{
     font-size: 30px;
 }
 
-
 h1{
     font-size:$font-size-h1;
 
@@ -96,31 +99,6 @@ li{
     display: inline;
     font-size: 42px;
 }
-aside{
-
-    width: 400px;
-    height: 950px;
-    margin-top: 136px;
-    float: right;
-    background: orange;
-
-}
-
-main{
-    width: 1495px;
-    height: 948px;
-    float: left;
-    margin-top: 136px;
-    margin-left: 5px;
-    margin-bottom: 16px;
-    background-color: black ;
-}
-
-.fixsize{
-    height: 234px;
-    margin-bottom: 5px;
-    background-color: teal;
-}
 
 div .overAllresult{
     width: 1520px;
@@ -132,11 +110,6 @@ div .wristband{
     width: 1520px;
     background-color: teal;
     height: 500px;
-}
-
-.navbar-brand{
-    font-size: 64px;
-    margin-top: 35px;
 }
 
 .container-fluid{
@@ -208,4 +181,3 @@ p{
 
 
 
-a.foo:focus { background-color: orange; }

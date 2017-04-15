@@ -1,0 +1,27 @@
+.footerClass{
+  height: 100px;
+  clear: both;
+  background-color: $primary-color-dark;
+}
+.footer-setting{
+  height: 100px;
+  text-align: center;
+  float: none;
+}
+.anchor-setting{
+  padding: 5px;
+}
+
+.footer-setting > li {
+  position: relative;
+}
+.footer-setting > li > a {
+  color: white;
+  height: 100px;
+  display: inline-block;
+}
+
+.footer-height{
+  height: 100px;
+
+}
