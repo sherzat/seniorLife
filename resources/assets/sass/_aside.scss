@@ -1,22 +1,24 @@
 aside{
   width: 400px;
+  height: 980px;
   float: right;
 }
-.aside-class{
-  //margin-top: 16px;
-}
-
-.fixsize{
-  height: 227px;
+.aside-settings{
+  height: 225px;
   padding: 0px;
   margin-top: 16px;
+  margin-bottom: 0px;
   background-color: teal;
 }
+
 .list-group{
-  margin-bottom: 0px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
+
 a.foo:focus{
   background-color: orange;
+
 
 }
 
