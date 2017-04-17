@@ -19,7 +19,36 @@
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
+
+        function getclicked(id) {
+            if (id == "button1") {
+
+                document.getElementById('button1').style.backgroundColor = "#FF9800";
+                document.getElementById('button2').style.backgroundColor = "#009688";
+                document.getElementById('button3').style.backgroundColor = "#009688";
+                document.getElementById('button4').style.backgroundColor = "#009688";
+            }else if(id == "button2"){
+                document.getElementById('button1').style.backgroundColor = "#009688";
+                document.getElementById('button2').style.backgroundColor = "#FF9800";
+                document.getElementById('button3').style.backgroundColor = "#009688";
+                document.getElementById('button4').style.backgroundColor = "#009688";
+            }else if(id == "button3"){
+                document.getElementById('button1').style.backgroundColor = "#009688";
+                document.getElementById('button2').style.backgroundColor = "#009688";
+                document.getElementById('button3').style.backgroundColor = "#FF9800";
+                document.getElementById('button4').style.backgroundColor = "#009688";
+            }else if(id == "button4"){
+                document.getElementById('button1').style.backgroundColor = "#009688";
+                document.getElementById('button2').style.backgroundColor = "#009688";
+                document.getElementById('button3').style.backgroundColor = "#009688";
+                document.getElementById('button4').style.backgroundColor = "#FF9800";
+            }else{
+
+            }
+        }
+
     </script>
+
 </head>
 
 <body>

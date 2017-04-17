@@ -3,23 +3,32 @@ aside{
   height: 980px;
   float: right;
 }
+.text-settings{
+  text-align: center;
+  color: white;
+  margin-top: 40px;
+  font-size: 48px;
+  font-family: $font-family-open-sans;
+
+}
 .aside-settings{
   height: 225px;
   padding: 0px;
   margin-top: 16px;
   margin-bottom: 0px;
-  background-color: teal;
+  background-color: #009688;
 }
 
 .list-group{
+
   margin-top: 16px;
   margin-bottom: 16px;
 }
-
-a.foo:focus{
+a.list-group-item:hover, a.list-group-item:focus{
   background-color: orange;
-
-
 }
 
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus{
+  background-color: orange;
+}
 
