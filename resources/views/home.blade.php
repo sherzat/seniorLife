@@ -4,7 +4,7 @@
 
 
 <main class="main-class">
-<section class="section-settings" style="margin-bottom: 16px">
+<section class="section-settings">
     <header class="header-setting"><h2>Overall Result of Survey</h2></header>
 
     <article>
