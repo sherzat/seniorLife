@@ -1,4 +1,19 @@
 .progressbar{
-  background-color: orange;
+  background-color: teal !important;
+}
+.progressbar-progress{
+  background-color: orange !important;
+  height: 30px !important;
+}
+.progress-bar-settings{
+ background-color: #B2DFDB;
+  margin-top: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
 
+}
+.text-progress-settings{
+  text-align: center;
+  font-family: $font-family-open-sans;
+  padding-top: 20px;
 }

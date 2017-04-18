@@ -5,7 +5,6 @@ import Question from './Question';
 //import Progress from './Progress';
 import Progress from 'react-progressbar';
 
-
 class Survey extends Component {
     constructor(props) {
         super(props);
@@ -31,7 +30,10 @@ class Survey extends Component {
         return(
             <div>
                 <section className="section-settings">
-                    <Progress completed={33} className={"progressbar"}/>
+                    <div className="progress-bar-settings">
+                       <h3 className="text-progress-settings">Your Progress 33%</h3>
+                         <Progress completed={33} className={"progressbar"}/>
+                    </div>
                     <Question question={this.state.question} />
                 </section>
                 <section className="section-settings">
