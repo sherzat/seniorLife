@@ -42,10 +42,11 @@ class SurveyController extends Controller
         return view('survey.new', $view_data);
          */
         //option 1: get 10 the question
-        $questions = App\Question::take(10)->get();
-        return $questions->toJson();
-	//option 1
 	/*
+        $questions = \App\Question::take(10)->get();
+        return $questions->toJson();
+	*/
+	//option 1
 	$asked_questions=[];
         $user = \App\User::where("id", Auth::id())->first();
         foreach($user->surveys as $survey)
@@ -56,10 +57,12 @@ class SurveyController extends Controller
             }
         }
 
-        $prepare_questions = \App\Question::select('question')->whereNotIn('id',$asked_questions)->limit(10)->get();
+        $prepare_questions = \App\Question::whereNotIn('id',$asked_questions)
+            ->limit(10)
+            ->with('choices')
+            ->get();
         $view_data['prepare_questions'] = $prepare_questions;
         return  json_encode($view_data);
-	*/
 
     }
 

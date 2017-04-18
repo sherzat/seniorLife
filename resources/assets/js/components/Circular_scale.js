@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 
 class Circular_scale extends Component {
+    constructor(props) {
+        super(props);
+        this.handleClick= this.handleClick.bind(this);
+    }
+    handleClick(){
+        this.props.nextQuestion();
+    }
 	render() {
             const style_svg={
                 transformOrigin: '50% 50% 0px',
@@ -9,7 +16,6 @@ class Circular_scale extends Component {
                 userSelect: 'none',
             };
 		return (
-            <div>
                 <div className="menu-wrapper">
                     <svg xmlns="http://www.w3.org/2000/svg"
                         viewBox="-2 -2 504 290" id="menu"
@@ -41,9 +47,10 @@ class Circular_scale extends Component {
                             </symbol>
                         </g>
                         <g id="itemsContainer">
-                            <a className="item" id="item-1" role="link" tabIndex="0" href="/ " title=" " transform="matrix(1,0,0,1,0,0)" data-svg-origin="250 250" >
+                            <a className="item" id="item-1" role="button" tabIndex="0" onClick={this.handleClick} title=" " transform="matrix(1,0,0,1,0,0)" data-svg-origin="250 250" >
                                 <path fill="none" stroke="#111" d="M355,250 l145,0 A250,250 0 0,0 452.25424859373686,103.05368692688171 l-117.3074641843674,85.22886158240863 A105,105 0 0,1 355,250" className="sector"></path>
                                 <use href="#icon-1" width="69" height="69" x="405.7113037109375" y="153.6966094970703" transform="rotate(72 440.2113037109375 188.1966094970703)"></use>
+                                {this.props.choices}
                             </a>
                             <a className="item" id="item-2" role="link" tabIndex="0" href=" " title=" " transform="matrix(0.80901,-0.58778,0.58778,0.80901,-99.20056166685515,194.69206447938143)" data-svg-origin="250 250" >
                                 <path fill="none" stroke="#111" d="M355,250 l145,0 A250,250 0 0,0 452.25424859373686,103.05368692688171 l-117.3074641843674,85.22886158240863 A105,105 0 0,1 355,250" className="sector"></path>
@@ -68,7 +75,6 @@ class Circular_scale extends Component {
                     </svg>
                 </div>
 
-            </div>
 		);
 	}
 }

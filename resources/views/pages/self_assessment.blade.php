@@ -25,7 +25,6 @@
                 <style>
                     .menu-wrapper {
                         position: relative;
-                        height: 0;
                         width: 50%; /* any width you want */
                         padding-top: 50%; /* if the menu is in full circle mode. 50% if it is in semi-circle mode. */
                     }
