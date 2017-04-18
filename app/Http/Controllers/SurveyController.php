@@ -26,6 +26,7 @@ class SurveyController extends Controller
     {
         //create new survey.
 		//map survey with questions.
+        /*
 		$survey = new \App\Survey;
 		$survey->name = 'test1';
 		$survey->description = 'test descreiption';
@@ -39,6 +40,27 @@ class SurveyController extends Controller
         //prepare queation data to pass to views.
         $view_data['survey'] = $survey;
         return view('survey.new', $view_data);
+         */
+        //option 1: get 10 the question
+        $questions = App\Question::take(10)->get();
+        return $questions->toJson();
+	//option 1
+	/*
+	$asked_questions=[];
+        $user = \App\User::where("id", Auth::id())->first();
+        foreach($user->surveys as $survey)
+        {
+            foreach($survey->questions as $question)
+            {
+                array_push($asked_questions, $question->id);
+            }
+        }
+
+        $prepare_questions = \App\Question::select('question')->whereNotIn('id',$asked_questions)->limit(10)->get();
+        $view_data['prepare_questions'] = $prepare_questions;
+        return  json_encode($view_data);
+	*/
+
     }
 
 	public function store_survey(Request $request, \App\Survey $survey)

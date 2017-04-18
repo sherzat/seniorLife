@@ -4,7 +4,7 @@ import Clock from './Clock';
 import Myform from './Myform';
 import NavbarForm from './Navbar';
 import Navbar from './Navbar';
-
+import Survey from './Survey';
 
 setInterval(tick, 1000);
 function tick() {
@@ -23,10 +23,14 @@ if (document.getElementById('myform')) {
         document.getElementById('myform'));
 }
 
-/*
-if (document.getElementById('navbar')) {
+if (document.getElementById('survey')) {
     ReactDOM.render(
-        <Navbar brand = "SeniorLife" href="/"  />,
-        document.getElementById('navbar'));
+        <Survey url="/survey/new" />,
+        document.getElementById('survey'));
 }
-*/
+
+if (document.getElementById('survey')) {
+    ReactDOM.render(
+        <Survey url="/survey/new" />,
+        document.getElementById('survey'));
+}
