@@ -6,7 +6,6 @@
 <main class="main-class">
 <section class="section-settings">
     <header class="header-setting"><h2>Overall Result of Survey</h2></header>
-
     <article>
         <p style="font-size: 48px; color: black;text-align: center;padding-top: 12px;"> Your Score is 78% it is ranked Good</p>
         <p style="color: black;text-align: center;padding-top: 12px;">For more information click here</p>
