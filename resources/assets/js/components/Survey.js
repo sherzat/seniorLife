@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import Circular_scale from './Circular_scale';
 import Question from './Question';
-import Progress from './Progress';
+//import Progress from './Progress';
+import Progress from 'react-progressbar';
 
 class Survey extends Component {
     constructor(props) {
@@ -29,7 +30,7 @@ class Survey extends Component {
         return(
             <div>
                 <section className="section-settings">
-                    <Progress count={this.state.current_value} />
+                    <Progress completed={33} className={"progressbar"}/>
                     <Question question={this.state.question} />
                 </section>
                 <section className="section-settings">

@@ -28,9 +28,3 @@ if (document.getElementById('survey')) {
         <Survey url="/survey/new" />,
         document.getElementById('survey'));
 }
-
-if (document.getElementById('survey')) {
-    ReactDOM.render(
-        <Survey url="/survey/new" />,
-        document.getElementById('survey'));
-}
