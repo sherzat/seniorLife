@@ -4,6 +4,7 @@ import Circular_scale from './Circular_scale';
 import Question from './Question';
 //import Progress from './Progress';
 import Progress from 'react-progressbar';
+import Slider_scale from './Slider_scale';
 
 class Survey extends Component {
     constructor(props) {
@@ -16,7 +17,7 @@ class Survey extends Component {
     componentDidMount(){
         $.ajax({
             method: "GET",
-            url: "survey/new",
+            url: this.props.url,
         })
             .done(function( result ) {
             console.log( "Data Saved: " + result );
@@ -27,6 +28,13 @@ class Survey extends Component {
     }
 
     render(){
+        const scale= this.props.scale;
+        let scale_component = null;
+        if(scale == "Circular_scale"){
+            scale_component= <Circular_scale />;
+        }else if (scale=="Slider_scale"){
+            scale_component= <Slider_scale />;
+        }
         return(
             <div>
                 <section className="section-settings">
@@ -37,7 +45,7 @@ class Survey extends Component {
                     <Question question={this.state.question} />
                 </section>
                 <section className="section-settings">
-                    <Circular_scale />
+                    {scale_component}
                 </section>
             </div>
         );

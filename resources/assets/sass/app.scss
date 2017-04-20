@@ -7,8 +7,8 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
 @import "node_modules/font-awesome/scss/font-awesome";
+@import "node_modules/react-rangeslider/lib/index";
 @import "seniorlife";
 @import "navHeader";
 @import "footerHome";
@@ -18,6 +18,8 @@
 @import "main";
 @import "footer-after-login";
 @import "progressbar";
+@import "slider_scale";
+
 article,aside,footer,header,main,nav,section {
     display: block;
 }

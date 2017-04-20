@@ -14,15 +14,16 @@
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
 
+
     <!-- Scripts -->
     <script>
+
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
 
-        function getclicked(id) {
+            function getclicked(id) {
             if (id == "button1") {
-
                 document.getElementById('button1').style.backgroundColor = "#FF9800";
                 document.getElementById('button2').style.backgroundColor = "#009688";
                 document.getElementById('button3').style.backgroundColor = "#009688";
@@ -46,6 +47,7 @@
 
             }
         }
+
 
     </script>
 

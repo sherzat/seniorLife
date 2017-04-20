@@ -18,7 +18,6 @@ Route::get('about', 'PagesController@getAbout');
 Route::get('contact', 'PagesController@getContact');
 Route::get('survey_cake', 'PagesController@getSurvey_cake');
 
-
 Route::get('self_assessment', 'Self_assessmentController@index');
 Route::post('self_assessment/store/{survey}', 'Self_assessmentController@store');
 Route::get('self_assessment/show', 'Self_assessmentController@show');
