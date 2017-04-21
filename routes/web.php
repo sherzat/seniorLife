@@ -26,7 +26,7 @@ Route::get('self_assessment/show', 'Self_assessmentController@show');
 
 Route::get('survey/new', 'SurveyController@create_survey')->name('new.survey');
 Route::get('survey/{survey}', 'SurveyController@detailed_survey')->name('detail.survey');
-Route::post('survey/store/{survey}', 'SurveyController@store_survey')->name('store.survey');
+Route::post('survey/store', 'SurveyController@store_survey')->name('store.survey');
 
 Route::get('databaseTest', function(){
 	if (DB::connection()->getDatabaseName())

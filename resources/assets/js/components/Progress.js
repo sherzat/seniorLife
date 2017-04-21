@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Progress from 'react-progressbar';
-import Progressbar from 'react-progressbar'
 class Progress extends Component {
     render(){
         return(

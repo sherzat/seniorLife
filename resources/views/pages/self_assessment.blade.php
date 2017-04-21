@@ -2,37 +2,24 @@
 
 @section('content')
 
-
                         <style>
-                            #menu{
-                                display:block;
-                                margin:0 auto;
-                            }
-                            a{
-                                cursor:pointer;
-                                outline:none;
-                            }
-                            .item .sector{
-                                transition:all .1s linear;
-                                fill:#fff;
-                                stroke:#111;
-                            }
-                            .item:hover .sector,.item:focus .sector{fill:#eee;}
-                            .menu-trigger{fill:#EA2A55;pointer-events:auto;}
-                            .menu-trigger:hover,.menu-trigger:focus{cursor:pointer;}
-                            symbol{overflow:visible;}
-                        </style>
+                        #menu{display:block;margin:0 auto;}
+                        a{cursor:pointer;outline:none;}
+                        .item .sector{transition:all .1s linear;stroke:#111;}
+                        .item:hover .sector,.item:focus .sector{fill:#eee;}
+                        .menu-trigger{fill:#EA2A55;pointer-events:auto;}
+                        .menu-trigger:hover,.menu-trigger:focus{cursor:pointer;}
+                        symbol{overflow:visible;}
+                    </style>
                 <style>
                     .menu-wrapper {
                         position: relative;
-                        width: 50%; /* any width you want */
-                        padding-top: 50%; /* if the menu is in full circle mode. 50% if it is in semi-circle mode. */
+                        text-align: center;
                     }
                     #menu {
                         position: absolute;
                         top: 0;
                         left: 0;
-                        width: 100%;
                     }
                 </style>
 <main class="main-class">
