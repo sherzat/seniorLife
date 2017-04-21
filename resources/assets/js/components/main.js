@@ -25,6 +25,8 @@ if (document.getElementById('myform')) {
 
 if (document.getElementById('survey')) {
     ReactDOM.render(
-        <Survey url="/survey/new" />,
+        <Survey url="/survey/new" scale="Slider_scale"/>,
         document.getElementById('survey'));
 }
+
+

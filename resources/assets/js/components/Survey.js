@@ -6,6 +6,7 @@ import Question from './Question';
 //import Progress from './Progress';
 import Progress from 'react-progressbar';
 import createFragment from 'react-addons-create-fragment'; // ES6
+import Slider_scale from './Slider_scale';
 
 class Survey extends Component {
     constructor(props) {
@@ -91,6 +92,13 @@ class Survey extends Component {
 
 	}
     render(){
+        const scale= this.props.scale;
+        let scale_component = null;
+        if(scale == "Circular_scale"){
+            scale_component= <Circular_scale_1 nextQuestion={this.nextQuestion} choices={this.state.choices}/>;
+        }else if (scale=="Slider_scale"){
+            scale_component= <Slider_scale />;
+        }
         return(
             <div>
                 <section className="section-settings">
@@ -101,8 +109,8 @@ class Survey extends Component {
 
                     <Question  question={this.state.question.question}/>
                 </section>
-				<section className="section-settings">
-                    <Circular_scale_1 nextQuestion={this.nextQuestion} choices={this.state.choices}/>
+                <section className="section-settings">
+                    {scale_component}
                 </section>
             </div>
         );
