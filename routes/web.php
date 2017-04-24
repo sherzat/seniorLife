@@ -12,7 +12,6 @@
 */
 
 Route::get('/', 'PagesController@getIndex');
-Route::get('/home', 'HomeController@index');
 
 Route::get('about', 'PagesController@getAbout');
 Route::get('contact', 'PagesController@getContact');

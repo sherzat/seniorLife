@@ -3,10 +3,8 @@
 @section('content')
 
                         <style>
-                        #menu{display:block;margin:0 auto;}
                         a{cursor:pointer;outline:none;}
                         .item .sector{transition:all .1s linear;stroke:#111;}
-                        .item:hover .sector,.item:focus .sector{fill:#eee;}
                         .menu-trigger{fill:#EA2A55;pointer-events:auto;}
                         .menu-trigger:hover,.menu-trigger:focus{cursor:pointer;}
                         symbol{overflow:visible;}
@@ -15,11 +13,6 @@
                     .menu-wrapper {
                         position: relative;
                         text-align: center;
-                    }
-                    #menu {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
                     }
                 </style>
 <main class="main-class">

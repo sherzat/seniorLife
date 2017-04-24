@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 
 @section('content')
 
-
+    <!-->
 <main class="main-class">
 <section class="section-settings">
     <header class="header-setting"><h2>Overall Result of Survey</h2></header>

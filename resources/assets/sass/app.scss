@@ -7,8 +7,38 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-@import "node_modules/font-awesome/scss/font-awesome";
-@import "node_modules/react-rangeslider/lib/index";
+.background-img{
+    background-size: cover;
+    background-image: url('/img/women.jpg');
+}
+.registor{
+    margin:3px;
+    width:inherit;
+    height:inherit;
+}
+.intro{
+    margin:3px;
+    width:inherit;
+    height:35%;
+    background-color:silver;
+}
+.container-fluid{
+    width:inherit;
+    height:inherit;
+}
+html,body {
+
+    width:100%;
+    height:100%;
+    min-width:320px;
+}
+
+.content_registor{
+    min-height:300px;
+}
+//@import "node_modules/font-awesome/scss/font-awesome";
+//@import "node_modules/react-rangeslider/lib/index";
+/*
 @import "seniorlife";
 @import "navHeader";
 @import "footerHome";
@@ -19,7 +49,7 @@
 @import "footer-after-login";
 @import "progressbar";
 @import "slider_scale";
-
+/*
 article,aside,footer,header,main,nav,section {
     display: block;
 }
@@ -145,6 +175,7 @@ div .wristband{
     margin: 0px;
 }
 */
+/*
 h1,h2,h3,h4,h5,h6,p{
     margin-bottom: 20px;
 }
@@ -155,13 +186,6 @@ html,body{
 
 
 
-.homeImage{
-    height: 100%;
-    background-size: cover;
-    background-image: url('/img/women.jpg');
-    margin-left: 0px;
-    margin-right: 0px;
-}
 
 
 section{
@@ -180,5 +204,5 @@ p{
     padding-top: 60px;
 }
 
-
+*/
 
