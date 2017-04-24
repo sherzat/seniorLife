@@ -5,7 +5,7 @@ import Circular_scale_1 from './Circular_scale_1';
 import Question from './Question';
 //import Progress from './Progress';
 import Progress from 'react-progressbar';
-import createFragment from 'react-addons-create-fragment'; // ES6
+//import createFragment from 'react-addons-create-fragment'; // ES6
 import Slider_scale from './Slider_scale';
 
 class Survey extends Component {
