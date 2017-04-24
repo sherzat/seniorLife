@@ -2,6 +2,7 @@
 @section('header_content')
 
     <main>
+
        <section>
 
        </section>
@@ -9,7 +10,7 @@
       <section style="margin-top: 5px">
 
       </section>
-  </main>
+    </main>
 
    <aside >
        <div class="row fixsize"></div>
