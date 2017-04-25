@@ -1,10 +1,10 @@
 @extends('layouts.layout')
 
 @section('content_registor')
-   {{--<div class="container-fluid homeImage">
+    {{--
+   <div class="container-fluid">
 
-       <div class="row">
-          <div class="col-sm-10 col-sm-offset-1">
+       <div class="col-sm-10 col-sm-offset-1">
                 <div class="title">
                     <h1>Monitor Your Health For Better Quality of Life</h1>
                 </div>
@@ -76,6 +76,6 @@
             </div>
         </div>
 
-    </div>
---}}
+    </div>--}}
+
 @endsection

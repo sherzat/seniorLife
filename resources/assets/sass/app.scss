@@ -1,43 +1,47 @@
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Lato:900|Open+Sans');
-
+//@import "node_modules/font-awesome/scss/font-awesome";
 // Variables
 @import "variables";
+@import "home_footor_settings";
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+/* this setting is for the background image women image to be specific*/
 .background-img{
-    background-size: cover;
     background-image: url('/img/women.jpg');
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-position:center;
 }
-.registor{
-    margin:3px;
-    width:inherit;
-    height:inherit;
-}
-.intro{
-    margin:3px;
-    width:inherit;
-    height:35%;
-    background-color:silver;
+/* applied in row to resize its width and height from its parents */
+.registor {
+    margin: 3px;
+    width: inherit;
+    height: inherit;
 }
 .container-fluid{
     width:inherit;
     height:inherit;
 }
 html,body {
-
     width:100%;
     height:100%;
     min-width:320px;
 }
+/* this style is for the 3 images on the home screen it creates horizontal line in between  */
 
-.content_registor{
-    min-height:300px;
-}
-//@import "node_modules/font-awesome/scss/font-awesome";
+
+
+
 //@import "node_modules/react-rangeslider/lib/index";
+
+@import "variables";
 /*
 @import "seniorlife";
 @import "navHeader";
@@ -49,15 +53,6 @@ html,body {
 @import "footer-after-login";
 @import "progressbar";
 @import "slider_scale";
-/*
-article,aside,footer,header,main,nav,section {
-    display: block;
-}
-
-html,body,h1,h2,h3,ul,li,a,p,article,aside,footer,header,main,nav,section{
-    padding: 0px;
-    margin: 0px;
-}
 
 #home_page {
 
@@ -105,12 +100,6 @@ html,body,h1,h2,h3,ul,li,a,p,article,aside,footer,header,main,nav,section{
 
 h1{
     font-size:$font-size-h1;
-
-}
-
-.img_class_login{
-    width: 320px;
-    height: 300px;
 }
 
 h2{
@@ -147,9 +136,6 @@ div .wristband{
     margin-left: 16px;
     margin-right: 16px;
 }
-
-
-
 .side-menu {
     height: 248px;
     color: $primary-color-text;
@@ -170,12 +156,10 @@ div .wristband{
 
 
 //Parallalax Scrolling
-/*
 *{
     margin: 0px;
 }
-*/
-/*
+
 h1,h2,h3,h4,h5,h6,p{
     margin-bottom: 20px;
 }
@@ -183,11 +167,6 @@ h1,h2,h3,h4,h5,h6,p{
 html,body{
     height:100%;
 }
-
-
-
-
-
 section{
     height: 473px;
     background-color: teal;
@@ -197,8 +176,6 @@ p{
     font-size: 24px;
     color: white;
 }
-
-
 #content {
     img{float: left;}
     padding-top: 60px;
