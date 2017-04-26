@@ -7,6 +7,7 @@ import Question from './Question';
 import Progress from 'react-progressbar';
 //import createFragment from 'react-addons-create-fragment'; // ES6
 import Slider_scale from './Slider_scale';
+import Checkbox from './Checkbox';
 
 class Survey extends Component {
     constructor(props) {
@@ -98,6 +99,8 @@ class Survey extends Component {
             scale_component= <Circular_scale_1 nextQuestion={this.nextQuestion} choices={this.state.choices}/>;
         }else if (scale=="Slider_scale"){
             scale_component= <Slider_scale />;
+        }else if (scale=="Checkbox"){
+            scale_component= <Checkbox />;
         }
         return(
             <div>
