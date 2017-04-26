@@ -10,8 +10,8 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
-Route::get('/', 'PagesController@getIndex');
+Route::get('/', 'WelcomeController@welcome');
+Route::get('/home', 'PagesController@getHome');
 
 Route::get('about', 'PagesController@getAbout');
 Route::get('contact', 'PagesController@getContact');
