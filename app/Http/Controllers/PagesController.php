@@ -12,9 +12,9 @@ class PagesController extends Controller
     {
         $this->middleware('auth');
     }
-    public function getIndex()
+    public function getHome()
     {
-    	return view('index');
+    	return view('home');
     }
 
     public function getOverView()
