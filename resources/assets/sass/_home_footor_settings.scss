@@ -1,3 +1,4 @@
+/* this style is for the 3 images on the home screen it creates horizontal line in between  */
 .style-for-images{
   box-shadow: inset 1px -1px 1px #444,inset -1px 1px 1px #ffffff;
 }
@@ -10,5 +11,16 @@
 }
 .settins-for-paragraphs {
   color: whitesmoke;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+}
+
+.setting-for-registration-button{
+  background-color: orange !important;
+  border: none !important;
+}
+
+.setting-for-registration-text{
+  text-align: center;
   font-family: 'Raleway', sans-serif;
 }

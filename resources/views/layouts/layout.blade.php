@@ -7,42 +7,57 @@
 
     <title>{{ config('app.name', 'SeniorLife') }}</title>
     <link href="/css/app.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
 <!-- background-img class is found in app.scss file -->
 <div class="container-fluid background-img">
     <!-- registor class is inside apps.scss file used to set the height and width of row to inherent from its parent -->
-    <div class="row registor">
-        <div class="col-xs-12 col-sm-12 visible-xs visible-sm">
-            <form class="navbar-form navbar-left signin_form_width" role="form" method="POST" action="{{ url('/login') }}">
+    <!-- vertical-align is used to center vertically even for unknown height or different screen size -->
+    <div class="row registor vertical-align">
+
+        <div class="col-xs-8 col-xs-offset-2 visible-xs">
+            <form class="navbar-form navbar-right" role="form" method="POST" action="{{ url('/login')}}">
                 {{ csrf_field() }}
+                <!-- font family and font size -->
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <input id="email" type="email" placeholder="username" class="signin_input"  name="email" value="{{ old('email') }}" required autofocus>
+                    /* the default color is changed and it is found in apps.scss */
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-user"></span>
+                        </div>
+                        <input id="email" type="email" placeholder="Username" class="form-control settins-for-paragraphs"
+                               name="email" value="{{ old('email') }}" required autofocus>
 
-                    @if ($errors->has('email'))
-                        <span class="help-block">
-										<strong>{{ $errors->first('email') }}</strong>
-									</span>
-                    @endif
+                        @if ($errors->has('email'))
 
+                             <span class="help-block">
+                                 <strong>{{ $errors->first('email') }}</strong>
+                             </span>
+                        @endif
+                    </div>
                 </div>
-
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <input id="password" placeholder="Password" type="password" class="signin_input" name="password" required>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-lock"></span>
+                        </div>
+                        <input id="password" placeholder="Password" type="password" class="form-control settins-for-paragraphs" name="password" required>
 
-                    @if ($errors->has('password'))
-                        <span class="help-block">
-										<strong>{{ $errors->first('password') }}</strong>
-									</span>
-                    @endif
+                        @if ($errors->has('password'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
+                    </div>
                 </div>
-
-                <div class="form-group ">
-                    <button class="btn btn-default signin_button" type="submit">
-                        Login
-                    </button>
-                </div>
+                <button type="submit" class="btn btn-success form-control settins-for-paragraphs lead">Sign in</button>
             </form>
+            <div class="form-group">
+                <h5 class="setting-for-registration-text">New to SeniorLife? Please register here!</h5>
+                <button type="submit" class="btn btn-success form-control setting-for-registration-button lead">Register</button>
+            </div>
         </div>
 
         <div class="col-md-12">
@@ -59,7 +74,7 @@
                         <a class="navbar-brand" href="#">{{ config('app.name', 'SeniorLife') }}</a>
                     </div>
                     <div id="navbar" class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav hidden-sm">
                             <li class="active"><a href="#">Home</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#contact">Contact</a></li>
@@ -67,7 +82,7 @@
                         <form class="navbar-form navbar-right" role="form" method="POST" action="{{ url('/login')}}">
                             {{ csrf_field() }}
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <input id="email" type="email" placeholder="Username"  class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="email" type="email" placeholder="Username"  class="input-xs form-control" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
 
@@ -78,7 +93,7 @@
 
                             </div>
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <input id="password" placeholder="Password" type="password" class="form-control" name="password" required>
+                                <input id="password" placeholder="Password" type="password" class="input-xs form-control" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -88,53 +103,12 @@
                             </div>
                             <button type="submit" class="btn btn-success">Sign in</button>
                         </form>
-                        {{--<form class="navbar-form navbar-right" role="form" method="POST" action="{{ url('/login') }}">
-                            {{ csrf_field() }}
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <input id="email" type="email" placeholder="username" class="signin_input"  name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-										<strong>{{ $errors->first('email') }}</strong>
-									</span>
-                                @endif
-
-                            </div>
-
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <input id="password" placeholder="Password" type="password" class="signin_input" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-										<strong>{{ $errors->first('password') }}</strong>
-									</span>
-                                @endif
-                            </div>
-
-                            <div class="form-group ">
-                                <button class="btn btn-default signin_button" type="submit">
-                                    Login
-                                </button>
-                            </div>
-                        </form>--}}
                     </div><!--/.nav-collapse -->
-
-                                            <!-- Authentication Links -->
 
                 </div>
 
             </nav>
             @yield('content_registor')
-        </div>
-        <div class="col-sm-12 visible-sm">
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-default">
-                    Submit
-                </button>
-            </form>
         </div>
     </div>
     <!-- intro class is found in app.scss -->
@@ -147,7 +121,7 @@
                     <fieldset>
                         <!-- title-settings is found in _home_footor_settings and is used to customize the titles "share" -->
                         <h2 class="card-title title-settings">Share</h2>
-                        <img class="card-img-top" src="img/Share-96.png" width="140" height="140" align="left"/>
+                        <img class="card-img-top img-responsive" src="img/Share-96.png" width="150" height="150" align="left"/>
                         <p class="card-text settins-for-paragraphs lead">By sharing your activities, You can let your
                             friends and families
                             know about your health in general. You can share your survey results, Empatica results,
@@ -163,7 +137,7 @@
                 <div class="card-block">
                     <fieldset>
                         <h2 class="card-title title-settings">Empatica</h2>
-                        <img class="card-img-top" src="img/Empatica-100.png" width="150" height="150"
+                        <img class="card-img-top img-responsive" src="img/Empatica-100.png" width="150" height="150"
                              align="left"/>
                         <p class="card-text settins-for-paragraphs lead">Empatica is a wristband a wearable wireless
                             device designed for continuous, real-time data acquisition in daily life. Using your
@@ -179,7 +153,7 @@
                 <div class="card-block">
                     <fieldset>
                         <h2 class="card-title title-settings">Survey</h2>
-                        <img class="card-img-top" src="img/Survey1.png" alt="" width="150" height="150"
+                        <img class="card-img-top img-responsive" src="img/Survey1.png" alt="" width="150" height="150"
                              align="left"/>
                         <p class="card-text settins-for-paragraphs lead">In Survey part, you will find different
                             categories and
