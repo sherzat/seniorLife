@@ -1,13 +1,15 @@
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Lato:900|Open+Sans');
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 //@import "node_modules/font-awesome/scss/font-awesome";
 // Variables
 @import "variables";
 @import "home_footor_settings";
 @import "navbar_header_setting";
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "registrationForm";
+
 
 /* this setting is for the background image women image to be specific*/
 .background-img{
@@ -45,22 +47,33 @@ html,body {
 .input-group-addon{
     background-color: #CAF7C5 !important;
 }
+/* home text customization and font */
+.title{
+    font-family: $font-family-Lato;
+    color: #4E6168 !important;
+    text-align: center;
+    font-size: 27px !important;
+}
+
+/* settings for registor button for tablets */
+.registor-button-settings{
+    display: block !important;
+    width: 177px !important;
+    background-color: orange !important;
+    border: none !important;
+
+}
 //@import "node_modules/react-rangeslider/lib/index";
 
-@import "variables";
 
-.section-settings {
-    width: 100%;
-    height: 466px;
-}
 /*
 @import "seniorlife";
 @import "navHeader";
 @import "footerHome";
 @import "registrationForm";
 @import "footer-and-header";
-@import "main";
 @import "aside";
+@import "main";
 @import "footer-after-login";
 @import "progressbar";
 @import "slider_scale";
@@ -85,12 +98,7 @@ html,body {
     margin-top: 30px;
     font-size: x-large;
 }
-.title{
-    font-family: $font-family-Lato;
-    margin-top: 554px;
-    color: black;
-    text-align: center;
-}
+
 .button{
     background-color: orange;
     border: none;
