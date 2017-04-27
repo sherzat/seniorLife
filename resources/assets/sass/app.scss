@@ -43,14 +43,19 @@ html,body {
 //@import "node_modules/react-rangeslider/lib/index";
 
 @import "variables";
+
+.section-settings {
+    width: 100%;
+    height: 466px;
+}
 /*
 @import "seniorlife";
 @import "navHeader";
 @import "footerHome";
 @import "registrationForm";
 @import "footer-and-header";
-@import "aside";
 @import "main";
+@import "aside";
 @import "footer-after-login";
 @import "progressbar";
 @import "slider_scale";

@@ -1,8 +1,8 @@
 @extends('layouts.layout')
 
-@section('content')
+@section('content_registor')
 
-    <!-->
+    <!--
 <main class="main-class">
 <section class="section-settings">
     <header class="header-setting"><h2>Overall Result of Survey</h2></header>
@@ -50,5 +50,6 @@
            </a>
        </div>
    </aside>
+   -->
 @endsection
 

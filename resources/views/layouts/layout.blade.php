@@ -14,7 +14,7 @@
     <!-- registor class is inside apps.scss file used to set the height and width of row to inherent from its parent -->
     <div class="row registor">
         <div class="col-xs-12 col-sm-12 visible-xs visible-sm">
-            <form class="navbar-form navbar-left signin_form_width" role="form" method="POST" action="{{ url('/login') }}">
+            <form class="navbar-form navbar-left signin_form_width" role="form" method="POST" action="{{ url('login') }}">
                 {{ csrf_field() }}
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                     <input id="email" type="email" placeholder="username" class="signin_input"  name="email" value="{{ old('email') }}" required autofocus>

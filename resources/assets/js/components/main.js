@@ -25,7 +25,7 @@ if (document.getElementById('myform')) {
 
 if (document.getElementById('survey')) {
     ReactDOM.render(
-        <Survey url="/survey/new" scale="Checkbox"/>,
+        <Survey url="/survey/new" scale="Circular_scale"/>,
         document.getElementById('survey'));
 }
 
