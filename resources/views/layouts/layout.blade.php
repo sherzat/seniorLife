@@ -17,6 +17,7 @@
     <!-- vertical-align is used to center vertically even for unknown height or different screen size -->
     <div class="row registor vertical-align">
 
+                    @if (Auth::guest())
         <div class="col-xs-8 col-xs-offset-2 visible-xs">
             <form class="navbar-form navbar-right" role="form" method="POST" action="{{ url('/login')}}">
                 {{ csrf_field() }}
@@ -59,7 +60,7 @@
                 <button type="submit" class="btn btn-success form-control setting-for-registration-button lead">Register</button>
             </div>
         </div>
-
+    @endif
         <div class="col-md-12">
 <!-- nav-color-and-height used to customize nav bar -->
             <nav class="navbar navbar-inverse navbar-fixed-top nav-customize">
