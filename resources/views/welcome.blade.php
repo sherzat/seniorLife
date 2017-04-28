@@ -3,16 +3,17 @@
 @section('content_registor')
 
     <div class="form-group">
+        <!-- title custmize the font and color text found in apps.scss-->
         <h4 class="lead title">Monitor Your Health For Better Quality of Life</h4>
-        <button type="button" class="btn btn-success btn-lg vertical-align registor-button-settings" data-toggle="modal" data-target="#myModal" >
-           Sign up Now
+        <button type="button" class="btn btn-success btn-lg vertical-align settins-for-paragraphs lead registor-button-settings" data-toggle="modal" data-target="#myModal" >
+           Sign Up Now
         </button>
     </div>
 
     <div id="myModal" class="modal fade" role="dialog">
        <!-- Modal content-->
         <div class="modal-content">
-             <img src="img/profile.png">
+             <img src="img/profile-orange.png">
              <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                  {{ csrf_field() }}
 

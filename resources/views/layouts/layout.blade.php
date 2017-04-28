@@ -66,7 +66,7 @@
             <div class="form-group">
                 <h5 class="setting-for-registration-text">New to SeniorLife? Please register here!</h5>
                 <!-- setting-for-registration-button is found in apps.scss file -->
-                <button type="submit" class="btn btn-success form-control setting-for-registration-button lead">Sign Up Now</button>
+                <a href="/register" role="button"><button type="submit" class="btn btn-success form-control setting-for-registration-button settins-for-paragraphs lead">Sign Up Now</button></a>
             </div>
         </div>
 @endif
@@ -135,7 +135,7 @@
 									</span>
                                 @endif
                             </div>
-                            <button type="submit" class="btn btn-success settins-for-paragraphs lead signin-background-color lead">Sign In</button>
+                            <button type="submit" class="btn btn-success signin-background-color lead">Sign In</button>
                         </form>
 @endif
                     </div><!--/.nav-collapse -->

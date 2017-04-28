@@ -9,14 +9,20 @@
   font-family: $font-family-open-sans;
   font-size: 32px;
 }
+/* settings for registor button for tablets */
+.registor-button-settings{
+  display: block !important;
+  width: 177px !important;
+  background-color: #f39c12 !important;
+  border: none !important;
+}
 
 .settins-for-paragraphs {
-  color: whitesmoke;
   font-family: 'Raleway', sans-serif;
 }
 
 .setting-for-registration-button{
-  background-color: orange !important;
+  background-color: #f39c12 !important;
   border: none !important;
 }
 
