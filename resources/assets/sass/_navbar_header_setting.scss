@@ -1,12 +1,14 @@
 .nav-customize{
-  background-color: $primary-color-dark !important;
+  //background-color: $primary-color-dark !important;
+  background-color: #16a085 !important;
   margin-bottom: 0px !important;
+  border: none !important;
 }
 
 /*used to change the color and font family of navbrnd for the title */
 .navbar-brand{
   font-size: 24px !important;
-  color: white !important;
+  color: #ecf0f1 !important;
   font-family:  $font-family-Lato !important;
 }
 

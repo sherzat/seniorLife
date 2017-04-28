@@ -43,7 +43,7 @@ html,body {
     margin-left: auto !important;
     margin-right: auto !important;
 }
-/* changing the user and password icon */
+/* changing the user and password icon color */
 .input-group-addon{
     background-color: #CAF7C5 !important;
 }
@@ -59,13 +59,16 @@ html,body {
 .registor-button-settings{
     display: block !important;
     width: 177px !important;
-    background-color: orange !important;
+    background-color: #f39c12 !important;
     border: none !important;
 
 }
+
+/* sign in background color */
+.signin-background-color{
+    background-color: #2ecc71 !important;
+}
 //@import "node_modules/react-rangeslider/lib/index";
-
-
 /*
 @import "seniorlife";
 @import "navHeader";
