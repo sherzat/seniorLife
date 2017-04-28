@@ -57,12 +57,12 @@
             </div>
         </div>
         <!-- Confirm password -->
-        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+        <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">
                     <span class="glyphicon glyphicon-lock"></span>
                 </div>
-                <input id="password-confirm" placeholder="Confirm password" type="password" class="form-control input-registration-settings" name="password-confirmation" required>
+                <input id="password-confirm" placeholder="Confirm password" type="password" class="form-control input-registration-settings" name="password_confirmation" required>
             </div>
         </div>
         <!-- submit button -->
@@ -131,12 +131,12 @@
             </div>
 
             <!-- Confirm password -->
-            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }} customizing-form-horizontal">
+            <div class="form-group customizing-form-horizontal">
                 <div class="input-group">
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-lock"></span>
                     </div>
-                    <input id="password-confirm" placeholder="Confirm password" type="password" class="form-control input-registration-settings" name="password-confirmation" required>
+                    <input id="password-confirm" placeholder="Confirm password" type="password" class="form-control input-registration-settings" name="password_confirmation" required>
                 </div>
             </div>
 
