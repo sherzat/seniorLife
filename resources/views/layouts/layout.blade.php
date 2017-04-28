@@ -22,6 +22,8 @@
             <form class="navbar-form navbar-right" role="form" method="POST" action="{{ url('/login')}}">
                 {{ csrf_field() }}
                 <!-- font family and font size -->
+
+     <!-- email form starts here -->
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                     <!-- the default color is changed and it is found in apps.scss -->
                     <div class="input-group">
@@ -39,6 +41,8 @@
                         @endif
                     </div>
                 </div>
+
+    <!-- password form starts here -->
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                     <div class="input-group">
                         <div class="input-group-addon">
@@ -53,11 +57,16 @@
                         @endif
                     </div>
                 </div>
-                <button type="submit" class="btn btn-success form-control settins-for-paragraphs lead">Sign in</button>
+
+    <!-- sign in button -->
+                    <!-- setting-for-paragraphs are used to change the size and font while background color changes the background color -->
+                    <!-- both are found in apps.scss -->
+                <button type="submit" class="btn btn-success form-control settins-for-paragraphs lead signin-background-color lead">Sign In</button>
             </form>
             <div class="form-group">
                 <h5 class="setting-for-registration-text">New to SeniorLife? Please register here!</h5>
-                <button type="submit" class="btn btn-success form-control setting-for-registration-button lead">Register</button>
+                <!-- setting-for-registration-button is found in apps.scss file -->
+                <button type="submit" class="btn btn-success form-control setting-for-registration-button lead">Sign Up Now</button>
             </div>
         </div>
 <!-- Extra small device ends here -->
@@ -105,7 +114,7 @@
 									</span>
                                 @endif
                             </div>
-                            <button type="submit" class="btn btn-success">Sign in</button>
+                            <button type="submit" class="btn btn-success settins-for-paragraphs lead signin-background-color lead">Sign In</button>
                         </form>
                     </div><!--/.nav-collapse -->
 
@@ -123,7 +132,7 @@
 
     <!-- intro class is found in app.scss -->
     <!-- Example row of columns -->
-    <div class="row" style="background-color: teal">
+    <div class="row" style="background-color: #16a085">
         <!-- style-for-images is found in _home_footor_settings and is used to add vertical lines -->
         <div class="col-md-4 style-for-images">
             <div class="card">
@@ -131,7 +140,9 @@
                     <fieldset>
                         <!-- title-settings is found in _home_footor_settings and is used to customize the titles "share" -->
                         <h2 class="card-title title-settings">Share</h2>
-                        <img class="card-img-top img-responsive" src="img/Share-96.png" width="150" height="150" align="left"/>
+                        <img class="card-img-top img-responsive" src="img/Share.png" width="150" height="150" align="left"/>
+
+                        <!-- settings-for-paragraphs are found in _home_footor_settings -->
                         <p class="card-text settins-for-paragraphs lead">By sharing your activities, You can let your
                             friends and families
                             know about your health in general. You can share your survey results, Empatica results,
@@ -147,7 +158,7 @@
                 <div class="card-block">
                     <fieldset>
                         <h2 class="card-title title-settings">Empatica</h2>
-                        <img class="card-img-top img-responsive" src="img/Empatica-100.png" width="150" height="150"
+                        <img class="card-img-top img-responsive" src="img/Empatica.png" width="150" height="150"
                              align="left"/>
                         <p class="card-text settins-for-paragraphs lead">Empatica is a wristband a wearable wireless
                             device designed for continuous, real-time data acquisition in daily life. Using your
@@ -163,7 +174,7 @@
                 <div class="card-block">
                     <fieldset>
                         <h2 class="card-title title-settings">Survey</h2>
-                        <img class="card-img-top img-responsive" src="img/Survey1.png" alt="" width="150" height="150"
+                        <img class="card-img-top img-responsive" src="img/Survey.png" alt="" width="150" height="150"
                              align="left"/>
                         <p class="card-text settins-for-paragraphs lead">In Survey part, you will find different
                             categories and
