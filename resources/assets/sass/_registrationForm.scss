@@ -2,26 +2,36 @@
   text-align: center;
   margin: 0 auto;
   border-radius: 4px;
-  width: 60%;
-  height: 700px;
-  position: fixed;
+  width: 55%;
+  height: 60%;
+  position: fixed !important;
   top: 50%;
-  margin-top: 150px;
+  margin-top: 50px;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color:$primary-color-dark;
 }
 
 .modal-content img{
-  width: 250px;
-  height: 250px;
-  margin-top: -100px;
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
   margin-bottom: 30px;
 }
-
+.input-registration-settings{
+  display: inline-flex !important;
+  width: 100% !important;
+}
+.customizing-form-horizontal {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+  padding-left: 45px !important;
+  padding-right: 45px !important;
+}
+/*
 .input-registration-settings{
   height: 60px;
-  width: 650px;
+  width: 60%;
   padding: 20px;
   margin: 3px;
   font-size: 28px;
@@ -38,4 +48,5 @@
   width: 650px;
   height: 60px;
 }
+*/
 

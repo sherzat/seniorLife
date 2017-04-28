@@ -7,23 +7,23 @@
 
     <title>{{ config('app.name', 'SeniorLife') }}</title>
     <link href="/css/app.css" rel="stylesheet">
-    <script src="/js/app.js"></script>
 </head>
 <body>
 
 <!-- background-img class is found in app.scss file -->
-<div class="container-fluid {{auth::guest()? "background-img":""}}">
+<div class="container-fluid {{Auth::guest() ? "background-img": ""}}">
     <!-- registor class is inside apps.scss file used to set the height and width of row to inherent from its parent -->
     <!-- vertical-align is used to center vertically even for unknown height or different screen size -->
     <div class="row registor vertical-align">
 
-                    @if (Auth::guest())
+<!-- This is visible only in extra small devices -->
+@if (Auth::guest())
         <div class="col-xs-8 col-xs-offset-2 visible-xs">
             <form class="navbar-form navbar-right" role="form" method="POST" action="{{ url('/login')}}">
                 {{ csrf_field() }}
                 <!-- font family and font size -->
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    /* the default color is changed and it is found in apps.scss */
+                    <!-- the default color is changed and it is found in apps.scss -->
                     <div class="input-group">
                         <div class="input-group-addon">
                             <span class="glyphicon glyphicon-user"></span>
@@ -60,28 +60,29 @@
                 <button type="submit" class="btn btn-success form-control setting-for-registration-button lead">Register</button>
             </div>
         </div>
-    @endif
+@endif
+<!-- Extra small device ends here -->
+
         <div class="col-md-12">
 <!-- nav-color-and-height used to customize nav bar -->
             <nav class="navbar navbar-inverse navbar-fixed-top nav-customize">
                 <div class="container">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        {{--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
-                        </button>
+                        </button>--}}
                         <a class="navbar-brand" href="#">{{ config('app.name', 'SeniorLife') }}</a>
                     </div>
+
                     <div id="navbar" class="collapse navbar-collapse">
-                    @if (Auth::guest())
-                    @else
-                        <ul class="nav navbar-nav hidden-sm">
+@if (!Auth::guest())
+                        <ul class="nav navbar-nav">
                             <li class="active"><a href="#">Home</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#contact">Contact</a></li>
-
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown logout-width-setting">
@@ -102,18 +103,17 @@
                                 </ul>
                             </li>
                         </ul>
-                    @endif
-        @if (Auth::guest())
-                        <form class="navbar-form navbar-right " role="form" method="POST" action="{{ url('/login')}}">
+@else
+                        <form class="navbar-form navbar-right" role="form" method="POST" action="{{ url('/login')}}">
                             {{ csrf_field() }}
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <input id="email" type="email" placeholder="Username"  class="input-xs form-control" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
 
-                                   {{-- <span class="help-block">
+                                    <span class="help-block">
 										<strong>{{ $errors->first('email') }}</strong>
-									</span>--}}
+									</span>
                                 @endif
 
                             </div>
@@ -128,18 +128,23 @@
                             </div>
                             <button type="submit" class="btn btn-success">Sign in</button>
                         </form>
-                    @endif
+@endif
                     </div><!--/.nav-collapse -->
 
                 </div>
 
             </nav>
-            @yield('content_registor')
+<!-- welcome text and register botton are added here for tablets and desktops -->
+            <div class="container">
+                <div class="col-xs-8 col-xs-offset-2 hidden-xs">
+                    @yield('content_registor')
+                </div>
+            </div>
         </div>
     </div>
+
     <!-- intro class is found in app.scss -->
     <!-- Example row of columns -->
-
 @if (Auth::guest())
     <div class="row" style="background-color: teal">
         <!-- style-for-images is found in _home_footor_settings and is used to add vertical lines -->
@@ -196,5 +201,6 @@
 @endif
 </div>
 
+<script src="/js/app.js"></script>
 </body>
 </html>

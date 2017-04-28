@@ -9,3 +9,8 @@
   color: white !important;
   font-family:  $font-family-Lato !important;
 }
+
+/*used to change the profile toggle fit in the nav bar*/
+.navbar-right .dropdown-toggle {
+    height:50px;
+}
