@@ -23,13 +23,9 @@ class PagesController extends Controller
     }
 
 
-    public function getAbout()
+    public function getRank()
     {
-    	$fist = 'sherzat';
-    	$last = 'ablimit';
-
-    	$full = $fist." ".$last;
-    	return view('pages.about')->with("fullname", $full);
+    	return view('pages.rank');
     }
 
     public function getContact()

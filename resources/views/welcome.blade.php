@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('content_registor')
+@section('content')
 
     <div class="form-group">
         <!-- title custmize the font and color text found in apps.scss-->

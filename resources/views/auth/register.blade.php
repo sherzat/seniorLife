@@ -1,7 +1,7 @@
 @extends('layouts.auth_layout')
 
 @section('regiser_content')
-    <form class="navbar-form navbar-right" role="form" method="POST" action="{{ url('/login')}}">
+    <form class="navbar-form navbar-right" role="form" method="POST" action="{{ url('/register')}}">
     {{ csrf_field() }}
     <!-- font family and font size -->
 
@@ -14,13 +14,13 @@
                 </div>
                 <input id="name" type="text" class="form-control input-group-sm input-registration-settings" placeholder="User name" name="name" value="{{ old('name') }}" required autofocus>
 
+
+            </div>
                 @if ($errors->has('name'))
                     <span class="help-block">
                                          <strong>{{ $errors->first('name') }}</strong>
                                      </span>
                 @endif
-
-            </div>
         </div>
 
         <!-- email form -->
@@ -33,13 +33,13 @@
                 <input id="email" type="email" placeholder="Email" class="form-control input-registration-settings"
                        name="email" value="{{ old('email') }}" required autofocus>
 
+            </div>
                 @if ($errors->has('email'))
 
                     <span class="help-block">
                                  <strong>{{ $errors->first('email') }}</strong>
                              </span>
                 @endif
-            </div>
         </div>
         <!-- password   form -->
         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
@@ -49,12 +49,12 @@
                 </div>
                 <input id="password" placeholder="Password" type="password" class="form-control input-registration-settings" name="password" required>
 
+            </div>
                 @if ($errors->has('password'))
                     <span class="help-block">
                                 <strong>{{ $errors->first('password') }}</strong>
                             </span>
                 @endif
-            </div>
         </div>
         <!-- Confirm password -->
         <div class="form-group">
@@ -74,7 +74,7 @@
 @section('regiser_content_md')
     <div class="modal-content">
         <img src="img/profile-orange.png">
-        <form class="form-horizontal" role="form" method="POST">
+        <form class="form-horizontal" role="form" method="POST" action="{{ url('/register')}}">
         {{ csrf_field() }}
 
         <!-- user name form -->
@@ -85,13 +85,13 @@
                     </div>
                     <input id="name" type="text" class="form-control input-group-sm input-registration-settings" placeholder="User name" name="name" value="{{ old('name') }}" required autofocus>
 
+
+                </div>
                     @if ($errors->has('name'))
                         <span class="help-block">
                                          <strong>{{ $errors->first('name') }}</strong>
                                      </span>
                     @endif
-
-                </div>
 
             </div>
 
@@ -105,13 +105,13 @@
                     <input id="email" type="email" placeholder="Email" class="form-control input-registration-settings"
                            name="email" value="{{ old('email') }}" required autofocus>
 
+                </div>
                     @if ($errors->has('email'))
 
                         <span class="help-block">
                                  <strong>{{ $errors->first('email') }}</strong>
                              </span>
                     @endif
-                </div>
             </div>
 
             <!-- password   form -->
@@ -122,12 +122,12 @@
                     </div>
                     <input id="password" placeholder="Password" type="password" class="form-control input-registration-settings" name="password" required>
 
+                </div>
                     @if ($errors->has('password'))
                         <span class="help-block">
                                 <strong>{{ $errors->first('password') }}</strong>
                             </span>
                     @endif
-                </div>
             </div>
 
             <!-- Confirm password -->

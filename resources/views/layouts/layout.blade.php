@@ -30,7 +30,7 @@
                         <div class="input-group-addon">
                             <span class="glyphicon glyphicon-user"></span>
                         </div>
-                        <input id="email" type="email" placeholder="Username" class="form-control settins-for-paragraphs"
+                        <input id="email" type="email" placeholder="Email" class="form-control settins-for-paragraphs"
                                name="email" value="{{ old('email') }}" required autofocus>
 
                         @if ($errors->has('email'))
@@ -116,7 +116,7 @@
                         <form class="navbar-form navbar-right" role="form" method="POST" action="{{ url('/login')}}">
                             {{ csrf_field() }}
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <input id="email" type="email" placeholder="Username"  class="input-xs form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="email" type="email" placeholder="Email"  class="input-xs form-control" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
 
@@ -146,7 +146,7 @@
 <!-- welcome text and register botton are added here for tablets and desktops -->
             <div class="container">
                 <div class="col-xs-8 col-xs-offset-2 hidden-xs">
-                    @yield('content_registor')
+                    @yield('content')
                 </div>
             </div>
         </div>

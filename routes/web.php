@@ -13,7 +13,7 @@
 Route::get('/', 'WelcomeController@welcome');
 Route::get('home', 'PagesController@getHome');
 
-Route::get('about', 'PagesController@getAbout');
+Route::get('rank', 'PagesController@getRank');
 Route::get('contact', 'PagesController@getContact');
 Route::get('survey_cake', 'PagesController@getSurvey_cake');
 
