@@ -28,7 +28,7 @@
                     <!-- the default color is changed and it is found in apps.scss -->
                     <div class="input-group">
                         <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="glyphicon glyphicon-envelope"></span>
                         </div>
                         <input id="email" type="email" placeholder="Email" class="form-control settins-for-paragraphs"
                                name="email" value="{{ old('email') }}" required autofocus>
@@ -64,7 +64,9 @@
                 <button type="submit" class="btn btn-success form-control settins-for-paragraphs lead signin-background-color lead">Sign In</button>
             </form>
             <div class="form-group">
-                <h5 class="setting-for-registration-text">New to SeniorLife? Please register here!</h5>
+                <h1> </h1>
+
+                <h5 class="setting-for-registration-text">New to SeniorLife?</h5>
                 <!-- setting-for-registration-button is found in apps.scss file -->
                 <a href="/register" role="button"><button type="submit" class="btn btn-success form-control setting-for-registration-button settins-for-paragraphs lead">Sign Up Now</button></a>
             </div>
@@ -113,11 +115,16 @@
                             </li>
                         </ul>
 @else
+    <!-- username form -->
                         <form class="navbar-form navbar-right" role="form" method="POST" action="{{ url('/login')}}">
                             {{ csrf_field() }}
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-envelope"></span>
+                                    </div>
                                 <input id="email" type="email" placeholder="Email"  class="input-xs form-control" name="email" value="{{ old('email') }}" required autofocus>
-
+                                </div>
                                 @if ($errors->has('email'))
 
                                     <span class="help-block">
@@ -126,9 +133,14 @@
                                 @endif
 
                             </div>
+          <!-- password form -->
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-lock"></span>
+                                    </div>
                                 <input id="password" placeholder="Password" type="password" class="input-xs form-control" name="password" required>
-
+                                </div>
                                 @if ($errors->has('password'))
                                     <span class="help-block">
 										<strong>{{ $errors->first('password') }}</strong>
@@ -159,6 +171,13 @@
         <!-- style-for-images is found in _home_footor_settings and is used to add vertical lines -->
         <div class="col-md-4 style-for-images">
             <div class="card">
+                <style>
+                    a:link, a:visited {
+
+                        text-decoration: none;
+                    }
+                </style>
+                <a href="#">
                 <div class="card-block">
                     <fieldset>
                         <!-- title-settings is found in _home_footor_settings and is used to customize the titles "share" -->
@@ -166,46 +185,53 @@
                         <img class="card-img-top img-responsive" src="img/Share.png" width="150" height="150" align="left"/>
 
                         <!-- settings-for-paragraphs are found in _home_footor_settings -->
-                        <p class="card-text settins-for-paragraphs lead">By sharing your activities, You can let your
+                        <!-- text-color-paragraphs changes the color of the paragraph -->
+                        <p class="card-text text-color-paragraphs settins-for-paragraphs lead">By sharing your activities, You can let your
                             friends and families
                             know about your health in general. You can share your survey results, Empatica results,
                             your rank and how many badges you collect and more. </p>
-                        <p><a class="btn btn-default" href="#" role="button">Read more &raquo;</a></p>
+                        <p class=" text-color-paragraphs settins-for-paragraphs">Read more &raquo;</p>
                     </fieldset>
                 </div>
+                </a>
             </div>
         </div>
 
         <div class="col-md-4 style-for-images">
             <div class="card">
+
+                <a  href="#">
                 <div class="card-block">
                     <fieldset>
                         <h2 class="card-title title-settings">Empatica</h2>
                         <img class="card-img-top img-responsive" src="img/Empatica.png" width="150" height="150"
                              align="left"/>
-                        <p class="card-text settins-for-paragraphs lead">Empatica is a wristband a wearable wireless
+                        <p class="card-text text-color-paragraphs settins-for-paragraphs lead">Empatica is a wristband a wearable wireless
                             device designed for continuous, real-time data acquisition in daily life. Using your
                             Empatica you can monitor seizures, sleep, and physical activity. </p>
-                        <p><a class="btn btn-default" href="#" role="button">Read more &raquo;</a></p>
+                        <p class=" text-color-paragraphs settins-for-paragraphs">Read more &raquo;</p>
                     </fieldset>
                 </div>
+                </a>
             </div>
         </div>
 
         <div class="col-md-4 style-for-images">
             <div class="card">
+                <a  href="#">
                 <div class="card-block">
                     <fieldset>
                         <h2 class="card-title title-settings">Survey</h2>
                         <img class="card-img-top img-responsive" src="img/Survey.png" alt="" width="150" height="150"
                              align="left"/>
-                        <p class="card-text settins-for-paragraphs lead">In Survey part, you will find different
+                        <p class="card-text text-color-paragraphs settins-for-paragraphs lead">In Survey part, you will find different
                             categories and
                             questions inside them. These questions are used to investigate
                             your characteristics, behaviors, or opinions regarding different things. </p>
-                        <p><a class="btn btn-default" href="#" role="button">Read more &raquo;</a></p>
+                        <p class=" text-color-paragraphs settins-for-paragraphs">Read more &raquo;</p>
                     </fieldset>
                 </div>
+                </a>
             </div>
         </div>
     </div>
