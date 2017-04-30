@@ -39,8 +39,8 @@ html,body {
 }
 /* this class is used to center for vertical height of sign in in small screen */
 .vertical-align {
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
 }
@@ -48,6 +48,7 @@ html,body {
 .input-group-addon{
     background-color: #CAF7C5 !important;
 }
+
 /* home text customization and font */
 .title{
     font-family: $font-family-Lato;

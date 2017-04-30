@@ -17,7 +17,6 @@
     <div class="row registor vertical-align">
 
 <!-- This is visible only in extra small devices -->
-@if (Auth::guest())
         <div class="col-xs-8 col-xs-offset-2 visible-xs">
             <form class="navbar-form navbar-right" role="form" method="POST" action="{{ url('/login')}}">
                 {{ csrf_field() }}
@@ -71,7 +70,6 @@
                 <a href="/register" role="button"><button type="submit" class="btn btn-success form-control setting-for-registration-button settins-for-paragraphs lead">Sign Up Now</button></a>
             </div>
         </div>
-@endif
 <!-- Extra small device ends here -->
 
         <div class="col-md-12">
@@ -79,42 +77,10 @@
             <nav class="navbar navbar-inverse navbar-fixed-top nav-customize">
                 <div class="container">
                     <div class="navbar-header">
-                        {{--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>--}}
                         <a class="navbar-brand" href="#">{{ config('app.name', 'SeniorLife') }}</a>
                     </div>
 
                     <div id="navbar" class="collapse navbar-collapse">
-@if (!Auth::guest())
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown logout-width-setting">
-                                <a href="#" class="dropdown-toggle profile-image" data-toggle="dropdown">
-                                    <img src="#" class="img-circle special-img"> {{ Auth::user()->name }} <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#"><i class="fa fa-cog"></i> Account</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="{{ url('/logout') }}" onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();">
-                                            <i class="fa fa-sign-out"></i> Sign-out</a>
-
-                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-@else
     <!-- username form -->
                         <form class="navbar-form navbar-right" role="form" method="POST" action="{{ url('/login')}}">
                             {{ csrf_field() }}
@@ -149,7 +115,6 @@
                             </div>
                             <button type="submit" class="btn btn-success signin-background-color lead">Sign In</button>
                         </form>
-@endif
                     </div><!--/.nav-collapse -->
 
                 </div>
@@ -166,7 +131,6 @@
 
     <!-- intro class is found in app.scss -->
     <!-- Example row of columns -->
-@if (Auth::guest())
     <div class="row" style="background-color: #16a085">
         <!-- style-for-images is found in _home_footor_settings and is used to add vertical lines -->
         <div class="col-md-4 style-for-images">
@@ -235,7 +199,6 @@
             </div>
         </div>
     </div>
-@endif
 </div>
 
 <script src="/js/app.js"></script>
