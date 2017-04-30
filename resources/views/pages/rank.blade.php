@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 @section('content')
-<div id="rank_card"> hello world</div>
+<div id="rank_card"></div>
 @endsection
