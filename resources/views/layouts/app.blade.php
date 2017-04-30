@@ -14,7 +14,7 @@
 <div class="container-fluid">
     <!-- registor class is inside apps.scss file used to set the height and width of row to inherent from its parent -->
     <!-- vertical-align is used to center vertically even for unknown height or different screen size -->
-    <div class="row registor vertical-align">
+    <div class="row row-nav">
         <nav class="navbar navbar-inverse navbar-fixed-top nav-customize">
             <div class="container">
                 <div class="navbar-header dropdown">
@@ -77,63 +77,9 @@
                     </ul>
 
                 </div>
-                {{--
-                <div class="navbar-header pull-right">
-                  <ul class="nav navbar-nav pull-right ul-marging-removed-15">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" style="background-color:#16a085;">
-                                <img src="/img/efrem.jpg" class="img-circle special-img" width="25" height="25">
-                                <strong style="color: #ecf0f1">{{ Auth::user()->name }}</strong>
-                                <span style="color: #ecf0f1"class="glyphicon glyphicon-chevron-down"></span>
-                            </a>
-
-                            <ul class="dropdown-menu background-color-dropdown">
-                                <li>
-                                    <div class="navbar-login">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <p class="text-center">
-                                                    <span>
-                                                        <img src="/img/efrem.jpg" width="87" height="87">
-                                                    </span>
-                                                </p>
-                                            </div>
-
-                                            <div class="col-lg-8">
-                                                <p class="text-left"><strong>Efrem Gebremedhin</strong></p>
-                                                <p class="text-left small">effer.vision@gmail.com</p>
-                                                <p class="text-left">
-                                                    <a href="#" class="btn btn-primary btn-block btn-sm">Profile</a>
-                                                </p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li class="divider navbar-login-session-bg"></li>
-                                <li><a href="#">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Messages <span class="badge pull-right"> 42 </span></a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Favourites Snippets <span class="glyphicon glyphicon-heart pull-right"></span></a></li>
-                                <li class="divider"></li>
-                                <li><a href="{{ url('/logout') }}" onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();">
-                                        Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a>
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>--}}
             </div>
         </nav>
-
+@yield("content")
     </div>
 </div>
 <script src="/js/app.js"></script>
