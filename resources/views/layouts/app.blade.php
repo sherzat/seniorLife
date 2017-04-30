@@ -5,173 +5,137 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'SeniorLife') }}</title>
-
-    <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-
-
-    <!-- Scripts -->
-    <script>
-
-        window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-        ]); ?>
-
-            function getclicked(id) {
-            if (id == "button1") {
-                document.getElementById('button1').style.backgroundColor = "#FF9800";
-                document.getElementById('button2').style.backgroundColor = "#009688";
-                document.getElementById('button3').style.backgroundColor = "#009688";
-                document.getElementById('button4').style.backgroundColor = "#009688";
-            }else if(id == "button2"){
-                document.getElementById('button1').style.backgroundColor = "#009688";
-                document.getElementById('button2').style.backgroundColor = "#FF9800";
-                document.getElementById('button3').style.backgroundColor = "#009688";
-                document.getElementById('button4').style.backgroundColor = "#009688";
-            }else if(id == "button3"){
-                document.getElementById('button1').style.backgroundColor = "#009688";
-                document.getElementById('button2').style.backgroundColor = "#009688";
-                document.getElementById('button3').style.backgroundColor = "#FF9800";
-                document.getElementById('button4').style.backgroundColor = "#009688";
-            }else if(id == "button4"){
-                document.getElementById('button1').style.backgroundColor = "#009688";
-                document.getElementById('button2').style.backgroundColor = "#009688";
-                document.getElementById('button3').style.backgroundColor = "#009688";
-                document.getElementById('button4').style.backgroundColor = "#FF9800";
-            }else{
-
-            }
-        }
-
-
-    </script>
-
 </head>
-
 <body>
-<div class="nav-header-setting">
-    <nav class="nav-header-setting navbar navbar-inverse">
 
+<!-- background-img class is found in app.scss file -->
+<div class="container-fluid">
+    <!-- registor class is inside apps.scss file used to set the height and width of row to inherent from its parent -->
+    <!-- vertical-align is used to center vertically even for unknown height or different screen size -->
+    <div class="row registor vertical-align">
+        <nav class="navbar navbar-inverse navbar-fixed-top nav-customize">
+            <div class="container">
+                <div class="navbar-header dropdown">
+                    <a class="navbar-toggle dropdown-toggle clearing-border-and-adding-color" data-toggle="dropdown"
+                       data-target=".pull-right">
 
-        <div class="header-height navbar-header ">
-            <!-- Branding Image -->
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
-            </a>
-        </div>
+                        <img src="/img/efrem.jpg" class="img-circle" width="15" height="15">
+                        <strong style="color: #ecf0f1">{{ Auth::user()->name }}</strong>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <a class="navbar-brand" href="#">{{ config('app.name', 'SeniorLife') }}</a>
 
-        @if (Auth::guest())
-        @else
-            <ul class="header-height nav navbar-nav">
-                <li class ="header-height"><a href="/">Feedback</a></li>
-                <li class = "header-height"><a href="/self_assessment">Self-assessment</a></li>
-                <li class="header-height"><a href="/about">Challenges</a></li>
-                <li class="header-height"><a href="/">Quality Of Life</a></li>
+                </div>
 
-                <li class="dropdown logout-width-setting">
-                    <a href="#" class="dropdown-toggle profile-image" data-toggle="dropdown">
-                        <img src="img/Pressure_64.png" class="img-circle special-img"> {{ Auth::user()->name }} <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><i class="fa fa-cog"></i> Account</a></li>
+                <div class="navbar-header pull-right">
+
+                    <a class="adding-anchor-marigin-top dropdown-toggle hidden-xs" data-toggle="dropdown">
+                        <img src="/img/efrem.jpg" class="img-circle special-img" width="15" height="15">
+                        <strong style="color: #ecf0f1">{{ Auth::user()->name }}</strong>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul class="dropdown-menu pull-right nav">
+                        <li>
+                            <div class="navbar-login">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <p class="text-center">
+                                            <span class="glyphicon glyphicon-user icon-size"></span>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p class="text-left"><strong>Efrem Gebremedhin</strong></p>
+                                        <p class="text-left small">effer.vision@gmail.com</p>
+                                        <p class="text-left">
+                                            <a href="#" class="btn btn-success btn-block btn-sm"
+                                               style="background-color:$emerald">Profile</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider navbar-login-session-bg"></li>
+                        <li><a href="#">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Messages <span class="badge pull-right"> 42 </span></a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Favourites Snippets <span
+                                        class="glyphicon glyphicon-heart pull-right"></span></a></li>
                         <li class="divider"></li>
                         <li><a href="{{ url('/logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                <i class="fa fa-sign-out"></i> Sign-out</a>
-
+                                                                 document.getElementById('logout-form').submit();">
+                                Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a>
                             <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
-
                         </li>
                     </ul>
-                </li>
-            </ul>
-        @endif
 
-    <!-- Right Side Of Navbar -->
-        @if (Auth::guest())
-            <ul class="nav navbar-nav navbar-right">
+                </div>
+                {{--
+                <div class="navbar-header pull-right">
+                  <ul class="nav navbar-nav pull-right ul-marging-removed-15">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" style="background-color:#16a085;">
+                                <img src="/img/efrem.jpg" class="img-circle special-img" width="25" height="25">
+                                <strong style="color: #ecf0f1">{{ Auth::user()->name }}</strong>
+                                <span style="color: #ecf0f1"class="glyphicon glyphicon-chevron-down"></span>
+                            </a>
 
-                <!-- Authentication Links -->
-                <form class="navbar-form navbar-left signin_form_width" role="form" method="POST" action="{{ url('/login') }}">
-                    {{ csrf_field() }}
-                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <input id="email" type="email" placeholder="username" class="signin_input"  name="email" value="{{ old('email') }}" required autofocus>
+                            <ul class="dropdown-menu background-color-dropdown">
+                                <li>
+                                    <div class="navbar-login">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <p class="text-center">
+                                                    <span>
+                                                        <img src="/img/efrem.jpg" width="87" height="87">
+                                                    </span>
+                                                </p>
+                                            </div>
 
-                        @if ($errors->has('email'))
-                            <span class="help-block">
-										<strong>{{ $errors->first('email') }}</strong>
-									</span>
-                        @endif
+                                            <div class="col-lg-8">
+                                                <p class="text-left"><strong>Efrem Gebremedhin</strong></p>
+                                                <p class="text-left small">effer.vision@gmail.com</p>
+                                                <p class="text-left">
+                                                    <a href="#" class="btn btn-primary btn-block btn-sm">Profile</a>
+                                                </p>
+                                            </div>
 
-                    </div>
+                                        </div>
+                                    </div>
+                                </li>
 
-                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                        <input id="password" placeholder="Password" type="password" class="signin_input" name="password" required>
-
-                        @if ($errors->has('password'))
-                            <span class="help-block">
-										<strong>{{ $errors->first('password') }}</strong>
-									</span>
-                        @endif
-                    </div>
-
-                    <div class="form-group ">
-                        <button class="btn btn-default signin_button" type="submit">
-                            Login
-                        </button>
-                    </div>
-                </form>
-            </ul>
-    </nav>
-    @endif
-</div>
-@yield('content')
-
-@if (Auth::guest())
-
-    <div class="subSection">
-        <div class="col-sm-4">
-            <div id="content">
-                <img src="img/Share-64.png" class="img_class_login" alt=""/>
-                <h1>Share</h1>
-                <p>Share your experience with friends and family's. And Let them know you are doing great</p>
+                                <li class="divider navbar-login-session-bg"></li>
+                                <li><a href="#">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Messages <span class="badge pull-right"> 42 </span></a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Favourites Snippets <span class="glyphicon glyphicon-heart pull-right"></span></a></li>
+                                <li class="divider"></li>
+                                <li><a href="{{ url('/logout') }}" onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();">
+                                        Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a>
+                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>--}}
             </div>
-
-        </div>
-        <div class="col-sm-4">
-            <div id="content">
-                <img src="img/Pressure_64.png" class="img_class_login" alt=""/>
-                <h1>Blood Pressure</h1>
-                <p> Measure your blood and get to know your self every day for better health </p>
-
-            </div>
-        </div>
-        <div class="col-sm-4">
-
-            <div id="content">
-                <img src="img/Survey-64.png" class="img_class_login" alt=""/>
-                <h1>Survey</h1>
-                <p>By filling our survey you will know your quality of life and we will help you for better
-                    achievement </p>
-            </div>
-        </div>
+        </nav>
 
     </div>
-@else
-    <footer class="footerClass">
-        <ul class="footer-height footer-setting ">
-            <li class ="footer-height"><a href="/" class="anchor-setting">Level 1</a></li>
-            <li class = "footer-height"><a href="/" class="anchor-setting">Start</a></li>
-        </ul>
-    </footer>
-@endif
-
-<!-- Scripts -->
+</div>
 <script src="/js/app.js"></script>
 </body>
 </html>
