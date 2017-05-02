@@ -21,7 +21,7 @@
                     <a class="navbar-toggle dropdown-toggle clearing-border-and-adding-color" data-toggle="dropdown"
                        data-target=".pull-right">
 
-                        <img src="/img/efrem.jpg" class="img-circle" width="15" height="15">
+                        <img src="/img/empatica.svg" class="img-circle" width="15" height="15">
                         <strong style="color: #ecf0f1">{{ Auth::user()->name }}</strong>
                         <span class="glyphicon glyphicon-chevron-down"></span>
                     </a>
@@ -32,7 +32,7 @@
                 <div class="navbar-header pull-right">
 
                     <a class="adding-anchor-marigin-top dropdown-toggle hidden-xs" data-toggle="dropdown">
-                        <img src="/img/efrem.jpg" class="img-circle special-img" width="15" height="15">
+                        <img src="/img/empatica.svg" class="img-circle special-img" width="15" height="15">
                         <strong style="color: #ecf0f1">{{ Auth::user()->name }}</strong>
                         <span class="glyphicon glyphicon-chevron-down"></span>
                     </a>
