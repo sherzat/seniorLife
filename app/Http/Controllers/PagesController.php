@@ -41,5 +41,14 @@ class PagesController extends Controller
     {
         return view('pages.survey_cake');
     }
+
+    public function getMysurvey()
+    {
+        return view('pages.mysurvey');
+    }
+    public function getEmpatica()
+    {
+        return view('pages.empatica');
+    }
 }
 

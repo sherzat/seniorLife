@@ -17,7 +17,6 @@ require('laravel-elixir-webpack-react');
 elixir((mix) => {
     mix.sass('app.scss')
        .webpack('app.js');
-    mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap/','public/fonts/bootstrap');
-    mix.copy('node_modules/font-awesome/fonts/','public/fonts/font-awesome');
-
+    mix.sass('app_bootstrap4.scss');
+    mix.copy('node_modules/font-awesome/fonts/','public/fonts');
 });

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Rank from './Rank';
+import Rank_card from './Rank_card';
 import Myform from './Myform';
 import NavbarForm from './Navbar';
 import Navbar from './Navbar';
@@ -19,7 +19,7 @@ if (document.getElementById('clock')) {
 
 if (document.getElementById('rank_card')) {
     ReactDOM.render(
-        <Rank />,
+        <Rank_card />,
         document.getElementById('rank_card'));
 }
 

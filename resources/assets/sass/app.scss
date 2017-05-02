@@ -2,8 +2,8 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Lato:900|Open+Sans');
 // Bootstrap
-@import "node_modules/bootstrap/scss/bootstrap";
-@import "node_modules/font-awesome/scss/font-awesome";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+//@import "node_modules/font-awesome/scss/font-awesome";
 // Variables
 @import "variables";
 @import "home_footor_settings";
@@ -29,9 +29,14 @@
     width: inherit;
     height: inherit;
 }
+.navbar{
+  border-radius: 0px;
+}
 .container-fluid{
     width:inherit;
     height:inherit;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 html,body {
     width:100%;
