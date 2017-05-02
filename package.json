@@ -19,6 +19,7 @@
     "vue-resource": "^1.0.3"
   },
   "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
     "font-awesome": "^4.7.0",
     "react-addons-create-fragment": "^15.5.3",
     "react-progressbar": "^1.4.6",
