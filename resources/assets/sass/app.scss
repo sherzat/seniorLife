@@ -40,7 +40,7 @@ html,body {
 }
 /* this class is used to center for vertical height of sign in in small screen */
 .vertical-align {
-    display: flex !important;
+    display: flex;
     align-items: center !important;
     margin-left: auto !important;
     margin-right: auto !important;

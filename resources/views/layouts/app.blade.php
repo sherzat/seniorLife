@@ -7,6 +7,15 @@
 
     <title>{{ config('app.name', 'SeniorLife') }}</title>
     <link href="/css/app.css" rel="stylesheet">
+    <script src="/js/app.js"></script>
+    <script>
+        $(function () {
+            $("a").on("click",function () {
+                $("a.active").removeClass("active");
+                $(this).addClass("active");
+            })
+        });
+    </script>
 </head>
 <body>
 
@@ -15,7 +24,7 @@
     <!-- registor class is inside apps.scss file used to set the height and width of row to inherent from its parent -->
     <!-- vertical-align is used to center vertically even for unknown height or different screen size -->
     <div class="row row-nav">
-        <nav class="navbar navbar-inverse navbar-fixed-top nav-customize">
+        <nav class="navbar navbar-inverse navbar-fixed-top nav-customize hidden-xs">
             <div class="container">
                 <div class="navbar-header dropdown">
                     <a class="navbar-toggle dropdown-toggle clearing-border-and-adding-color" data-toggle="dropdown"
@@ -36,6 +45,42 @@
                         <strong style="color: #ecf0f1">{{ Auth::user()->name }}</strong>
                         <span class="glyphicon glyphicon-chevron-down"></span>
                     </a>
+                    <ul class="nav navbar-nav nav-pills making-hemberger-center">
+                        <li>
+                            <!-- custom-style-for-xs-screen is used to change color -->
+                            <a href="#" class="active custom-style-for-xs-screen">
+                                MySurvey
+                            </a>
+                        </li>
+
+                        <li>
+                            <!-- custom-style-for-xs-screen is used to change color -->
+                            <a href="#">
+                                Empatica
+                            </a>
+                        </li>
+
+                        <li>
+                            <!-- custom-style-for-xs-screen is used to change color -->
+                            <a href="#">
+                                Challenges
+                            </a>
+                        </li>
+
+                        <li>
+                            <!-- custom-style-for-xs-screen is used to change color -->
+                            <a href="#">
+                                MySurvey
+                            </a>
+                        </li>
+
+                        <li>
+                            <!-- custom-style-for-xs-screen is used to change color -->
+                            <a href="#">
+                                Rank
+                            </a>
+                        </li>
+                    </ul>
                     <ul class="dropdown-menu pull-right nav">
                         <li>
                             <div class="navbar-login">
@@ -76,12 +121,65 @@
                         </li>
                     </ul>
 
+
                 </div>
             </div>
         </nav>
 @yield("content")
     </div>
+
+    <nav class="navbar navbar-fixed-top visible-xs nav-customize">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+<!-- hemberger-custom-setting is used to change background color -->
+                    <span class="icon-bar hemberger-custom-settings"></span>
+                    <span class="icon-bar hemberger-custom-settings"></span>
+                    <span class="icon-bar hemberger-custom-settings"></span>
+                </button>
+                <a class="navbar-brand hidden-xs" href="#">{{ config('app.name', 'SeniorLife') }}</a>
+                <div class="container navbar-more pull-right visible-xs">
+                    <ul class="nav navbar-nav making-hemberger-center nav-pills">
+                        <li>
+                            <!-- custom-style-for-xs-screen is used to change color -->
+                            <a href="#" class="active custom-style-for-xs-screen">
+                                <span class="glyphicon glyphicon-list-alt"></span>
+                                MySurvey
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="custom-style-for-xs-screen">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                                Empatica
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar" style="background-color: white">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Page 1-1</a></li>
+                            <li><a href="#">Page 1-2</a></li>
+                            <li><a href="#">Page 1-3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Page 2</a></li>
+                    <li><a href="#">Page 3</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
 </div>
-<script src="/js/app.js"></script>
+
 </body>
 </html>

@@ -2,3 +2,25 @@
 .row-nav{
   padding-top: 50px;
 }
+
+.custom-style-for-xs-screen{
+  color: $cloud;
+  background-color: $green-sea-color;
+}
+.making-hemberger-center > li > a:hover,
+.making-hemberger-center > li > a:focus{
+  background-color:$emerald;
+  color: $cloud;
+}
+.active{
+  background-color: $emerald !important;
+  color: $cloud;
+}
+
+.hemberger-custom-settings {
+background-color: $cloud;
+}
+
+.making-hemberger-center{
+  display:-webkit-inline-box;
+}
