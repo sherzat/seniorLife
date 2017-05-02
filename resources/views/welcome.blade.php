@@ -82,7 +82,7 @@
 
 <!-- submit button -->
                      <div class="form-group customizing-form-horizontal">
-                         <button type="submit" class="btn btn-success form-control setting-for-registration-button lead">Register</button>
+                         <button type="submit" class="btn btn-success form-control setting-for-registration-button settins-for-paragraphs lead">Register</button>
                      </div>
              </form>
          </div>
