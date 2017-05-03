@@ -27,7 +27,7 @@
                     <!-- the default color is changed and it is found in apps.scss -->
                     <div class="input-group">
                         <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-envelope"></span>
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
                         </div>
                         <input id="email" type="email" placeholder="Email" class="form-control settins-for-paragraphs"
                                name="email" value="{{ old('email') }}" required autofocus>
@@ -45,7 +45,7 @@
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                     <div class="input-group">
                         <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-lock"></span>
+                            <i class="fa fa-key" aria-hidden="true"></i>
                         </div>
                         <input id="password" placeholder="Password" type="password" class="form-control settins-for-paragraphs" name="password" required>
 
@@ -87,7 +87,7 @@
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <span class="glyphicon glyphicon-envelope"></span>
+                                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                     </div>
                                 <input id="email" type="email" placeholder="Email"  class="input-xs form-control" name="email" value="{{ old('email') }}" required autofocus>
                                 </div>
@@ -103,7 +103,7 @@
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <span class="glyphicon glyphicon-lock"></span>
+                                        <i class="fa fa-key" aria-hidden="true"></i>
                                     </div>
                                 <input id="password" placeholder="Password" type="password" class="input-xs form-control" name="password" required>
                                 </div>

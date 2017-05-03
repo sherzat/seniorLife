@@ -14,7 +14,8 @@ class PagesController extends Controller
     }
     public function getHome()
     {
-    	return view('home');
+        $current_page="home";
+    	return view('home' , ['current_page' => $current_page]);
     }
 
     public function getOverView()
@@ -25,13 +26,11 @@ class PagesController extends Controller
 
     public function getRank()
     {
-    	return view('pages.rank');
+        $current_page="rank";
+        return view('pages.rank' , ['current_page' => $current_page]);
     }
 
-    public function getContact()
-    {
-    	return view('pages.contact');
-    }
+
 
     public function getSelf_assessments()
     {
@@ -44,11 +43,14 @@ class PagesController extends Controller
 
     public function getMysurvey()
     {
-        return view('pages.mysurvey');
+        $current_page="mysurvey";
+        return view('pages.mysurvey' , ['current_page' => $current_page]);
     }
     public function getEmpatica()
     {
-        return view('pages.empatica');
+        $current_page="empatica";
+        return view('pages.empatica' , ['current_page' => $current_page]);
+
     }
 }
 

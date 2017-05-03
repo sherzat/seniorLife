@@ -1,3 +1,4 @@
+//stylesheet for layouts.app.blade.php file.  layout for the application after login
 .container-fluid{
   width:inherit;
   height:inherit;
@@ -16,9 +17,6 @@ html,body {
   color: $cloud;
 
 }
-.Inlining-listing{
-  flex-direction: inherit !important;
-}
 .nav-customize{
   //background-color: $primary-color-dark !important;
   background-color: #16a085 !important;
@@ -35,6 +33,29 @@ html,body {
   background-color: $emerald !important;
 }
 
+.navbar-login{
+  padding: 10px;
+  padding-bottom: 0px;
+}
+
+.icon-size{
+  font-size: 87px;
+}
+
+@media (max-width: 576px) {
+.container {
+  width: 100%;
+  max-width: 100%;
+}
+}
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+a {
+  font-family: 'Raleway', sans-serif !important;
+}
+.hover-class > li > a:hover{
+  background-color: $emerald !important;
+}
 /* this class is used to center for vertical height of sign in in small screen
 .vertical-align {
   display: flex;
