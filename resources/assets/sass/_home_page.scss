@@ -30,3 +30,17 @@
   dominant-baseline: middle;
   text-anchor: middle;
 }
+body > div.container-fluid > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(4) > button{
+  color: $cloud;
+  background-color: $emerald;
+  border-color: $emerald
+}
+
+body > div.container-fluid > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div > div.card-block.mx-auto > i{
+  color: $orange;
+}
+
+.my-flex-card > div > div.card {
+  height: calc(100% - 15px);
+  margin-bottom: 15px;
+}

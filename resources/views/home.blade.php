@@ -11,7 +11,7 @@
 
         <div class="container">
 
-            <div class="row">
+            <div class="row my-flex-card">
                 <div class="col-md-6">
                     <div class="card">
                         <!-- Heading -->
@@ -30,7 +30,7 @@
                             <p class="card-text">You have completed 10 surveys this week</p>
                         </div>
                         <div class="card-block mx-auto">
-                            <button class="btn btn-success">Start New Survey</button>
+                            <button class="btn btn-success">Read Detail >></button>
                         </div>
                     </div>
                 </div>
@@ -38,17 +38,42 @@
                     <!-- Heading -->
                     <div class="card">
                         <div class="card-block">
-                            <h4 class="card-title">Health Card</h4>
-                            <h6 class="card-subtitle text-muted">Sun disappears!</h6>
+                            <h4 class="card-title">Health Card </h4>
+                            <h6 class="card-subtitle text-muted">Real time data</h6>
                         </div>
 
                         <!-- Image -->
-                        <img src="/img/empatica_icon.png" alt="Photo of sunset">
-
+                        <div class="card-block mx-auto">
+                            <i class="fa fa-spinner fa-3x fa-spin" aria-hidden="true"></i>
+                        </div>
+                        <div class="mx-auto">
+                            <p>Connect Your Device</p>
+                        </div>
                         <!-- Text Content -->
                         <div class="card-block">
-                            <p class="card-text">The sun disappeared behind the horizon today. Experts claim it could be
-                                gone for good!</p>
+                            <div class="list-group list-group-flush">
+                                <li class="list-group-item justify-content-between">
+                                    <div class="" id="health_card">
+                                        <i class="fa fa-heartbeat" aria-hidden="true"></i>
+                                        <span> Heart Rate </span>
+                                    </div>
+                                    <span> 42 </span>
+                                </li>
+                                <li class="list-group-item justify-content-between">
+                                    <div class="" id="health_card"><i class="fa fa-smile-o" aria-hidden="true"></i></i>
+                                        <span> Stress level</span>
+                                    </div>
+                                    <span>Normal</span>
+                                </li>
+                                <li class="list-group-item justify-content-between">
+                                    <div class="" id="health_card">
+                                        <i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i>
+                                        <span>Temperature</span>
+                                    </div>
+                                    <span> 25 oC </span>
+                                </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -60,11 +85,33 @@
                     <div class="card">
                         <div class="card-block">
                             <h4 class="card-title">Your achevemnts</h4>
-                            <h6 class="card-subtitle text-muted">Sun disappears!</h6>
+                            <h6 class="card-subtitle text-muted">Your collection</h6>
                         </div>
 
                         <!-- Image -->
-                        <img src="/img/empatica_icon.png" alt="Photo of sunset">
+                        <div id="myCarousel" class="carousel slide bg-inverse" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                    <img class="d-block img-fluid ml-auto mr-auto" src="/pix/samples/30m.jpg" alt="First slide">
+                                    <img class="d-block img-fluid ml-auto mr-auto" src="/pix/samples/28m.jpg" alt="Second slide">
+                                    <img class="d-block img-fluid ml-auto mr-auto" src="/pix/samples/28m.jpg" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block img-fluid ml-auto mr-auto" src="/pix/samples/28m.jpg" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block img-fluid ml-auto mr-auto" src="/pix/samples/27m.jpg" alt="Third slide">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
 
                         <!-- Text Content -->
                         <div class="card-block">
