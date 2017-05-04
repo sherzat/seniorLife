@@ -1,0 +1,32 @@
+.bg-nav{
+  background-color:$green-sea-color;
+}
+
+.navbar-brand{
+  font-size: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #ecf0f1;
+  font-family:  $font-family-Lato;
+}
+.navbar-toggler{
+  border: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+body > nav > div > button:focus{
+  outline: 0px;
+}
+#navbarSupportedContent > ul > li> a{
+  color: $cloud;
+}
+
+
+@media screen and (max-width: 576px){
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+}

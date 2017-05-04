@@ -23,6 +23,11 @@ class PagesController extends Controller
 
     }
 
+    public function getProfile()
+    {
+        $current_page="profile";
+        return view('pages.profile' , ['current_page' => $current_page]);
+    }
 
     public function getRank()
     {
@@ -53,4 +58,3 @@ class PagesController extends Controller
 
     }
 }
-
