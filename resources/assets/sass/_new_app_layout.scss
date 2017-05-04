@@ -6,8 +6,12 @@
   font-size: 20px;
   padding-top: 0px;
   padding-bottom: 0px;
-  color: #ecf0f1;
+  color: $cloud;
   font-family:  $font-family-Lato;
+}
+body > nav > div > a.navbar-brand.hidden-lg-up{
+  color:$orange;
+  position: absolute;
 }
 .navbar-toggler{
   border: 0px;
@@ -15,6 +19,12 @@
   padding-right: 0px;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+body > nav > div > button > div{
+  color:$cloud;
+}
+.navbar-toggler-right{
+  right:0px;
 }
 body > nav > div > button:focus{
   outline: 0px;

@@ -1,9 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.new_app')
 @section('content')
 
-  {{$(".card-wrapper").on('click', function(event) {
-     alert('You clicked the Bootstrap Card');
-});}}
+
   <div class="container">
 <div class="row">
     <div class="col-md-12 col-xs-12 card-wrapper">
