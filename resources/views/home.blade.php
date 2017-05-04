@@ -2,54 +2,184 @@
 
 @section('content')
 
-{{--
-    <!-->
-<main class="main-class">
-<section class="section-settings">
-    <header class="header-setting"><h2>Overall Result of Survey</h2></header>
-    <article>
-        <p style="font-size: 48px; color: black;text-align: center;padding-top: 12px;"> Your Score is 78% it is ranked Good</p>
-        <p style="color: black;text-align: center;padding-top: 12px;">For more information click here</p>
-    </article>
+    <div class="jumbotron jumbotron-fluid">
 
-</section>
-<section class="section-settings">
-    <header class="header-setting">
-        <h2>
-            Overall Result of Wristband
-        </h2>
-    </header>
-</section>
-</main>
+        <div class="container">
+            <h1> What you need to know </h1>
+            <p>Make daily self-assessment for better quality of life!</p>
+        </div>
 
+        <div class="container">
 
-<aside class="aside-class">
+            <div class="row my-flex-card">
+                <div class="col-md-6">
+                    <div class="card">
+                        <!-- Heading -->
+                        <div class="card-block mx-auto">
+                            <h4 class="card-title">Your Quality of Life</h4>
+                            <h6 class="card-subtitle text-muted">Overall score of your last survey</h6>
+                        </div>
 
-       <div class="list-group">
-           <a href="#" id="button1" onclick="getclicked(this.id);" class="active aside-settings list-group-item list-group-item-action flex-column align-items-start">
-               <h1 class="text-settings">Overview</h1>
-               <p style="text-align: center">
-                   See your overall activities and results
-               </p>
-           </a>
+                        <!-- Image -->
+                        <div class="card-block" style="text-align: center">
+                            <div id="circular_progress_bar">
+                            </div>
+                        </div>
+                        <!-- Text Content -->
+                        <div class="card-block  mx-auto">
+                            <p class="card-text">You have completed 10 surveys this week</p>
+                        </div>
+                        <div class="card-block mx-auto">
+                            <button class="btn btn-success">Read Detail >></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <!-- Heading -->
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">Health Card </h4>
+                            <h6 class="card-subtitle text-muted">Real time data</h6>
+                        </div>
 
-           <a href="#" id="button2" onclick="getclicked(this.id);" class="single aside-settings list-group-item list-group-item-action flex-column align-items-start">
-               <h1 class="text-settings">Survey</h1>
-               <p style="text-align: center">Start your self-assessment by filling survey questionnaire  </p>
-           </a>
+                        <!-- Image -->
+                        <div class="card-block mx-auto">
+                            <i class="fa fa-spinner fa-3x fa-spin" aria-hidden="true"></i>
+                        </div>
+                        <div class="mx-auto">
+                            <p>Connect Your Device</p>
+                        </div>
+                        <!-- Text Content -->
+                        <div class="card-block">
+                            <div class="list-group list-group-flush">
+                                <li class="list-group-item justify-content-between">
+                                    <div class="" id="health_card">
+                                        <i class="fa fa-heartbeat" aria-hidden="true"></i>
+                                        <span> Heart Rate </span>
+                                    </div>
+                                    <span> 42 </span>
+                                </li>
+                                <li class="list-group-item justify-content-between">
+                                    <div class="" id="health_card"><i class="fa fa-smile-o" aria-hidden="true"></i></i>
+                                        <span> Stress level</span>
+                                    </div>
+                                    <span>Normal</span>
+                                </li>
+                                <li class="list-group-item justify-content-between">
+                                    <div class="" id="health_card">
+                                        <i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i>
+                                        <span>Temperature</span>
+                                    </div>
+                                    <span> 25 oC </span>
+                                </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-           <a href="#" id="button3" onclick="getclicked(this.id);" class="single aside-settings list-group-item list-group-item-action flex-column align-items-start">
-               <h1 class="text-settings">Wristband</h1>
-               <p style="text-align: center">Use your  blood pressure measurement for quick self-assessment </p>
-           </a>
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Heading -->
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">Your achevemnts</h4>
+                            <h6 class="card-subtitle text-muted">Your collection</h6>
+                        </div>
 
-           <a href="#" id="button4" onclick="getclicked(this.id);" class="single aside-settings list-group-item list-group-item-action flex-column align-items-start">
+                        <!-- Image -->
+                        <div id="myCarousel" class="carousel slide bg-inverse" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                    <img class="d-block img-fluid ml-auto mr-auto" src="/pix/samples/30m.jpg" alt="First slide">
+                                    <img class="d-block img-fluid ml-auto mr-auto" src="/pix/samples/28m.jpg" alt="Second slide">
+                                    <img class="d-block img-fluid ml-auto mr-auto" src="/pix/samples/28m.jpg" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block img-fluid ml-auto mr-auto" src="/pix/samples/28m.jpg" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block img-fluid ml-auto mr-auto" src="/pix/samples/27m.jpg" alt="Third slide">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
 
-              <h1 class="text-settings">Share</h1>
-               <p style="text-align: center">If you want to share your results with family and friends </p>
+                        <!-- Text Content -->
+                        <div class="card-block">
+                            <p class="card-text">The sun disappeared behind the horizon today. Experts claim it could be
+                                gone for good!</p>
+                        </div>
+                    </div>
+                </div>
 
-           </a>
-       </div>
-   </aside>--}}
+                <div class="col-md-6">
+                    <!-- Heading -->
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">To day's Challenges</h4>
+                            <h6 class="card-subtitle text-muted">Sun disappears!</h6>
+                        </div>
+
+                        <!-- Image -->
+                        <img src="/img/empatica_icon.png" alt="Photo of sunset">
+
+                        <!-- Text Content -->
+                        <div class="card-block">
+                            <p class="card-text">The sun disappeared behind the horizon today. Experts claim it could be
+                                gone for good!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="myCarousel" class="carousel fixed-bottom slide bg-inverse" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img class="d-block img-fluid ml-auto mr-auto" src="/img/Empatica.png"
+                         alt="First slide">
+                    <div class="carousel-caption mb-0">
+                        <h3>First slide</h3>
+                        <p>This is the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block img-fluid ml-auto mr-auto" src="/img/Empatica.png" alt="Second slide">
+                    <div class="carousel-caption mb-0">
+                        <h3>Second slide</h3>
+                        <p>This is the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block img-fluid ml-auto mr-auto" src="/img/Empatica.png" alt="Third slide">
+                    <div  class="carousel-caption mb-0">
+                        <h3>Third slide</h3>
+                        <p>This is the third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
 @endsection
-
