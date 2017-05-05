@@ -2,36 +2,82 @@
   background-color:$green-sea-color;
 }
 
-.navbar-brand{
-  font-size: 20px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  color: $cloud;
-  font-family:  $font-family-Lato;
+
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.open,
+.navbar-light .navbar-nav .open>.nav-link{
+  color: $green-sea-color;
+  background:$cloud;
 }
-body > nav > div > a.navbar-brand.hidden-lg-up{
-  color:$orange;
-  position: absolute;
-}
-.navbar-toggler{
-  border: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-body > nav > div > button > div{
+.navbar-light .navbar-nav .nav-link{
   color:$cloud;
 }
-.navbar-toggler-right{
-  right:0px;
+.navbar-light .navbar-brand,{
+  color:$cloud;
+  font-family:  $font-family-Lato;
+  font-size: 20px;
+}
+.navbar-light .navbar-toggler{
+   border: 0px;
+   padding-left: 0px;
+   padding-right: 0px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   font-size: 25px;
+   color:$cloud;
+ }
+.navbar-light .navbar-toggler:hover {
+    color: $cloud;
+}
+.navbar-light .navbar-toggler:focus{
+  color: $cloud;
 }
 body > nav > div > button:focus{
   outline: 0px;
 }
-#navbarSupportedContent > ul > li> a{
-  color: $cloud;
+.navbar-light .navbar-brand:hover{
+  color:$cloud;
 }
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
+    color: $green-sea-color;
+    background-color: $cloud;
+}
+.navbar-light .nav-active-menu-sm {
+    display: inline-block;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+    line-height: inherit;
+    white-space: nowrap;
+    color: $orange;
+}
+
+// .navbar-brand{
+//   font-size: 20px;
+//   padding-top: 0px;
+//   padding-bottom: 0px;
+//   color: $cloud;
+//
+// }
+// body > nav > div > a.navbar-brand.hidden-lg-up{
+//   color:$orange;
+//   position: absolute;
+// }
+
+// body > nav > div > button > div{
+//   color:$cloud;
+// }
+// .navbar-toggler-right{
+//   right:0px;
+// }
+
+//
+// #navbarSupportedContent a{
+//   color: $cloud;
+// }
+
 
 
 @media screen and (max-width: 576px){

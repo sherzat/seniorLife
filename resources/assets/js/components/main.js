@@ -6,11 +6,20 @@ import NavbarForm from './Navbar';
 import Navbar from './Navbar';
 import Survey from './Survey';
 import Home from './Home';
+import MySurvey from './MySurvey';
+
+
+if (document.getElementById('mysurvey')) {
+  ReactDOM.render(
+    <MySurvey />,
+      document.getElementById('mysurvey')
+  );
+}
 
 setInterval(tick, 1000);
 function tick() {
 // We only want to try to render our component on pages that have a div with an ID
-// of "example"; otherwise, we will see an error in our console 
+// of "example"; otherwise, we will see an error in our console
 if (document.getElementById('clock')) {
     ReactDOM.render(
         <Clock date = {new Date()} />,
@@ -35,4 +44,3 @@ if (document.getElementById('circular_progress_bar')) {
         <Home />,
         document.getElementById('circular_progress_bar'));
 }
-

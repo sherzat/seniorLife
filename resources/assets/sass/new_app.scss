@@ -1,4 +1,6 @@
+@import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/font-awesome/scss/font-awesome";
 // Variables
 @import "variables";
-@import "_new_app_layout.scss"
+@import "new_app_layout.scss";
+@import "home_page";
