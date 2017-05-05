@@ -56,29 +56,12 @@ a {
 .hover-class > li > a:hover{
   background-color: $emerald !important;
 }
-/* this class is used to center for vertical height of sign in in small screen
-.vertical-align {
-  display: flex;
-  align-items: center !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}*/
-/*
 
-!* changing the user and password icon color *!
-.input-group-addon{
-  background-color: #CAF7C5 !important;
+.btn-success{
+  background-color: $emerald !important;
+  font-family: 'Raleway', sans-serif;
 }
 
-!* home text customization and font *!
-.title{
-  font-family: $font-family-Lato;
-  color: #34495e !important;
-  text-align: center;
-  font-size: 27px !important;
+.Rail-way-font{
+  font-family: 'Raleway', sans-serif !important;
 }
-
-!* sign in background color *!
-.signin-background-color{
-  background-color: #2ecc71 !important;
-}*/

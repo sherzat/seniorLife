@@ -6,6 +6,7 @@ import NavbarForm from './Navbar';
 import Navbar from './Navbar';
 import Survey from './Survey';
 import Home from './Home';
+import Home_progress_bar from './Home_progress_bar';
 
 setInterval(tick, 1000);
 function tick() {
@@ -36,3 +37,9 @@ if (document.getElementById('circular_progress_bar')) {
         document.getElementById('circular_progress_bar'));
 }
 
+
+if (document.getElementById('home_progress_bar')) {
+    ReactDOM.render(
+        <Home_progress_bar />,
+        document.getElementById('home_progress_bar'));
+}
