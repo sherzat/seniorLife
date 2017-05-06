@@ -7,6 +7,8 @@ import Navbar from './Navbar';
 import Survey from './Survey';
 import Home from './Home';
 import Home_progress_bar from './Home_progress_bar';
+import AchievementPage from './achievement_page/AchievementPage';
+import HomePage from './home_Page/HomePage';
 
 setInterval(tick, 1000);
 function tick() {
@@ -43,3 +45,16 @@ if (document.getElementById('home_progress_bar')) {
         <Home_progress_bar />,
         document.getElementById('home_progress_bar'));
 }
+
+if (document.getElementById('achievement_page')) {
+    ReactDOM.render(
+        <AchievementPage/>,
+        document.getElementById('achievement_page'));
+}
+
+if (document.getElementById('home_page')) {
+    ReactDOM.render(
+        <HomePage/>,
+        document.getElementById('home_page'));
+}
+

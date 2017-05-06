@@ -7,7 +7,7 @@
             <dvi class="row">
                 <div class="col-md-4 col-sm-3">
                     <div class="card-block text-center">
-                        <img class="card-img-top img-fluid img-responsive" src="/img/avatars/child-women-avatar.png"
+                        <img class="card-img-top img-fluid img-responsive" src="/img/avatars/children/child-women-avatar.png"
                              alt="Card image cap">
                         <p class="card-text">Today's Challenge</p>
                     </div>
@@ -26,7 +26,6 @@
                                 <div class="col-sm-5 col-lg-5">
                                     <button class="btn btn-success mt-2 mb-0">Start the Challenge</button>
                                 </div>
-
                             </dl>
                         </div>
                     </div>
