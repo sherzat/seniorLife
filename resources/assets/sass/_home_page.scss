@@ -3,7 +3,7 @@
  *
  * All of the styles in this file are optional and configurable!
  */
-
+@import "progressbar";
 .CircularProgressbar {
   /*
    * This fixes an issue where the CircularProgressbar svg has
@@ -13,6 +13,8 @@
    */
   width: 20%;
 }
+
+
 
 .CircularProgressbar .CircularProgressbar-path {
   stroke: $orange;
@@ -36,11 +38,59 @@ body > div.container-fluid > div > div:nth-child(2) > div:nth-child(1) > div:nth
   border-color: $emerald
 }
 
-body > div.container-fluid > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div > div.card-block.mx-auto > i{
+.fa-spin{
   color: $orange;
 }
 
 .my-flex-card > div > div.card {
   height: calc(100% - 15px);
   margin-bottom: 15px;
+}
+
+#myCarousel{
+  height: 150px;
+  width: 100%;
+  background-color: white;
+}
+
+.slider_image_item {
+  width: 100% !important;
+}
+
+.carousel-inner > .item > img {
+  width: 200px;
+  height: 200px;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 200px;
+  width: 200px;
+}
+
+#myCarousel > div > div.mx-auto > img{
+  width: 100px !important;
+  height: 100px !important;
+}
+
+
+
+#myCarousel > div > div > div {
+  width: 100px;
+}
+
+#myCarousel > a.carousel-control-prev,
+#myCarousel > a.carousel-control-next > i{
+color:$midnight-blue ;
+}
+#myCarousel > ol > li.active{
+  background-color: $emerald;
+}
+
+#myCarousel > ol > li{
+  background-color: $orange;
+}
+
+.react-progressbar{
+  width: 20%;
 }

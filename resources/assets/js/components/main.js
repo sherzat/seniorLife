@@ -6,7 +6,8 @@ import NavbarForm from './Navbar';
 import Navbar from './Navbar';
 import Survey from './Survey';
 import Home from './Home';
-import MySurvey from './MySurvey';
+import Home_progress_bar from './Home_progress_bar';
+import MySurvey from './my_survey/MySurvey';
 
 
 if (document.getElementById('mysurvey')) {
@@ -15,6 +16,8 @@ if (document.getElementById('mysurvey')) {
       document.getElementById('mysurvey')
   );
 }
+
+
 
 setInterval(tick, 1000);
 function tick() {
@@ -43,4 +46,12 @@ if (document.getElementById('circular_progress_bar')) {
     ReactDOM.render(
         <Home />,
         document.getElementById('circular_progress_bar'));
+}
+
+
+
+if (document.getElementById('home_progress_bar')) {
+    ReactDOM.render(
+        <Home_progress_bar />,
+        document.getElementById('home_progress_bar'));
 }

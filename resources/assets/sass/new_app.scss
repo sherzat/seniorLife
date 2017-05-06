@@ -1,6 +1,20 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Lato:900|Open+Sans');
+
+// Bootstrap v4
 @import "node_modules/bootstrap/scss/bootstrap";
+
+// Font-awesome
 @import "node_modules/font-awesome/scss/font-awesome";
+
 // Variables
 @import "variables";
+
+// Layout of the webapp after login
 @import "new_app_layout.scss";
+
+// Stylings for home page
 @import "home_page";
+
+// Stylings for mysurvey page
+@import "mysurvey";

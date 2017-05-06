@@ -80,6 +80,19 @@ body > nav > div > button:focus{
 
 
 
+
+@media screen and (max-width: 991px){
+  .navbar-toggleable-md .navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+    background-color: $green-sea-color;
+    border-radius: 0;
+  }
+  .navbar-toggleable-md .navbar-nav .dropdown-menu a {
+    color:$cloud;
+  }
+
+}
 @media screen and (max-width: 576px){
   .container {
     width: 100%;
