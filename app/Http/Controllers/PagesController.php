@@ -52,5 +52,10 @@ class PagesController extends Controller
         return view('pages.empatica' , ['current_page' => $current_page]);
 
     }
+
+    public function getChallenges()
+    {
+        return view('pages.challenges');
+    }
 }
 

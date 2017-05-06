@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="jumbotron jumbotron-fluid">
+
 
         <div class="container">
             <h1> What you need to know </h1>
@@ -15,7 +15,7 @@
                 <div class="col-md-6">
                     <div class="card">
                         <!-- Heading -->
-                        <div class="card-block p-1 pb-2">
+                        <div class="card-block pt-1 pb-2">
                             <h4 class="card-title">Your Quality of Life</h4>
                             <h6 class="card-subtitle">Overall score of your last survey</h6>
                         </div>
@@ -38,7 +38,7 @@
                     <!-- Heading -->
                     <div class="card">
                         <!-- Heading -->
-                        <div class="card-block p-1 pb-2">
+                        <div class="card-block pt-1 pb-2">
                             <h4 class="card-title">Health Card </h4>
                             <h6 class="card-subtitle text-muted">Real time data</h6>
                         </div>
@@ -85,7 +85,7 @@
                 <div class="col-md-6">
                     <div class="card">
                         <!-- Heading -->
-                        <div class="card-block p-1 pb-2">
+                        <div class="card-block pt-1 pb-2">
                             <h4 class="card-title">Your achevemnts</h4>
                             <h6 class="card-subtitle text-muted">Your collection</h6>
                         </div>
@@ -154,7 +154,7 @@
                 <div class="col-md-6">
                     <!-- Heading -->
                     <div class="card">
-                        <div class="card-block p-1 pb-2">
+                        <div class="card-block pt-1 pb-2">
                             <h4 class="card-title"> <h2>Level 1</h2></h4>
 
                         </div>
@@ -176,5 +176,4 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection

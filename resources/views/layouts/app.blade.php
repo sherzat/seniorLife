@@ -65,8 +65,8 @@
 <body>
 
 <!-- background-img class is found in app.scss file -->
-<div class="container-fluid">
-    <nav class="navbar navbar-light bg-faded nav-customize">
+<div class="jumbotron container-fluid mb-0 mt-3">
+    <nav class="navbar navbar-light fixed-top bg-faded nav-customize">
 
         <!-- only visible in xs sreen-->
         <div class="container hidden-sm-up navbar-fonts">
@@ -353,7 +353,10 @@
             </div>
         </div>
     </nav>
+
+
     @yield('content')
+
 </div>
 <script src="/js/app.js"></script>
 </body>

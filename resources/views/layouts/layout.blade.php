@@ -11,7 +11,7 @@
 <body>
 
 <!-- background-img class is found in app.scss file -->
-<div class="container-fluid {{Auth::guest() ? "background-img": ""}}">
+<div class="container-fluid background-img">
     <!-- registor class is inside apps.scss file used to set the height and width of row to inherent from its parent -->
     <!-- vertical-align is used to center vertically even for unknown height or different screen size -->
     <div class="row registor vertical-align">
