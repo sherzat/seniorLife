@@ -19,6 +19,62 @@
         <a class="nav-active-menu-sm hidden-lg-up" href="#">
           {{Route::currentRouteName()}}
         </a>
+<!--PROFILE on the navbar in small screens -->
+        {{-- <div class="profile ml-auto hidden-lg-up" >
+          <a class="" data-toggle="dropdown" href="#">
+            <img src="/img/efrem.jpg " class="rounded" width="20" height="20">
+            {{ title_case(Auth::user()->name )}} <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-right">
+              <li class="dropdown-item list-group-item border-0">
+                <div class="navbar-login">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <p class="text-center">
+                        <i class="fa fa-user fa-5x" aria-hidden="true"></i>
+                      </p>
+                    </div>
+                    <div class="col-lg-8">
+                      <p class="text-left"><strong>Efrem Gebremedhin</strong></p>
+                      <p class="text-left small">effer.vision@gmail.com</p>
+                      <p class="text-left">
+                        <a href="#" class="btn btn-success btn-block btn-sm"
+                        style="background-color:$emerald">Profile</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <div class="dropdown-divider"></div>
+
+              <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Account
+                Settings </a>
+                <i class="fa fa-cog" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-divider"></div>
+
+              <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">User
+                stats</a>
+                <i class="fa fa-area-chart" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-divider"></div>
+
+              <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Messages </a>
+                <span class="badge badge-default badge-pill"> 42 </span>
+              </a>
+              <div class="dropdown-divider"></div>
+
+              <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="{{ url('/logout') }}"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
+                <a class="mr-auto">Sign Out</a>
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                  {{ csrf_field() }}
+                </form>
+
+              </a>
+            </ul>
+        </div> --}}
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav">
@@ -58,30 +114,16 @@
                 Achievement
               </a>
             </li>
-            <li class="nav-item profile">
+            {{-- PROFILE is in the collapsed meneu in sm screen --}}
+            <li class="nav-item profile hidden-lg-up">
               <a class="nav-link" data-toggle="dropdown" href="#">
                 <img src="/img/efrem.jpg " class="rounded" width="20" height="20">
                 {{ title_case(Auth::user()->name )}} <b class="caret"></b></a>
               <ul class="dropdown-menu dropdown-menu-right">
-                <li class="dropdown-item list-group-item border-0">
-                    <div class="navbar-login">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <p class="text-center">
-                                    <i class="fa fa-user fa-5x" aria-hidden="true"></i>
-                                </p>
-                            </div>
-                            <div class="col-lg-8">
-                                <p class="text-left"><strong>Efrem Gebremedhin</strong></p>
-                                <p class="text-left small">effer.vision@gmail.com</p>
-                                <p class="text-left">
-                                    <a href="#" class="btn btn-success btn-block btn-sm"
-                                       style="background-color:$emerald">Profile</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+                <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Account
+                  Profile </a>
+                  <i class="fa fa-cog" aria-hidden="true"></i>
+                </a>
                 <div class="dropdown-divider"></div>
 
                 <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Account
@@ -101,7 +143,7 @@
                 </a>
                 <div class="dropdown-divider"></div>
 
-                <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="{{ url('/logout') }}"
+                <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="{{ url('/logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                   <a class="mr-auto">Sign Out</a>
@@ -109,12 +151,65 @@
                   <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                   </form>
-                </a>
+                </button>
               </ul>
             </li>
           </ul>
 
+          <div class="navbar-nav ml-auto hidden-md-down" >
+            <a class="nav-link" data-toggle="dropdown" href="#">
+              <img src="/img/efrem.jpg " class="rounded" width="20" height="20">
+              {{ title_case(Auth::user()->name )}} <b class="caret"></b></a>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li class="dropdown-item list-group-item border-0">
+                  <div class="navbar-login">
+                      <div class="row">
+                          <div class="col-lg-4">
+                              <p class="text-center">
+                                  <i class="fa fa-user fa-5x" aria-hidden="true"></i>
+                              </p>
+                          </div>
+                          <div class="col-lg-8">
+                              <p class="text-left"><strong>Efrem Gebremedhin</strong></p>
+                              <p class="text-left small">effer.vision@gmail.com</p>
+                              <p class="text-left">
+                                  <a href="#" class="btn btn-success btn-block btn-sm"
+                                     style="background-color:$emerald">Profile</a>
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <div class="dropdown-divider"></div>
 
+              <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Account
+                      Settings </a>
+                  <i class="fa fa-cog" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-divider"></div>
+
+              <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">User
+                      stats</a>
+                  <i class="fa fa-area-chart" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-divider"></div>
+
+              <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Messages </a>
+                  <span class="badge badge-default badge-pill"> 42 </span>
+              </a>
+              <div class="dropdown-divider"></div>
+
+              <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="{{ url('/logout') }}"
+                      onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
+                <a class="mr-auto">Sign Out</a>
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                </form>
+              </a>
+            </ul>
+          </div>
 
 
 

@@ -19,6 +19,7 @@
   font-family:  $font-family-Lato;
   font-size: 20px;
 }
+
 .navbar-light .navbar-toggler{
    border: 0px;
    padding-left: 0px;
@@ -45,6 +46,9 @@ body > nav > div > button:focus{
     background-color: $cloud;
     border-radius: 0.25rem;
 }
+ .navbar-light .navbar-nav .nav-link:focus{
+   color: $cloud;
+ }
 .navbar-light .nav-active-menu-sm {
     display: inline-block;
     padding-top: .25rem;
@@ -94,6 +98,11 @@ body > nav > div > button:focus{
     color:$cloud;
   }
 
+
+  .navbar-toggleable-md > .container {
+      padding-right: inherit;
+      padding-left: inherit;
+  }
 }
 @media screen and (max-width: 576px){
   .container {
