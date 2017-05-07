@@ -14,7 +14,7 @@ class Category extends Component {
               width="auto"
               height="80"
               />
-              <p className="card-text">Community life</p>
+            <p className="card-text">{this.props.name}</p>
           </div>
         </a>
         </Link>
@@ -25,9 +25,23 @@ class Category extends Component {
 
 class NewSurvey extends Component {
   render () {
-    var urls = ["/self_assessment","/mysurvey","/home", "/rank"];
-    var toReturns = urls.map(url=>{
-      return <Category url={url} onClickHandler={this.props.onClickHandler}/>
+    var url="/survey/new";
+    var categorys = [
+      {id: 0, name: "Community life"},
+      {id: 1, name: "Education"},
+      {id: 2, name: "Fitness"},
+      {id: 3, name: "Nutrition"},
+      {id: 4, name: "Personal care"},
+      {id: 5, name: "Health"},
+      {id: 6, name: "Relationship"},
+      {id: 7, name: "Comunication"},
+      {id: 8, name: "Recreativity"},
+      {id: 9, name: "Housing"},
+    ]
+
+
+    var toReturns = categorys.map(category=>{
+      return <Category key={category.id} name={category.name}/>
     });
     return (
       <div className="row">

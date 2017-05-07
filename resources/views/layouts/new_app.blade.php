@@ -173,7 +173,7 @@
                               <p class="text-left"><strong>Efrem Gebremedhin</strong></p>
                               <p class="text-left small">effer.vision@gmail.com</p>
                               <p class="text-left">
-                                  <a href="#" class="btn btn-success btn-block btn-sm"
+                                  <a href={{url('profile')}} class="btn btn-success btn-block btn-sm"
                                      style="background-color:$emerald">Profile</a>
                               </p>
                           </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SurveyResult from './SurveyResult';
 import NewSurvey from './NewSurvey';
-import Survey from '../Survey';
+
 
 class MySurvey extends Component {
 	constructor(props) {
@@ -10,17 +10,7 @@ class MySurvey extends Component {
 		this.state={
 			renderSurveyPage: false,
 		}
-
-		this.onClickHandler = this.onClickHandler.bind(this);
 	}
-
-
-	onClickHandler() {
-		this.setState({
-			renderSurveyPage:true,
-		});
-	}
-
 
 	render() {
 		const data = [
@@ -33,22 +23,12 @@ class MySurvey extends Component {
 			{name: 'Page G', uv: 3490, pv: 4300, amt: 2100},
 		];
 
-
-		if(this.state.renderSurveyPage){
-			return (
-				<div>
-					<Survey />
-				</div>
-			);
-		}
-		else {
-			return (
-				<div>
-					<SurveyResult />
-					<NewSurvey onClickHandler={this.onClickHandler}/>
-				</div>
-			);
-		}
+		return (
+			<div>
+				<SurveyResult />
+				<NewSurvey />
+			</div>
+		);
 	}
 }
 
