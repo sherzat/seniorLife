@@ -2,12 +2,44 @@ import React, {Component} from 'react';
 import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 
 class ProfileImage extends Component {
-    state = {
-        isShowingModal: false,
+    constructor(props) {
+        super(props);
+        this.state = {
+            isShowingModal: false,
+        }
+        // This binding is necessary to make `this` work in the callback
+        this.handleSave = this.handleSave.bind(this);
     }
+
+
 
     handleClick = () => this.setState({isShowingModal: true})
     handleClose = () => this.setState({isShowingModal: false})
+    handleSave() {
+        var data = {
+            avatar: this.props.img_src,
+        }
+
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: "POST",
+            url: "/profile",
+            data: data,
+            success: function (response) {
+                // you will get response from your php page (what you echo or print)
+                console.log(response);
+                this.handleClose();
+                location.reload();
+            }.bind(this),
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }.bind(this),
+
+            dataType: "text",
+        });
+    }
     render() {
         return (
             <div>
@@ -30,7 +62,7 @@ class ProfileImage extends Component {
                                                                           height={250}
                                                                           src={this.props.img_src}
                                                                           alt="Card image cap"></img></button>
-                                    <button className="btn btn-success" onClick={this.handleClose}>Save</button>
+                                    <button className="btn btn-success" onClick={this.handleSave}>Save</button>
                                 </div>
                                 </ModalDialog>
                             </ModalContainer>
