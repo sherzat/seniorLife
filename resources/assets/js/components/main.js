@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import Rank from './Rank';
+import RankPage from './rank_page/RankPage';
 import Myform from './Myform';
 import NavbarForm from './Navbar';
 import Navbar from './Navbar';
@@ -35,10 +35,10 @@ if (document.getElementById('clock')) {
      }
 }
 
-if (document.getElementById('rank')) {
+if (document.getElementById('rank_page')) {
     ReactDOM.render(
-        <Rank />,
-        document.getElementById('rank'));
+        <RankPage />,
+        document.getElementById('rank_page'));
 }
 
 if (document.getElementById('survey')) {

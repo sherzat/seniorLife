@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="jumbotron mt-4">
+
         <div class="card  ">
             <dvi class="row">
                 <div class="col-md-4 col-sm-3">
@@ -33,7 +33,5 @@
             </dvi>
         </div>
 
-
-    </div>
 
 @endsection
