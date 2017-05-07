@@ -8,12 +8,12 @@ class HomePage extends  Component {
         return (
             <div>
 
-                <div className="container">
+
                     <h1> What you need to know </h1>
                     <p>Make daily self-assessment for better quality of life!</p>
-                </div>
 
-                <div className="container Rail-way-font">
+
+                <div className="Rail-way-font">
 
                     <div className="row my-flex-card">
                         <div className="col-md-6">

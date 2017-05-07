@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/new_app.css">
   </head>
   <body>
+
     <nav class="navbar navbar-toggleable-md navbar-light fixed-top bg-nav">
       <div class="container">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -275,9 +276,12 @@
         </div>
       </div>
     </nav>
-    <div class="jumbotron mb-0">
-        @yield('content')
+    <div class="top-margin">
+      <div class="jumbotron">
+      @yield('content')
+      </div>
     </div>
+
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="/js/app.js"></script>
   </body>
