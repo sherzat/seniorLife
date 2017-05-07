@@ -8,8 +8,8 @@ class AvailableBadges extends Component {
     render() {
         return (
             <div>
-
-                <li className="list-group-item justify-content-between">
+<div className="card">
+                <li className="list-group-item justify-content-between " >
                     <div className="col-md-2 col-sm-4">
                         <div className="card-block">
                             <img className="card-img-top img-fluid img-responsive"
@@ -31,7 +31,7 @@ class AvailableBadges extends Component {
 
                     </div>
                 </li>
-
+</div>
             </div>
         );
     }

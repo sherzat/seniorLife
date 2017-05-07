@@ -5,10 +5,9 @@ import Myform from './Myform';
 import NavbarForm from './Navbar';
 import Navbar from './Navbar';
 import Survey from './Survey';
-import Home from './Home';
-import Home_progress_bar from './Home_progress_bar';
 import AchievementPage from './achievement_page/AchievementPage';
 import HomePage from './home_Page/HomePage';
+import ProfilePage from './profile_page/ProfilePage';
 
 setInterval(tick, 1000);
 function tick() {
@@ -33,18 +32,6 @@ if (document.getElementById('survey')) {
         document.getElementById('survey'));
 }
 
-if (document.getElementById('circular_progress_bar')) {
-    ReactDOM.render(
-        <Home />,
-        document.getElementById('circular_progress_bar'));
-}
-
-
-if (document.getElementById('home_progress_bar')) {
-    ReactDOM.render(
-        <Home_progress_bar />,
-        document.getElementById('home_progress_bar'));
-}
 
 if (document.getElementById('achievement_page')) {
     ReactDOM.render(
@@ -58,3 +45,8 @@ if (document.getElementById('home_page')) {
         document.getElementById('home_page'));
 }
 
+if (document.getElementById('profile_page')) {
+    ReactDOM.render(
+        <ProfilePage/>,
+        document.getElementById('profile_page'));
+}

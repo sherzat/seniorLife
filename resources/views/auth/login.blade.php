@@ -27,7 +27,8 @@
                 <div class="input-group-addon">
                     <span class="glyphicon glyphicon-lock"></span>
                 </div>
-                <input id="password" placeholder="Password" type="password" class="form-control settins-for-paragraphs" name="password" required>
+                <input id="password" placeholder="Password" type="password" class="form-control settins-for-paragraphs"
+                       name="password" required>
             </div>
 
             @if ($errors->has('password'))
@@ -40,7 +41,9 @@
         <!-- sign in button -->
         <!-- setting-for-paragraphs are used to change the size and font while background color changes the background color -->
         <!-- both are found in apps.scss -->
-        <button type="submit" class="btn btn-success form-control settins-for-paragraphs lead signin-background-color lead">Sign In</button>
+        <button type="submit"
+                class="btn btn-success form-control settins-for-paragraphs lead signin-background-color lead">Sign In
+        </button>
     </form>
 @endsection
 
@@ -74,7 +77,8 @@
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-lock"></span>
                     </div>
-                    <input id="password" placeholder="Password" type="password" class="form-control input-registration-settings" name="password" required>
+                    <input id="password" placeholder="Password" type="password"
+                           class="form-control input-registration-settings" name="password" required>
 
                 </div>
                 @if ($errors->has('password'))
@@ -86,7 +90,9 @@
 
             <!-- submit button -->
             <div class="form-group customizing-form-horizontal">
-                <button type="submit" class="btn btn-success form-control setting-for-registration-button lead">Sign In</button>
+                <button type="submit" class="btn btn-success form-control setting-for-registration-button lead">Sign
+                    In
+                </button>
             </div>
         </form>
     </div>

@@ -29,7 +29,6 @@ class AchievementPage extends Component {
                     <div className="card-block">
                         <div className="row  justify-content-around">
                             {collectedBadges}
-
                         </div>
                     </div>
                 </div>
@@ -40,9 +39,13 @@ class AchievementPage extends Component {
                         badges</h4></div>
                     <div className="card-block">
                         <div className="list-group list-group-flush">
-                            <AvailableBadges/>
-                            <AvailableBadges/>
-                            <AvailableBadges/>
+
+                            <AvailableBadges background_color = {"bg-faded"}/>
+
+                            <AvailableBadges background_color = {"Background-color"}/>
+
+
+
                         </div>
                     </div>
                 </div>

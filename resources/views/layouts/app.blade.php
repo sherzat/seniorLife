@@ -110,7 +110,7 @@
                         <i class="fa fa-trophy" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-divider"></div>
-                    <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="/profile">
+                    <input class="dropdown-item list-group-item border-0 pt-2 pb-2" href="/profile">
                         <a class="mr-auto">Profile</a>
                         <i class="fa fa-user" aria-hidden="true"></i>
                     </button>
@@ -317,7 +317,7 @@
                                     <p class="text-left small">effer.vision@gmail.com</p>
                                     <p class="text-left">
                                         <a href="#" class="btn btn-success btn-block btn-sm"
-                                           style="background-color:$emerald">Profile</a>
+                                           style="background-color:$emerald">Change Profile Picture</a>
                                     </p>
                                 </div>
                             </div>

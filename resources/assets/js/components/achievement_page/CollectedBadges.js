@@ -1,6 +1,4 @@
-/**
- * Created by Avatar on 5/6/2017.
- */
+
 import React, {Component} from 'react';
 
 class CollectedBadges extends Component {

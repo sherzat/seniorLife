@@ -20,6 +20,7 @@ Route::get('mysurvey', 'PagesController@getMysurvey');
 Route::get('empatica', 'PagesController@getEmpatica');
 Route::get('challenges', 'PagesController@getChallenges');
 Route::get('achievement', 'PagesController@getAchievement');
+Route::get('profile', 'PagesController@getProfile');
 
 Route::get('self_assessment', 'Self_assessmentController@index');
 Route::post('self_assessment/store/{survey}', 'Self_assessmentController@store');

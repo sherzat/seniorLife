@@ -62,5 +62,10 @@ class PagesController extends Controller
     {
         return view('pages.achievement');
     }
+
+    public function getProfile()
+    {
+        return view('pages.profile');
+    }
 }
 
