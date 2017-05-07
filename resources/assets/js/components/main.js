@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import Rank from './Rank';
+import RankPage from './rank_page/RankPage';
 import Myform from './Myform';
 import NavbarForm from './Navbar';
 import Navbar from './Navbar';
@@ -13,6 +13,7 @@ import Router_mysurvey from './my_survey/Router_mysurvey';
 import AchievementPage from './achievement_page/AchievementPage';
 import HomePage from './home_Page/HomePage';
 import ProfilePage from './profile_page/ProfilePage';
+import ChallengesPage from './challenges_page/ChallengesPage';
 
 
 
@@ -35,10 +36,10 @@ if (document.getElementById('clock')) {
      }
 }
 
-if (document.getElementById('rank')) {
+if (document.getElementById('rank_page')) {
     ReactDOM.render(
-        <Rank />,
-        document.getElementById('rank'));
+        <RankPage />,
+        document.getElementById('rank_page'));
 }
 
 if (document.getElementById('survey')) {
@@ -65,4 +66,10 @@ if (document.getElementById('profile_page')) {
     ReactDOM.render(
         <ProfilePage/>,
         document.getElementById('profile_page'));
+}
+
+if (document.getElementById('challenges_page')) {
+    ReactDOM.render(
+        <ChallengesPage/>,
+        document.getElementById('challenges_page'));
 }

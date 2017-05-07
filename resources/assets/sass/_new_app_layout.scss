@@ -2,6 +2,12 @@
   background-color:$green-sea-color;
 }
 
+.top-margin{
+  margin-top: 56px;
+}
+html,body {
+background-color: $cloud;
+}
 
 .navbar-light .navbar-nav .active>.nav-link,
 .navbar-light .navbar-nav .nav-link.active,
@@ -14,7 +20,7 @@
 .navbar-light .navbar-nav .nav-link{
   color:$cloud;
 }
-.navbar-light .navbar-brand,{
+.navbar-light .navbar-brand{
   color:$cloud;
   font-family:  $font-family-Lato;
   font-size: 20px;

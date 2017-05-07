@@ -1,4 +1,4 @@
 @extends('layouts.new_app')
 @section('content')
-<div id="rank"></div>
+<div id="rank_page"></div>
 @endsection
