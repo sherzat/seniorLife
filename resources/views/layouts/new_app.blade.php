@@ -182,7 +182,9 @@
       </div>
     </nav>
     <div class="top-margin">
+      <div class="jumbotron">
       @yield('content')
+      </div>
     </div>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->

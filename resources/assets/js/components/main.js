@@ -13,6 +13,7 @@ import Route_mysurvey from './my_survey/Route_mysurvey';
 import AchievementPage from './achievement_page/AchievementPage';
 import HomePage from './home_Page/HomePage';
 import ProfilePage from './profile_page/ProfilePage';
+import ChallengesPage from './challenges_page/ChallengesPage';
 
 
 
@@ -65,4 +66,10 @@ if (document.getElementById('profile_page')) {
     ReactDOM.render(
         <ProfilePage/>,
         document.getElementById('profile_page'));
+}
+
+if (document.getElementById('challenges_page')) {
+    ReactDOM.render(
+        <ChallengesPage/>,
+        document.getElementById('challenges_page'));
 }
