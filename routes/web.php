@@ -22,6 +22,8 @@ Route::get('empatica', 'PagesController@getEmpatica')->name("Empatica");
 
 Route::get('challenges', 'PagesController@getChallenges')->name("Challenges");
 
+Route::get('achievement', 'PagesController@getAchievement')->name("Achievement");
+
 
 Route::get('self_assessment', 'Self_assessmentController@index');
 Route::post('self_assessment/store/{survey}', 'Self_assessmentController@store');

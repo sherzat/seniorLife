@@ -62,4 +62,9 @@ class PagesController extends Controller
     {
         return view('pages.challenges');
     }
+
+    public function getAchievement()
+    {
+        return view('pages.achievement');
+    }
 }

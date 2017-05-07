@@ -52,12 +52,18 @@
                 Rank
               </a>
             </li>
+            <li class="nav-item {{ ends_with(Request::url(), 'achievement') ? "active" : "" }} mr-auto">
+              <a class="nav-link " href="achievement">
+                <i class="fa fa-trophy" aria-hidden="true"></i>
+                Achievement
+              </a>
+            </li>
             <li class="nav-item profile">
               <a class="nav-link" data-toggle="dropdown" href="#">
                 <img src="/img/efrem.jpg " class="rounded" width="20" height="20">
                 {{ title_case(Auth::user()->name )}} <b class="caret"></b></a>
               <ul class="dropdown-menu dropdown-menu-right">
-                <li class="dropdown-item list-group-item border-0 pt-2 pb-2">
+                <li class="dropdown-item list-group-item border-0">
                     <div class="navbar-login">
                         <div class="row">
                             <div class="col-lg-4">
@@ -78,32 +84,32 @@
                 </li>
                 <div class="dropdown-divider"></div>
 
-                <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Account
+                <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Account
                         Settings </a>
                     <i class="fa fa-cog" aria-hidden="true"></i>
-                </button>
+                </a>
                 <div class="dropdown-divider"></div>
 
-                <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">User
+                <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">User
                         stats</a>
                     <i class="fa fa-area-chart" aria-hidden="true"></i>
-                </button>
+                </a>
                 <div class="dropdown-divider"></div>
 
-                <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Messages </a>
+                <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Messages </a>
                     <span class="badge badge-default badge-pill"> 42 </span>
-                </button>
+                </a>
                 <div class="dropdown-divider"></div>
 
-                <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="{{ url('/logout') }}"
+                <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="{{ url('/logout') }}"
                         onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();"><a
-                            class="mr-auto">Sign Out</a>
-                    <i class="fa fa-sign-out" aria-hidden="true"></i>
-                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                        document.getElementById('logout-form').submit();">
+                  <a class="mr-auto">Sign Out</a>
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                  <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
-                    </form>
-                </button>
+                  </form>
+                </a>
               </ul>
             </li>
           </ul>
@@ -174,8 +180,9 @@
         </div>
       </div>
     </nav>
-
-@yield('content')
+    <div class="jumbotron mb-0">
+        @yield('content')
+    </div>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="/js/app.js"></script>
   </body>

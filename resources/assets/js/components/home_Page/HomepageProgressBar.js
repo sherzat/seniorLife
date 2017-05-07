@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Progress from 'react-progressbar';
 
-class Home_progress_bar extends  Component {
+class HomepageProgressBar extends  Component {
     render() {
         return (
             <div>
@@ -11,4 +11,4 @@ class Home_progress_bar extends  Component {
     }
 }
 
-export default Home_progress_bar;
+export default HomepageProgressBar;

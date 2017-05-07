@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+
 import Rank from './Rank';
 import Myform from './Myform';
 import NavbarForm from './Navbar';
 import Navbar from './Navbar';
 import Survey from './Survey';
-import Home from './Home';
-import Home_progress_bar from './Home_progress_bar';
 import MySurvey from './my_survey/MySurvey';
+import AchievementPage from './achievement_page/AchievementPage';
+import HomePage from './home_Page/HomePage';
+
+
 
 
 if (document.getElementById('mysurvey')) {
@@ -16,8 +19,6 @@ if (document.getElementById('mysurvey')) {
       document.getElementById('mysurvey')
   );
 }
-
-
 
 setInterval(tick, 1000);
 function tick() {
@@ -42,16 +43,15 @@ if (document.getElementById('survey')) {
         document.getElementById('survey'));
 }
 
-if (document.getElementById('circular_progress_bar')) {
+
+if (document.getElementById('achievement_page')) {
     ReactDOM.render(
-        <Home />,
-        document.getElementById('circular_progress_bar'));
+        <AchievementPage/>,
+        document.getElementById('achievement_page'));
 }
 
-
-
-if (document.getElementById('home_progress_bar')) {
+if (document.getElementById('home_page')) {
     ReactDOM.render(
-        <Home_progress_bar />,
-        document.getElementById('home_progress_bar'));
+        <HomePage/>,
+        document.getElementById('home_page'));
 }

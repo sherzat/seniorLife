@@ -354,9 +354,9 @@
         </div>
     </nav>
 
-
+<div class="jumbotron mb-0">
     @yield('content')
-
+</div>
 </div>
 <script src="/js/app.js"></script>
 </body>
