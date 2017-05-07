@@ -28,9 +28,7 @@ class ProfilePage extends Component {
                             {profilePictures}
                         </div>
                     </div>
-
-                    <div className="card-footer Bg-color "></div>
-
+                    
                 </div>
 
 
