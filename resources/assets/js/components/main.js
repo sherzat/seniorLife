@@ -6,7 +6,7 @@ import Myform from './Myform';
 import NavbarForm from './Navbar';
 import Navbar from './Navbar';
 import Survey from './Survey';
-import MySurvey from './my_survey/MySurvey';
+import Route_mysurvey from './my_survey/Route_mysurvey';
 import AchievementPage from './achievement_page/AchievementPage';
 import HomePage from './home_Page/HomePage';
 
@@ -15,7 +15,7 @@ import HomePage from './home_Page/HomePage';
 
 if (document.getElementById('mysurvey')) {
   ReactDOM.render(
-    <MySurvey />,
+    <Route_mysurvey />,
       document.getElementById('mysurvey')
   );
 }

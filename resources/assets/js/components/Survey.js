@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 //import Circular_scale from './Circular_scale';
-import Circular_scale_1 from './Circular_scale_1';
+import Circular_scale_1 from './my_survey/Circular_scale_1';
 import Question from './Question';
 //import Progress from './Progress';
 import Progress from 'react-progressbar';
@@ -79,7 +79,7 @@ class Survey extends Component {
 			dataType: 'json',
             data: {data: answers},
             success: function (response) {
-                // you will get response from your php page (what you echo or print)                
+                // you will get response from your php page (what you echo or print)
                 console.log(response);
 
             }.bind(this),

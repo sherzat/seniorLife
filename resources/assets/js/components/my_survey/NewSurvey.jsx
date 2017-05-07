@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom';
 class Category extends Component {
 
   render() {
     return (
       <div className="col-xs-2 mb-2">
-        <a className="card text-center" href={this.props.url}>
+        <Link to="/mysurvey/new_survey">
+        <a className="card text-center" >
           <div className="card-block">
             <img className="card-img-top"
               src="/img/categorys/002-businessman.svg"
@@ -16,6 +17,7 @@ class Category extends Component {
               <p className="card-text">Community life</p>
           </div>
         </a>
+        </Link>
       </div>
     );
   }
@@ -25,7 +27,7 @@ class NewSurvey extends Component {
   render () {
     var urls = ["/self_assessment","/mysurvey","/home", "/rank"];
     var toReturns = urls.map(url=>{
-      return <Category url={url} />
+      return <Category url={url} onClickHandler={this.props.onClickHandler}/>
     });
     return (
       <div className="row">
