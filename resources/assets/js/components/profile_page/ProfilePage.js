@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ProfileImage from './profileImage';
+import ProfileImage from './ProfileImage';
 
 class ProfilePage extends Component {
     render() {
@@ -28,9 +28,7 @@ class ProfilePage extends Component {
                             {profilePictures}
                         </div>
                     </div>
-
-                    <div className="card-footer Bg-color "></div>
-
+                    
                 </div>
 
 

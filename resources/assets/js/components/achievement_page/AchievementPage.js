@@ -25,7 +25,7 @@ class AchievementPage extends Component {
 
 
                 <div className="card mb-4">
-                    <div className=" card-title mx-auto mt-4 Lato-font"><h4> You have collected this badges</h4></div>
+                    <div className="card-header Bg-color text-center Lato-font"><h4> You have collected this badges</h4></div>
                     <div className="card-block">
                         <div className="row  justify-content-around">
                             {collectedBadges}
@@ -35,7 +35,7 @@ class AchievementPage extends Component {
 
 
                 <div className="card ">
-                    <div className=" card-title mx-auto mt-4 Lato-font"><h4>In the future you can also collect this
+                    <div className="card-header Bg-color text-center Lato-font"><h4>In the future you can also collect this
                         badges</h4></div>
                     <div className="card-block">
                         <div className="list-group list-group-flush">
