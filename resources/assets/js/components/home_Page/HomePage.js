@@ -186,7 +186,7 @@ class HomePage extends  Component {
                                 {/* <!-- button -->*/}
 
                                 <div className="card-block p-1 pb-3 mx-auto">
-                                    <button className="btn btn-success">See more achevement badges</button>
+                                    <a className="btn btn-success" href="/achievement">See more achevement badges</a>
                                 </div>
                             </div>
                         </div>
@@ -221,7 +221,7 @@ class HomePage extends  Component {
                                 {/*<!-- Button -->*/}
 
                                 <div className="card-block p-1 pb-3 mx-auto">
-                                    <button className="btn btn-success">Go to challenges</button>
+                                    <a className="btn btn-success" href="/challenges">Go to challenges</a>
                                 </div>
                             </div>
                         </div>

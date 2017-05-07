@@ -2,5 +2,6 @@
 
 @section('content')
 
- <div id="achievement_page"></div>
+    <div id="profile_page"></div>
+
 @endsection

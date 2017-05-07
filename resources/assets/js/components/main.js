@@ -6,9 +6,13 @@ import Myform from './Myform';
 import NavbarForm from './Navbar';
 import Navbar from './Navbar';
 import Survey from './Survey';
+
 import Route_mysurvey from './my_survey/Route_mysurvey';
+
+
 import AchievementPage from './achievement_page/AchievementPage';
 import HomePage from './home_Page/HomePage';
+import ProfilePage from './profile_page/ProfilePage';
 
 
 
@@ -54,4 +58,11 @@ if (document.getElementById('home_page')) {
     ReactDOM.render(
         <HomePage/>,
         document.getElementById('home_page'));
+}
+
+
+if (document.getElementById('profile_page')) {
+    ReactDOM.render(
+        <ProfilePage/>,
+        document.getElementById('profile_page'));
 }
