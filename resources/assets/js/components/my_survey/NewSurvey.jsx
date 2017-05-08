@@ -6,7 +6,7 @@ class Category extends Component {
     return (
       <div className="col-xs-2 mb-2">
         <Link to="/mysurvey/new_survey">
-        <a className="card text-center" >
+        <div className="card text-center" >
           <div className="card-block">
             <img className="card-img-top"
               src="/img/categorys/002-businessman.svg"
@@ -16,7 +16,7 @@ class Category extends Component {
               />
             <p className="card-text">{this.props.name}</p>
           </div>
-        </a>
+        </div>
         </Link>
       </div>
     );

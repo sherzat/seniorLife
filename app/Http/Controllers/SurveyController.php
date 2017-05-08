@@ -13,11 +13,11 @@ class SurveyController extends Controller
     {
             $this->middleware('auth');
     }
-	
+
 	public function detailed_survey(Survey $survey)
 	{
-			
-        $view_data['survey'] = $survey;
+
+        // $view_data['survey'] = $survey;
 		return view('survey.detail', $view_data);
 	}
 
@@ -36,7 +36,7 @@ class SurveyController extends Controller
         $survey->questions()->attach([1,2,3,4,5]);
         $user_id = Auth::id();
         $survey->users()->attach($user_id);
-	
+
         //prepare queation data to pass to views.
         $view_data['survey'] = $survey;
         return view('survey.new', $view_data);

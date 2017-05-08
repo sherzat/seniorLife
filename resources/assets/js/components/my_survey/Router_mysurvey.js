@@ -33,11 +33,16 @@ class Route_mysurvey extends React.Component {
       location.state.modal &&
       this.previousLocation !== location // not initial render
     )
+    const survey = (props)=>{
+      return (
+        <Survey url="/survey/new" scale="Circular_scale"/>
+      );
+    }
     return (
       <div>
         <Switch location={isModal ? this.previousLocation : location}>
           <Route exact path='/mysurvey' component={MySurvey}/>
-          <Route path='/mysurvey/new_survey/' component={Survey}/>
+          <Route path='/mysurvey/new_survey' component={survey}/>
         </Switch>
         {isModal ? <Route path='/new_survey/' component={Modal} /> : null}
       </div>

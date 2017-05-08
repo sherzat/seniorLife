@@ -27,8 +27,9 @@ class Survey extends Component {
     componentWillMount(){
         $.ajax({
             method: "GET",
-            url: "survey/new",
+            url: "http://127.0.0.1:8000/api/user",
 		})
+
 			.done(function( result ) {
 				var result_obj = JSON.parse(result);
 				var iterator = result_obj.prepare_questions[Symbol.iterator]();

@@ -217,6 +217,6 @@
     </div>
 </div>
 
-<script src="/js/app.js"></script>
+<script src="/js/app_v3.js"></script>
 </body>
 </html>
