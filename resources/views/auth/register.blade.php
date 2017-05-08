@@ -1,5 +1,4 @@
 @extends('layouts.auth_layout')
-
 @section('regiser_content')
     <form class="navbar-form navbar-right" role="form" method="POST" action="{{ url('/register')}}">
     {{ csrf_field() }}

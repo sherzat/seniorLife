@@ -30,7 +30,6 @@
             @yield('regiser_content_md')
             @yield('login_content_md')
         </div>
-
     </div>
 </div>
 <script src="/js/app.js"></script>

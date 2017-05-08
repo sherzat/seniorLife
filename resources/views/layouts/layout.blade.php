@@ -143,6 +143,7 @@
     <!-- intro class is found in app.scss -->
     <!-- Example row of columns -->
     <div class="row" style="background-color: #16a085">
+
         <!-- style-for-images is found in _home_footor_settings and is used to add vertical lines -->
         <div class="col-md-4 style-for-images">
             <div class="card">
@@ -176,7 +177,6 @@
 
         <div class="col-md-4 style-for-images">
             <div class="card">
-
                 <a href="#">
                     <div class="card-block">
                         <fieldset>
