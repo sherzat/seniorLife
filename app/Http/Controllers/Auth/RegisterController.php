@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -70,18 +71,4 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function register(Request $request)
-    {
-        $validator = $this->validator($request->all());
-
-        if ($validator->fails())
-        {
-             return redirect('register')->withErrors($validator)->withInput();
-        }
-        event(new Registered($user));
-        $this->guard()->login($user);
-        // Success redirection - which will be attribute `$redirectTo`
-
-        return redirect($this->redirectPath());
-    }
 }

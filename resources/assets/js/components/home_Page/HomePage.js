@@ -43,7 +43,7 @@ class HomePage extends  Component {
                                 {/*  <!-- button -->*/}
 
                                 <div className="card-block p-1 pb-3 mx-auto">
-                                    <button className="btn btn-success">Read Detail >></button>
+                                    <button className="btn btn-success">Read Detail</button>
                                 </div>
                             </div>
                         </div>

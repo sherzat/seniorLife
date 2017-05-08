@@ -8,6 +8,15 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/new_app.css">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Scripts -->
+    <script>
+        window.Laravel = <?php echo json_encode([
+            'csrfToken' => csrf_token(),
+        ]); ?>
+    </script>
   </head>
   <body>
 
@@ -159,7 +168,7 @@
 
           <div class="navbar-nav ml-auto hidden-md-down" >
             <a class="nav-link" data-toggle="dropdown" href="#">
-              <img src="/img/efrem.jpg " class="rounded" width="20" height="20">
+              <img src={{ Auth::user()->avatar }} class="rounded" width="20" height="20">
               {{ title_case(Auth::user()->name )}} <b class="caret"></b></a>
             <ul class="dropdown-menu dropdown-menu-right">
               <li class="dropdown-item list-group-item border-0">
