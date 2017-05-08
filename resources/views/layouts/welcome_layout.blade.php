@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<div class="container-fluid  background-img w-100 h-100 ">
+<div class="container-fluid  background-img w-100 h-100 vertical-center">
 <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
     <div class="container">
     <div class="navbar-header">
