@@ -3,15 +3,10 @@ import React, { Component } from 'react'
 
 
 class Category extends Component {
-    constructor(props) {
-        super(props);
 
-
-        this.handleOnclick = this.handleOnclick.bind(this);
-    }
     handleOnclick() {
         this.props.handleOnclick()
-        console.log('in category')
+
 
     }
   render() {
@@ -51,7 +46,7 @@ class NewSurvey extends Component {
 
 
     var toReturns = categorys.map(category=>{
-      return <Category key={category.id} name={category.name} img_src = {category.img_src} handleOnclick={this.props.handleOnclick} />
+      return <Category key={category.id} name={category.name} img_src = {category.img_src}/>
     });
     return (
       <div className="row">

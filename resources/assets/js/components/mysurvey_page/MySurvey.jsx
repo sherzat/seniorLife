@@ -24,7 +24,9 @@ class MySurvey extends Component {
                 {renderSurveyPage ? (
                     <div>
                         <SurveyResult />
+                        <div className="card-block">
                         <NewSurvey handleOnclick={this.handleOnclick}/>
+                        </div>
                     </div>
                     ) : (
                         <div>

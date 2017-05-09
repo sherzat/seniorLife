@@ -40,3 +40,14 @@ a .card:hover{
   text-decoration:none;
   color:$midnight-blue;
 }
+
+.my-flex-card-width{
+        float: left;
+        width: 100%;
+        border: 1px solid #ccc;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        margin-left: 1.75438%;
+        overflow: hidden;
+}

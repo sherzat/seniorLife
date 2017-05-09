@@ -159,9 +159,9 @@ class HomePage extends  Component {
                                             <div className="carousel-item active">
                                                 <div className="mx-auto">
 
-                                                    <img
+                                                    {/*<img
                                                         className="d-block img-fluid ml-auto mr-auto slider_image_item "
-                                                        src={this.state.home.badges[0]} alt="First slide"></img>
+                                                        src={this.state.home.badges[0]} alt="First slide"></img>*/}
                                                 </div>
 
                                             </div>
@@ -169,19 +169,19 @@ class HomePage extends  Component {
 
                                             <div className="carousel-item">
                                                 <div className="mx-auto">
-                                                   <img
+                                                  {/* <img
                                                  className="d-block img-fluid ml-auto mr-auto slider_image_item "
                                                  src={this.state.home.badges[1]} alt="Second slide"></img>
-
+*/}
                                                 </div>
                                             </div>
 
 
                                             <div className="carousel-item">
                                                 <div className="mx-auto">
-                                                  <img
+                                                  {/*<img
                                                         className="d-block img-fluid ml-auto mr-auto slider_image_item "
-                                                        src={this.state.home.badges[2]} alt="Third slide"></img>
+                                                        src={this.state.home.badges[2]} alt="Third slide"></img>*/}
 
                                                 </div>
                                             </div>

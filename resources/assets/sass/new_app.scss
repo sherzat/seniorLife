@@ -23,6 +23,13 @@
   color: $cloud !important;
 }
 
+.Bg-color-midnight{
+  background-color: $midnight-blue !important;
+}
+
+.Bg-color-cloud{
+  background-color: $cloud !important;
+}
 //Stylings for welcome page
 @import "welcome_page";
 
