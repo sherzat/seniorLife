@@ -6,7 +6,7 @@ class HomepageCircularPiechart extends Component {
     render() {
         return (
             <div>
-                <CircularProgressbar percentage={78}/>
+                <CircularProgressbar percentage={this.props.qol}/>
             </div>
         );
     }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{ config('app.name', 'SeniorLife') }}</title>
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/new_app.css" rel="stylesheet">
 </head>
 <body>
 
@@ -30,7 +30,6 @@
             @yield('regiser_content_md')
             @yield('login_content_md')
         </div>
-
     </div>
 </div>
 <script src="/js/app_v3.js"></script>

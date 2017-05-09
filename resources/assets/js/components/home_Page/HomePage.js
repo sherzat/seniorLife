@@ -4,7 +4,31 @@ import HomepageProgressBar from './HomepageProgressBar';
 import HomepageCircularPiechart from './HomepageCircularPiechart';
 
 class HomePage extends  Component {
-    render() {
+    constructor(props) {
+        super(props);
+        this.state = {home:[],};
+
+    }
+
+    /*//sending request to get the gol value*/
+
+    componentWillMount() {
+        var url ="/home/1";
+        $.ajax({
+            method: "GET",
+            url: url,
+        })
+            .done(function( result ) {
+
+                console.log(result)
+                this.setState({home:result});
+
+            }.bind(this))
+    }
+
+    render(){
+
+
         return (
             <div>
 
@@ -30,14 +54,14 @@ class HomePage extends  Component {
 
                                 <div className="card-block p-1" style={{textAlign: "center"}}>
 
-                                    <HomepageCircularPiechart/>
+                                    <HomepageCircularPiechart qol={this.state.home.qol}/>
 
                                 </div>
 
                                 {/* <!-- Text Content -->*/}
 
                                 <div className="card-block p-1 mx-auto">
-                                    <p className="card-text">You have completed 10 surveys this week</p>
+                                    <p className="card-text">You have completed {this.state.home.survey} surveys this week</p>
                                 </div>
 
                                 {/*  <!-- button -->*/}
@@ -137,7 +161,7 @@ class HomePage extends  Component {
 
                                                     <img
                                                         className="d-block img-fluid ml-auto mr-auto slider_image_item "
-                                                        src="/img/badges/first_survey.png" alt="First slide"></img>
+                                                        src={this.state.home.badges[0]} alt="First slide"></img>
                                                 </div>
 
                                             </div>
@@ -145,9 +169,9 @@ class HomePage extends  Component {
 
                                             <div className="carousel-item">
                                                 <div className="mx-auto">
-                                                    <img
-                                                        className="d-block img-fluid ml-auto mr-auto slider_image_item "
-                                                        src="/img/badges/first_survey.png" alt="Second slide"></img>
+                                                   <img
+                                                 className="d-block img-fluid ml-auto mr-auto slider_image_item "
+                                                 src={this.state.home.badges[1]} alt="Second slide"></img>
 
                                                 </div>
                                             </div>
@@ -155,9 +179,9 @@ class HomePage extends  Component {
 
                                             <div className="carousel-item">
                                                 <div className="mx-auto">
-                                                    <img
+                                                  <img
                                                         className="d-block img-fluid ml-auto mr-auto slider_image_item "
-                                                        src="/img/badges/first_survey.png" alt="Third slide"></img>
+                                                        src={this.state.home.badges[2]} alt="Third slide"></img>
 
                                                 </div>
                                             </div>
@@ -199,13 +223,13 @@ class HomePage extends  Component {
 
                             <div className="card">
                                 <div className="card-block pt-1 pb-2">
-                                    <h4 className="card-title"><h2>Level 1</h2></h4>
+                                    <h4 className="card-title"><h2>Level {this.state.home.level} </h2></h4>
                                 </div>
 
                                 {/*<!-- Image -->*/}
 
                                 <div className="card-block pb-0">
-                                    <HomepageProgressBar/>
+                                    <HomepageProgressBar progress_points={this.state.home.progress_points}/>
                                 </div>
                                 <div className="card-block p-1 pb-3 mx-auto">
                                     Get 70 more points to level up

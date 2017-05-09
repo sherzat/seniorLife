@@ -5,6 +5,7 @@ import AvailableBadges from './AvailableBadges';
 class AchievementPage extends Component {
 
     render() {
+
         var img_src_paths = [
         "/img/badges/first_survey.png",
         "/img/badges/keeep_it_up.png",
@@ -15,10 +16,12 @@ class AchievementPage extends Component {
         "/img/badges/survey_intermediate.png",
         "/img/badges/welcome_aboard.png"];
 
+
         const collectedBadges = img_src_paths.map(
             (img_src_path) =>
                 <CollectedBadges img_src = {img_src_path}/>
-        );
+        )
+
         return (
 
             <div>

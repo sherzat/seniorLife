@@ -5,7 +5,7 @@ class HomepageProgressBar extends  Component {
     render() {
         return (
             <div>
-                <Progress completed={33} className={"progressbar"}/>
+                <Progress completed={this.props.progress_points} className={"progressbar"}/>
             </div>
         );
     }

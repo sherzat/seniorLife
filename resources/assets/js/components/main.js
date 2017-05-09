@@ -14,10 +14,8 @@ import AchievementPage from './achievement_page/AchievementPage';
 import HomePage from './home_Page/HomePage';
 import ProfilePage from './profile_page/ProfilePage';
 import ChallengesPage from './challenges_page/ChallengesPage';
-
-
-
-
+import WelcomePage from './welcome_page/WelcomePage';
+import FooterComponent from './welcome_page/FooterComponent';
 if (document.getElementById('mysurvey')) {
   ReactDOM.render(
     <Router_mysurvey />,
@@ -72,4 +70,15 @@ if (document.getElementById('challenges_page')) {
     ReactDOM.render(
         <ChallengesPage/>,
         document.getElementById('challenges_page'));
+}
+
+if (document.getElementById('welcome_page')) {
+    ReactDOM.render(
+        <WelcomePage/>,
+        document.getElementById('welcome_page'));
+}
+if (document.getElementById('footer')) {
+    ReactDOM.render(
+        <FooterComponent/>,
+        document.getElementById('footer'));
 }
