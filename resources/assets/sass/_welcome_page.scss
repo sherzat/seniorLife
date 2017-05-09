@@ -7,10 +7,7 @@ html,body {
   height:100%;
   min-width:320px;
 }
-.my-flex-card{
-  height: calc(100% - 15px);
-  margin-bottom: 15px;
-}
+
 
 /* this setting is for the background image women image to be specific*/
 .background-img{
@@ -22,11 +19,17 @@ html,body {
   background-size:cover;
   background-position:center;
 }
-
-.vertical-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
-
-  display: flex;
-  align-items: center;
+.fade.show {
+  opacity: 1;
+  background-color: rgba(44, 38, 38, 0.78);
 }
+
+.modal-content{
+
+  background-color:rgba(255, 255, 255, 0);
+}
+.my-flex-card  {
+  height: calc(100% - 15px);
+  margin-bottom: 15px;
+}
+

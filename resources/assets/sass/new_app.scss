@@ -10,6 +10,19 @@
 // Variables
 @import "variables";
 
+.Rail-way-font{
+  font-family: 'Raleway', sans-serif !important;
+}
+.Lato-font{
+  font-family: $font-family-Lato !important;
+}
+.Font-dark{
+  color:$midnight-blue !important;
+}
+.Font-light{
+  color: $cloud !important;
+}
+
 //Stylings for welcome page
 @import "welcome_page";
 

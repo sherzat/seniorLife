@@ -15,11 +15,11 @@
 </head>
 <body>
 
-<div class="container-fluid  background-img w-100 h-100 vertical-center">
+<div class="container-fluid  background-img w-100 h-100 Rail-way-font">
 <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
     <div class="container">
     <div class="navbar-header">
-        <a class="navbar-brand" href="#">{{ config('app.name', 'SeniorLife') }}</a>
+        <a class="navbar-brand Title-light Lato-font" href="#">{{ config('app.name', 'SeniorLife') }}</a>
     </div>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
@@ -33,7 +33,7 @@
                     <div class="input-group-addon">
                         <i class="fa fa-envelope-o" aria-hidden="true"></i>
                     </div>
-                    <input id="email" type="email" placeholder="Email" class="input-xs form-control"
+                    <input id="email" type="email" placeholder="Email" class="input-xs form-control Rail-way-font"
                            name="email" value="{{ old('email') }}" required autofocus>
                 </div>
                 @if ($errors->has('email'))
@@ -51,7 +51,7 @@
                         <i class="fa fa-key" aria-hidden="true"></i>
                     </div>
                     <input id="password" placeholder="Password" type="password"
-                           class="input-xs form-control" name="password" required>
+                           class="input-xs form-control Rail-way-font" name="password" required>
                 </div>
                 @if ($errors->has('password'))
                     <span class="help-block">
@@ -59,7 +59,7 @@
 									</span>
                 @endif
             </div>
-            <button type="submit" class="btn btn-success signin-background-color lead">Sign In</button>
+            <button type="submit" class="btn btn-success Rail-way-font">Sign In</button>
         </form>
     </div>
     </div>
@@ -68,9 +68,9 @@
 
     @yield('content')
 </div>
-<div class="container-fluid">
+
     @yield('footer')
-</div>
+
 
 
 <!-- Bootstrap core JavaScript

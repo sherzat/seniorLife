@@ -43,3 +43,4 @@ Route::get('databaseTest', function(){
 Route::get('/storedata', 'QuestionController@mapQC');
 Auth::routes();
 Route::resource('profile', 'ProfileController');
+Route::resource('home', 'HomeController');

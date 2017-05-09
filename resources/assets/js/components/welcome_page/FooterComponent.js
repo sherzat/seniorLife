@@ -5,18 +5,18 @@ class FooterComponent extends Component {
     render() {
         return (
             <div>
-                <div className="container">
+                <div className="container-fluid">
 
                     {/*Example row of columns */}
 
                     <div className="row ">
-                        <div className="col-md-4">
+                        <div className="col-md-4 m-0 p-0">
                             <div className="card my-flex-card">
                                 <div className="card-header Bg-color"><h4>Survey</h4></div>
                                 <div className="card-block">
                                     <h5 className="card-title">Where you fill the questionnaire</h5>
                                     <img className="card-img-top img-responsive pull-left" src="img/Survey.png" alt=""
-                                         width="150" height="150" align="left"/>
+                                         width="120" height="120" align="left"/>
                                     <p>In Survey part, you will find different categories and
                                         questions inside them. These questions are used to investigate
                                         your characteristics, behaviors, or opinions regarding different
@@ -26,13 +26,13 @@ class FooterComponent extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-4 m-0 p-0">
                             <div className="card my-flex-card">
                                 <div className="card-header Bg-color"><h4>Empatica</h4></div>
                                 <div className="card-block">
                                     <h5 className="card-title">Your wristband watch</h5>
                                     <img className="card-img-top img-responsive pull-left" src="img/Empatica.png"
-                                         width="150" height="150"
+                                         width="120" height="120"
                                          align="left"/>
                                     <p>Empatica is a
                                         wristband a wearable wireless
@@ -44,14 +44,14 @@ class FooterComponent extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-4 m-0 p-0">
                             <div className="card my-flex-card">
                                 <div className="card-header Bg-color"><h4>Share</h4></div>
                                 <div className="card-block">
                                     <h5 className="card-title">Let other know your activities</h5>
                                     <img className="card-img-top img-responsive pull-left" src="img/Share.png"
-                                         width="150"
-                                         height="150"
+                                         width="120"
+                                         height="120"
                                          align="left"/>
                                     <p className="card-text">By sharing your
                                         activities, You can let your
