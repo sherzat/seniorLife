@@ -1,6 +1,7 @@
 @extends('layouts.welcome_layout')
 
 @section('content')
+
     <div class="d-flex justify-content-center align-items-center h-100 hidden-md-up">
     <div class=" ">
         <form class="navbar-form navbar-right" role="form" method="POST" action="{{ url('/login')}}">
@@ -47,18 +48,18 @@
             <!-- setting-for-paragraphs are used to change the size and font while background color changes the background color -->
             <!-- both are found in apps.scss -->
             <button type="submit"
-                    class="btn btn-success form-control settins-for-paragraphs lead signin-background-color lead">
+                    class="btn btn-success form-control lead">
                 Sign In
             </button>
         </form>
-        <div class="form-group">
+        <div class="form-group mt-5">
             <h1></h1>
 
-            <h5 class="setting-for-registration-text">New to SeniorLife?</h5>
+            <h5 class="text-center Rail-way-font">New to SeniorLife?</h5>
             <!-- setting-for-registration-button is found in apps.scss file -->
             <a href="/register" role="button">
                 <button type="submit"
-                        class="btn btn-success form-control setting-for-registration-button settins-for-paragraphs lead">
+                        class="btn btn-success form-control Regestor-bg-color lead border-0 Rail-way-font">
                     Sign Up Now
                 </button>
             </a>
@@ -69,7 +70,7 @@
            <!-- title custmize the font and color text found in apps.scss-->
            <h4 class="Lato-font Font-dark">Monitor Your Health For Better Quality of Life</h4>
            <button type="button"
-                   class="btn btn-success btn-lg lead "
+                   class="btn btn-success btn-lg lead Regestor-bg-color border-0 Rail-way-font"
                    data-toggle="modal" data-target="#myModal">
                Sign Up Now
            </button>
@@ -153,7 +154,7 @@
                <!-- submit button -->
                <div class="form-group customizing-form-horizontal">
                    <button type="submit"
-                           class="btn btn-success form-control setting-for-registration-button settins-for-paragraphs lead">
+                           class="btn btn-success form-control border-0 lead Regestor-bg-color">
                        Register
                    </button>
                </div>
@@ -163,10 +164,9 @@
    </div>
 @endsection
 
-
 @section('footer')
 
-    <div id="footer"></div>
+    <div id="footer" class="mt-1"></div>
 
 @endsection
 
