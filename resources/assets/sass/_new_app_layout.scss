@@ -1,5 +1,5 @@
 .bg-nav{
-  background-color:$green-sea-color;
+  background-color:$midnight-blue;
 }
 
 /*.top-margin{
@@ -13,7 +13,7 @@ background-color: $cloud;
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.open,
 .navbar-light .navbar-nav .open>.nav-link{
-  color: $green-sea-color;
+  color: $midnight-blue;
   background:$cloud;
   border-radius: 0.25rem;
 }
@@ -48,12 +48,14 @@ body > nav > div > button:focus{
   color:$cloud;
 }
  .navbar-light .navbar-nav .nav-link:hover{
-    color: $green-sea-color;
+    color: $midnight-blue;
     background-color: $cloud;
     border-radius: 0.25rem;
 }
  .navbar-light .navbar-nav .nav-link:focus{
-   color: $cloud;
+   color: $midnight-blue;
+   background-color: $cloud;
+   border-radius: 0.25rem;
  }
 .navbar-light .nav-active-menu-sm {
     display: inline-block;
@@ -67,42 +69,15 @@ body > nav > div > button:focus{
     color: $orange;
 }
 
-// .navbar-brand{
-//   font-size: 20px;
-//   padding-top: 0px;
-//   padding-bottom: 0px;
-//   color: $cloud;
-//
-// }
-// body > nav > div > a.navbar-brand.hidden-lg-up{
-//   color:$orange;
-//   position: absolute;
-// }
-
-// body > nav > div > button > div{
-//   color:$cloud;
-// }
-// .navbar-toggler-right{
-//   right:0px;
-// }
-
-//
-// #navbarSupportedContent a{
-//   color: $cloud;
-// }
-
-
-
-
 @media screen and (max-width: 991px){
   .navbar-toggleable-md .navbar-nav .dropdown-menu {
     position: static;
     float: none;
-    background-color: $green-sea-color;
+    background-color: $cloud !important;
     border-radius: 0;
   }
   .navbar-toggleable-md .navbar-nav .dropdown-menu a {
-    color:$cloud;
+    color: $midnight-blue;
   }
 
 
@@ -116,4 +91,9 @@ body > nav > div > button:focus{
     width: 100%;
     max-width: 100%;
   }
+}
+
+.list-group-item:focus, .list-group-item:hover, button:focus {
+  outline: 1px dotted;
+  outline: 0px auto -webkit-focus-ring-color;
 }
