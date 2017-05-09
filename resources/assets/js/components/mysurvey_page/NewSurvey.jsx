@@ -1,15 +1,6 @@
 import React, { Component } from 'react'
-<<<<<<< HEAD:resources/assets/js/components/my_survey/NewSurvey.jsx
 
 
-class Category extends Component {
-  
-  render() {
-    return (
-      <div className="col-xs-2 mb-2">
-        <button>
-        <div className="card text-center" >
-=======
 
 
 
@@ -24,7 +15,6 @@ class Category extends Component {
     return (
       <div className="col-xs-2 mb-2">
         <button className="card text-center" onClick={this.handleOnclick} >
->>>>>>> e0f189d8700b7cda10abfa8800690c7723620d8e:resources/assets/js/components/mysurvey_page/NewSurvey.jsx
           <div className="card-block">
             <img className="card-img-top"
               src={this.props.img_src}
@@ -34,12 +24,8 @@ class Category extends Component {
               />
             <p className="card-text">{this.props.name}</p>
           </div>
-<<<<<<< HEAD:resources/assets/js/components/my_survey/NewSurvey.jsx
-        </div>
-      </button>
-=======
+
         </button>
->>>>>>> e0f189d8700b7cda10abfa8800690c7723620d8e:resources/assets/js/components/mysurvey_page/NewSurvey.jsx
       </div>
     );
   }
