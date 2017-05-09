@@ -3,21 +3,24 @@ import ReactDOM from 'react-dom';
 
 import RankPage from './rank_page/RankPage';
 
-import MySurvey from './my_survey/MySurvey';
+import Myform from './Myform';
+import NavbarForm from './Navbar';
+import Navbar from './Navbar';
+
+
+import MySurvey  from './mysurvey_page/MySurvey';
 
 
 import AchievementPage from './achievement_page/AchievementPage';
 import HomePage from './home_Page/HomePage';
 import ProfilePage from './profile_page/ProfilePage';
 import ChallengesPage from './challenges_page/ChallengesPage';
-import WelcomePage from './welcome_page/WelcomePage';
 import FooterComponent from './welcome_page/FooterComponent';
 
-
-if (document.getElementById('mysurvey')) {
+if (document.getElementById('mysurvey_page')) {
   ReactDOM.render(
     <MySurvey />,
-      document.getElementById('mysurvey')
+      document.getElementById('mysurvey_page')
   );
 }
 
@@ -36,12 +39,6 @@ if (document.getElementById('rank_page')) {
     ReactDOM.render(
         <RankPage />,
         document.getElementById('rank_page'));
-}
-
-if (document.getElementById('survey')) {
-    ReactDOM.render(
-        <Survey url="/survey/new" scale="Circular_scale"/>,
-        document.getElementById('survey'));
 }
 
 
@@ -70,11 +67,7 @@ if (document.getElementById('challenges_page')) {
         document.getElementById('challenges_page'));
 }
 
-if (document.getElementById('welcome_page')) {
-    ReactDOM.render(
-        <WelcomePage/>,
-        document.getElementById('welcome_page'));
-}
+
 if (document.getElementById('footer')) {
     ReactDOM.render(
         <FooterComponent/>,

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 //import Circular_scale from './Circular_scale';
-import Circular_scale_1 from './my_survey/Circular_scale_1';
+import Circular_scale_1 from './Circular_scale_1';
 import Question from './Question';
 //import Progress from './Progress';
 import Progress from 'react-progressbar';
 //import createFragment from 'react-addons-create-fragment'; // ES6
-import Slider_scale from './Slider_scale';
+import Slider_scale from '../Slider_scale';
 
 class Survey extends Component {
     constructor(props) {
@@ -102,20 +102,38 @@ class Survey extends Component {
         }
         return(
             <div>
-                <section className="section-settings">
-                    <div className="progress-bar-settings">
-                       <h3 className="text-progress-settings">Your Progress 33%</h3>
-                         <Progress completed={33} className={"progressbar"}/>
-                    </div>
+                <div className="container-fluid">
+                    <div className="card">
+                        <div className="card-header justify-content-between">
 
-                    <Question  question={this.state.question.question}/>
-                </section>
-                <section className="section-settings">
-                    {scale_component}
-                </section>
+    <div className="col-md-8"><Progress completed={33} className={"mr-auto"}/></div>
+
+                            <div className="col-md-2">  <button>Go back</button></div>
+
+                        </div>
+                        <div className="card-block">
+                            <div className="row h-40">
+                                <div className="col-md-4 col-sm-12"></div>
+                                <div className="col-md-8 col-sm-12"></div>
+                            </div>
+                            <div className="row h-60">
+                                <div className="col-md-12 col-sm-12"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
 }
 
 export default Survey;
+
+           /*     <div className="card-header"
+                <div className="progress-bar-settings">
+                    <h3 className="">Your Progress 33%</h3>
+                    <Progress completed={33} className={"progressbar"}/>
+                </div>
+            </div>
+        <Question  question={this.state.question.question}/>
+    {scale_component}*/

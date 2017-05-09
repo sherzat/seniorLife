@@ -16,7 +16,7 @@
 <body>
 
 <div class="container-fluid  background-img w-100 h-100 Rail-way-font">
-<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top Nav-bg-color">
     <div class="container">
     <div class="navbar-header">
         <a class="navbar-brand Title-light Lato-font" href="#">{{ config('app.name', 'SeniorLife') }}</a>
@@ -64,7 +64,6 @@
     </div>
     </div>
 </nav>
-
 
     @yield('content')
 </div>
