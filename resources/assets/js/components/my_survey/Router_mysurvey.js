@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from 'react-router-dom'
-
-import MySurvey from './MySurvey';
-import Survey from '../Survey';
+// import React, { Component } from 'react';
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link
+// } from 'react-router-dom'
+//
+// import MySurvey from './MySurvey';
+// import Survey from '../Survey';
 
 class Route_mysurvey extends React.Component {
   constructor(props) {

@@ -1,23 +1,24 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
-class Category extends Component {
 
+
+class Category extends Component {
+  
   render() {
     return (
       <div className="col-xs-2 mb-2">
-        <Link to="/mysurvey/new_survey">
+        <button>
         <div className="card text-center" >
           <div className="card-block">
             <img className="card-img-top"
               src="/img/categorys/002-businessman.svg"
               alt="Image Community life"
-              width="auto"
+              width="80"
               height="80"
               />
             <p className="card-text">{this.props.name}</p>
           </div>
         </div>
-        </Link>
+      </button>
       </div>
     );
   }
