@@ -7,6 +7,7 @@ import Question from './Question';
 import Progress from 'react-progressbar';
 //import createFragment from 'react-addons-create-fragment'; // ES6
 import Slider_scale from '../Slider_scale';
+import Balloon from 'react-balloon';
 
 class Survey extends Component {
     constructor(props) {
@@ -101,39 +102,51 @@ class Survey extends Component {
             scale_component= <Slider_scale />;
         }
         return(
-            <div>
-                <div className="container-fluid">
-                    <div className="card">
-                        <div className="card-header justify-content-between">
-
-    <div className="col-md-8"><Progress completed={33} className={"mr-auto"}/></div>
-
-                            <div className="col-md-2">  <button>Go back</button></div>
-
-                        </div>
-                        <div className="card-block">
-                            <div className="row h-40">
-                                <div className="col-md-4 col-sm-12"></div>
-                                <div className="col-md-8 col-sm-12"></div>
-                            </div>
-                            <div className="row h-60">
-                                <div className="col-md-12 col-sm-12"></div>
-                            </div>
-                        </div>
-                    </div>
+            <div className="container-fluid" id="survey">
+              <div className="card">
+                <div className="card-header">
+                  <div className="row justify-content-between">
+                    <div className="col-sd-10 align-self-center"><Progress completed={33} className={"w-100"}/></div>
+                    <div className="col-sd-2  d-flex justify-content-end"><button>Go back</button></div>
+                  </div>
                 </div>
+
+                <div className="card-block">
+                  <div className="row">
+                    <div className="col-md-3 col-sm-12 ">
+                      <img className="card-img-top" src="/img/avatars/default/default-user.png" width="200" height="200"></img>
+                      <div className="card-block">
+                        <div className="col-md-3 col-sm-12">
+                          Score
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-9 col-sm-12 ">
+                      <div className="row ">
+                        <div className="col-md-12 d-flex">
+                        <div className="talk-bubble tri-right left-in">
+                          <div className="talktext">
+                            <p>This talk-bubble uses .left-in class to show a triangle on the left slightly indented. Still a blocky square.</p>
+                          </div>
+                        </div>
+                        <button className="next-btn"><i className="fa fa-angle-right" aria-hidden="true"></i></button>
+                        </div>
+                      </div>
+                      <div className="row">
+
+                        <div className="col-md-12">
+                          {scale_component}
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
             </div>
         );
     }
 }
 
 export default Survey;
-
-           /*     <div className="card-header"
-                <div className="progress-bar-settings">
-                    <h3 className="">Your Progress 33%</h3>
-                    <Progress completed={33} className={"progressbar"}/>
-                </div>
-            </div>
-        <Question  question={this.state.question.question}/>
-    {scale_component}*/

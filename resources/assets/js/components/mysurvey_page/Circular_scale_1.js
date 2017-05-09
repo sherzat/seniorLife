@@ -25,7 +25,8 @@ class Circular_scale_1 extends Component {
 	render() {
         return (
             <div className="menu-wrapper">
-                <svg width="700" height="361" id="menu" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 700 360" preserveAspectRatio="xMinYMin meet"
+                  className="svg-content" id="menu" xmlns="http://www.w3.org/2000/svg">
                     <g>
                         <title>Layer 1</title>
                         <g id="symbolsContainer">
@@ -59,7 +60,7 @@ class Circular_scale_1 extends Component {
                                 <g>
                                     <path
                                         fill="#FFFFFF"
-                                        d="M32,0C14.355,0,0,14.355,0,32s14.355,32,32,32s32-14.355,32-32S49.645,0,32,0z M32,60    C16.561,60,4,47.439,4,32S16.561,4,32,4s28,12.561,28,28S47.439,60,32,60z" 
+                                        d="M32,0C14.355,0,0,14.355,0,32s14.355,32,32,32s32-14.355,32-32S49.645,0,32,0z M32,60    C16.561,60,4,47.439,4,32S16.561,4,32,4s28,12.561,28,28S47.439,60,32,60z"
                                     />
                                     <circle
                                         fill="#FFFFFF"
@@ -82,7 +83,7 @@ class Circular_scale_1 extends Component {
                                 <g fill="#1D1D1B">
                                     <path
                                         fill="#FFFFFF"
-                                        d="M32,0C14.355,0,0,14.355,0,32s14.355,32,32,32s32-14.355,32-32S49.645,0,32,0z M32,60    C16.561,60,4,47.439,4,32S16.561,4,32,4s28,12.561,28,28S47.439,60,32,60z" 
+                                        d="M32,0C14.355,0,0,14.355,0,32s14.355,32,32,32s32-14.355,32-32S49.645,0,32,0z M32,60    C16.561,60,4,47.439,4,32S16.561,4,32,4s28,12.561,28,28S47.439,60,32,60z"
                                     />
                                     <circle
                                         fill="#FFFFFF"
@@ -104,7 +105,7 @@ class Circular_scale_1 extends Component {
                                 <g fill="#1D1D1B">
                                     <path
                                         fill="#FFFFFF"
-                                        d="M32,0C14.355,0,0,14.355,0,32s14.355,32,32,32s32-14.355,32-32S49.645,0,32,0z M32,60    C16.561,60,4,47.439,4,32S16.561,4,32,4s28,12.561,28,28S47.439,60,32,60z" 
+                                        d="M32,0C14.355,0,0,14.355,0,32s14.355,32,32,32s32-14.355,32-32S49.645,0,32,0z M32,60    C16.561,60,4,47.439,4,32S16.561,4,32,4s28,12.561,28,28S47.439,60,32,60z"
                                     />
                                     <circle
                                         fill="#FFFFFF"

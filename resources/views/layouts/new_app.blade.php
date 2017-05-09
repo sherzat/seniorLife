@@ -128,7 +128,7 @@
             {{-- PROFILE is in the collapsed meneu in sm screen --}}
             <li class="nav-item profile hidden-lg-up">
               <a class="nav-link" data-toggle="dropdown" href="#">
-                <img src="/img/efrem.jpg " class="rounded" width="20" height="20">
+                <img src="/img/efrem.jpg" class="rounded" width="20" height="20">
                 {{ title_case(Auth::user()->name )}} <b class="caret"></b></a>
               <ul class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Account
