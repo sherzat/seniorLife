@@ -29,5 +29,9 @@ class Self_assessmentController extends Controller
 		return view('pages.self_assessment', $view_data);
 
     }
+    public function show()
+    {
+      return view('pages.mysurvey');
+    }
 
  }

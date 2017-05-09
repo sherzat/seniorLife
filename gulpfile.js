@@ -15,6 +15,7 @@ require('laravel-elixir-webpack-react');
  */
 
 elixir((mix) => {
+
     mix.sass('app.scss')     // compile app.scss to public/css/app.css
        .webpack('app.js'); // compile app.js to public/js/app.js
     mix.sass('new_app.scss');

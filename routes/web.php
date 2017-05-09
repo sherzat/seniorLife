@@ -17,7 +17,10 @@ Route::get('rank', 'PagesController@getRank')->name("Rank");
 Route::get('contact', 'PagesController@getContact');
 Route::get('survey_cake', 'PagesController@getSurvey_cake');
 
-Route::get('mysurvey', 'PagesController@getMysurvey')->name("My Survey");
+Route::get('/mysurvey/{path?}',[
+	'uses'=> 'Self_assessmentController@show',
+	'where'=> ['path' => '.*'],
+])->name("My Survey");
 Route::get('empatica', 'PagesController@getEmpatica')->name("Empatica");
 Route::get('challenges', 'PagesController@getChallenges')->name("Challenges");
 Route::get('achievement', 'PagesController@getAchievement')->name("Achievement");
@@ -43,4 +46,5 @@ Route::get('databaseTest', function(){
 Route::get('/storedata', 'QuestionController@mapQC');
 Auth::routes();
 Route::resource('profile', 'ProfileController');
+
 Route::resource('home', 'HomeController');

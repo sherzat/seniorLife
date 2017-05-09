@@ -89,37 +89,37 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav">
             <li class="nav-item  {{ ends_with(Request::url(), 'home') ? "active" : "" }}">
-              <a class="nav-link" href="home">
+              <a class="nav-link" href={{url("home")}}>
                 <i class="fa fa-home" aria-hidden="true"></i>
                 Home
               </a>
             </li>
             <li class="nav-item {{ ends_with(Request::url(), 'mysurvey') ? "active" : "" }}">
-              <a class="nav-link " href="mysurvey">
+              <a class="nav-link " href={{url("mysurvey")}}>
                 <i class="fa fa-wpforms" aria-hidden="true"></i>
                 MySurvey
               </a>
             </li>
             <li class="nav-item {{ ends_with(Request::url(), 'empatica') ? "active" : "" }}">
-              <a class="nav-link " href="empatica">
+              <a class="nav-link " href={{url("empatica")}}>
                 <i class="fa fa-heartbeat" aria-hidden="true"></i>
                 Empatica
               </a>
             </li>
             <li class="nav-item {{ ends_with(Request::url(), 'challenges') ? "active" : "" }}">
-              <a class="nav-link " href="challenges">
+              <a class="nav-link " href={{url("challenges")}}>
                 <i class="fa fa-certificate" aria-hidden="true"></i>
                 Challenges
               </a>
             </li>
             <li class="nav-item {{ ends_with(Request::url(), 'rank') ? "active" : "" }} mr-auto">
-              <a class="nav-link " href="rank">
+              <a class="nav-link " href={{url("rank")}}>
                 <i class="fa fa-trophy" aria-hidden="true"></i>
                 Rank
               </a>
             </li>
             <li class="nav-item {{ ends_with(Request::url(), 'achievement') ? "active" : "" }} mr-auto">
-              <a class="nav-link " href="achievement">
+              <a class="nav-link " href={{url("achievement")}}>
                 <i class="fa fa-trophy" aria-hidden="true"></i>
                 Achievement
               </a>
@@ -153,7 +153,7 @@
                 </a>
                 <div class="dropdown-divider"></div>
 
-                <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="{{ url('/logout') }}"
+                <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="{{ url('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                   <a class="mr-auto">Sign Out</a>
