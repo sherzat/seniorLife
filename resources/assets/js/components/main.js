@@ -5,9 +5,9 @@ import RankPage from './rank_page/RankPage';
 import Myform from './Myform';
 import NavbarForm from './Navbar';
 import Navbar from './Navbar';
-import Survey from './Survey';
 
-import Router_mysurvey from './my_survey/Router_mysurvey';
+
+import MySurvey  from './mysurvey_page/MySurvey';
 
 
 import AchievementPage from './achievement_page/AchievementPage';
@@ -15,10 +15,10 @@ import HomePage from './home_Page/HomePage';
 import ProfilePage from './profile_page/ProfilePage';
 import ChallengesPage from './challenges_page/ChallengesPage';
 import FooterComponent from './welcome_page/FooterComponent';
-if (document.getElementById('mysurvey')) {
+if (document.getElementById('mysurvey_page')) {
   ReactDOM.render(
-    <Router_mysurvey />,
-      document.getElementById('mysurvey')
+    <MySurvey />,
+      document.getElementById('mysurvey_page')
   );
 }
 
@@ -37,12 +37,6 @@ if (document.getElementById('rank_page')) {
     ReactDOM.render(
         <RankPage />,
         document.getElementById('rank_page'));
-}
-
-if (document.getElementById('survey')) {
-    ReactDOM.render(
-        <Survey url="/survey/new" scale="Circular_scale"/>,
-        document.getElementById('survey'));
 }
 
 

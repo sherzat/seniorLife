@@ -19,6 +19,7 @@
     </script>
   </head>
   <body>
+  <div class="container-fluid w-100 h-100 Rail-way-font">
 
     <nav class="navbar navbar-toggleable-md navbar-light fixed-top bg-nav">
       <div class="container">
@@ -285,11 +286,11 @@
         </div>
       </div>
     </nav>
-    <div class="top-margin">
-      <div class="jumbotron">
+
+<div class="jumbotron">
       @yield('content')
-      </div>
-    </div>
+</div>
+  </div>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="/js/app.js"></script>

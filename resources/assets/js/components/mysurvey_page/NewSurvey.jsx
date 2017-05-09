@@ -1,23 +1,33 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
-class Category extends Component {
 
+
+
+class Category extends Component {
+    constructor(props) {
+        super(props);
+
+
+        this.handleOnclick = this.handleOnclick.bind(this);
+    }
+    handleOnclick() {
+        this.props.handleOnclick()
+        console.log('in category')
+
+    }
   render() {
     return (
       <div className="col-xs-2 mb-2">
-        <Link to="/mysurvey/new_survey">
-        <div className="card text-center" >
+        <button className="card text-center" onClick={this.handleOnclick} >
           <div className="card-block">
             <img className="card-img-top"
-              src="/img/categorys/002-businessman.svg"
+              src={this.props.img_src}
               alt="Image Community life"
               width="auto"
               height="80"
               />
             <p className="card-text">{this.props.name}</p>
           </div>
-        </div>
-        </Link>
+        </button>
       </div>
     );
   }
@@ -27,21 +37,21 @@ class NewSurvey extends Component {
   render () {
     var url="/survey/new";
     var categorys = [
-      {id: 0, name: "Community life"},
-      {id: 1, name: "Education"},
-      {id: 2, name: "Fitness"},
-      {id: 3, name: "Nutrition"},
-      {id: 4, name: "Personal care"},
-      {id: 5, name: "Health"},
-      {id: 6, name: "Relationship"},
-      {id: 7, name: "Comunication"},
-      {id: 8, name: "Recreativity"},
-      {id: 9, name: "Housing"},
+      {id: 0, name: "Community life", img_src:"/img/categorys/003-people.svg"},
+      {id: 1, name: "Education", img_src:"/img/categorys/006-learning.svg" },
+      {id: 2, name: "Fitness", img_src:"/img/categorys/008-dumbbell.svg"},
+      {id: 3, name: "Nutrition", img_src:"/img/categorys/010-fruit-salad.svg"},
+      {id: 4, name: "Personal care", img_src:"/img/categorys/005-doctor.svg"},
+      {id: 5, name: "Health", img_src:"/img/categorys/009-hospital.svg"},
+      {id: 6, name: "Relationship", img_src:"/img/categorys/people.svg"},
+      {id: 7, name: "Comunication", img_src:"/img/categorys/001-chat.svg"},
+      {id: 8, name: "Recreativity", img_src:"/img/categorys/002-businessman.svg"},
+      {id: 9, name: "Housing", img_src:"/img/categorys/004-construction.svg"},
     ]
 
 
     var toReturns = categorys.map(category=>{
-      return <Category key={category.id} name={category.name}/>
+      return <Category key={category.id} name={category.name} img_src = {category.img_src} handleOnclick={this.props.handleOnclick} />
     });
     return (
       <div className="row">
