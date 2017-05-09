@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import RankPage from './rank_page/RankPage';
+
 import Myform from './Myform';
 import NavbarForm from './Navbar';
 import Navbar from './Navbar';
@@ -15,6 +16,7 @@ import HomePage from './home_Page/HomePage';
 import ProfilePage from './profile_page/ProfilePage';
 import ChallengesPage from './challenges_page/ChallengesPage';
 import FooterComponent from './welcome_page/FooterComponent';
+
 if (document.getElementById('mysurvey_page')) {
   ReactDOM.render(
     <MySurvey />,
