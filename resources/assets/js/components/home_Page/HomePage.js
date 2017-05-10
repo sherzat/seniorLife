@@ -2,17 +2,18 @@
 import React, { Component } from 'react';
 import HomepageProgressBar from './HomepageProgressBar';
 import HomepageCircularPiechart from './HomepageCircularPiechart';
-import HomePageCarousel from './HomepageCarousel';
+import HomepageCarousel from './HomepageCarousel';
 
 class HomePage extends  Component {
     constructor(props) {
         super(props);
-        this.state = {home:[],};
+        this.state = {home:[],loaded:false};
+        this.getData=this.getData.bind(this);
     }
 
     /*//sending request to get the gol value*/
 
-    componentWillMount() {
+    getData() {
         var url ="/home/1";
         $.ajax({
             method: "GET",
@@ -21,14 +22,19 @@ class HomePage extends  Component {
             .done(function( result ) {
 
                 console.log(result)
-                this.setState({home:result});
+                this.setState({home:result ,loaded:true});
 
             }.bind(this))
     }
+    componentWillMount(){
+        this.getData();
+    }
+    componentDidMount(){
 
+    }
     render(){
-
-
+        if(!this.state.loaded)
+            return (<h>loading</h>);
         return (
             <div>
 
@@ -145,7 +151,7 @@ class HomePage extends  Component {
 
                                 {/*<!-- Image -->*/}
 
-                                <HomePageCarousel/>
+                              <HomepageCarousel badges={this.state.home.badges} />
 
                                 {/*<!-- Text Content -->*/}
 
