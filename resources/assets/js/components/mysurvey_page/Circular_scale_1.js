@@ -25,7 +25,7 @@ class Circular_scale_1 extends Component {
 	render() {
         return (
             <div className="menu-wrapper">
-                <svg viewBox="0 0 700 360" preserveAspectRatio="xMinYMin meet"
+                <svg viewBox="-50 18 820 350" preserveAspectRatio="xMinYMin meet"
                   className="svg-content" id="menu" xmlns="http://www.w3.org/2000/svg">
                     <g>
                         <title>Layer 1</title>
