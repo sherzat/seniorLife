@@ -7,7 +7,6 @@ import Question from './Question';
 import Progress from 'react-progressbar';
 //import createFragment from 'react-addons-create-fragment'; // ES6
 import Slider_scale from '../Slider_scale';
-import Balloon from 'react-balloon';
 
 class Survey extends Component {
   constructor(props) {

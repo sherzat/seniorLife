@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Survey', 'survey_users');
     }
+
+    public function achievements()
+    {
+        return $this->belongsToMany('App\Achievement');
+    }
 }

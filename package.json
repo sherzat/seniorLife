@@ -25,6 +25,7 @@
     "react-modal-dialog": "^4.0.7",
     "react-progressbar": "^1.4.6",
     "react-rangeslider": "^2.0.1",
+    "react-responsive-carousel": "^3.1.15",
     "react-router-dom": "^4.1.1",
     "recharts": "^0.22.4"
   }

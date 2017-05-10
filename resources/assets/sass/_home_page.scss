@@ -3,7 +3,6 @@
  *
  * All of the styles in this file are optional and configurable!
  */
-@import "progressbar";
 .CircularProgressbar {
   /*
    * This fixes an issue where the CircularProgressbar svg has
@@ -92,4 +91,13 @@ color:$midnight-blue ;
 
 .react-progressbar{
   width: 20%;
+}
+
+.coverflow__container__1P-xE
+{
+  position: relative;
+  background: white !important;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
 }
