@@ -58,11 +58,11 @@ class SurveyController extends Controller
         }
 
         //$prepare_questions = \App\Question::whereNotIn('id',$asked_questions)
-        $prepare_questions = \App\Question::limit(10)
+        $prepare_questions = \App\Question::select("id","question")->limit(10)
             ->with('choices')
             ->get();
-        $view_data['prepare_questions'] = $prepare_questions;
-        return  json_encode($view_data);
+
+        return  json_encode($prepare_questions);
 
     }
 

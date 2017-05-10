@@ -27,8 +27,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/mysurvey';
-    protected $loginPath = '/login';
+    protected $redirectTo = '/home';
+    
 
 
     /**
