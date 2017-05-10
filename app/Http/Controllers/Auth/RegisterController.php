@@ -79,7 +79,7 @@ class RegisterController extends Controller
         {
              return redirect('register')->withErrors($validator)->withInput();
         }
-        event(new Registered($user));
+        event(new Registered($user = $this->create($request->all())));
         $this->guard()->login($user);
         // Success redirection - which will be attribute `$redirectTo`
 

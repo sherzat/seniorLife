@@ -18,11 +18,13 @@ class Survey extends Component {
     };
     this.handleNextButton= this.handleNextButton.bind(this);
     this.handleAnswer= this.handleAnswer.bind(this);
+    this.sendAnswers=this.sendAnswers.bind(this);
   }
 
   handleNextButton(clicked_item){
     if(this.state.answer!=null){
         console.log("go to sendAnswers()");
+        this.sendAnswers();
     }
     this.setState({
       currentQuestionId: this.state.currentQuestionId+1,
@@ -34,6 +36,34 @@ class Survey extends Component {
   handleAnswer(answer){
     console.log(answer);
     this.setState({answer:answer});
+  }
+
+  sendAnswers(){
+    if(this.state.answer == null)
+      return
+    var answer={question_id: this.state.currentQuestionId, choice_id: this.state.answer};
+    console.log(answer);
+    $.ajax({
+      
+      headers: {
+       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+
+      type: "POST",
+      url: "/survey/store",
+      dataType: 'json',
+      data: {data: answer},
+      success: function (response) {
+        // you will get response from your php page (what you echo or print)
+        console.log(response);
+
+      }.bind(this),
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log(textStatus, errorThrown);
+      }.bind(this),
+
+      dataType: "text",
+    });
   }
   componentWillMount(){
     $.ajax({
