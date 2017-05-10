@@ -28,7 +28,7 @@ class SurveyResult extends Component {
 										<p className="card-text">
 											From here you can view more about the results of the surveys you have completed.
 										</p>
-										<a href="#" className="btn btn-primary">
+										<a href="#" className="btn btn-success">
 											Read More
 										</a>
 									</div>

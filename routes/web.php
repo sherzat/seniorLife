@@ -11,7 +11,6 @@
 |
 */
 Route::get('/', 'WelcomeController@welcome');
-Route::get('home', 'PagesController@getHome')->name("Home");
 
 Route::get('rank', 'PagesController@getRank')->name("Rank");
 Route::get('contact', 'PagesController@getContact');
@@ -46,5 +45,7 @@ Route::get('databaseTest', function(){
 Route::get('/storedata', 'QuestionController@mapQC');
 Auth::routes();
 Route::resource('profile', 'ProfileController');
+Route::get('profile', 'ProfileController@index')->name("Profile");
 
 Route::resource('home', 'HomeController');
+Route::get('home', 'HomeController@index')->name("Home");
