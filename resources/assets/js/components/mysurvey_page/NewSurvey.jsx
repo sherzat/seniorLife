@@ -55,7 +55,7 @@ class NewSurvey extends Component {
       return <Category key={category.id} name={category.name} img_src = {category.img_src} handleOnclick={this.props.handleOnclick} />
     });
     return (
-      <div className="row">
+      <div className="row mt-2 Rail-way-font">
         <div className="col-md-12 col-xs-12">
           <div className="card mx-auto">
             <div className="row">
@@ -74,8 +74,6 @@ class NewSurvey extends Component {
                 <div className="card-block">
                     <div className="row justify-content-wrap ">
                       {toReturns}
-
-
                     </div>
                 </div>
               </div>

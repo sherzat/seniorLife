@@ -2,17 +2,18 @@
 import React, { Component } from 'react';
 import HomepageProgressBar from './HomepageProgressBar';
 import HomepageCircularPiechart from './HomepageCircularPiechart';
+import HomepageCarousel from './HomepageCarousel';
 
 class HomePage extends  Component {
     constructor(props) {
         super(props);
-        this.state = {home:[],};
-
+        this.state = {home:[],loaded:false};
+        this.getData=this.getData.bind(this);
     }
 
     /*//sending request to get the gol value*/
 
-    componentWillMount() {
+    getData() {
         var url ="/home/1";
         $.ajax({
             method: "GET",
@@ -21,14 +22,19 @@ class HomePage extends  Component {
             .done(function( result ) {
 
                 console.log(result)
-                this.setState({home:result});
+                this.setState({home:result ,loaded:true});
 
             }.bind(this))
     }
+    componentWillMount(){
+        this.getData();
+    }
+    componentDidMount(){
 
+    }
     render(){
-
-
+        if(!this.state.loaded)
+            return (<h>loading</h>);
         return (
             <div>
 
@@ -145,61 +151,7 @@ class HomePage extends  Component {
 
                                 {/*<!-- Image -->*/}
 
-                                <div className="card-block p-1">
-                                    <div id="myCarousel" className="carousel slide" data-ride="carousel">
-
-                                        <ol className="carousel-indicators">
-                                            <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
-                                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                                        </ol>
-
-                                        <div className="carousel-inner" role="listbox">
-
-                                            <div className="carousel-item active">
-                                                <div className="mx-auto">
-
-                                                    {/*<img
-                                                        className="d-block img-fluid ml-auto mr-auto slider_image_item "
-                                                        src={this.state.home.badges[0]} alt="First slide"></img>*/}
-                                                </div>
-
-                                            </div>
-
-
-                                            <div className="carousel-item">
-                                                <div className="mx-auto">
-                                                  {/* <img
-                                                 className="d-block img-fluid ml-auto mr-auto slider_image_item "
-                                                 src={this.state.home.badges[1]} alt="Second slide"></img>
-*/}
-                                                </div>
-                                            </div>
-
-
-                                            <div className="carousel-item">
-                                                <div className="mx-auto">
-                                                  {/*<img
-                                                        className="d-block img-fluid ml-auto mr-auto slider_image_item "
-                                                        src={this.state.home.badges[2]} alt="Third slide"></img>*/}
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <a className="carousel-control-prev" href="#myCarousel" role="button"
-                                           data-slide="prev">
-                                            <i className="fa fa-chevron-left" aria-hidden="true"></i>
-                                            <span className="sr-only">Previous</span>
-                                        </a>
-                                        <a className="carousel-control-next" href="#myCarousel" role="button"
-                                           data-slide="next">
-                                            <i className="fa fa-chevron-right" aria-hidden="true"></i>
-                                            <span className="sr-only">Next</span>
-                                        </a>
-                                    </div>
-                                </div>
+                              <HomepageCarousel badges={this.state.home.badges} />
 
                                 {/*<!-- Text Content -->*/}
 

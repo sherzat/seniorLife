@@ -1,15 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-  public function __construct()
-  {
-      $this->middleware('auth');
-  }
+
+    public function __construct()
+{
+    $this->middleware('auth');
+}
     /**
      * Display a listing of the resource.
      *
@@ -55,20 +56,7 @@ class HomeController extends Controller
             'survey' => 7,
             'progress_points' => 70,
             'level' => 2,
-            'badges' => array(
-                array(
-                    'id'=>0,
-                    'path' => '/img/badges/first_survey.png',
-                ),
-                array(
-                    'id'=>1,
-                    'path' => '/img/badges/keeep_it_up.png',
-                ),
-                 array(
-                     'id'=>2,
-                     'path' => '/img/badges/regular.png',
-                 ),
-            )
+            'badges' => Auth::user()->achievements()->select('badge')->get(),
         );
 
 
