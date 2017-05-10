@@ -295,9 +295,7 @@
         </div>
     </nav>
 
-    <div class="jumbotron">
         @yield('content')
-    </div>
 
 </div>
 

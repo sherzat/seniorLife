@@ -102,12 +102,12 @@ class Survey extends Component {
             scale_component= <Slider_scale />;
         }
         return(
-            <div className="container-fluid" id="survey">
+            <div className="container" id="survey">
               <div className="card">
                 <div className="card-header">
                   <div className="row justify-content-between">
-                    <div className="col-sd-10 align-self-center"><Progress completed={33} className={"w-100"}/></div>
-                    <div className="col-sd-2  d-flex justify-content-end"><button>Go back</button></div>
+                    <div className="col-sm-10 align-self-center"><Progress completed={33} className={""}/></div>
+                    <div className="col-sm-2  d-flex justify-content-end"><button>Go back</button></div>
                   </div>
                 </div>
 
@@ -122,7 +122,7 @@ class Survey extends Component {
                       </div>
                     </div>
                     <div className="col-md-9 col-sm-12 ">
-                      <div className="row ">
+                      <div className="row " style={{height:"30%"}}>
                         <div className="col-md-12 d-flex">
                         <div className="talk-bubble tri-right left-in">
                           <div className="talktext">
