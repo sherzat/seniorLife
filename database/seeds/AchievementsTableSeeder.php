@@ -13,7 +13,7 @@ class AchievementsTableSeeder extends Seeder
     {
         DB::table('achievements')->insert([
             ['point' =>(10),
-            'title' => ('welcome badge'),
+            'title' => ('welcome aboard'),
             'description' => ('you have registered successfully'),
             'badge' => ('/img/badges/welcome_aboard.png'),],
 
