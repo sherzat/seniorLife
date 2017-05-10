@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Events\Onregister;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -69,6 +70,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
     }
 
     public function register(Request $request)
@@ -79,10 +81,10 @@ class RegisterController extends Controller
         {
              return redirect('register')->withErrors($validator)->withInput();
         }
-        event(new Registered($user));
+        event(new Registered($user = $this->create($request->all())));
         $this->guard()->login($user);
         // Success redirection - which will be attribute `$redirectTo`
-
+        event(new Onregister());
         return redirect($this->redirectPath());
     }
 }

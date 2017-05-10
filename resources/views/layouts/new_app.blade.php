@@ -8,15 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/new_app.css">
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Scripts -->
-    <script>
-        window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-        ]); ?>
-    </script>
 </head>
 <body>
 <div class="container-fluid w-100 h-100 Rail-way-font">
@@ -33,64 +25,6 @@
             <a class="nav-active-menu-sm hidden-lg-up" href="#">
                 {{Route::currentRouteName()}}
             </a>
-
-            <!--PROFILE on the navbar in small screens -->
-            {{-- <div class="profile ml-auto hidden-lg-up" >
-              <a class="" data-toggle="dropdown" href="#">
-                <img src="/img/efrem.jpg " class="rounded" width="20" height="20">
-                {{ title_case(Auth::user()->name )}} <span class="caret"></span></a>
-
-              <ul class="dropdown-menu dropdown-menu-right">
-                  <li class="dropdown-item list-group-item border-0">
-                    <div class="navbar-login">
-                      <div class="row">
-                        <div class="col-lg-4">
-                          <p class="text-center">
-                            <i class="fa fa-user fa-5x" aria-hidden="true"></i>
-                          </p>
-                        </div>
-                        <div class="col-lg-8">
-                          <p class="text-left"><strong>Efrem Gebremedhin</strong></p>
-                          <p class="text-left small">effer.vision@gmail.com</p>
-                          <p class="text-left">
-                            <a href="#" class="btn btn-success btn-block btn-sm"
-                            style="background-color:$emerald">Profile</a>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <div class="dropdown-divider"></div>
-
-                  <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Account
-                    Settings </a>
-                    <i class="fa fa-cog" aria-hidden="true"></i>
-                  </a>
-                  <div class="dropdown-divider"></div>
-
-                  <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">User
-                    stats</a>
-                    <i class="fa fa-area-chart" aria-hidden="true"></i>
-                  </a>
-                  <div class="dropdown-divider"></div>
-
-                  <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Messages </a>
-                    <span class="badge badge-default badge-pill"> 42 </span>
-                  </a>
-                  <div class="dropdown-divider"></div>
-
-                  <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="{{ url('/logout') }}"
-                  onclick="event.preventDefault();
-                  document.getElementById('logout-form').submit();">
-                    <a class="mr-auto">Sign Out</a>
-                    <i class="fa fa-sign-out" aria-hidden="true"></i>
-                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                      {{ csrf_field() }}
-                    </form>
-
-                  </a>
-                </ul>
-            </div> --}}
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
@@ -133,34 +67,20 @@
                     {{-- PROFILE is in the collapsed meneu in sm screen --}}
                     <li class="nav-item profile hidden-lg-up">
                         <a class="nav-link" data-toggle="dropdown" href="#">
-                            <img src="/img/efrem.jpg " class="rounded" width="20" height="20">
+                            <img src={{ Auth::user()->avatar }} class="rounded" width="20" height="20">
                             {{ title_case(Auth::user()->name )}} <b class="caret"></b></a>
                         <ul class="dropdown-menu dropdown-menu-right">
 
-                            <button class="dropdown-item Bg-color-cloud list-group-item border-0 pt-2 pb-2" onclick="window.location.href='/profile'"><a class="mr-auto">Change profile Picture </a>
+                            <button class="dropdown-item Bg-color-cloud list-group-item border-0 pt-2 pb-2"
+                                    onclick="window.location.href='/profile'"><a class="mr-auto">Change profile
+                                    Picture </a>
                                 <i class="fa fa-cog" aria-hidden="true"></i>
                             </button>
 
                             <div class="dropdown-divider Bg-color-midnight"></div>
 
-                           {{-- <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Account
-                                    Settings </a>
-                                <i class="fa fa-cog" aria-hidden="true"></i>
-                            </a>
-                            <div class="dropdown-divider"></div>
-
-                            <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">User
-                                    stats</a>
-                                <i class="fa fa-area-chart" aria-hidden="true"></i>
-                            </a>
-                            <div class="dropdown-divider"></div>
-
-                            <a class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Messages </a>
-                                <span class="badge badge-default badge-pill"> 42 </span>
-                            </a>
-                            <div class="dropdown-divider"></div>--}}
-
-                            <button class="dropdown-item border-0 Bg-color-cloud list-group-item border-0 pt-2 pb-2" href="{{ url('logout') }}"
+                            <button class="dropdown-item border-0 Bg-color-cloud list-group-item border-0 pt-2 pb-2"
+                                    href="{{ url('logout') }}"
                                     onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                                 <a class="mr-auto">Sign Out</a>
@@ -177,7 +97,8 @@
 
                 <div class="navbar-nav ml-auto hidden-md-down">
                     <a class="nav-link" data-toggle="dropdown" href="#">
-                        <img src={{ Auth::user()->avatar }} class="rounded" width="20" height="20" style="margin-bottom: 4px">
+                        <img src={{ Auth::user()->avatar }} class="rounded" width="20" height="20"
+                             style="margin-bottom: 4px">
                         {{ title_case(Auth::user()->name )}} <b class="caret"></b></a>
                     <ul class="dropdown-menu p-3 m-2 dropdown-menu-right">
                         <li class="dropdown-item list-group-item border-0">
@@ -185,15 +106,15 @@
                                 <div class="row">
                                     <div class="col-lg-4 p-0">
                                         <p class="text-center">
-                                            <img src={{ Auth::user()->avatar }} class="rounded">
+                                            <img src={{ Auth::user()->avatar }} class="rounded" width="100" height="100">
                                         </p>
                                     </div>
                                     <div class="col-lg-8">
-                                        <p class="text-left"><strong>Efrem Gebremedhin</strong></p>
-                                        <p class="text-left small">effer.vision@gmail.com</p>
+                                        <p class="text-left"><strong> {{ title_case(Auth::user()->name )}}</strong></p>
+                                        <p class="text-left small">{{ Auth::user()->email }}</p>
                                         <p class="text-left">
-                                            <a href="{{url('profile')}}" class ="btn btn-success btn-block btn-sm" >
-                                            Profile</a>
+                                            <a href="{{url('profile')}}" class="btn btn-success btn-block btn-sm">
+                                                Profile</a>
                                         </p>
                                     </div>
                                 </div>
@@ -225,77 +146,18 @@
                             <a class="mr-auto">Sign Out</a>
                             <i class="fa fa-sign-out" aria-hidden="true"></i>
                             <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
+                                {{  csrf_field() }}
                             </form>
                         </button>
                     </ul>
                 </div>
 
 
-                {{-- <a class="navbar-toggler navbar-toggler-right m-2 Bar-cloud hidden-md-down border-0" data-toggle="dropdown"
-                   id="navbarDropdownMenuLink2" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                   aria-label="Toggle navigation">
-                    <img src="/img/efrem.jpg " class="rounded" width="20" height="20">
-                    <i class="fa fa-caret-down" aria-hidden="true"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right"
-                     aria-labelledby="navbarDropdownMenuLink2">
-
-                    <li class="dropdown-item list-group-item border-0 pt-2 pb-2">
-                        <div class="navbar-login">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <p class="text-center">
-                                        <i class="fa fa-user fa-5x" aria-hidden="true"></i>
-                                    </p>
-                                </div>
-                                <div class="col-lg-8">
-                                    <p class="text-left"><strong>Efrem Gebremedhin</strong></p>
-                                    <p class="text-left small">effer.vision@gmail.com</p>
-                                    <p class="text-left">
-                                        <a href="#" class="btn btn-success btn-block btn-sm"
-                                           style="background-color:$emerald">Profile</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <div class="dropdown-divider"></div>
-
-                    <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Account
-                            Settings </a>
-                        <i class="fa fa-cog" aria-hidden="true"></i>
-                    </button>
-                    <div class="dropdown-divider"></div>
-
-                    <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">User
-                            stats</a>
-                        <i class="fa fa-area-chart" aria-hidden="true"></i>
-                    </button>
-                    <div class="dropdown-divider"></div>
-
-                    <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Messages </a>
-                        <span class="badge badge-default badge-pill"> 42 </span>
-                    </button>
-                    <div class="dropdown-divider"></div>
-
-                    <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="{{ url('/logout') }}"
-                            onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();"><a
-                                class="mr-auto">Sign Out</a>
-                        <i class="fa fa-sign-out" aria-hidden="true"></i>
-                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
-                    </button>
-                </div> --}}
-
-
             </div>
         </div>
     </nav>
 
-        @yield('content')
+    @yield('content')
 
 </div>
 
