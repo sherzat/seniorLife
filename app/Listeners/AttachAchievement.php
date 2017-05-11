@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Listeners;
-use App\Events\Onregister;
+use App\Events\OnRegister;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +23,7 @@ class AttachAchievement
      * @param  Onregister  $event
      * @return void
      */
-    public function handle(Onregister $event)
+    public function handle(OnRegister $event)
     {
         $id = \App\Achievement::select('id')
             ->where('title','welcome aboard')

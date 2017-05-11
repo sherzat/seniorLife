@@ -5,33 +5,38 @@ class Circular_scale_1 extends Component {
     super(props);
     this.state = {
       rotate_degree: "rotate(-180 350,332.91281127929693)" ,
+      choice_id:null,
     };
     this.handleClick= this.handleClick.bind(this);
   }
   handleClick(event){
+    const choices= this.props.choices.map(
+      (each)=>
+        each.id
+    );
     const clicked_item= event.target.parentElement.id;
     var choice_id="";
     if(clicked_item == "item-1"){
-      choice_id=0;
+      choice_id = choices[0];
       this.setState({rotate_degree: "rotate(-18 350,323.01281127929693)" });
     }
     if(clicked_item == "item-2"){
-      choice_id=1;
+      choice_id=choices[1];
       this.setState({rotate_degree: "rotate(-54 350,323.01281127929693)" });
     }
     if(clicked_item == "item-3"){
-      choice_id=2;
+      choice_id=choices[2];
       this.setState({rotate_degree: "rotate(-90 350,323.01281127929693)" });
     }
     if(clicked_item == "item-4"){
-      choice_id=3;
+      choice_id=choices[3];
       this.setState({rotate_degree: "rotate(-126 350,323.01281127929693)" });
     }
     if(clicked_item == "item-5"){
-      choice_id=4;
+      choice_id=choices[4];
       this.setState({rotate_degree: "rotate(-162 350,323.01281127929693)" });
     }
-    this.props.handleAnswer(choice_id);
+    this.props.handleAnswer(choice_id, this.props.question_id);
   }
   render() {
     const choices= this.props.choices.map(

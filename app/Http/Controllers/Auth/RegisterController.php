@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Events\Onregister;
+use App\Events\OnRegister;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -84,7 +84,7 @@ class RegisterController extends Controller
         event(new Registered($user = $this->create($request->all())));
         $this->guard()->login($user);
         // Success redirection - which will be attribute `$redirectTo`
-        event(new Onregister());
+        event(new OnRegister());
         return redirect($this->redirectPath());
     }
 }

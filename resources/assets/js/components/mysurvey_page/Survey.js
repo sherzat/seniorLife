@@ -13,38 +13,40 @@ class Survey extends Component {
     super(props);
     this.state = {
       data:[],
-      currentQuestionId: null,
+      currentQuestion: null,
       answer:null,
+      question_id:null,
+      score:0,
     };
     this.handleNextButton= this.handleNextButton.bind(this);
     this.handleAnswer= this.handleAnswer.bind(this);
     this.sendAnswers=this.sendAnswers.bind(this);
   }
 
-  handleNextButton(clicked_item){
+  handleNextButton(){
     if(this.state.answer!=null){
         console.log("go to sendAnswers()");
         this.sendAnswers();
     }
     this.setState({
-      currentQuestionId: this.state.currentQuestionId+1,
+      currentQuestion: this.state.currentQuestion+1,
       answer:null,
       });
 
 
   }
-  handleAnswer(answer){
+  handleAnswer(answer, question_id){
     console.log(answer);
-    this.setState({answer:answer});
+    this.setState({answer:answer, question_id: question_id});
   }
 
   sendAnswers(){
     if(this.state.answer == null)
       return
-    var answer={question_id: this.state.currentQuestionId, choice_id: this.state.answer};
+    var answer={question_id: this.state.question_id, choice_id: this.state.answer};
     console.log(answer);
     $.ajax({
-      
+
       headers: {
        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       },
@@ -56,6 +58,7 @@ class Survey extends Component {
       success: function (response) {
         // you will get response from your php page (what you echo or print)
         console.log(response);
+        this.setState({score: this.state.score +1 });
 
       }.bind(this),
       error: function(jqXHR, textStatus, errorThrown) {
@@ -73,7 +76,7 @@ class Survey extends Component {
     })
     .done(function( result ) {
 
-      this.setState({data:result, currentQuestionId:0}, function(){
+      this.setState({data:result, currentQuestion:0}, function(){
       });
     }.bind(this))
   }
@@ -85,7 +88,7 @@ class Survey extends Component {
       <Question key={each.id} question={each.question} />
     );
     const choices_for_q= this.state.data.map((each)=>
-      <Circular_scale_1 key={each.id} choices={each.choices} handleAnswer={this.handleAnswer}/>
+      <Circular_scale_1 key={each.id} question_id={each.id} choices={each.choices} handleAnswer={this.handleAnswer}/>
     );
     return(
       <div className="container" id="survey">
@@ -103,7 +106,7 @@ class Survey extends Component {
                 <img className="card-img-top" src="/img/avatars/default/default-user.png" width="200" height="200"></img>
                 <div className="card-block">
                   <div className="col-md-3 col-sm-12">
-                    Score
+                    Score: {this.state.score}
                   </div>
                 </div>
               </div>
@@ -112,14 +115,14 @@ class Survey extends Component {
                   <div className="col-md-12 d-flex">
                     <div className="talk-bubble tri-right left-in">
                       <div className="talktext">
-                        {survey_question[this.state.currentQuestionId]}
+                        {survey_question[this.state.currentQuestion]}
                       </div>
                     </div>
                     <button className="next-btn" onClick={this.handleNextButton}><i className="fa fa-angle-right" aria-hidden="true"></i></button>
                   </div>
                 </div>
                 <div className="row">
-                  {choices_for_q[this.state.currentQuestionId]}
+                  {choices_for_q[this.state.currentQuestion]}
                   <div className="col-md-12">
                   </div>
                 </div>

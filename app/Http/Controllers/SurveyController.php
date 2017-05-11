@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewSurvey;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Survey;
@@ -74,48 +75,9 @@ class SurveyController extends Controller
     $question_id = $request->input("data.question_id");
     $choice_id = $request->input("data.choice_id");
 
+    //fire the NewSurvey event to save response
+    event(new NewSurvey($user, $question_id, $choice_id));
 
-
-    //$user->surveys()->attach()
-
-    return $choice_id;
-    // var_dump($responsed_choices = json_decode($request->input('data')));
-    // //$user = $survey->users->where('id', $user_id)->first();
-    // $survey = new \App\Survey;
-    // $survey->name = 'test1';
-    // $survey->description = 'test descreiption';
-    // $survey->save();
-    //
-    // $survey->users()->attach($user_id);
-    // $choice_id = null;
-    // foreach ($responsed_choices as $value)
-    // {
-    //   //var_dump($value);
-    //   //print $value->id;
-    //   $survey->questions()->attach($value->id);
-    //   if($value->answer == 'svg_11') //5
-    //   $choice_id = 5;
-    //   if($value->answer == 'svg_13') //4
-    //   $choice_id = 4;
-    //   if($value->answer == 'svg_15') //3
-    //   $choice_id = 3;
-    //   if($value->answer == 'svg_17') //2
-    //   $choice_id = 2;
-    //   if($value->answer == 'svg_19') //1
-    //   $choice_id = 1;
-    //
-    //   print ($choice_id);
-    //   $choice = \App\Choice::where('id', '1')->first();
-    //   $question = $survey->questions->where('id', $value->id)->first();
-    //   $response = new \App\Response;
-    //   $response->users()->associate($user_id);
-    //   $response->questions()->associate($question);
-    //   $response->choices()->associate($choice);
-    //   $response->surveys()->associate($survey);
-    //   $response->save();
-    // }
-
-    //return  redirect()->route('detail.survey', [$survey->id]);
-
+    return "success";
   }
 }
