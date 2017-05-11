@@ -14,13 +14,14 @@ class SurveyController extends Controller
   {
     $this->middleware('auth');
   }
-
-  public function detailed_survey(Survey $survey)
+  public function survey_result()
   {
-
-    // $view_data['survey'] = $survey;
-    return view('survey.detail', $view_data);
+    $user=Auth::user();
+    $surveyResult = $user->getSurveyResult();
+    return json_encode($surveyResult);
   }
+
+
 
 
   public function create_survey()

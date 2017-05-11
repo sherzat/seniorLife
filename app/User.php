@@ -4,6 +4,7 @@ namespace App;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -45,5 +46,17 @@ class User extends Authenticatable
     public function achievements()
     {
         return $this->belongsToMany('App\Achievement');
+    }
+
+    public function getSurveyResult()
+    {
+        $result= $this->responses()
+        ->select(DB::raw("avg(weight) as score, hour(time(responses.created_at)) as hour" ))
+        ->join('choices', 'responses.choice_id', '=', 'choices.id')
+        ->groupBy(DB::raw("hour" ))
+        ->orderBy(DB::raw("hour"))
+        ->get();
+
+      return $result;
     }
 }
