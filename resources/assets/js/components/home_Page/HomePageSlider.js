@@ -1,10 +1,11 @@
 
+
 import React, { Component } from 'react'
 import Slider from 'react-rangeslider'
 
-class Slider_scale extends Component {
+class HomePageSlider extends Component {
 
-  constructor (props, context) {
+    constructor (props, context) {
         super(props, context)
         this.state = {
             value: 10
@@ -33,7 +34,6 @@ class Slider_scale extends Component {
         return (
 
             <div className='slider'>
-                <h2 className="text-progress-settings"> Express your fillings </h2>
                 <Slider
                     min={0}
                     max={100}
@@ -48,4 +48,4 @@ class Slider_scale extends Component {
         )
     }
 }
-export default Slider_scale;
+export default HomePageSlider;

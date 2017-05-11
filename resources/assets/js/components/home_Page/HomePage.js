@@ -151,7 +151,7 @@ class HomePage extends  Component {
 
                                 {/*<!-- Image -->*/}
 
-                              <HomepageCarousel badges={this.state.home.badges} />
+                              {/*<HomepageCarousel badges={this.state.home.badges} />*/}
 
                                 {/*<!-- Text Content -->*/}
 

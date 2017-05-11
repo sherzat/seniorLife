@@ -44,9 +44,9 @@ class Circular_scale_1 extends Component {
         each.choice
     );
     return (
-      <div className="menu-wrapper">
+      <div className="svg-container">
 
-        <svg viewBox="-50 18 820 350" preserveAspectRatio="xMinYMin meet"
+        <svg viewBox="20 0 650 380 " preserveAspectRatio="xMinYMin meet"
           className="svg-content" id="menu" xmlns="http://www.w3.org/2000/svg">
           <g>
             <title>Layer 1</title>
@@ -155,23 +155,23 @@ class Circular_scale_1 extends Component {
             </g>
             <g id="itemsContainer">
               <a id="item-1" className="item" role="button" onClick={this.handleClick}>
-                <path id="svg_11" className="sector" d="m454.62421,323.170522l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#111" fill="#00bfa5"/>
+                <path id="svg_11" className="sector" d="m454.62421,323.170522l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#ecbd8e" fill="#eb4841"/>
                 <use id="svg_12" transform="rotate(72 539.8355712890624,261.3672790527344) " y="226.867131" x="505.335514" height="69" width="69" href="#icon-1"/>
               </a>
               <a transform="matrix(0.80901,-0.58778,0.58778,0.80901,-99.20056166685515,194.69206447938143) " id="item-2" className="item" role="button" onClick={this.handleClick}>
-                <path id="svg_13" className="sector" d="m392.589471,367.75486l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#111" fill="#00c853"/>
+                <path id="svg_13" className="sector" d="m392.589471,367.75486l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#ecbd8e" fill="#f48847"/>
                 <use id="svg_14" transform="rotate(72 477.80078125,305.9515686035156) " y="271.45147" x="443.300775" height="69" width="69" href="#icon-2"/>
               </a>
               <a transform="matrix(0.30901,-0.95105,0.95105,0.30901,-65.01837766752521,410.5098804800515) " id="item-3" className="item" role="button" onClick={this.handleClick}>
-                <path id="svg_15" className="sector" d="m316.195403,367.359987l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#111" fill="#64dd17"/>
+                <path id="svg_15" className="sector" d="m316.195403,367.359987l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#ecbd8e" fill="#ffc84a"/>
                 <use id="svg_16" transform="rotate(72 401.4067687988282,305.55664062500006) " y="271.056597" x="366.906707" height="69" width="69" href="#icon-3"/>
               </a>
               <a transform="matrix(-0.30901,-0.95105,0.95105,-0.30901,89.49011951994842,565.0183776675252) " id="item-4" className="item" role="button" onClick={this.handleClick}>
-                <path id="svg_17" className="sector" d="m254.624614,322.138391l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#111" fill="#aeea00"/>
+                <path id="svg_17" className="sector" d="m254.624614,322.138391l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#ecbd8e" fill="#a6c34c"/>
                 <use id="svg_18" transform="rotate(72 339.83590698242193,260.3349914550781) " y="225.835001" x="305.335918" height="69" width="69" href="#icon-4"/>
               </a>
               <a transform="matrix(-0.80901,-0.58778,0.58778,-0.80901,305.3079355206185,599.2005616668552) " id="item-5" className="item" role="button" onClick={this.handleClick}>
-                <path id="svg_19" className="sector" d="m231.392693,249.361427l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#111" fill="#ffd600"/>
+                <path id="svg_19" className="sector" d="m231.392693,249.361427l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#ecbd8e" fill="#4dbf4d"/>
                 <use id="svg_20" transform="rotate(72 316.6041259765625,187.55796813964844) " y="153.058037" x="282.103996" height="69" width="69" href="#icon-5"/>
               </a>
             </g>

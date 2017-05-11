@@ -4,10 +4,11 @@
 .rangeslider {
   margin: 0px 0;
   position: relative;
-  background: teal;
+  background: $emerald;
 }
 .rangeslider,
 .rangeslider .rangeslider__fill {
+
   display: block;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
 }
@@ -51,30 +52,30 @@
 * Rangeslider - Horizontal slider
 */
 .rangeslider-horizontal {
-  height: 50px;
+  height: 20px;
   border-radius: 10px;
-  margin-left: 40px;
-  margin-right: 40px;
+
 }
 .rangeslider-horizontal .rangeslider__fill {
   height: 100%;
-  background-color: orange;
+
+  background-color: $emerald;
   border-radius: 10px;
   top: 0;
 }
 .rangeslider-horizontal .rangeslider__handle {
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   border-radius: 100px;
-  top: -25px;
+  top: -10px;
 }
 .rangeslider-horizontal .rangeslider__handle:after {
   content: ' ';
   position: absolute;
-  width: 50px;
-  height: 50px;
-  top: 24px;
-  left: 24px;
+  width: 25px;
+  height: 25px;
+  top: 6px;
+  left: 6px;
   border-radius: 50%;
   background-color: #dadada;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset, 0 -1px 3px rgba(0, 0, 0, 0.4) inset;
@@ -123,8 +124,31 @@
 }
 .rangeslider__label-list .rangeslider__label {
   position: absolute;
-  font-size: 28px;
+  font-size: 16px;
   cursor: pointer;
   display: inline-block;
   top: 75px;
+}
+.slider{
+  width: 60%;
+  height: 15px;
+}
+
+.slider li {
+
+  /* Safari */
+  -webkit-transform: rotate(30deg);
+
+  /* Firefox */
+  -moz-transform: rotate(30deg);
+
+  /* IE */
+  -ms-transform: rotate(30deg);
+
+  /* Opera */
+  -o-transform: rotate(30deg);
+
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
 }

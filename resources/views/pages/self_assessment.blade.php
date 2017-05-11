@@ -2,55 +2,58 @@
 
 @section('content')
 
-                        <style>
-                        a{cursor:pointer;outline:none;}
-                        .item .sector{transition:all .1s linear;stroke:#111;}
-                        .menu-trigger{fill:#EA2A55;pointer-events:auto;}
-                        .menu-trigger:hover,.menu-trigger:focus{cursor:pointer;}
-                        symbol{overflow:visible;}
-                    </style>
-                <style>
-                    .menu-wrapper {
-                        position: relative;
-                        text-align: center;
-                    }
-                </style>
-<main class="main-class">
-    <div id="survey"></div>
-</main>
+  <div id="survey"></div>
 
-   <aside class="aside-class">
+   {{-- <div className="jumbotron mt-2">
+        <div class="row">
+            <div class="col-md-9">
 
-       <div class="list-group">
-           <a href="#" class="foo aside-settings list-group-item list-group-item-action flex-column align-items-start">
-               <h1 style="text-align: center;color: white; margin-top: 20px">Survey</h1>
-           </a>
+                <div class="row card card-group Bg-color-midnight">
 
-           <a href="#" class="foo aside-settings list-group-item list-group-item-action flex-column align-items-start">
-               <h1 style="text-align: center;color: white; margin-top: 30px">Wristband</h1>
-           </a>
+                    <div class="col-md-3 p-0">
+                        <img class="card-img p-0" src="/img/avatars/children/Child-women-avatar.png">
+                    </div>
+                    <div class="col-md-9 p-0">
+                        <div class="card-block vertical-align">
+                            <h2 class="text-white vertical-align">I am Question</h2>
 
-       </div>
-   </aside>
-<!--
-<ul class="collection with-header">
-    <li class="collection-header">
-        <h2 class="flow-text">Recent Surveys
-            <span style="float:right;">
-					<a href='{{route('new.survey')}}'>Create new</a>
-            </span>
-        </h2>
-    </li>
-    @forelse ($surveys as $survey)
-      <li class="collection-item">
-        <div>
-            {{ route('detail.survey', $survey->name, $survey)}}
-            <a href="survey/{{ $survey->id }}" title="Edit Survey" class="secondary-content"><i class="material-icons">view</i></a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row card">
+
+                        <li class="list-group-item justify-content-between">
+                            <button class="btn btn-success">Prev</button>
+
+                            <img src="/img/avatars/default/default-user.png">
+
+                            <Button class="bg btn-success btn-lg">next</Button>
+                        </li>
+
+                </div>
+
+
+            </div>
+            <div class="col-md-3">
+
+                <div class="card my-flex-card">
+                    <div class="card-block">
+                        <h4 class="card-title">8</h4>
+                        <p class="card-text">points</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Level</li>
+                        <li class="list-group-item">Progress</li>
+                        <li class="list-group-item">fitness survey</li>
+                    </ul>
+                    <div class="card-block">
+                        <a href="#" class="card-link">back to survey</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        </li>
-    @empty
-        <p class="flow-text center-align">Nothing to show</p>
-    @endforelse
-    </ul>
-    -->
+    </div>--}}
+
 @endsection
