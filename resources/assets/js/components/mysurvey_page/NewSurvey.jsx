@@ -10,7 +10,7 @@ class Category extends Component {
         this.handleOnclick = this.handleOnclick.bind(this);
     }
     handleOnclick() {
-        this.props.handleOnclick()
+        this.props.handleOnclick(this.props.name)
         console.log('in category')
 
     }
@@ -38,16 +38,8 @@ class NewSurvey extends Component {
   render () {
     var url="/survey/new";
     var categorys = [
-      {id: 0, name: "Community life", img_src:"/img/categorys/003-people.svg"},
-      {id: 1, name: "Education", img_src:"/img/categorys/006-learning.svg" },
-      {id: 2, name: "Fitness", img_src:"/img/categorys/008-dumbbell.svg"},
-      {id: 3, name: "Nutrition", img_src:"/img/categorys/010-fruit-salad.svg"},
-      {id: 4, name: "Personal care", img_src:"/img/categorys/005-doctor.svg"},
-      {id: 5, name: "Health", img_src:"/img/categorys/009-hospital.svg"},
-      {id: 6, name: "Relationship", img_src:"/img/categorys/people.svg"},
-      {id: 7, name: "Comunication", img_src:"/img/categorys/001-chat.svg"},
-      {id: 8, name: "Recreativity", img_src:"/img/categorys/002-businessman.svg"},
-      {id: 9, name: "Housing", img_src:"/img/categorys/004-construction.svg"},
+      {id: 0, name: "Cognition", img_src:"/img/categorys/001-mind.svg"},
+      
     ]
 
 

@@ -16,10 +16,12 @@ class Survey extends Component {
       answer:null,
       question_id:null,
       score:0,
+      submitDisabled:true,
     };
     this.handleNextButton= this.handleNextButton.bind(this);
     this.handleAnswer= this.handleAnswer.bind(this);
     this.sendAnswers=this.sendAnswers.bind(this);
+    this.handleGoBackBtn = this.handleGoBackBtn.bind(this);
   }
 
   handleNextButton(){
@@ -30,13 +32,13 @@ class Survey extends Component {
     this.setState({
       currentQuestion: this.state.currentQuestion+1,
       answer:null,
+      submitDisabled:true,
       });
-
-
   }
+
   handleAnswer(answer, question_id){
     console.log(answer);
-    this.setState({answer:answer, question_id: question_id});
+    this.setState({answer:answer, question_id: question_id, submitDisabled:false});
   }
 
   sendAnswers(){
@@ -75,11 +77,14 @@ class Survey extends Component {
     })
     .done(function( result ) {
 
-      this.setState({data:result, currentQuestion:0}, function(){
+      this.setState({data:result, currentQuestion:0,}, function(){
       });
     }.bind(this))
   }
 
+  handleGoBackBtn() {
+    this.props.handleOnclick("survey");
+  }
 
 
   render(){
@@ -89,6 +94,7 @@ class Survey extends Component {
     const choices_for_q= this.state.data.map((each)=>
       <Circular_scale_1 key={each.id} question_id={each.id} choices={each.choices} handleAnswer={this.handleAnswer}/>
     );
+    console.log(survey_question.length);
     return(
       <div>
 
@@ -109,11 +115,14 @@ class Survey extends Component {
               <li className="list-group-item justify-content-between Set-width">
                 <button className="btn btn-success">Prev</button>
 
-                  {/*{choices_for_q[this.state.currentQuestion]}*/}
+            {choices_for_q[this.state.currentQuestion]}
 
-                  <HomePageSlider />
 
-                <button className="bg btn-success btn-lg" onClick={this.handleNextButton}>next</button>
+
+                <button
+                  className="bg btn-success btn-lg" type="button"
+                  
+                  onClick={this.handleNextButton}>Submit</button>
               </li>
             </div>
           </div>
@@ -121,15 +130,16 @@ class Survey extends Component {
 
             <div className="card my-flex-card">
               <div className="card-block">
-                <HomepageProgressBar/>
+                <small>{this.state.currentQuestion}/{survey_question.length}</small>
+                <HomepageProgressBar percent={this.state.currentQuestion*10}/>
               </div>
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">Level</li>
                 <li className="list-group-item">Score: {this.state.score}</li>
-                <li className="list-group-item">fitness survey</li>
+                <li className="list-group-item">{this.props.selectedCategory}</li>
               </ul>
               <div className="card-block">
-                <a href="#" className="card-link">back to survey</a>
+                <a href="#" className="card-link" onClick={this.handleGoBackBtn}>back to categories</a>
               </div>
             </div>
           </div>

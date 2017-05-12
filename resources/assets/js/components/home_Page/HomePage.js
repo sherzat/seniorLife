@@ -60,7 +60,7 @@ class HomePage extends  Component {
 
                                 <div className="card-block p-1" style={{textAlign: "center"}}>
 
-                                    <HomepageCircularPiechart qol={this.state.home.qol}/>
+                                    <HomepageCircularPiechart percentage={this.state.home.qol ? this.state.home.qol.score : 0}/>
 
                                 </div>
 
@@ -151,7 +151,7 @@ class HomePage extends  Component {
 
                                 {/*<!-- Image -->*/}
 
-                              {/*<HomepageCarousel badges={this.state.home.badges} />*/}
+                                <HomepageCarousel badges={this.state.home.badges} />
 
                                 {/*<!-- Text Content -->*/}
 

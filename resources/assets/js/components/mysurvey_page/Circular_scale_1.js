@@ -52,7 +52,7 @@ class Circular_scale_1 extends Component {
             <title>Layer 1</title>
             <g id="symbolsContainer">
               <symbol viewBox="0 0 69 69" id="icon-1" className="icon icon-">
-                <text id="svg_2" fontSize="26px" textAnchor="middle" y="-60%" x="50%" fill="#222">{choices[0]}</text>
+                <text id="svg_2" fontSize="30px" textAnchor="middle" y="-80%" x="50%" fill="#222">{choices[0]}</text>
                 <g>
                   <path
                     d="M 32,0 C 14.355,0 0,14.355 0,32 0,49.645 14.355,64 32,64 49.645,64 64,49.645 64,32 64,14.355 49.645,0 32,0 Z m 0,60 C 16.561,60 4,47.439 4,32 4,16.561 16.561,4 32,4 47.439,4 60,16.561 60,32 60,47.439 47.439,60 32,60 Z"
@@ -77,7 +77,7 @@ class Circular_scale_1 extends Component {
                 </g>
               </symbol>
               <symbol viewBox="0 0 69 69" id="icon-2" className="icon icon-">
-                <text id="svg_4" fontSize="26px" textAnchor="middle" y="-60%" x="50%" fill="#222">{choices[1]}</text>
+                <text id="svg_4" fontSize="30px" textAnchor="middle" y="-80%" x="50%" fill="#222">{choices[1]}</text>
                 <g>
                   <path
                     fill="#FFFFFF"
@@ -100,7 +100,7 @@ class Circular_scale_1 extends Component {
                 </g>
               </symbol>
               <symbol viewBox="0 0 69 69" id="icon-3" className="icon icon-">
-                <text id="svg_6" fontSize="26px" textAnchor="middle" y="-60%" x="50%" fill="#222">{choices[2]}</text>
+                <text id="svg_6" fontSize="30px" textAnchor="middle" y="-80%" x="50%" fill="#222">{choices[2]}</text>
                 <g fill="#1D1D1B">
                   <path
                     fill="#FFFFFF"
@@ -122,7 +122,7 @@ class Circular_scale_1 extends Component {
                 </g>
               </symbol>
               <symbol viewBox="0 0 69 69" id="icon-4" className="icon icon-">
-                <text id="svg_8" fontSize="26px" textAnchor="middle" y="-60%" x="50%" fill="#222">{choices[3]}</text>
+                <text id="svg_8" fontSize="30px" textAnchor="middle" y="-80%" x="50%" fill="#222">{choices[3]}</text>
                 <g fill="#1D1D1B">
                   <path
                     fill="#FFFFFF"
@@ -144,7 +144,7 @@ class Circular_scale_1 extends Component {
                 </g>
               </symbol>
               <symbol viewBox="0 0 69 69" id="icon-5" className="icon icon-">
-                <text id="svg_10" fontSize="26px" textAnchor="middle" y="-60%" x="50%" fill="#222">{choices[4]}</text>
+                <text id="svg_10" fontSize="30px" textAnchor="middle" y="-80%" x="50%" fill="#222">{choices[4]}</text>
                 <g fill="#1D1D1B">
                   <path d="M32,0C14.355,0,0,14.355,0,32s14.355,32,32,32s32-14.355,32-32S49.645,0,32,0z M32,60    C16.561,60,4,47.439,4,32S16.561,4,32,4s28,12.561,28,28S47.439,60,32,60z" fill="#FFFFFF"/>
                   <circle cx="20.518" cy="21.361" r="5" fill="#FFFFFF"/>

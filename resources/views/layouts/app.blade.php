@@ -19,7 +19,7 @@
             crossorigin="anonymous"></script>
 
     <title>{{ config('app.name', 'SeniorLife') }}</title>
-    <link href="/css/app_bootstrap4.css" rel="stylesheet">
+    <link href="/css/new_app.css" rel="stylesheet">
 
     <script>
         $(document).ready(function () {

@@ -9,13 +9,18 @@ class MySurvey extends Component {
 
         this.state = {
             renderSurveyPage: true,
+            selectedCategory:null,
         };
         this.handleOnclick = this.handleOnclick.bind(this);
     }
-    handleOnclick() {
+    handleOnclick(target) {
         console.log('in mysyrvey')
+        if (target == 'survey'){
+          this.setState({renderSurveyPage: true})
+        }else {
 
-        this.setState({renderSurveyPage: false})
+          this.setState({renderSurveyPage: false, selectedCategory: target})
+        }
     }
     render() {
    const renderSurveyPage = this.state.renderSurveyPage;
@@ -30,7 +35,11 @@ class MySurvey extends Component {
                     </div>
                     ) : (
                         <div>
-                            <Survey url="/survey/new" scale="Circular_scale"/>
+                            <Survey url="/survey/new"
+                              scale="Circular_scale"
+                              handleOnclick={this.handleOnclick}
+                              selectedCategory={this.state.selectedCategory}
+                            />
                         </div>
                     )}
             </div>
