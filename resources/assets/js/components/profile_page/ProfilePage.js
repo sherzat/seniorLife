@@ -16,7 +16,7 @@ class ProfilePage extends Component {
 
         const profilePictures = img_src_paths.map(
             (img_src_path) =>
-                <ProfileImage img_src={img_src_path}/>
+                <ProfileImage key={img_src_path} img_src={img_src_path}/>
         );
         return (
             <div>

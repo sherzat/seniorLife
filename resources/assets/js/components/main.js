@@ -3,11 +3,6 @@ import ReactDOM from 'react-dom';
 
 import RankPage from './rank_page/RankPage';
 
-import Myform from './Myform';
-import NavbarForm from './Navbar';
-import Navbar from './Navbar';
-
-
 import MySurvey  from './mysurvey_page/MySurvey';
 
 
@@ -24,16 +19,7 @@ if (document.getElementById('mysurvey_page')) {
   );
 }
 
-setInterval(tick, 1000);
-function tick() {
-// We only want to try to render our component on pages that have a div with an ID
-// of "example"; otherwise, we will see an error in our console
-if (document.getElementById('clock')) {
-    ReactDOM.render(
-        <Clock date = {new Date()} />,
-        document.getElementById('clock'));
-     }
-}
+
 
 if (document.getElementById('rank_page')) {
     ReactDOM.render(
@@ -73,3 +59,4 @@ if (document.getElementById('footer')) {
         <FooterComponent/>,
         document.getElementById('footer'));
 }
+

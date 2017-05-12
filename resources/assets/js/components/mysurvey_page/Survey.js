@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
-//import Circular_scale from './Circular_scale';
 import Circular_scale_1 from './Circular_scale_1';
 import Question from './Question';
-//import Progress from './Progress';
 import Progress from 'react-progressbar';
-//import createFragment from 'react-addons-create-fragment'; // ES6
 import Slider_scale from '../Slider_scale';
+import HomepageProgressBar from '../home_Page/HomepageProgressBar';
+import HomePageSlider from '../home_Page/HomePageSlider';
 
 class Survey extends Component {
   constructor(props) {
@@ -91,50 +90,97 @@ class Survey extends Component {
       <Circular_scale_1 key={each.id} question_id={each.id} choices={each.choices} handleAnswer={this.handleAnswer}/>
     );
     return(
-      <div className="container" id="survey">
-        <div className="card">
-          <div className="card-header">
-            <div className="row justify-content-between">
-              <div className="col-sm-10 align-self-center"><Progress completed={33} className={""}/></div>
-              <div className="col-sm-2  d-flex justify-content-end"><button >Go back</button></div>
+      <div>
+
+        <div className="row">
+          <div className="col-md-9">
+            <div className="row card card-group Bg-color-midnight">
+              <div className="col-md-3 p-0">
+                <img className="card-img p-0" src="/img/avatars/children/Child-women-avatar.png"></img>
+              </div>
+              <div className="col-md-9 p-0">
+                <div className="card-block vertical-align">
+                  <h2 className="text-white vertical-align">{survey_question[this.state.currentQuestion]}</h2>
+                </div>
+              </div>
+            </div>
+
+            <div className="row card">
+              <li className="list-group-item justify-content-between Set-width">
+                <button className="btn btn-success">Prev</button>
+
+                  {/*{choices_for_q[this.state.currentQuestion]}*/}
+
+                  <HomePageSlider />
+
+                <button className="bg btn-success btn-lg" onClick={this.handleNextButton}>next</button>
+              </li>
             </div>
           </div>
+          <div className="col-md-3">
 
-          <div className="card-block">
-            <div className="row">
-              <div className="col-md-3 col-sm-12 ">
-                <img className="card-img-top" src="/img/avatars/default/default-user.png" width="200" height="200"></img>
-                <div className="card-block">
-                  <div className="col-md-3 col-sm-12">
-                    Score: {this.state.score}
-                  </div>
-                </div>
+            <div className="card my-flex-card">
+              <div className="card-block">
+                <HomepageProgressBar/>
               </div>
-              <div className="col-md-9 col-sm-12 ">
-                <div className="row " style={{height:"30%"}}>
-                  <div className="col-md-12 d-flex">
-                    <div className="talk-bubble tri-right left-in">
-                      <div className="talktext">
-                        {survey_question[this.state.currentQuestion]}
-                      </div>
-                    </div>
-                    <button className="next-btn" onClick={this.handleNextButton}><i className="fa fa-angle-right" aria-hidden="true"></i></button>
-                  </div>
-                </div>
-                <div className="row">
-                  {choices_for_q[this.state.currentQuestion]}
-                  <div className="col-md-12">
-                  </div>
-                </div>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item">Level</li>
+                <li className="list-group-item">Score: {this.state.score}</li>
+                <li className="list-group-item">fitness survey</li>
+              </ul>
+              <div className="card-block">
+                <a href="#" className="card-link">back to survey</a>
               </div>
-
             </div>
-
           </div>
         </div>
+
       </div>
     );
   }
 }
 
 export default Survey;
+
+
+{/*
+<div className="card">
+  <div className="card-header">
+    <div className="row justify-content-between">
+      <div className="col-sm-10 align-self-center"><Progress completed={33} className={""}/></div>
+      <div className="col-sm-2  d-flex justify-content-end"><button >Go back</button></div>
+    </div>
+  </div>
+
+  <div className="card-block">
+    <div className="row">
+      <div className="col-md-3 col-sm-12 ">
+        <img className="card-img-top" src="/img/avatars/default/default-user.png" width="200" height="200"></img>
+        <div className="card-block">
+          <div className="col-md-3 col-sm-12">
+            Score: {this.state.score}
+          </div>
+        </div>
+      </div>
+      <div className="col-md-9 col-sm-12 ">
+        <div className="row " style={{height:"30%"}}>
+          <div className="col-md-12 d-flex">
+            <div className="talk-bubble tri-right left-in">
+              <div className="talktext">
+                  {survey_question[this.state.currentQuestion]}
+              </div>
+            </div>
+            <button className="next-btn" onClick={this.handleNextButton}><i className="fa fa-angle-right" aria-hidden="true"></i></button>
+          </div>
+        </div>
+        <div className="row">
+            {choices_for_q[this.state.currentQuestion]}
+          <div className="col-md-12">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>*/}
