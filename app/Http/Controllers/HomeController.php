@@ -51,8 +51,9 @@ class HomeController extends Controller
      */
     public function show($id)
     {
+        $qol=Auth::user()->getSurveyResult()->last();
         $badges =array(
-            'qol' => 75,
+            'qol' => $qol,
             'survey' => 7,
             'progress_points' => 70,
             'level' => 2,
