@@ -6,6 +6,7 @@ import Progress from 'react-progressbar';
 import Slider_scale from '../Slider_scale';
 import HomepageProgressBar from '../home_Page/HomepageProgressBar';
 import HomePageSlider from '../home_Page/HomePageSlider';
+import HomePageRadioButton from '../home_Page/HomepageRadioButton';
 
 class Survey extends Component {
   constructor(props) {
@@ -121,8 +122,9 @@ class Survey extends Component {
 
                 <button
                   className="bg btn-success btn-lg" type="button"
-                  
+
                   onClick={this.handleNextButton}>Submit</button>
+
               </li>
             </div>
           </div>
