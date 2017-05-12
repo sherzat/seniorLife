@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Progress from 'react-progressbar';
 import 'rc-progress/assets/index.css';
 import { Line, Circle } from 'rc-progress';
 

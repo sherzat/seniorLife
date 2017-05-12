@@ -4,6 +4,7 @@ import HomepageProgressBar from './HomepageProgressBar';
 import HomepageCircularPiechart from './HomepageCircularPiechart';
 import HomepageCarousel from './HomepageCarousel';
 
+
 class HomePage extends  Component {
     constructor(props) {
         super(props);
@@ -151,7 +152,7 @@ class HomePage extends  Component {
 
                                 {/*<!-- Image -->*/}
 
-                              {/*<HomepageCarousel badges={this.state.home.badges} />*/}
+                             <HomepageCarousel badges={this.state.home.badges} />
 
                                 {/*<!-- Text Content -->*/}
 
