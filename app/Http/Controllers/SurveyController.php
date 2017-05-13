@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Survey;
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 
 class SurveyController extends Controller
 {
@@ -26,41 +27,20 @@ class SurveyController extends Controller
 
   public function create_survey()
   {
-    //create new survey.
-    //map survey with questions.
-    /*
-    $survey = new \App\Survey;
-    $survey->name = 'test1';
-    $survey->description = 'test descreiption';
-    $survey->save();
 
-
-    $survey->questions()->attach([1,2,3,4,5]);
-    $user_id = Auth::id();
-    $survey->users()->attach($user_id);
-
-    //prepare queation data to pass to views.
-    $view_data['survey'] = $survey;
-    return view('survey.new', $view_data);
-    */
-    //option 1: get 10 the question
-    /*
-    $questions = \App\Question::take(10)->get();
-    return $questions->toJson();
-    */
-    //option 1
-    $asked_questions=[];
-    $user = \App\User::where("id", Auth::id())->first();
-    foreach($user->surveys as $survey)
-    {
-      foreach($survey->questions as $question)
-      {
-        array_push($asked_questions, $question->id);
-      }
-    }
+    // $asked_questions=[];
+    // $user = Auth::user();
+    // foreach($user->surveys()->whereDate('created_at', DB::raw("CURDATE()") ) as $survey)
+    // {
+    //   foreach($survey->questions as $question)
+    //   {
+    //     array_push($asked_questions, $question->id);
+    //   }
+    // }
+    // dd($asked_questions);
 
     //$prepare_questions = \App\Question::whereNotIn('id',$asked_questions)
-    $prepare_questions = \App\Question::select("id","question")->limit(10)
+    $prepare_questions = \App\Question::select("id","question")->where("category","=",1)
     ->with('choices')
     ->get();
 

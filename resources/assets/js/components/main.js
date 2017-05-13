@@ -6,7 +6,7 @@ import RankPage from './rank_page/RankPage';
 import MySurvey  from './mysurvey_page/MySurvey';
 
 
-import AchievementPage from './achievement_page/AchievementPage';
+//import AchievementPage from './achievement_page/AchievementPage';
 import HomePage from './home_Page/HomePage';
 import ProfilePage from './profile_page/ProfilePage';
 import ChallengesPage from './challenges_page/ChallengesPage';
@@ -28,11 +28,11 @@ if (document.getElementById('rank_page')) {
 }
 
 
-if (document.getElementById('achievement_page')) {
-    ReactDOM.render(
-        <AchievementPage/>,
-        document.getElementById('achievement_page'));
-}
+// if (document.getElementById('achievement_page')) {
+//     ReactDOM.render(
+//         <AchievementPage/>,
+//         document.getElementById('achievement_page'));
+// }
 
 if (document.getElementById('home_page')) {
     ReactDOM.render(
@@ -59,4 +59,3 @@ if (document.getElementById('footer')) {
         <FooterComponent/>,
         document.getElementById('footer'));
 }
-

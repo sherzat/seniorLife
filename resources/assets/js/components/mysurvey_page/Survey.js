@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import Circular_scale_1 from './Circular_scale_1';
+import Circular_scale_3 from './Circular_scale_3';
 import Question from './Question';
-import Progress from 'react-progressbar';
 import Slider_scale from '../Slider_scale';
 import HomepageProgressBar from '../home_Page/HomepageProgressBar';
 import HomePageSlider from '../home_Page/HomePageSlider';
@@ -123,25 +123,26 @@ class Survey extends Component {
                 <button
                   className="bg btn-success btn-lg" type="button"
 
-                  onClick={this.handleNextButton}>Submit</button>
+                  onClick={this.handleNextButton}>next</button>
 
               </li>
             </div>
           </div>
           <div className="col-md-3">
 
-            <div className="card my-flex-card">
-              <div className="card-block">
+            <div className="card my-flex-card bg-faded">
+              <div className="card-block ">
                 <small>{this.state.currentQuestion}/{survey_question.length}</small>
-                <HomepageProgressBar percent={this.state.currentQuestion*10}/>
+                <HomepageProgressBar percent={(this.state.currentQuestion/survey_question.length)*100}/>
               </div>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">Level</li>
-                <li className="list-group-item">Score: {this.state.score}</li>
-                <li className="list-group-item">{this.props.selectedCategory}</li>
-              </ul>
               <div className="card-block">
-                <a href="#" className="card-link" onClick={this.handleGoBackBtn}>back to categories</a>
+                <dt>Category:</dt> <dd className="ml-auto">{this.props.selectedCategory}</dd>
+              </div>
+              <div className="card-block ">
+                Score: {this.state.score}
+              </div>
+              <div className="card-block">
+                <a href="#" className="btn button" onClick={this.handleGoBackBtn}>back to categories</a>
               </div>
             </div>
           </div>
@@ -153,46 +154,3 @@ class Survey extends Component {
 }
 
 export default Survey;
-
-
-{/*
-<div className="card">
-  <div className="card-header">
-    <div className="row justify-content-between">
-      <div className="col-sm-10 align-self-center"><Progress completed={33} className={""}/></div>
-      <div className="col-sm-2  d-flex justify-content-end"><button >Go back</button></div>
-    </div>
-  </div>
-
-  <div className="card-block">
-    <div className="row">
-      <div className="col-md-3 col-sm-12 ">
-        <img className="card-img-top" src="/img/avatars/default/default-user.png" width="200" height="200"></img>
-        <div className="card-block">
-          <div className="col-md-3 col-sm-12">
-            Score: {this.state.score}
-          </div>
-        </div>
-      </div>
-      <div className="col-md-9 col-sm-12 ">
-        <div className="row " style={{height:"30%"}}>
-          <div className="col-md-12 d-flex">
-            <div className="talk-bubble tri-right left-in">
-              <div className="talktext">
-                  {survey_question[this.state.currentQuestion]}
-              </div>
-            </div>
-            <button className="next-btn" onClick={this.handleNextButton}><i className="fa fa-angle-right" aria-hidden="true"></i></button>
-          </div>
-        </div>
-        <div className="row">
-            {choices_for_q[this.state.currentQuestion]}
-          <div className="col-md-12">
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</div>*/}
