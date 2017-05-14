@@ -21,7 +21,7 @@ class CreatePointsTable extends Migration
                $table->enum('points_genre', ['survey', 'challenge', 'other']); //type self if from action that the user did. type other if from other users action
                $table->timestamps();
                $table->softDeletes(); //optional but recommended
-          
+
                //set foreign key relations
                 $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); //If user is deleted, also delete users points
         });
@@ -35,6 +35,6 @@ class CreatePointsTable extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('responses');
+        Schema::dropIfExists('points');
     }
 }

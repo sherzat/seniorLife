@@ -8,7 +8,7 @@
 .item .sector{transition:all .1s linear;stroke:#111;}
 .menu-trigger{fill:#EA2A55;pointer-events:auto;}
 .menu-trigger:hover,.menu-trigger:focus{cursor:pointer;}
-.symbol{overflow:visible;}
+symbol{overflow:visible;}
 
 
 .svg-content {
@@ -33,6 +33,8 @@
 .Set-width {
 	height: 350px;
 }
+
+
 
 /*
 .my-flex-card-width{

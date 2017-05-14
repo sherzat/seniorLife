@@ -50,12 +50,20 @@ class User extends Authenticatable
 
     public function getSurveyResult()
     {
+    //  ->select(DB::raw("cast(avg(weight)/0.5 as decimal(2,1)) as score, time_format((time(responses.created_at)), '%H:00:00') as hour" ))
+
         $result= $this->responses()
-        ->select(DB::raw("avg(weight) as score, hour(time(responses.created_at)) as hour" ))
+        ->select(DB::raw("cast(avg(weight)/0.5 as decimal(2,1)) as score, date(responses.created_at) as hour" ))
         ->join('choices', 'responses.choice_id', '=', 'choices.id')
         ->groupBy(DB::raw("hour" ))
         ->orderBy(DB::raw("hour"))
         ->get();
+
+        $result->transform(function ($item) {
+          return ['score'=>(float)$item->score, 'hour'=>$item->hour]  ;
+        });
+
+
 
       return $result;
     }

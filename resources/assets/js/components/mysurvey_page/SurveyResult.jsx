@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { LineChart, Line, CartesianGrid, XAxis,YAxis, Tooltip,Legend} from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis,YAxis, Tooltip,Legend, ResponsiveContainer} from 'recharts';
 
 class CustomizedDot extends Component{
   render () {
@@ -27,6 +27,7 @@ class SurveyResult extends Component {
 		super(props);
 		this.state={
 			data:null,
+      noData: true,
 		};
 	}
 	componentWillMount(){
@@ -38,10 +39,14 @@ class SurveyResult extends Component {
 		.done(function( result ) {
 
 			this.setState({data:result}, function(){
+        if(this.state.data.length != 0){
+          this.setState({noData:false})
+        }
 			});
 		}.bind(this))
 	}
 	render() {
+
 		const data = this.state.data;
 		return (
 			<div>
@@ -62,17 +67,25 @@ class SurveyResult extends Component {
 										</a>
 									</div>
 								</div>
-								<div className="col-md-8">
-									<LineChart width={600} height={300} data={data}
-										margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-										<XAxis dataKey="hour"/>
-										<YAxis dataKey="score"/>
-										<CartesianGrid strokeDasharray="3 3"/>
-										<Tooltip/>
-										<Legend />
-										<Line type="monotone" dataKey="score" stroke="#82ca9d" dot={<CustomizedDot />}/>
-									</LineChart>
+								<div className="col-md-8 ">
+                  {this.state.noData ? (
+                    <p className="mt-5">
+                      No data available, please fill up some surveys to see more result.
+                    </p>
+                  ) : (
+                    <ResponsiveContainer width="100%" height={300}>
+                      <LineChart data={data}
+                        margin={{top: 50, right: 80, left: 0, bottom: 40}}>
+                        <XAxis dataKey="hour" unit="hour"/>
+                        <YAxis dataKey="score" unit="%"/>
+                        <CartesianGrid strokeDasharray="3 3"/>
+                        <Tooltip/>
+                        <Legend />
+                        <Line type="monotone" unit="%" dataKey="score" stroke="#82ca9d" dot={<CustomizedDot />}/>
+                      </LineChart>
 
+                    </ResponsiveContainer>
+                  )}
 								</div>
 							</div>
 						</div>
