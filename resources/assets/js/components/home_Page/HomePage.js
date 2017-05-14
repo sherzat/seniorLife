@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import HomepageProgressBar from './HomepageProgressBar';
 import HomepageCircularPiechart from './HomepageCircularPiechart';
 import HomepageCarousel from './HomepageCarousel';
-
+import HomepageRadioButton from './HomepageRadioButton';
 
 class HomePage extends  Component {
     constructor(props) {
@@ -12,7 +12,7 @@ class HomePage extends  Component {
         this.getData=this.getData.bind(this);
     }
 
-    /*//sending request to get the gol value*/
+    /*//sending request to to set  flag to 1 value*/
 
     getData() {
         var url ="/home/1";
@@ -36,6 +36,12 @@ class HomePage extends  Component {
     render(){
         if(!this.state.loaded)
             return (<h>loading</h>);
+
+        if(this.state.home.flag==0){
+            sessionStorage.setItem('firstvisit', this.state.home.flag);
+            startIntro('home').start();
+        }
+
         return (
             <div>
 
@@ -53,7 +59,7 @@ class HomePage extends  Component {
                                 {/*<!-- Heading -->*/}
 
                                 <div className="card-block pt-1 pb-2">
-                                    <h4 className="card-title">Your Quality of Life</h4>
+                                    <h4 id="step1"className="card-title">Your Quality of Life</h4>
                                     <h6 className="card-subtitle">Overall score of your last survey</h6>
                                 </div>
 
@@ -87,7 +93,7 @@ class HomePage extends  Component {
                                 {/*<!-- Heading -->*/}
 
                                 <div className="card-block pt-1 pb-2">
-                                    <h4 className="card-title">Health Card </h4>
+                                    <h4 id="step2" className="card-title">Health Card </h4>
                                     <h6 className="card-subtitle text-muted">Real time data</h6>
                                 </div>
 
@@ -146,13 +152,13 @@ class HomePage extends  Component {
                                 {/*<!-- Heading -->*/}
 
                                 <div className="card-block pt-1 pb-2">
-                                    <h4 className="card-title">Your achevemnts</h4>
+                                    <h4 id="step3" className="card-title">Your achevemnts</h4>
                                     <h6 className="card-subtitle text-muted">Your collection</h6>
                                 </div>
 
                                 {/*<!-- Image -->*/}
 
-                             <HomepageCarousel badges={this.state.home.badges} />
+                              {/*<HomepageCarousel badges={this.state.home.badges} />*/}
 
                                 {/*<!-- Text Content -->*/}
 
@@ -176,7 +182,7 @@ class HomePage extends  Component {
 
                             <div className="card">
                                 <div className="card-block pt-1 pb-2">
-                                    <h4 className="card-title"><h2>Level {this.state.home.level} </h2></h4>
+                                    <h4 id="step4" className="card-title"><h2>Level {this.state.home.level} </h2></h4>
                                 </div>
 
                                 {/*<!-- Image -->*/}

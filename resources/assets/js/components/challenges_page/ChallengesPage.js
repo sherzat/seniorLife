@@ -1,7 +1,45 @@
 import React, {Component} from 'react';
 
 class ChallengesPage extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            challengesData:[],
+
+        };
+        this.handleOnclick = this.handleOnclick.bind(this);
+        this.getData = this.getData.bind(this);
+    }
+    handleOnclick() {
+
+    }
+    componentWillMount(){
+        this.getData();
+        console.log('in challenges')
+
+
+    }
+    getData() {
+        var url ="/getChallengesData";
+        $.ajax({
+            method: "GET",
+            url: url,
+        })
+            .done(function( result ) {
+
+                console.log(result)
+                this.setState({challengesData:result});
+
+            }.bind(this))
+    }
+
     render() {
+
+        if(this.state.challengesData.flag==0){
+            startIntro('challenges').start();
+        }
+
         return (
             <div>
                 <div className="card">
@@ -15,7 +53,7 @@ class ChallengesPage extends Component {
                         </div>
                         <div className="col-md-8 col-sm-9">
                             <div className="card-block">
-                                <h3 className="card-title Lato-font">Fill in One survey from nutrition category</h3>
+                                <h3 id="step8" className="card-title Lato-font">Fill in One survey from nutrition category</h3>
                                 <div className=" ">
                                     <dl className="row Rail-way-font">
                                         <dt className="col-sm-5 col-lg-3">Time it takes:</dt>

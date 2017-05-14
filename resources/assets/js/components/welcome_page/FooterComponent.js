@@ -28,17 +28,14 @@ class FooterComponent extends Component {
                         </div>
                         <div className="col-md-4 m-0 p-0">
                             <div className="card my-flex-card">
-                                <div className="card-header Bg-color"><h4>Empatica</h4></div>
+                                <div className="card-header Bg-color"><h4>Gamification</h4></div>
                                 <div className="card-block">
-                                    <h5 className="card-title">Your wristband watch</h5>
+                                    <h5 className="card-title">points and badges</h5>
                                     <img className="card-img-top img-responsive pull-left" src="img/Empatica.png"
                                          width="120" height="120"
                                          align="left"/>
-                                    <p>Empatica is a
-                                        wristband a wearable wireless
-                                        device designed for continuous, real-time data acquisition in daily
-                                        life. Using your
-                                        Empatica you can monitor seizures, sleep, and physical activity. </p>
+                                    <p>To make your self-assessment more interactive we have included some game elements.
+                                        You can gate  badges as reward if you collected enough points and acomplish challenges.</p>
                                     <p><a className="btn btn-success" href="#" role="button">Read more &raquo;</a>
                                     </p>
                                 </div>
@@ -46,19 +43,14 @@ class FooterComponent extends Component {
                         </div>
                         <div className="col-md-4 m-0 p-0">
                             <div className="card my-flex-card">
-                                <div className="card-header Bg-color"><h4>Share</h4></div>
+                                <div className="card-header Bg-color"><h4>Avatar</h4></div>
                                 <div className="card-block">
-                                    <h5 className="card-title">Let other know your activities</h5>
+                                    <h5 className="card-title">use avatars for your profile</h5>
                                     <img className="card-img-top img-responsive pull-left" src="img/Share.png"
                                          width="120"
                                          height="120"
                                          align="left"/>
-                                    <p className="card-text">By sharing your
-                                        activities, You can let your
-                                        friends and families
-                                        know about your health in general. You can share your survey results,
-                                        Empatica results,
-                                        your rank and how many badges you collect and more. </p>
+                                    <p className="card-text">By using avatars as your profile feel free on sharing with your friends, relatives and more.</p>
                                     <p><a className="btn btn-success" href="#" role="button">Read more &raquo;</a>
                                     </p>
                                 </div>

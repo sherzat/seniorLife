@@ -1,4 +1,7 @@
 @extends('layouts.new_app')
 @section('content')
-<div id="rank_page"></div>
+
+    <a class="MyAvatar "  href="javascript:void(0);" onclick="startIntro('rank_clicked');"><img src="/img/avatars/adults/adult-women.png" class="rounded-circle"/></a>
+
+    <div id="rank_page"></div>
 @endsection

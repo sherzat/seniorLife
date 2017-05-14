@@ -3,24 +3,53 @@ import SurveyResult from './SurveyResult';
 import NewSurvey from './NewSurvey';
 import Survey from './Survey';
 
+
 class MySurvey extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            mysurveyData:[],
             renderSurveyPage: true,
         };
         this.handleOnclick = this.handleOnclick.bind(this);
+        this.getData = this.getData.bind(this);
     }
     handleOnclick() {
-        console.log('in mysyrvey')
 
         this.setState({renderSurveyPage: false})
     }
+    componentWillMount(){
+        this.getData();
+        console.log('in mysyrvey')
+
+
+    }
+    getData() {
+        var url ="/getMysurveyData";
+        $.ajax({
+            method: "GET",
+            url: url,
+        })
+            .done(function( result ) {
+
+                console.log(result)
+                this.setState({mysurveyData:result});
+
+            }.bind(this))
+    }
+
     render() {
+
+
+        if(this.state.mysurveyData.flag==0){
+            startIntro('mysurvey').start();
+        }
+
    const renderSurveyPage = this.state.renderSurveyPage;
         return (
             <div>
+
                 {renderSurveyPage ? (
                     <div>
                         <SurveyResult />

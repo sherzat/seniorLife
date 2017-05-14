@@ -53,3 +53,18 @@
 
 // Stylings for home_page slider scale component
 @import "slider_scale";
+
+
+//tour image
+
+.MyAvatar{
+  position:fixed;
+  float:right;
+  right:0;
+  top:10px;
+  z-index:999 ;
+  margin-top: 70px !important;
+  margin: 0 0 10px 10px;
+}
+
+

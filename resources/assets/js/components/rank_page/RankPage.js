@@ -2,7 +2,45 @@ import React, {Component} from 'react';
 import RankElement from './RankElement.js';
 
 class RankPage extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            rankData:[],
+
+        };
+        this.handleOnclick = this.handleOnclick.bind(this);
+        this.getData = this.getData.bind(this);
+    }
+    handleOnclick() {
+
+    }
+    componentWillMount(){
+        this.getData();
+        console.log('in rank')
+
+
+    }
+    getData() {
+        var url ="/getRankData";
+        $.ajax({
+            method: "GET",
+            url: url,
+        })
+            .done(function( result ) {
+
+                console.log(result)
+                this.setState({rankData:result});
+
+            }.bind(this))
+    }
+
     render() {
+
+        if(this.state.rankData.flag==0){
+            startIntro('rank').start();
+        }
+
         return (
             <div>
                 <div className="card">
@@ -16,12 +54,12 @@ class RankPage extends Component {
                             </div>
                             <div className="col-md-4 col-sm-12 col-lg-4">
                                 <div className="card-block text-center">
-                                    <h4>Name</h4>
+                                    <h4 id="step10">Name</h4>
                                 </div>
                             </div>
                             <div className="col-md-4 col-sm-12 col-lg-4">
                                 <div className="card-block text-center">
-                                    <h4>Rank</h4>
+                                    <h4 id="step9">Rank</h4>
                                 </div>
                             </div>
                         </div>

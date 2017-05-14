@@ -40,7 +40,7 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -52,6 +52,7 @@ class HomeController extends Controller
     public function show($id)
     {
         $badges =array(
+            'flag' =>  Auth::user()->flag,
             'qol' => 75,
             'survey' => 7,
             'progress_points' => 70,
@@ -59,7 +60,8 @@ class HomeController extends Controller
             'badges' => Auth::user()->achievements()->select('badge')->get(),
         );
 
-
+        Auth::user()->flag = 1;
+        Auth::user()->save();
 
        return response()
             ->json($badges);
