@@ -74,7 +74,7 @@
 
                             <button class="dropdown-item Bg-color-cloud list-group-item border-0 pt-2 pb-2"
                                     onclick="window.location.href='/profile'"><a class="mr-auto">Change profile
-                                    Picture </a>
+                                </a>
                                 <i class="fa fa-cog" aria-hidden="true"></i>
                             </button>
 
@@ -113,32 +113,21 @@
                                     <div class="col-lg-7">
                                         <p class="text-left"><strong> {{ title_case(Auth::user()->name )}}</strong></p>
                                         <p class="text-left small">{{ Auth::user()->email }}</p>
-                                        <p class="text-left">
-                                            <a href="{{url('profile')}}" class="btn btn-success btn-block btn-sm">
-                                                Profile</a>
-                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <div class="dropdown-divider"></div>
 
-                        <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">Account
-                                Settings</a>
-                            <i class="fa fa-cog justify-content-end text-right" aria-hidden="true"></i>
+
+                        <button class="dropdown-item list-group-item border-0 pt-2 pb-2"
+                                onclick="window.location.href='/profile'"><a class="mr-auto">Change profile
+                                 </a>
+                            <i class="fa fa-cog" aria-hidden="true"></i>
                         </button>
+
                         <div class="dropdown-divider"></div>
 
-                        <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a class="mr-auto">User
-                                stats</a>
-                            <i class="fa fa-area-chart" aria-hidden="true"></i>
-                        </button>
-                        <div class="dropdown-divider"></div>
-
-                        <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="#"><a
-                                    class="mr-auto">Messages </a>
-                            <span class="badge badge-default badge-pill"> 42 </span>
-                        </button>
                         <div class="dropdown-divider"></div>
 
                         <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="{{ url('/logout') }}"
