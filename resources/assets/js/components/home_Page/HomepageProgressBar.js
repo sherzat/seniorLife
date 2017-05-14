@@ -9,7 +9,7 @@ class HomepageProgressBar extends  Component {
         super(props);
         this.state = {
             percent: '0',
-            color: '#3FC7FA',
+            color: '#f39c12',
         };
     }
 

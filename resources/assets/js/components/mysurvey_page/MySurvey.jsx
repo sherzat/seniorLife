@@ -57,10 +57,9 @@ class MySurvey extends Component {
 
                 {renderSurveyPage ? (
                     <div>
-                        <SurveyResult />
 
                         <NewSurvey handleOnclick={this.handleOnclick}/>
-
+                        <SurveyResult />
                     </div>
                     ) : (
                         <div>
