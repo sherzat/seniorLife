@@ -165,9 +165,6 @@
 @endsection
 
 @section('footer')
-
-    <div id="footer" class="mt-1"></div>
-
 @endsection
 
 

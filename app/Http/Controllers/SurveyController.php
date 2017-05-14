@@ -57,9 +57,15 @@ class SurveyController extends Controller
     $answers = $request->input("data");
 
 
+
+
+
+
+
     //fire the NewSurvey event to save response
     event(new NewSurvey($user, $answers));
 
     return $answers;
+
   }
 }

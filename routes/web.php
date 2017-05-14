@@ -16,20 +16,28 @@ Route::get('rank', 'PagesController@getRank')->name("Rank");
 Route::get('contact', 'PagesController@getContact');
 Route::get('survey_cake', 'PagesController@getSurvey_cake');
 
-Route::get('/mysurvey/{path?}',[
-	'uses'=> 'Self_assessmentController@show',
-	'where'=> ['path' => '.*'],
-])->name("My Survey");
+//mysurvey
+Route::get('mysurvey','MySurveyController@getMysurvey')->name("My Survey");
+Route::get('getMysurveyData','MySurveyController@getMysurveyData');
+
+
+//challenges
+Route::get('challenges','ChallengesController@getChallenges')->name("Challenges");
+Route::get('getChallengesData','ChallengesController@getChallengesData');
+
+//rank
+Route::get('rank','RankController@getRank')->name("Rank");
+Route::get('getRankData','RankController@getRankData');
+
+//achievement
+Route::get('achievement','AchievementController@getAchievement')->name("Achievement");
+Route::get('getAchievementData','AchievementController@getAchievementData');
+
 Route::get('empatica', 'PagesController@getEmpatica')->name("Empatica");
-Route::get('challenges', 'PagesController@getChallenges')->name("Challenges");
-Route::get('achievement', 'PagesController@getAchievement')->name("Achievement");
-
-
 
 Route::get('self_assessment', 'Self_assessmentController@index');
 Route::post('self_assessment/store/{survey}', 'Self_assessmentController@store');
 Route::get('self_assessment/show', 'Self_assessmentController@show');
-
 
 Route::get('survey/new', 'SurveyController@create_survey')->name('new.survey');
 Route::post('survey/store', 'SurveyController@store_survey')->name('store.survey');

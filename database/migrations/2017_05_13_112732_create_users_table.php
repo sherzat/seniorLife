@@ -20,6 +20,11 @@ class CreateUsersTable extends Migration
          $table->string('password');
          $table->string('avatar')->default('/img/avatars/animal/animal-duck.png');
          $table->bigInteger('point')->default(0);
+         $table->boolean('flag')->default(0);
+         $table->boolean('mysurveyflag')->default(0);
+         $table->boolean('challengsflag')->default(0);
+         $table->boolean('rankflag')->default(0);
+         $table->boolean('achievementflag')->default(0);
          $table->rememberToken();
          $table->timestamps();
      });
