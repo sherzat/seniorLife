@@ -102,3 +102,9 @@ body > nav > div > button:focus{
   outline: 1px dotted;
   outline: 0px auto -webkit-focus-ring-color;
 }
+
+.navbar .dropdown-item:active {
+  color:$midnight-blue;
+  text-decoration: none;
+   background-color: white;
+}
