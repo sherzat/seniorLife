@@ -21,6 +21,9 @@
 
     <nav class="navbar py-0 navbar-toggleable-md navbar-light fixed-top bg-nav" >
       <div class="container">
+
+          {{--navbar content for small screen--}}
+
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -33,6 +36,8 @@
             </a>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                {{--navbar content for middle screen--}}
                 <ul class="navbar-nav">
                     <li  class="nav-item  {{ ends_with(Request::url(), 'home') ? "active" : "" }}">
                         <a  class="nav-link" href={{url("home")}} >
