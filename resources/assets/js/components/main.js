@@ -6,7 +6,7 @@ import RankPage from './rank_page/RankPage';
 import MySurvey  from './mysurvey_page/MySurvey';
 
 
-//import AchievementPage from './achievement_page/AchievementPage';
+// import AchievementPage from './achievement_page/AchievementPage'; //update the progress bar in achievement_page
 import HomePage from './home_Page/HomePage';
 import ProfilePage from './profile_page/ProfilePage';
 import ChallengesPage from './challenges_page/ChallengesPage';
@@ -27,7 +27,7 @@ if (document.getElementById('rank_page')) {
         document.getElementById('rank_page'));
 }
 
-
+//TO DO :update the progress bar in achievement_page
 // if (document.getElementById('achievement_page')) {
 //     ReactDOM.render(
 //         <AchievementPage/>,
