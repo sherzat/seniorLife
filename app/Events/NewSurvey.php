@@ -18,11 +18,10 @@ class NewSurvey
      *
      * @return void
      */
-    public function __construct(User $user, $question_id, $choice_id)
+    public function __construct(User $user, $answers)
     {
         $this->user = $user;
-        $this->question_id = $question_id;
-        $this->choice_id = $choice_id;
+        $this->answers=$answers;
     }
 
     /**

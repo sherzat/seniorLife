@@ -12,6 +12,7 @@
     <!-- Bootstrap 4 core CSS -->
     <!-- Custom styles for this template -->
     <link href="/css/new_app.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -19,14 +20,14 @@
 <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top Nav-bg-color">
     <div class="container">
     <div class="navbar-header">
-        <a class="navbar-brand Title-light Lato-font" href="#">{{ config('app.name', 'SeniorLife') }}</a>
+        <a id="brand-seniorlife" class="navbar-brand Title-light Lato-font" href="#">{{ config('app.name', 'SeniorLife') }}</a>
     </div>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
 
         </ul>
-        <form class="navbar-form form-inline my-2 my-lg-0" role="form" method="POST" action="{{ url('/login')}}">
+        <form id="login-form" class="navbar-form form-inline my-2 my-lg-0" role="form" method="POST" action="{{ url('/login')}}">
             {{ csrf_field() }}
             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} mr-sm-2">
                 <div class="input-group">
@@ -77,5 +78,6 @@
 <!-- Placed at the end of the document so the pages load faster -->
 
 <script src="/js/app.js"></script>
+
 </body>
 </html>

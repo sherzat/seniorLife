@@ -14,10 +14,10 @@ class Question_choicesTableSeeder extends Seeder
     public function run()
     {
 
-		    $questions = DB::table('questions')->where('category','=',1)->get();
+		    $questions = DB::table('questions')->where('category_id','=',1)->get();
 
         $questions->each(function($question){
-          DB::table('question_choices')->insert([
+          DB::table('question_choice')->insert([
             ["choice_id"=>1, 'question_id'=>$question->id],
             ["choice_id"=>2, 'question_id'=>$question->id],
             ["choice_id"=>3, 'question_id'=>$question->id],

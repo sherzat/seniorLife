@@ -12,7 +12,7 @@ class Question extends Model
     //The choices that belongs to the questions
     public function choices()
     {
-        return $this->belongsToMany('App\Choice', 'question_choices');
+        return $this->belongsToMany('App\Choice', 'question_choice');
     }
 /*
     public function users()
@@ -25,9 +25,9 @@ class Question extends Model
         return $this->hasMany('App\Response');
     }
 
-    public function surveys()
+    public function categorys()
     {
-        return $this->belongsToMany('App\Survey', 'survey_questions');
+        return $this->belongsTo('App\Category', 'categorys');
     }
 
 }

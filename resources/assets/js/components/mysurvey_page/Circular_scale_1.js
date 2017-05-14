@@ -4,11 +4,11 @@ class Circular_scale_1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rotate_degree: "rotate(-180 350,332.91281127929693)" ,
       choice_id:null,
     };
     this.handleClick= this.handleClick.bind(this);
   }
+
   handleClick(event){
     const choices= this.props.choices.map(
       (each)=>
@@ -18,23 +18,18 @@ class Circular_scale_1 extends Component {
     var choice_id="";
     if(clicked_item == "item-1"){
       choice_id = choices[0];
-      this.setState({rotate_degree: "rotate(-18 350,323.01281127929693)" });
     }
     if(clicked_item == "item-2"){
       choice_id=choices[1];
-      this.setState({rotate_degree: "rotate(-54 350,323.01281127929693)" });
     }
     if(clicked_item == "item-3"){
       choice_id=choices[2];
-      this.setState({rotate_degree: "rotate(-90 350,323.01281127929693)" });
     }
     if(clicked_item == "item-4"){
       choice_id=choices[3];
-      this.setState({rotate_degree: "rotate(-126 350,323.01281127929693)" });
     }
     if(clicked_item == "item-5"){
       choice_id=choices[4];
-      this.setState({rotate_degree: "rotate(-162 350,323.01281127929693)" });
     }
     this.props.handleAnswer(choice_id, this.props.question_id);
   }
@@ -43,6 +38,7 @@ class Circular_scale_1 extends Component {
       (each)=>
         each.choice
     );
+
     return (
       <div className="svg-container">
 
@@ -175,7 +171,7 @@ class Circular_scale_1 extends Component {
                 <use id="svg_20" transform="rotate(72 316.6041259765625,187.55796813964844) " y="153.058037" x="282.103996" height="69" width="69" href="#icon-5"/>
               </a>
             </g>
-            <g transform={this.state.rotate_degree} id="svg_27">
+            <g transform={this.props.answered} id="svg_27">
               <path
                 stroke="#000" transform="rotate(1.1317607164382935 401.0000305175724,323.0167541503895) " d="m350.50002,322.744793c0.09386,-5.2407 -0.06006,-10.4884 0.77188,-15.71988c20.44239,1.72093 40.64368,4.53679 60.74161,7.06908c1.07894,-2.56973 0.57111,-4.70135 1.50855,-7.07724c12.91175,4.99953 25.70706,10.07025 37.97798,15.38244c-11.77275,6.02584 -25.27652,11.25888 -38.53361,16.61756c-0.42929,-2.49546 -0.85866,-4.9909 -1.28796,-7.48636c-19.539,2.41424 -40.20213,4.91033 -59.86745,7.11741c-1.33734,-5.09275 -1.29803,-10.63889 -1.311,-15.90301z"
                 strokeWidth="1.5" fill="#d50000"/>

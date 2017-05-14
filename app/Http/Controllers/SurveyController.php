@@ -40,7 +40,8 @@ class SurveyController extends Controller
     // dd($asked_questions);
 
     //$prepare_questions = \App\Question::whereNotIn('id',$asked_questions)
-    $prepare_questions = \App\Question::select("id","question")->where("category","=",1)
+    $prepare_questions = \App\Category::where('name', '=', 'cognition')->first()
+    ->questions()
     ->with('choices')
     ->get();
 
@@ -53,12 +54,12 @@ class SurveyController extends Controller
     //get the current user
     $user = Auth::user();
     //get the current answered question_id and choice_id
-    $question_id = $request->input("data.question_id");
-    $choice_id = $request->input("data.choice_id");
+    $answers = $request->input("data");
+
 
     //fire the NewSurvey event to save response
-    event(new NewSurvey($user, $question_id, $choice_id));
+    event(new NewSurvey($user, $answers));
 
-    return "success";
+    return $answers;
   }
 }

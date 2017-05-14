@@ -17,36 +17,95 @@ class Survey extends Component {
       answer:null,
       question_id:null,
       score:0,
-      submitDisabled:true,
+      dataIndex:0,
     };
     this.handleNextButton= this.handleNextButton.bind(this);
+    this.handlePrevButton= this.handlePrevButton.bind(this);
+
     this.handleAnswer= this.handleAnswer.bind(this);
     this.sendAnswers=this.sendAnswers.bind(this);
     this.handleGoBackBtn = this.handleGoBackBtn.bind(this);
+    this.changeChildstate = this.changeChildstate.bind(this);
+  }
+
+  //this contains the answers the user responded and will be send to server when all survey questions are finished
+  answers = [];
+
+
+
+  handlePrevButton() {
+    this.setState({
+      currentQuestion: this.state.currentQuestion-1,
+    }, function () {
+      for (var i = 0; i < this.answers.length; i++) {
+        if (i == this.state.currentQuestion){
+          // this.setState({answer:this.answers[i].c_id})
+          this.changeChildstate(this.answers[i].c_id);
+          return
+        }
+      }
+    });
+    this.changeChildstate(null);
+  }
+
+  changeChildstate(c_id) {
+    if(c_id == 1){
+      this.setState({rotate_degree: "rotate(-18 350,323.01281127929693)" });
+    }
+    if(c_id == 2){
+      this.setState({rotate_degree: "rotate(-54 350,323.01281127929693)" });
+    }
+    if(c_id == 3){
+      this.setState({rotate_degree: "rotate(-90 350,323.01281127929693)" });
+    }
+    if(c_id == 4){
+      this.setState({rotate_degree: "rotate(-126 350,323.01281127929693)" });
+    }
+    if(c_id == 5){
+      this.setState({rotate_degree: "rotate(-162 350,323.01281127929693)" });
+    }
+    if(c_id == null){
+      this.setState({rotate_degree: "rotate(-180 350,323.01281127929693)" });
+    }
   }
 
   handleNextButton(){
-    if(this.state.answer!=null){
-        console.log("go to sendAnswers()");
-        this.sendAnswers();
-    }
+
     this.setState({
       currentQuestion: this.state.currentQuestion+1,
-      answer:null,
-      submitDisabled:true,
-      });
+    }, function () {
+      if(this.state.currentQuestion >= this.state.data.length-1){
+        console.log("time to send answers")
+      }
+      console.log(this.state.currentQuestion)
+      for (var i = 0; i < this.answers.length; i++) {
+        if (i == this.state.currentQuestion){
+          this.changeChildstate(this.answers[i].c_id);
+          return
+        }
+      }
+
+      this.answers.push({c_id:null, q_id: null});
+      this.changeChildstate(null);
+    });
+
   }
 
   handleAnswer(answer, question_id){
-    console.log(answer);
-    this.setState({answer:answer, question_id: question_id, submitDisabled:false});
+    this.changeChildstate(answer);
+    for (var i = 0; i < this.answers.length; i++) {
+      if (i == this.state.currentQuestion){
+        this.answers.splice(i, 1, {c_id:answer, q_id: question_id});
+        console.log(this.answers);
+        return
+      }
+    }
+    this.answers.push({c_id:answer, q_id: question_id});
+    console.log(this.answers);
   }
 
   sendAnswers(){
-    if(this.state.answer == null)
-      return
-    var answer={question_id: this.state.question_id, choice_id: this.state.answer};
-    console.log(answer);
+    console.log(this.answers);
     $.ajax({
 
       headers: {
@@ -56,7 +115,7 @@ class Survey extends Component {
       type: "POST",
       url: "/survey/store",
       dataType: 'json',
-      data: {data: answer},
+      data: {data: this.answers},
       success: function (response) {
         // you will get response from your php page (what you echo or print)
         console.log(response);
@@ -69,6 +128,7 @@ class Survey extends Component {
 
       dataType: "text",
     });
+    this.handleGoBackBtn();
   }
   componentWillMount(){
     $.ajax({
@@ -93,7 +153,7 @@ class Survey extends Component {
       <Question key={each.id} question={each.question} />
     );
     const choices_for_q= this.state.data.map((each)=>
-      <Circular_scale_1 key={each.id} question_id={each.id} choices={each.choices} handleAnswer={this.handleAnswer}/>
+      <Circular_scale_1 key={each.id} question_id={each.id} choices={each.choices} answered={this.state.rotate_degree} handleAnswer={this.handleAnswer}/>
     );
     console.log(survey_question.length);
     return(
@@ -114,16 +174,31 @@ class Survey extends Component {
 
             <div className="row card">
               <li className="list-group-item justify-content-between Set-width">
-                <button className="btn btn-success">Prev</button>
 
-            {choices_for_q[this.state.currentQuestion]}
+                <div style={{width:"67px"}}>
+                  <button
+                    className="btn btn-success"
+                    hidden={this.state.currentQuestion == 0? true:false}
+                    onClick={this.handlePrevButton}>Prev</button>
+                </div>
 
+                {this.state.currentQuestion<this.state.data.length? (choices_for_q[this.state.currentQuestion])
+                  : (
+                    <div style={{width:"60%"}} className="text-center">
+                      <p style={{fontSize: "18px"}}>Congratulations,the survey is finished . Please submit your answers.</p>
+                      <button className="btn btn-success " onClick={this.sendAnswers}>
+                        submit
+                      </button>
+                    </div>
 
+                  )}
 
-                <button
-                  className="bg btn-success btn-lg" type="button"
-
-                  onClick={this.handleNextButton}>next</button>
+                  <div style={{width:"67px"}}>
+                    <button
+                      className="btn btn-success "
+                      hidden={this.state.currentQuestion == this.state.data.length? true:false}
+                      onClick={this.handleNextButton}>Next</button>
+                  </div>
 
               </li>
             </div>

@@ -8,6 +8,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/new_app.css">
+    <link href="/css/hopscotch.css" rel="stylesheet">
+    
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -166,5 +168,7 @@
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script src="/js/app.js"></script>
+<script src="/js/hopscotch.js"></script>
+<script src="/js/tour.js"></script>
 </body>
 </html>

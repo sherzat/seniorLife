@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'avatar','point',
     ];
 
     /**
@@ -27,22 +27,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    /*
-    public function questions()
-    {
-        return $this->belongsToMany('App\Question', 'responses');
-    }
-    */
+
+    //one to many
     public function responses()
     {
         return $this->hasMany('App\Response');
     }
 
-    public function surveys()
-    {
-        return $this->belongsToMany('App\Survey', 'survey_users');
-    }
 
+    //many to many
     public function achievements()
     {
         return $this->belongsToMany('App\Achievement');
@@ -56,14 +49,12 @@ class User extends Authenticatable
         ->select(DB::raw("cast(avg(weight)/0.5 as decimal(2,1)) as score, date(responses.created_at) as hour" ))
         ->join('choices', 'responses.choice_id', '=', 'choices.id')
         ->groupBy(DB::raw("hour" ))
-        ->orderBy(DB::raw("hour"))
+        // ->orderBy(DB::raw("hour"))
         ->get();
 
         $result->transform(function ($item) {
           return ['score'=>(float)$item->score, 'hour'=>$item->hour]  ;
         });
-
-
 
       return $result;
     }
