@@ -52,13 +52,25 @@ class SurveyController extends Controller
   {
     //get the current user
     $user = Auth::user();
-    //get the current answered question_id and choice_id
+
+
+      $mysurveyflag =array(
+          'mysurveyflag' =>  Auth::user()->mysurveyflag,
+      );
+
+      Auth::user()->mysurveyflag = 1;
+      Auth::user()->save();
+
+
+
+
+      //get the current answered question_id and choice_id
     $question_id = $request->input("data.question_id");
     $choice_id = $request->input("data.choice_id");
 
     //fire the NewSurvey event to save response
     event(new NewSurvey($user, $question_id, $choice_id));
 
-    return "success";
+      return response()->json($mysurveyflag);
   }
 }

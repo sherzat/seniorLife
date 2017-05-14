@@ -3,8 +3,45 @@ import CollectedBadges from './CollectedBadges';
 import AvailableBadges from './AvailableBadges';
 
 class AchievementPage extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            achievementData:[],
+
+        };
+        this.handleOnclick = this.handleOnclick.bind(this);
+        this.getData = this.getData.bind(this);
+    }
+    handleOnclick() {
+
+    }
+    componentWillMount(){
+        this.getData();
+        console.log('in achievement')
+
+
+    }
+    getData() {
+        var url ="/getAchievementData";
+        $.ajax({
+            method: "GET",
+            url: url,
+        })
+            .done(function( result ) {
+
+                console.log(result)
+                this.setState({achievementData:result});
+
+            }.bind(this))
+    }
+
 
     render() {
+
+        if(this.state.achievementData.flag==0){
+            startIntro('achievement').start();
+        }
 
         var img_src_paths = [
         "/img/badges/first_survey.png",
@@ -28,7 +65,7 @@ class AchievementPage extends Component {
 
 
                 <div className="card mb-4">
-                    <div className="card-header Bg-color text-center Lato-font"><h4> You have collected this badges</h4></div>
+                    <div className="card-header Bg-color text-center Lato-font"><h4 id="step11"> You have collected this badges</h4></div>
                     <div className="card-block">
                         <div className="row  justify-content-around">
                             {collectedBadges}
@@ -38,7 +75,7 @@ class AchievementPage extends Component {
 
 
                 <div className="card ">
-                    <div className="card-header Bg-color text-center Lato-font"><h4>In the future you can also collect this
+                    <div className="card-header Bg-color text-center Lato-font"><h4 id="step12">In the future you can also collect this
                         badges</h4></div>
                     <div className="card-block">
                         <div className="list-group list-group-flush">

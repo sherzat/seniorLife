@@ -53,6 +53,7 @@ class HomeController extends Controller
     {
         $qol=Auth::user()->getSurveyResult()->last();
         $badges =array(
+            'flag' =>  Auth::user()->flag,
             'qol' => $qol,
             'survey' => 7,
             'progress_points' => 70,
@@ -60,7 +61,8 @@ class HomeController extends Controller
             'badges' => Auth::user()->achievements()->select('badge')->get(),
         );
 
-
+        Auth::user()->flag = 1;
+        Auth::user()->save();
 
        return response()
             ->json($badges);

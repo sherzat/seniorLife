@@ -12,6 +12,8 @@
     <!-- Bootstrap 4 core CSS -->
     <!-- Custom styles for this template -->
     <link href="/css/new_app.css" rel="stylesheet">
+
+
 </head>
 <body>
 
@@ -20,6 +22,7 @@
     <div class="container">
     <div class="navbar-header">
         <a class="navbar-brand Title-light Lato-font" href="#">{{ config('app.name', 'SeniorLife') }}</a>
+
     </div>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
@@ -59,7 +62,8 @@
 									</span>
                 @endif
             </div>
-            <button type="submit" class="btn btn-success Rail-way-font">Sign In</button>
+            <button type="submit" class="btn btn-success Rail-way-font"  data-step="1" data-intro="Get it, use it." >Sign In</button>
+
         </form>
     </div>
     </div>
