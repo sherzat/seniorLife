@@ -53,9 +53,9 @@ class HomePage extends  Component {
 
                 <div className="Rail-way-font">
 
-                    <div className="row my-flex-card">
-                        <div className="col-md-6">
-                            <div className="card">
+                    <div className="row d-flex ">
+                        <div className="col-md-6 align-self-stretch mb-4">
+                            <div className="card h-100">
 
                                 {/*<!-- Heading -->*/}
 
@@ -85,11 +85,11 @@ class HomePage extends  Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 align-self-stretch mb-4">
 
                             {/* <!-- Heading -->*/}
 
-                            <div className="card">
+                            <div className="card h-100">
 
                                 {/*<!-- Heading -->*/}
 
@@ -143,12 +143,12 @@ class HomePage extends  Component {
                             </div>
                         </div>
                     </div>
-                    <div className="row my-flex-card">
+                    <div className="row d-flex">
 
                         {/*<!-- your achevments -->*/}
 
-                        <div className="col-md-6">
-                            <div className="card">
+                        <div className="col-md-6 align-self-stretch mb-4">
+                            <div className="card h-100">
 
                                 {/*<!-- Heading -->*/}
 
@@ -178,11 +178,11 @@ class HomePage extends  Component {
 
                         {/*<!-- your progress -->*/}
 
-                        <div className="col-md-6">
+                        <div className="col-md-6 align-self-stretch mb-4">
 
                             {/*<!-- Heading -->*/}
 
-                            <div className="card">
+                            <div className="card h-100">
                                 <div className="card-block pt-1 pb-2">
                                     <h4 id="step4" className="card-title">Player status </h4>
                                 </div>

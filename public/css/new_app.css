@@ -11814,11 +11814,6 @@ body > div.container-fluid > div > div:nth-child(2) > div:nth-child(1) > div:nth
   color: #f39c12;
 }
 
-.my-flex-card > div > div.card {
-  height: calc(100% - 15px);
-  margin-bottom: 15px;
-}
-
 #myCarousel {
   height: 150px;
   width: 100%;
