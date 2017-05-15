@@ -48,6 +48,7 @@ class SurveyResult extends Component {
 	render() {
 
 		const data = this.state.data;
+
 		return (
 			<div>
 				<div className="row">

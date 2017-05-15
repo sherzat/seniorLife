@@ -58,4 +58,17 @@ class User extends Authenticatable
 
       return $result;
     }
+
+    public function getResultByCatagory(){
+
+        $responses = \App\Response::select('name', DB::raw('avg(weight) as score'))
+            ->join('questions', 'questions.id', '=', 'responses.question_id')
+            ->join('categorys', 'categorys.id', '=', 'questions.category_id')
+            ->join('choices', 'choices.id', '=', 'responses.choice_id')
+            ->where('user_id', $this->id)
+            ->groupBy('name')
+            ->get();
+
+        return $responses;
+    }
 }

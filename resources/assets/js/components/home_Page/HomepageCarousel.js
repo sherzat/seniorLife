@@ -18,15 +18,14 @@ class HomepageCarousel extends Component {
                     displayQuantityOfSide={2}
                     navigation={false}
                     enableHeading={false}
-                    width={360}
-                    height={250}
-                >
+                    className="w-100"
+                    height={250}>
 
                     {collectedBadges}
 
                 </Coverflow>
-            </div>
 
+            </div>
         );
     }
 }

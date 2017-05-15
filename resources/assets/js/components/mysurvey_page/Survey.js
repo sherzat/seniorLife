@@ -203,10 +203,13 @@ class Survey extends Component {
 
           <div className="col-md-3">
 
+
+
             <div className="card-block mb-20">
               <small>{this.state.currentQuestion}/{survey_question.length}</small>
               <ProgressBar percent={(this.state.currentQuestion / survey_question.length) * 100}/>
             </div>
+
 
            <div className="card-block">
              <div className="card-title"> <b>Category</b></div>
@@ -214,9 +217,12 @@ class Survey extends Component {
             </div>
 
             <div className="card-block">
+
+
               <a href="#" className="btn btn-sm btn-secondary" onClick={this.handleGoBackBtn}>
                Back to categories</a>
             </div>
+
 
           </div>
         </div>

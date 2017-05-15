@@ -4,6 +4,7 @@ import HomepageProgressBar from './HomepageProgressBar';
 import HomepageCircularPiechart from './HomepageCircularPiechart';
 import HomepageCarousel from './HomepageCarousel';
 import HomepageRadioButton from './HomepageRadioButton';
+import HomepageBarchart from './HomepageBarchart';
 
 class HomePage extends  Component {
     constructor(props) {
@@ -94,51 +95,11 @@ class HomePage extends  Component {
 
                                 <div className="card-block pt-1 pb-2">
                                     <h4 id="step2" className="card-title">Health Card </h4>
-                                    <h6 className="card-subtitle text-muted">Real time data</h6>
+                                    <h6 className="card-subtitle text-muted">see result of individual category survey</h6>
                                 </div>
 
-                                {/*<!-- Image -->*/}
+                                <HomepageBarchart />
 
-                                <div className="card-block p-1 mx-auto">
-                                    <i className="fa fa-spinner fa-3x fa-spin" aria-hidden="true"></i>
-                                </div>
-
-                                {/* <!-- Text Content -->*/}
-
-                                <div className=" card-block p-1 mx-auto">
-                                    <p>Connect Your Device</p>
-                                </div>
-
-                                {/*<!-- Text Content -->*/}
-
-                                <div className="card-block p-1 pb-3">
-                                    <div className="list-group list-group-flush">
-
-                                        <li className="list-group-item justify-content-between">
-                                            <div className="" id="health_card">
-                                                <i className="fa fa-heartbeat" aria-hidden="true"></i>
-                                                <span> Heart Rate </span>
-                                            </div>
-                                            <span> 42 </span>
-                                        </li>
-
-                                        <li className="list-group-item justify-content-between">
-                                            <div className="" id="health_card">
-                                                <i className="fa fa-smile-o" aria-hidden="true"></i>
-                                                <span> Stress level</span>
-                                            </div>
-                                            <span>Normal</span>
-                                        </li>
-
-                                        <li className="list-group-item justify-content-between">
-                                            <div className="" id="health_card">
-                                                <i className="fa fa-thermometer-three-quarters" aria-hidden="true"></i>
-                                                <span>Temperature</span>
-                                            </div>
-                                            <span> 25 oC </span>
-                                        </li>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

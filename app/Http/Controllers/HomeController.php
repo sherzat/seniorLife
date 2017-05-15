@@ -101,4 +101,11 @@ class HomeController extends Controller
     {
         //
     }
+
+    public function getResultByCatagory(){
+
+        $user=Auth::user();
+        $getResultByCatagory = $user->getResultByCatagory();
+        return json_encode($getResultByCatagory);
+    }
 }
