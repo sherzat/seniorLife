@@ -19,6 +19,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\NewSurvey' => [
             'App\Listeners\SaveSurvey',
         ],
+        'App\Events\Points' => [
+            'App\Listeners\AddPoints',
+        ],
 
     ];
 

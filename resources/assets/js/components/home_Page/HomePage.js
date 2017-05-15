@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import HomepageProgressBar from './HomepageProgressBar';
+import PlayerStatus from '../components/PlayerStatus';
 import HomepageCircularPiechart from './HomepageCircularPiechart';
 import HomepageCarousel from './HomepageCarousel';
 import HomepageRadioButton from './HomepageRadioButton';
@@ -183,13 +184,14 @@ class HomePage extends  Component {
 
                             <div className="card">
                                 <div className="card-block pt-1 pb-2">
-                                    <h4 id="step4" className="card-title"><h2>Level {this.state.home.level} </h2></h4>
+                                    <h4 id="step4" className="card-title">Player status </h4>
                                 </div>
 
                                 {/*<!-- Image -->*/}
 
                                 <div className="card-block pb-0">
-                                    <HomepageProgressBar progress_points={this.state.home.progress_points}/>
+                                    <PlayerStatus
+                                      playerStatus={this.state.home.playerStatus}/>
                                 </div>
                                 <div className="card-block p-1 pb-3 mx-auto">
                                     Get 70 more points to level up

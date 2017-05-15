@@ -7,6 +7,9 @@ import Slider_scale from '../Slider_scale';
 import HomepageProgressBar from '../home_Page/HomepageProgressBar';
 import HomePageSlider from '../home_Page/HomePageSlider';
 import HomePageRadioButton from '../home_Page/HomepageRadioButton';
+import {ModalContainer, ModalDialog} from 'react-modal-dialog';
+import PlayerStatus from '../components/PlayerStatus'
+
 
 class Survey extends Component {
   constructor(props) {
@@ -16,8 +19,9 @@ class Survey extends Component {
       currentQuestion: null,
       answer:null,
       question_id:null,
-      score:0,
       dataIndex:0,
+      isShowingModal: false,
+      playerStatus:null,
     };
     this.handleNextButton= this.handleNextButton.bind(this);
     this.handlePrevButton= this.handlePrevButton.bind(this);
@@ -26,12 +30,17 @@ class Survey extends Component {
     this.sendAnswers=this.sendAnswers.bind(this);
     this.handleGoBackBtn = this.handleGoBackBtn.bind(this);
     this.changeChildstate = this.changeChildstate.bind(this);
+    this.handleModalClose = this.handleModalClose.bind(this);
   }
 
   //this contains the answers the user responded and will be send to server when all survey questions are finished
   answers = [];
 
-
+  handleModalClick = () => this.setState({isShowingModal: true})
+  handleModalClose () {
+    this.setState({isShowingModal: false})
+    this.props.handleOnclick("survey");
+  }
 
   handlePrevButton() {
     this.setState({
@@ -85,7 +94,7 @@ class Survey extends Component {
         }
       }
 
-      this.answers.push({c_id:null, q_id: null});
+      this.answers.push({});
       this.changeChildstate(null);
     });
 
@@ -104,8 +113,16 @@ class Survey extends Component {
     console.log(this.answers);
   }
 
+
   sendAnswers(){
-    console.log(this.answers);
+
+    //remove the not answered the questions from the list
+    var answers = this.answers.filter((each)=>
+      Object.values(each)!=""
+    );
+    console.log(answers);
+
+
     $.ajax({
 
       headers: {
@@ -117,9 +134,10 @@ class Survey extends Component {
       dataType: 'json',
       data: {data: this.answers},
       success: function (response) {
-        // you will get response from your php page (what you echo or print)
         console.log(response);
-        this.setState({score: this.state.score +1 });
+        this.setState({playerStatus: response},function(){
+          this.handleModalClick();
+        });
 
       }.bind(this),
       error: function(jqXHR, textStatus, errorThrown) {
@@ -128,7 +146,7 @@ class Survey extends Component {
 
       dataType: "text",
     });
-    this.handleGoBackBtn();
+
   }
   componentWillMount(){
     $.ajax({
@@ -143,7 +161,8 @@ class Survey extends Component {
     }.bind(this))
   }
 
-  handleGoBackBtn() {
+  handleGoBackBtn(completeState) {
+
     this.props.handleOnclick("survey");
   }
 
@@ -185,7 +204,7 @@ class Survey extends Component {
                 {this.state.currentQuestion<this.state.data.length? (choices_for_q[this.state.currentQuestion])
                   : (
                     <div style={{width:"60%"}} className="text-center">
-                      <p style={{fontSize: "18px"}}>Congratulations,the survey is finished . Please submit your answers.</p>
+                      <p style={{fontSize: "18px"}}>You have made it till the end!! Please submit your answers.</p>
                       <button className="btn btn-success " onClick={this.sendAnswers}>
                         submit
                       </button>
@@ -213,16 +232,32 @@ class Survey extends Component {
               <div className="card-block">
                 <dt>Category:</dt> <dd className="ml-auto">{this.props.selectedCategory}</dd>
               </div>
-              <div className="card-block ">
-                Score: {this.state.score}
-              </div>
+
               <div className="card-block">
                 <a href="#" className="btn button" onClick={this.handleGoBackBtn}>back to categories</a>
               </div>
             </div>
           </div>
         </div>
+        {
+          this.state.isShowingModal &&
+        <ModalContainer>
+            <ModalContainer onClose={this.handleModalClose}>
+                <ModalDialog onClose={this.handleModalClose}>
+                  <dl className="row">
+                    
+                    <p style={{fontSize: "18px"}}>Congratulations</p>
+                    <dt className="col-sm-3">you earned:</dt>
+                    <dd className="col-sm-9">25 points</dd>
 
+                    <dt className="col-sm-3">The result of the survey :</dt>
+                    <dd className="col-sm-9">68 out of 100</dd>
+
+                </dl>
+                </ModalDialog>
+            </ModalContainer>
+        </ModalContainer>
+      }
       </div>
     );
   }
