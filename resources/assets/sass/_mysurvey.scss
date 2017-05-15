@@ -4,7 +4,6 @@
     margin-bottom: 0;
 }
 
-
 .item .sector{transition:all .1s linear;stroke:#111;}
 .menu-trigger{fill:#EA2A55;pointer-events:auto;}
 .menu-trigger:hover,.menu-trigger:focus{cursor:pointer;}
@@ -34,6 +33,14 @@ symbol{overflow:visible;}
 	height: 350px;
 }
 
+.Card-Height{
+
+	height: 180px !important;
+}
+
+.Text-font-size{
+	font-size: 29px !important;
+}
 
 
 /*

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import 'rc-progress/assets/index.css';
 import { Line, Circle } from 'rc-progress';
 
-class HomepageProgressBar extends  Component {
+class ProgressBar extends  Component {
 
     constructor(props) {
         super(props);
@@ -20,8 +20,8 @@ class HomepageProgressBar extends  Component {
 
         return (
             <div>
-                <small className="text-right"><h4>2/20</h4></small>
-                <Line percent={44} strokeWidth={5} trailWidth={5} strokeLinecap="square"  strokeColor={this.state.color} />
+
+                <Line percent={this.props.percent}  strokeWidth="6" strokeColor={this.state.color} />
 
             </div>
 
@@ -29,7 +29,4 @@ class HomepageProgressBar extends  Component {
     }
 }
 
-export default HomepageProgressBar;
-
-
-{/*<Progress completed={this.props.progress_points} className={"progressbar"}/>*/}
+export default ProgressBar;

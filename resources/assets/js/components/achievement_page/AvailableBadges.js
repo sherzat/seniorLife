@@ -2,8 +2,7 @@
  * Created by Avatar on 5/6/2017.
  */
 import React, {Component} from 'react';
-import Progress from 'react-progressbar';
-
+import ProgressBar from '../mysurvey_page/ProgressBar';
 class AvailableBadges extends Component {
     render() {
         return (
@@ -27,7 +26,7 @@ class AvailableBadges extends Component {
                     <div className="col-md-5 col-sm-4">
 
                         <small>3/10</small>
-                        <Progress completed={33} className={"progressbar"}/>
+                        <ProgressBar percent={33} className={"progressbar"}/>
 
                     </div>
                 </li>

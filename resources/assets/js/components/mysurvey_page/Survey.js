@@ -4,9 +4,9 @@ import Circular_scale_1 from './Circular_scale_1';
 import Circular_scale_3 from './Circular_scale_3';
 import Question from './Question';
 import Slider_scale from '../Slider_scale';
-import HomepageProgressBar from '../home_Page/HomepageProgressBar';
 import HomePageSlider from '../home_Page/HomePageSlider';
 import HomePageRadioButton from '../home_Page/HomepageRadioButton';
+import ProgressBar from './ProgressBar';
 
 class Survey extends Component {
   constructor(props) {
@@ -162,12 +162,9 @@ class Survey extends Component {
         <div className="row">
           <div className="col-md-9">
             <div className="row card card-group Bg-color-midnight">
-              <div className="col-md-3 p-0">
-                <img className="card-img p-0" src="/img/avatars/children/Child-women-avatar.png"></img>
-              </div>
-              <div className="col-md-9 p-0">
-                <div className="card-block vertical-align">
-                  <h2 className="text-white vertical-align">{survey_question[this.state.currentQuestion]}</h2>
+              <div className="col-md-12 p-0">
+                <div className="card-block Card-Height vertical-align">
+                  <h2 className="text-white Text-font-size vertical-align">{survey_question[this.state.currentQuestion]}</h2>
                 </div>
               </div>
             </div>
@@ -177,7 +174,7 @@ class Survey extends Component {
 
                 <div style={{width:"67px"}}>
                   <button
-                    className="btn btn-success"
+                    className="btn btn-success btn-lg"
                     hidden={this.state.currentQuestion == 0? true:false}
                     onClick={this.handlePrevButton}>Prev</button>
                 </div>
@@ -186,16 +183,16 @@ class Survey extends Component {
                   : (
                     <div style={{width:"60%"}} className="text-center">
                       <p style={{fontSize: "18px"}}>Congratulations,the survey is finished . Please submit your answers.</p>
-                      <button className="btn btn-success " onClick={this.sendAnswers}>
+                      <button className="btn btn-success btn-lg" onClick={this.sendAnswers}>
                         submit
                       </button>
                     </div>
 
                   )}
 
-                  <div style={{width:"67px"}}>
+                  <div style={{width:"91px"}}>
                     <button
-                      className="btn btn-success "
+                      className="btn btn-success btn-lg"
                       hidden={this.state.currentQuestion == this.state.data.length? true:false}
                       onClick={this.handleNextButton}>Next</button>
                   </div>
@@ -203,23 +200,24 @@ class Survey extends Component {
               </li>
             </div>
           </div>
+
           <div className="col-md-3">
 
-            <div className="card my-flex-card bg-faded">
-              <div className="card-block ">
-                <small>{this.state.currentQuestion}/{survey_question.length}</small>
-                <HomepageProgressBar percent={(this.state.currentQuestion/survey_question.length)*100}/>
-              </div>
-              <div className="card-block">
-                <dt>Category:</dt> <dd className="ml-auto">{this.props.selectedCategory}</dd>
-              </div>
-              <div className="card-block ">
-                Score: {this.state.score}
-              </div>
-              <div className="card-block">
-                <a href="#" className="btn button" onClick={this.handleGoBackBtn}>back to categories</a>
-              </div>
+            <div className="card-block mb-20">
+              <small>{this.state.currentQuestion}/{survey_question.length}</small>
+              <ProgressBar percent={(this.state.currentQuestion / survey_question.length) * 100}/>
             </div>
+
+           <div className="card-block">
+             <div className="card-title"> <b>Category</b></div>
+             <span>{this.props.selectedCategory}</span>
+            </div>
+
+            <div className="card-block">
+              <a href="#" className="btn btn-sm btn-secondary" onClick={this.handleGoBackBtn}>
+               Back to categories</a>
+            </div>
+
           </div>
         </div>
 

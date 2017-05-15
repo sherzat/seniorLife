@@ -189,7 +189,7 @@ class HomePage extends  Component {
                                 {/*<!-- Image -->*/}
 
                                 <div className="card-block pb-0">
-                                    <HomepageProgressBar progress_points={this.state.home.progress_points}/>
+                                    <HomepageProgressBar />
                                 </div>
                                 <div className="card-block p-1 pb-3 mx-auto">
                                     Get 70 more points to level up
