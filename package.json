@@ -19,6 +19,7 @@
     "vue-resource": "^1.0.3"
   },
   "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
     "font-awesome": "^4.7.0",
     "nw-react-slider": "^2.0.1",
     "rc-progress": "^2.1.1",

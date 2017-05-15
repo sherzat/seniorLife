@@ -51,16 +51,21 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        $qol=Auth::user()->getSurveyResult()->last();
-        $badges =array(
-            'flag' =>  Auth::user()->flag,
-            'qol' => $qol,
-            'survey' => 7,
-            'progress_points' => 70,
-            'level' => 2,
-            'badges' => Auth::user()->achievements()->select('badge')->get(),
-        );
+        $user = Auth::user();
 
+
+        // level and points pair
+        $player_status = $user->getPlayerStatus();
+
+
+        $qol=$user->getSurveyResult()->last();
+
+        $badges =array(
+            'flag' =>  $user->flag,
+            'qol' => $qol,
+            'playerStatus'=>$player_status,
+            'badges' => $user->achievements()->select('badge')->get(),
+        );
         Auth::user()->flag = 1;
         Auth::user()->save();
 

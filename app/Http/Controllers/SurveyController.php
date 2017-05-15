@@ -39,7 +39,7 @@ class SurveyController extends Controller
 
     //$prepare_questions = \App\Question::whereNotIn('id',$asked_questions)
     $prepare_questions = \App\Category::where('name', '=', 'cognition')->first()
-    ->questions()
+    ->questions()->where('id', '>' , '5')->limit(5)
     ->with('choices')
     ->get();
 
@@ -54,16 +54,15 @@ class SurveyController extends Controller
     //get the current answered question_id and choice_id
     $answers = $request->input("data");
 
-
-
-
-
-
-
     //fire the NewSurvey event to save response
     event(new NewSurvey($user, $answers));
 
-    return $answers;
+
+    // level and points pair
+    $playerStatus = $user->getPlayerStatus();
+
+
+    return $playerStatus;
 
   }
 }

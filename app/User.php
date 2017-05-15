@@ -71,4 +71,36 @@ class User extends Authenticatable
 
         return $responses;
     }
+
+    public function getPlayerStatus()
+    {
+      $points = $this->point;
+      $level_score = array( );
+      for($i=1;$i<51;$i++){
+        $nextscore = $i*($i + 2)*10;
+        array_push($level_score, array("level"=>$i, "score"=>$nextscore));
+      }
+      $prev_level = array_last($level_score, function ($value, $key) use($points) {
+        return $value["score"] <= $points;
+      });
+      $current_level = array_first($level_score, function ($value, $key) use($points){
+        return $value["score"] > $points ;
+      });
+
+
+
+      $level['current_level'] = $current_level;
+      $level['prev_level'] = $prev_level;
+
+
+      $max_score = ($level['current_level']['score'] - $level['prev_level']['score']);
+      $processed_score =  ($this->point - $level['prev_level']['score']);
+      $level_progress['max_score'] = $max_score;
+      $level_progress['processed_score'] = $processed_score;
+      $PlayerStatus =array(
+          'level_progress' => $level_progress,
+          'level' => $level['current_level']['level'],
+      );
+      return $PlayerStatus;
+    }
 }

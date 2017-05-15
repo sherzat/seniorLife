@@ -40,10 +40,7 @@ body > div.container-fluid > div > div:nth-child(2) > div:nth-child(1) > div:nth
   color: $orange;
 }
 
-.my-flex-card > div > div.card {
-  height: calc(100% - 15px);
-  margin-bottom: 15px;
-}
+
 
 #myCarousel{
   height: 150px;
@@ -120,4 +117,3 @@ color:$midnight-blue ;
   padding-left: 7px !important;
   padding-top: 7px !important;
 }
-
