@@ -98,7 +98,6 @@ class HomePage extends  Component {
                                     <h4 id="step2" className="card-title">Health Card </h4>
                                     <h6 className="card-subtitle text-muted">see result of individual category survey</h6>
                                 </div>
-
                                 <HomepageBarchart />
 
                             </div>
