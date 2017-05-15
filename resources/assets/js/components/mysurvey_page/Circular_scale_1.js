@@ -43,7 +43,7 @@ class Circular_scale_1 extends Component {
       <div className="svg-container">
 
         <svg viewBox="20 0 650 380 " preserveAspectRatio="xMinYMin meet"
-          className="svg-content" id="menu" xmlns="http://www.w3.org/2000/svg">
+          className="svg-content" id="menu" xmlns="http://www.w3.org/2000/svg" version="1.1">
           <g>
             <title>Layer 1</title>
             <g id="symbolsContainer">
