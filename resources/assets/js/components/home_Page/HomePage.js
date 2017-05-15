@@ -104,12 +104,12 @@ class HomePage extends  Component {
                             </div>
                         </div>
                     </div>
-                    <div className="row my-flex-card">
+                    <div className="row d-flex ">
 
                         {/*<!-- your achevments -->*/}
 
-                        <div className="col-md-6">
-                            <div className="card">
+                        <div className="col-md-6 align-self-stretch mb-4">
+                            <div className="card h-100">
 
                                 {/*<!-- Heading -->*/}
 
