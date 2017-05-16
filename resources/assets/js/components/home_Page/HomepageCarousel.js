@@ -15,12 +15,13 @@ class HomepageCarousel extends Component {
             <div>
 
                 <Coverflow
+                    style={{width: "100vw", height:"300px"}}
                     displayQuantityOfSide={2}
                     navigation={false}
                     enableHeading={false}
                     className="w-100"
                     height={250}>
-
+                    />
                     {collectedBadges}
 
                 </Coverflow>
