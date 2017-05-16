@@ -18,12 +18,16 @@
 .Font-dark{
   color:$midnight-blue !important;
 }
+
 .Font-light{
   color: $cloud !important;
 }
 
 .Bg-color-midnight{
   background-color: $midnight-blue !important;
+}
+.form-group.has-error > span > strong {
+  color: red !important;
 }
 
 .Bg-color-cloud{

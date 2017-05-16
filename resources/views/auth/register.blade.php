@@ -18,7 +18,7 @@
 
                 </div>
                 @if ($errors->has('name'))
-                    <span class="form-text">
+                    <span class="form-text Red-color">
                                          <strong>{{ $errors->first('name') }}</strong>
                                      </span>
                 @endif
@@ -37,7 +37,7 @@
                 </div>
                 @if ($errors->has('email'))
 
-                    <span class="form-text ">
+                    <span class="form-text Red-color">
                                  <strong>{{ $errors->first('email') }}</strong>
                              </span>
                 @endif
@@ -53,7 +53,7 @@
 
                 </div>
                 @if ($errors->has('password'))
-                    <span class="form-text">
+                    <span class="form-text Red-color">
                                 <strong>{{ $errors->first('password') }}</strong>
                             </span>
                 @endif
