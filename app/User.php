@@ -88,7 +88,6 @@ class User extends Authenticatable
       });
 
 
-
       $level['current_level'] = $current_level;
       $level['prev_level'] = $prev_level;
 

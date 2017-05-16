@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
 import Circular_scale_1 from './Circular_scale_1';
-import Circular_scale_3 from './Circular_scale_3';
 import Question from './Question';
-import Slider_scale from '../Slider_scale';
+import Slider_scale from './Slider_scale';
 import HomePageSlider from '../home_Page/HomePageSlider';
 import HomePageRadioButton from '../home_Page/HomepageRadioButton';
 import ProgressBar from './ProgressBar';
@@ -19,7 +18,6 @@ class Survey extends Component {
       currentQuestion: null,
       answer:null,
       question_id:null,
-      dataIndex:0,
       isShowingModal: false,
       playerStatus:null,
     };
@@ -58,23 +56,23 @@ class Survey extends Component {
   }
 
 // only for the circular scale
-  changeChildstate(c_id) {
-    if(c_id == 1){
+  changeChildstate(choice_index) {
+    if(choice_index == 0){
       this.setState({rotate_degree: "rotate(-18 350,323.01281127929693)" });
     }
-    if(c_id == 2){
+    if(choice_index == 1){
       this.setState({rotate_degree: "rotate(-54 350,323.01281127929693)" });
     }
-    if(c_id == 3){
+    if(choice_index == 2){
       this.setState({rotate_degree: "rotate(-90 350,323.01281127929693)" });
     }
-    if(c_id == 4){
+    if(choice_index == 3){
       this.setState({rotate_degree: "rotate(-126 350,323.01281127929693)" });
     }
-    if(c_id == 5){
+    if(choice_index == 4){
       this.setState({rotate_degree: "rotate(-162 350,323.01281127929693)" });
     }
-    if(c_id == null){
+    if(choice_index == null){
       this.setState({rotate_degree: "rotate(-180 350,323.01281127929693)" });
     }
   }
@@ -101,8 +99,9 @@ class Survey extends Component {
 
   }
 
-  handleAnswer(answer, question_id){
-    this.changeChildstate(answer);
+  handleAnswer(choice_index, question_id){
+    this.changeChildstate(choice_index);
+    var answer = this.state.data[this.state.currentQuestion].choices[choice_index].id;
     for (var i = 0; i < this.answers.length; i++) {
       if (i == this.state.currentQuestion){
         this.answers.splice(i, 1, {c_id:answer, q_id: question_id});
@@ -174,17 +173,22 @@ class Survey extends Component {
   render(){
 
     var description = this.props.selectedCategory !== 'cognition'?  this.props.categoryDescription: "" ;
-    console.log(description)
+
     const survey_question= this.state.data.map((each)=>
       <Question key={each.id}
          question={each.question}
          description={description}/>
     );
-
-    const choices_for_q= this.state.data.map((each)=>
+    var choices_for_q=null;
+    if(this.props.selectedCategoryId ==1){
+      choices_for_q= this.state.data.map((each)=>
       <Circular_scale_1 key={each.id} question_id={each.id} choices={each.choices} answered={this.state.rotate_degree} handleAnswer={this.handleAnswer}/>
-    );
-
+      );
+    }else if (this.props.selectedCategoryId <5) {
+      choices_for_q= this.state.data.map((each)=>
+      <Slider_scale key={each.id} question_id={each.id} choices={each.choices} answered={this.state.rotate_degree} handleAnswer={this.handleAnswer}/>
+      );
+    }
     console.log(survey_question.length);
     return(
       <div>

@@ -23,17 +23,20 @@ class Slider_scale extends Component {
 
     render () {
         const { value } = this.state
+        const choices= this.props.choices.map(
+          (each)=>
+            each.choice
+        );
         const horizontalLabels = {
-            0: 'Very unsatisfied',
-            25: 'Unsatisfied',
-            50: 'Neutral',
-            75: 'Satisfied',
-            100: 'Very satisfied'
+            0: choices[0],
+            25: choices[1],
+            50: choices[2],
+            75: choices[3],
+            100: choices[4]
         }
         return (
 
             <div className='slider'>
-                <h2 className="text-progress-settings"> Express your fillings </h2>
                 <Slider
                     min={0}
                     max={100}

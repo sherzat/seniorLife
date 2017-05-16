@@ -54,7 +54,7 @@ class RankPage extends Component {
                     ranking={rankId++}
                     user_avatar={rank.avatar}
                     user_name={rank.name}
-                    levels={rank.level}
+                    level={rank.level}
                     points={rank.point} />
         )
         return (

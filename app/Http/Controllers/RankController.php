@@ -15,15 +15,9 @@ class RankController extends Controller
 
     public function getRankData()
     {
-        $rankUsers= DB::table('users')->select('id','name', 'email','point','avatar')->orderBy('point', 'desc')->get();
+        $rankUsers= \App\User::all();
 
-//        $playerStatus=[];
-//        $rankUsers->each(function ($item) use($playerStatus){
-//            array_add($playerStatus,
-//               'playerStatus', array(\App\User::find($item->id)->getPlayerStatus())
-//            );
-//            dd($playerStatus);
-//        });
+
         $rankData =array(
             'flag' =>  Auth::user()->rankflag,//thisis fr fist time visit
             'rankUsers' => $rankUsers,

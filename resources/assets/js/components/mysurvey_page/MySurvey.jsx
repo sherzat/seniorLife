@@ -83,6 +83,7 @@ class MySurvey extends Component {
                               handleOnclick={this.handleOnclick}
                               selectedCategory={this.state.selectedCategory.name}
                               categoryDescription={this.state.selectedCategory.description}
+                              selectedCategoryId={this.state.selectedCategory.id}
                             />
                         </div>
                     )}

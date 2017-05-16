@@ -4,34 +4,34 @@ class Circular_scale_1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      choice_id:null,
+      choice_index:null,
     };
     this.handleClick= this.handleClick.bind(this);
   }
 
   handleClick(event){
-    const choices= this.props.choices.map(
-      (each)=>
-        each.id
-    );
+    // const choices= this.props.choices.map(
+    //   (each)=>
+    //     each.id
+    // );
     const clicked_item= event.target.parentElement.id;
-    var choice_id="";
+    var choice_index="";
     if(clicked_item == "item-1"){
-      choice_id = choices[0];
+      choice_index = 0;
     }
     if(clicked_item == "item-2"){
-      choice_id=choices[1];
+      choice_index=1;
     }
     if(clicked_item == "item-3"){
-      choice_id=choices[2];
+      choice_index=2;
     }
     if(clicked_item == "item-4"){
-      choice_id=choices[3];
+      choice_index=3;
     }
     if(clicked_item == "item-5"){
-      choice_id=choices[4];
+      choice_index=4;
     }
-    this.props.handleAnswer(choice_id, this.props.question_id);
+    this.props.handleAnswer(choice_index, this.props.question_id);
   }
   render() {
     const choices= this.props.choices.map(
