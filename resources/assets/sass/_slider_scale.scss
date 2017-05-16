@@ -134,7 +134,13 @@
   height: 15px;
 }
 
-.slider li {
+.slider > div > ul > li:nth-child(5){
+  left:-42px !important;
+  top: -60px;
+}
+.slider > div > ul > li:nth-child(1),
+.slider > div > ul > li:nth-child(3),
+.slider > div > ul > li:nth-child(5) {
 
   /* Safari */
   -webkit-transform: rotate(30deg);
