@@ -121,7 +121,7 @@ class Survey extends Component {
       Object.values(each)!=""
     );
     console.log(answers);
-
+    this.answers = answers;
 
     $.ajax({
 
@@ -134,8 +134,9 @@ class Survey extends Component {
       dataType: 'json',
       data: {data: this.answers},
       success: function (response) {
-        console.log(response);
         this.setState({playerStatus: response},function(){
+          console.log(this.state.playerStatus);
+
           this.handleModalClick();
         });
 
@@ -144,7 +145,6 @@ class Survey extends Component {
         console.log(textStatus, errorThrown);
       }.bind(this),
 
-      dataType: "text",
     });
 
   }
@@ -174,6 +174,7 @@ class Survey extends Component {
     const choices_for_q= this.state.data.map((each)=>
       <Circular_scale_1 key={each.id} question_id={each.id} choices={each.choices} answered={this.state.rotate_degree} handleAnswer={this.handleAnswer}/>
     );
+    
     console.log(survey_question.length);
     return(
       <div>
@@ -244,16 +245,16 @@ class Survey extends Component {
         <ModalContainer>
             <ModalContainer onClose={this.handleModalClose}>
                 <ModalDialog onClose={this.handleModalClose}>
-                  <dl className="row">
-
-                    <p style={{fontSize: "18px"}}>Congratulations</p>
-                    <dt className="col-sm-3">you earned:</dt>
-                    <dd className="col-sm-9">25 points</dd>
-
-                    <dt className="col-sm-3">The result of the survey :</dt>
-                    <dd className="col-sm-9">68 out of 100</dd>
-
-                </dl>
+                  <div className="card" style={{width:"300px"}}>
+                    <div className="card-title text-center">Congratulations</div>
+                    <div className="card-block">
+                      <PlayerStatus  playerStatus={this.state.playerStatus.playerStatus}/>
+                      <dl className="d-flex justify-content-around mt-4">
+                      <dt className="">you earned:</dt>
+                      <dd className="">{this.answers.length} points</dd>
+                      </dl>
+                    </div>
+                  </div>
                 </ModalDialog>
             </ModalContainer>
         </ModalContainer>

@@ -12,17 +12,18 @@ class PlayerStatus extends  Component {
             color: '#f39c12',
         };
     }
-
+    componentDidMount(){
+      this.setState({percent: this.props.playerStatus.level_progress['processed_score']})
+    }
     render() {
-        const playerStatus = this.props.playerStatus;
-
+        console.log(this.props.playerStatus);
         return (
             <div>
               <div className="d-flex">
-                <p className="m-0">Level {playerStatus.level}</p><small className="ml-auto">{playerStatus.level_progress['processed_score']}/{playerStatus.level_progress['max_score']}</small>
+                <p className="m-0">Level {this.props.playerStatus.level}</p><small className="ml-auto">{this.props.playerStatus.level_progress['processed_score']}/{this.props.playerStatus.level_progress['max_score']}</small>
 
               </div>
-                <Line percent={playerStatus.level_progress['processed_score']/playerStatus.level_progress['max_score'] * 100} strokeWidth="5" trailWidth="5" strokeColor={this.state.color} />
+                <Line percent={this.state.percent/this.props.playerStatus.level_progress['max_score'] * 100} strokeWidth="5" trailWidth="5" strokeColor={this.state.color} />
             </div>
 
         );

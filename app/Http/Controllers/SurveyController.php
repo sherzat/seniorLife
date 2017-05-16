@@ -59,10 +59,10 @@ class SurveyController extends Controller
 
 
     // level and points pair
-    $playerStatus = $user->getPlayerStatus();
+    $playerStatus= array('playerStatus'=>$user->getPlayerStatus());
 
 
-    return $playerStatus;
+    return response()->json($playerStatus);
 
   }
 }
