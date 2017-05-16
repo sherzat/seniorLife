@@ -55,16 +55,20 @@
                         </div>
 
                     </div>
+
                     <button type="submit" class="btn btn-success Rail-way-font" data-step="1"
                             data-intro="Get it, use it.">Sign In
                     </button>
 
                 </form>
+
+
             </div>
         </div>
     </nav>
 
     @yield('content')
+
 </div>
 
 @yield('footer')
