@@ -37,7 +37,7 @@ class ChallengesPage extends Component {
     render() {
 
         if(this.state.challengesData.flag==0){
-            startIntro('challenges').start();
+            startIntro('challenges');
         }
 
         return (
@@ -77,4 +77,3 @@ class ChallengesPage extends Component {
 }
 
 export default ChallengesPage;
-

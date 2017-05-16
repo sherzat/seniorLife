@@ -38,7 +38,7 @@ class RankPage extends Component {
     render() {
 
         if(this.state.rankData.flag==0){
-            startIntro('rank').start();
+            startIntro('rank');
         }
 
         return (

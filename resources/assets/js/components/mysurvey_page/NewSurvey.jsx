@@ -18,7 +18,7 @@ class Category extends Component {
     return (
       <div className="col-xs-2 mx-2 my-2">
         <button className="card text-center" onClick={this.handleOnclick} >
-          <div className="card-block">
+          <div className="card-block p-1">
             <img className="card-img-top"
               src={this.props.img_src}
               alt="Image Community life"
@@ -37,10 +37,12 @@ class Category extends Component {
 class NewSurvey extends Component {
   render () {
     var url="/survey/new";
-    var categorys = [
-      {id: 0, name: "Cognition", img_src:"/img/categorys/001-mind.svg"},
-      
-    ]
+    var categorys = this.props.categories;
+    //
+    // [
+    //   {id: 0, name: "Cognition", img_src:"/img/categorys/001-mind.svg"},
+    //
+    // ]
 
 
     var toReturns = categorys.map(category=>{

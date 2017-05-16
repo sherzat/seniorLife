@@ -148,10 +148,11 @@ class Survey extends Component {
     });
 
   }
-  componentWillMount(){
+  componentDidMount(){
+    var url = "survey/create/" . this.props.selectedCategory;
     $.ajax({
       method: "GET",
-      url: "survey/new",
+      url: "survey/",
       dataType:"json",
     })
     .done(function( result ) {
@@ -174,7 +175,7 @@ class Survey extends Component {
     const choices_for_q= this.state.data.map((each)=>
       <Circular_scale_1 key={each.id} question_id={each.id} choices={each.choices} answered={this.state.rotate_degree} handleAnswer={this.handleAnswer}/>
     );
-    
+
     console.log(survey_question.length);
     return(
       <div>

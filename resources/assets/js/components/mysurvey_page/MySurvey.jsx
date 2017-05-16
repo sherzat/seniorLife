@@ -12,6 +12,7 @@ class MySurvey extends Component {
             mysurveyData:[],
             renderSurveyPage: true,
             selectedCategory:null,
+            loaded: false,
         };
         this.handleOnclick = this.handleOnclick.bind(this);
         this.getData = this.getData.bind(this);
@@ -22,7 +23,9 @@ class MySurvey extends Component {
           this.setState({renderSurveyPage: true})
         }else {
 
-          this.setState({renderSurveyPage: false, selectedCategory: target})
+          this.setState( function () {
+            return { renderSurveyPage: false, selectedCategory: target};
+          });
         }
     }
     componentWillMount(){
@@ -32,15 +35,22 @@ class MySurvey extends Component {
 
     }
     getData() {
-        var url ="/getMysurveyData";
+        var url ="/survey/result";
         $.ajax({
             method: "GET",
             url: url,
+            dataType: 'json',
         })
-            .done(function( result ) {
+            .done(function( data ) {
 
-                console.log(result)
-                this.setState({mysurveyData:result});
+                console.log(data)
+                this.setState({mysurveyData:data}, function () {
+                  this.setState({loaded: true}, function () {
+                    if(this.state.mysurveyData.flag==0){
+                      startIntro('mysurvey')
+                    }
+                  });
+                });
 
             }.bind(this))
     }
@@ -48,19 +58,21 @@ class MySurvey extends Component {
     render() {
 
 
-        if(this.state.mysurveyData.flag==0){
-            startIntro('mysurvey').start();
-        }
 
-   const renderSurveyPage = this.state.renderSurveyPage;
-        return (
-            <div>
+      const renderSurveyPage = this.state.renderSurveyPage;
 
-                {renderSurveyPage ? (
+
+      if(!this.state.loaded)
+        return (<h>loading</h>);
+
+      return (
+        <div>
+
+          {renderSurveyPage ? (
                     <div>
 
-                        <NewSurvey handleOnclick={this.handleOnclick}/>
-                        <SurveyResult />
+                        <NewSurvey handleOnclick={this.handleOnclick} categories={this.state.mysurveyData.categories}/>
+                        <SurveyResult data={this.state.mysurveyData.SurveyResult}/>
                     </div>
                     ) : (
                         <div>

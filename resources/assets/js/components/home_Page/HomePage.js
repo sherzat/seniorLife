@@ -25,7 +25,15 @@ class HomePage extends  Component {
             .done(function( result ) {
 
                 console.log(result)
-                this.setState({home:result ,loaded:true});
+                this.setState({home:result}, function(){
+                  this.setState({loaded:true}, function(){
+                    if(this.state.home.flag==0){
+                        sessionStorage.setItem('firstvisit', this.state.home.flag);
+                        startIntro('home');
+                    }
+                  });
+
+                });
 
             }.bind(this))
     }
@@ -39,10 +47,7 @@ class HomePage extends  Component {
         if(!this.state.loaded)
             return (<h>loading</h>);
 
-        if(this.state.home.flag==0){
-            sessionStorage.setItem('firstvisit', this.state.home.flag);
-            startIntro('home').start();
-        }
+
 
         return (
             <div>

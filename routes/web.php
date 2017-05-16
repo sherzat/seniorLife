@@ -35,11 +35,7 @@ Route::get('getAchievementData','AchievementController@getAchievementData');
 
 Route::get('empatica', 'PagesController@getEmpatica')->name("Empatica");
 
-Route::get('self_assessment', 'Self_assessmentController@index');
-Route::post('self_assessment/store/{survey}', 'Self_assessmentController@store');
-Route::get('self_assessment/show', 'Self_assessmentController@show');
-
-Route::get('survey/new', 'SurveyController@create_survey')->name('new.survey');
+Route::get('survey/create/{new}', 'SurveyController@create_survey')->name('new.survey');
 Route::post('survey/store', 'SurveyController@store_survey')->name('store.survey');
 Route::get('survey/result', 'SurveyController@survey_result');
 
@@ -50,7 +46,6 @@ Route::get('databaseTest', function(){
 	}
 });
 
-Route::get('/storedata', 'QuestionController@mapQC');
 Auth::routes();
 Route::resource('profile', 'ProfileController');
 Route::get('profile', 'ProfileController@index')->name("Profile");

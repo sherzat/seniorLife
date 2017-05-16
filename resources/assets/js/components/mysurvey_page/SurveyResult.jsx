@@ -30,24 +30,24 @@ class SurveyResult extends Component {
       noData: true,
 		};
 	}
-	componentWillMount(){
-		$.ajax({
-			method: "GET",
-			url: "survey/result",
-			dataType:"json",
-		})
-		.done(function( result ) {
-
-			this.setState({data:result}, function(){
-        if(this.state.data.length != 0){
-          this.setState({noData:false})
-        }
-			});
-		}.bind(this))
-	}
+	// componentWillMount(){
+	// 	$.ajax({
+	// 		method: "GET",
+	// 		url: "survey/result",
+	// 		dataType:"json",
+	// 	})
+	// 	.done(function( result ) {
+  //
+	// 		this.setState({data:result}, function(){
+  //       if(this.state.data.length != 0){
+  //         this.setState({noData:false})
+  //       }
+	// 		});
+	// 	}.bind(this))
+	// }
 	render() {
 
-		const data = this.state.data;
+		const data = this.props.data;
 
 		return (
 			<div>

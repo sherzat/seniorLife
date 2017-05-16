@@ -18,12 +18,14 @@ class SurveyController extends Controller
   public function survey_result()
   {
     $user=Auth::user();
-    $surveyResult = $user->getSurveyResult();
-    return json_encode($surveyResult);
+    $mySurveyData['surveyResult'] = $user->getSurveyResult();
+
+    $mySurveyData['categories'] = \App\Category::all();
+    return json_encode($mySurveyData);
   }
 
 
-  public function create_survey()
+  public function create_survey($category)
   {
 
     // $asked_questions=[];
@@ -38,7 +40,7 @@ class SurveyController extends Controller
     // dd($asked_questions);
 
     //$prepare_questions = \App\Question::whereNotIn('id',$asked_questions)
-    $prepare_questions = \App\Category::where('name', '=', 'cognition')->first()
+    $prepare_questions = \App\Category::where('name', '=', $category)->first()
     ->questions()->where('id', '>' , '5')->limit(5)
     ->with('choices')
     ->get();
