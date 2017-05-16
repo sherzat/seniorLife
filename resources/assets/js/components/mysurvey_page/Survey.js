@@ -57,6 +57,7 @@ class Survey extends Component {
     this.changeChildstate(null);
   }
 
+// only for the circular scale
   changeChildstate(c_id) {
     if(c_id == 1){
       this.setState({rotate_degree: "rotate(-18 350,323.01281127929693)" });
@@ -149,10 +150,12 @@ class Survey extends Component {
 
   }
   componentDidMount(){
-    var url = "survey/create/" . this.props.selectedCategory;
+    var url_prefix = "survey/create/";
+    var url = url_prefix.concat(this.props.selectedCategory);
+    console.log(url);
     $.ajax({
       method: "GET",
-      url: "survey/",
+      url: url,
       dataType:"json",
     })
     .done(function( result ) {
