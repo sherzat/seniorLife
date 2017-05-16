@@ -19,6 +19,14 @@ class ChoicesTableSeeder extends Seeder
             ["choice"=>"very rarely", "weight"=>4],
             ["choice"=>"never", "weight"=>5],
 
+
+            ["choice"=>"no difficulty", "weight"=>5],
+            ["choice"=>"with difficulty", "weight"=>4],
+            ["choice"=>"Accomplished by a proxy", "weight"=>3],
+            ["choice"=>"Not accomplished", "weight"=>2],
+            ["choice"=>"Not applicable", "weight"=>1],
+
+
         ]);
     }
 }

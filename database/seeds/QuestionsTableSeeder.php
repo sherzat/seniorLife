@@ -38,32 +38,75 @@ class QuestionsTableSeeder extends Seeder
         ['question'=>"Do you drop things?", 'category_id' => 1],
         ['question'=>"Do you find you can’t think of anything to say?", 'category_id' => 1],
 
-        // ['question'=>"In general, would you say your health is:", 'category_id' => 2],
-        // ['question'=>"Compared to one year ago, how would you rate your health in general now?", 'category_id' => 2],
-        // ['question'=>"Does your health now limit you in Vigorous activities, such as running, lifting heavy objects, participating in strenuous sports", 'category_id' => 2],
-        // ['question'=>"Does your health now limit you in Moderate activities, such as moving a table, pushing a vacuum cleaner, bowling, or playing golf", 'category_id' => 2],
-        // ['question'=>"Does your health now limit you in Lifting or carrying groceries", 'category_id' => 2],
-        // ['question'=>"Does your health now limit you in Climbing several flights of stairs", 'category_id' => 2],
-        // ['question'=>"Does your health now limit you in Climbing one flight of stairs", 'category_id' => 2],
-        // ['question'=>"Does your health now limit you in Bending, kneeling, or stooping", 'category_id' => 2],
-        // ['question'=>"Does your health now limit you in Walking more than a mile", 'category_id' => 2],
-        // ['question'=>"Does your health now limit you in Walking several blocks", 'category_id' => 2],
-        // ['question'=>"Does your health now limit you in Walking one block", 'category_id' => 2],
-        // ['question'=>"Does your health now limit you in Bathing or dressing yourself", 'category_id' => 2],
-        // ['question'=>"During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of your physical health? Cut down the amount of time you spent on work or other activities", 'category_id' => 2],
-        // ['question'=>"Accomplished less than you would like", 'category_id' => 2],
-        // ['question'=>"Were limited in the kind of work or other activities", 'category_id' => 2],
-        // ['question'=>"Had difficulty performing the work or other activities (for example, it took extra effort)", 'category_id' => 2],
-        // ['question'=>"During the past 4 weeks, to what extent has your physical health or emotional problems interfered with your normal social activities with family, friends, neighbors, or groups?", 'category_id' => 2],
-        // ['question'=>"During the past 4 weeks, how much did pain interfere with your normal work (including both work outside the home and housework)?", 'category_id' => 2],
-        // ['question'=>"During the past 4 weeks, how much of the time has your physical health or emotional problems interfered with your social activities (like visiting with friends, relatives, etc.)?", 'category_id' => 2],
-        // ['question'=>"I seem to get sick a little easier than other people", 'category_id' => 2],
-        // ['question'=>"I am as healthy as anybody I know", 'category_id' => 2],
-        // ['question'=>"I expect my health to get worse", 'category_id' => 2],
-        // ['question'=>"My health is excellent", 'category_id' => 2],
+
+         ['question'=>"Selecting appropriate foor for your meals, according to your taste and particular needs (quantity, type of food)", 'category_id' => 2],
+         ['question'=>"preparing your meals (including using electric kitchen appliances)", 'category_id' => 2],
+         ['question'=>"eating in restaurants (table service and fast-food)", 'category_id' => 2],
+
+         ['question'=>"getting in and out of bed", 'category_id' => 3],
+         ['question'=>"sleep (comfort, duration, continuity, etc)", 'category_id' => 3],
+         ['question'=>"participating in physical activities to maintain or improve your physical fitness or health (walking, individual or group exercise)", 'category_id' => 3],
+         ['question'=>"participating in relaxation, unwinding, or mental focus activities to ensure your psychological or mental wellbeing (yoga, meditation, person growth, chess, etc)", 'category_id' => 3],
+
+         ['question'=>"attending to your personal hygiene (washing yourself, doing your hair, taking a bath or shower, etc)", 'category_id' => 4],
+         ['question'=>"using the bathroom and toilet in your home (and other devices for elimination)", 'category_id' => 4],
+         ['question'=>"using a bathroom and toilet other than those in your home (and other devices for elimination)", 'category_id' => 4],
+         ['question'=>"Dressing and undressing the upper half of your body (clothing, accesories, including the choice of clothes)", 'category_id' => 4],
+         ['question'=>"dressing and undressing the lower half of your body (clothing, accessories, including the choice of clothes)", 'category_id' => 4],
+         ['question'=>"putting on, removing, and maintaining your assistive devices (orthotics, prosthetics, contact lenses, glasses, etc)", 'category_id' => 4],
+
+         ['question'=>"communication with another person at home or in the community (expressing needs, holding a conversation, etc)", 'category_id' => 5],
+         ['question'=>"communicating with a group of people at home or in the community (expressing needs, holding a conversation, etc)", 'category_id' => 5],
+         ['question'=>"written communication (writing a letter, message)", 'category_id' => 5],
+         ['question'=>"reading and understanding written information (newspaper, books, letters, signs, etc)", 'category_id' => 5],
+         ['question'=>"using a phone or mobile phone", 'category_id' => 5],
+         ['question'=>"using a computer", 'category_id' => 5],
+         ['question'=>"using a radio, television or sound system", 'category_id' => 5],
+
+         ['question'=>"maintaining your home (cleaning, laundry, minor repairs)", 'category_id' => 6],
+         ['question'=>"maintaining the grounds of your home (lawn, garden, snow removal, ect)", 'category_id' => 6],
+         ['question'=>"painting, major repairs, etc)", 'category_id' => 6],
+          ['question'=>"entering and exiting your home", 'category_id' => 6],
+          ['question'=>"moving around within your home", 'category_id' => 6],
+          ['question'=>"using the furniture and home-furnishing equipment in your home (desk, thermostat, radiator system, etc)", 'category_id' => 6],
+         ['question'=>"moving around outside your home (yard, grounds, etc)", 'category_id' => 6],
+
+          ['question'=>"getting around on streets or sidewalks (including crossing streets)", 'category_id' => 7],
+         ['question'=>"getting around on slippery or uneven surfaces (snow, ice, grass, gravel)", 'category_id' => 7],
+          ['question'=>"getting around on slippery or uneven surfaces (snow, ice, grass, gravel)", 'category_id' => 7],
+        ['question'=>"driving a vehicle", 'category_id' => 7],
+        ['question'=>"riding a bicycle (for transportation, recreation)", 'category_id' => 7],
+        ['question'=>"being a passenger in a vehicle (car, bus, taxi)", 'category_id' => 7],
+
+     /*   ['question'=>"recognizing the value of money and correctly using the different denominations of paper and coin money", 'category_id' => 8],
+        ['question'=>"using bank cards and ATMs", 'category_id' => 8],
+       ['question'=>"making purchases", 'category_id' => 8],
+        ['question'=>"planning your budget and meeting your financial obligations", 'category_id' => 8],
+         ['question'=>"maintaining a close relationship with members of your familiy", 'category_id' => 9],
+       ['question'=>"maintaining social relationships with those around you (neighbours, in activities)", 'category_id' => 9],
+          ['question'=>"having a sexual relationship (healthy, appropriate, safe sex)", 'category_id' => 9],*/
+
+          ['question'=>"getting to public buildings in your community (governmental, financial, judicial, postal)", 'category_id' => 8],
+          ['question'=>"entering and getting around in public buildings in your community", 'category_id' => 8],
+          ['question'=>"using the public services in your community", 'category_id' => 8],
+          ['question'=>"getting to commercial establishments in your community (supermarket, shopping mall, convenience, etc)", 'category_id' => 8],
+          ['question'=>"entering and moving around in commercial establishments in your community (supermarket, shopping mall, convenience store, etc)", 'category_id' => 8],
+          ['question'=>"participating in spiritual or religious practices", 'category_id' => 8],
+          ['question'=>"participating in social or community groups (social clubs, charity or religious groups)", 'category_id' => 8],
+
+          ['question'=>"participating in educational activities or vocational training at the high school level (courses, homework, extracurricular activities)", 'category_id' => 9],
+          ['question'=>"undertaking vocational training (trade school, university, community college)", 'category_id' => 9],
+
+          ['question'=>"participating in sporting or recreational activities (walking, sports, games, etc)", 'category_id' => 10],
+          ['question'=>"participating in artistic, cultural or craft activities (music, dance, woodworking)", 'category_id' => 10],
+          ['question'=>"going to sporting events ", 'category_id' => 10],
+          ['question'=>"going to artistic or cultural events", 'category_id' => 10],
+          ['question'=>"taking part in outdoor activities", 'category_id' => 10],
+          ['question'=>"participating in tourist activities (traveling, visiting natural or historic sites, camping)", 'category_id' => 10],
+          ['question'=>"using your neighbourhood recreational services (library, municipal recreation centre, etc)", 'category_id' => 10],
 
 
-        ]);
+      ]);
 
 
     }

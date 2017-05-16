@@ -14,16 +14,31 @@ class Question_choicesTableSeeder extends Seeder
     public function run()
     {
 
-		    $questions = DB::table('questions')->where('category_id','=',1)->get();
+        $questions = DB::table('questions')->where('category_id','=',1)->get();
 
         $questions->each(function($question){
-          DB::table('question_choice')->insert([
-            ["choice_id"=>1, 'question_id'=>$question->id],
-            ["choice_id"=>2, 'question_id'=>$question->id],
-            ["choice_id"=>3, 'question_id'=>$question->id],
-            ["choice_id"=>4, 'question_id'=>$question->id],
-            ["choice_id"=>5, 'question_id'=>$question->id],
-          ]);
+            DB::table('question_choice')->insert([
+                ["choice_id"=>1, 'question_id'=>$question->id],
+                ["choice_id"=>2, 'question_id'=>$question->id],
+                ["choice_id"=>3, 'question_id'=>$question->id],
+                ["choice_id"=>4, 'question_id'=>$question->id],
+                ["choice_id"=>5, 'question_id'=>$question->id],
+
+            ]);
+        });
+
+
+        $questions = DB::table('questions')->where('category_id','>=',2)->get();
+
+        $questions->each(function($question){
+            DB::table('question_choice')->insert([
+                ["choice_id"=>6, 'question_id'=>$question->id],
+                ["choice_id"=>7, 'question_id'=>$question->id],
+                ["choice_id"=>8, 'question_id'=>$question->id],
+                ["choice_id"=>9, 'question_id'=>$question->id],
+                ["choice_id"=>10, 'question_id'=>$question->id],
+
+            ]);
         });
 
     }
