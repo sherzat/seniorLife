@@ -22,9 +22,11 @@ class MySurvey extends Component {
         if (target == 'survey'){
           this.setState({renderSurveyPage: true})
         }else {
-
+          const selectedCategory = this.state.mysurveyData.categories.find((category)=>
+            category.id==target
+          );
           this.setState( function () {
-            return { renderSurveyPage: false, selectedCategory: target};
+            return { renderSurveyPage: false, selectedCategory: selectedCategory};
           });
         }
     }
@@ -79,7 +81,8 @@ class MySurvey extends Component {
                             <Survey url="/survey/new"
                               scale="Circular_scale"
                               handleOnclick={this.handleOnclick}
-                              selectedCategory={this.state.selectedCategory}
+                              selectedCategory={this.state.selectedCategory.name}
+                              categoryDescription={this.state.selectedCategory.description}
                             />
                         </div>
                     )}

@@ -10,7 +10,7 @@ class Category extends Component {
         this.handleOnclick = this.handleOnclick.bind(this);
     }
     handleOnclick() {
-        this.props.handleOnclick(this.props.name)
+        this.props.handleOnclick(this.props.id)
         console.log('in category')
 
     }
@@ -46,7 +46,7 @@ class NewSurvey extends Component {
 
 
     var toReturns = categorys.map(category=>{
-      return <Category key={category.id} name={category.name} img_src = {category.img_src} handleOnclick={this.props.handleOnclick} />
+      return <Category key={category.id} id={category.id} name={category.name} img_src = {category.img_src} handleOnclick={this.props.handleOnclick} />
     });
     return (
       <div className="row mt-2 Rail-way-font">

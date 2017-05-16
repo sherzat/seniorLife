@@ -151,7 +151,7 @@ class Survey extends Component {
   }
   componentDidMount(){
     var url_prefix = "survey/create/";
-    var url = url_prefix.concat(this.props.selectedCategory);
+    var url = url_prefix.concat(this.props.selectedCategory);   //get qustoins by category
     console.log(url);
     $.ajax({
       method: "GET",
@@ -172,9 +172,15 @@ class Survey extends Component {
 
 
   render(){
+
+    var description = this.props.selectedCategory !== 'cognition'?  this.props.categoryDescription: "" ;
+    console.log(description)
     const survey_question= this.state.data.map((each)=>
-      <Question key={each.id} question={each.question} />
+      <Question key={each.id}
+         question={each.question}
+         description={description}/>
     );
+
     const choices_for_q= this.state.data.map((each)=>
       <Circular_scale_1 key={each.id} question_id={each.id} choices={each.choices} answered={this.state.rotate_degree} handleAnswer={this.handleAnswer}/>
     );
@@ -188,7 +194,7 @@ class Survey extends Component {
             <div className="row card card-group Bg-color-midnight">
               <div className="col-md-12 p-0">
                 <div className="card-block Card-Height vertical-align">
-                  <h2 className="text-white Text-font-size vertical-align">{survey_question[this.state.currentQuestion]}</h2>
+                  {survey_question[this.state.currentQuestion]}
                 </div>
               </div>
             </div>
@@ -202,6 +208,7 @@ class Survey extends Component {
                     hidden={this.state.currentQuestion == 0? true:false}
                     onClick={this.handlePrevButton}>Prev</button>
                 </div>
+
 
                 {this.state.currentQuestion<this.state.data.length? (choices_for_q[this.state.currentQuestion])
                   : (
