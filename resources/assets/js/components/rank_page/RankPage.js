@@ -76,7 +76,7 @@ class RankPage extends Component {
 
                             <div className="col-md-3 col-sm-12 col-lg-3">
                                 <div className="card-block text-center">
-                                    <h4 id="step10">Level</h4>
+                                    <h4 id="step6">Level</h4>
                                 </div>
                             </div>
 
