@@ -51,7 +51,7 @@ class NewSurvey extends Component {
     return (
       <div className="row mt-2 Rail-way-font">
         <div className="col-md-12 col-xs-12">
-          <div className="card mx-auto">
+          <div className="card mb-4">
             <div className="row">
               <div className="col-md-4 ">
                   <div className="card-block ">

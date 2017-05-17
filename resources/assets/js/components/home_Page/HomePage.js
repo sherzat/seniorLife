@@ -52,8 +52,7 @@ class HomePage extends  Component {
             <div>
 
 
-                    <h1> What you need to know </h1>
-                    <p>Make daily self-assessment for better quality of life!</p>
+                    <h3 className="mb-4"> Make daily self-assessment for better quality of life! </h3>
 
 
                 <div className="Rail-way-font">
@@ -158,21 +157,19 @@ class HomePage extends  Component {
                                     <PlayerStatus
                                       playerStatus={this.state.home.playerStatus}/>
                                 </div>
-                                <div className="card-block p-1 pb-3 mx-auto">
-                                    Get 70 more points to level up
-                                </div>
 
                                 {/*<!-- Text Content -->*/}
 
                                 <div className="card-block p-1 mx-auto">
-                                    <p className="card-text">Hi! Do you like challenge, see our today's challenge for
-                                        you.</p>
+                                    <p className="card-text">
+                                      Fill in surveys to level up.
+                                  </p>
                                 </div>
 
                                 {/*<!-- Button -->*/}
 
                                 <div className="card-block p-1 pb-3 mx-auto">
-                                    <a className="btn btn-success" href="/challenges">Go to challenges</a>
+                                    <a className="btn btn-success" href="/mysurvey">Go to surveys</a>
                                 </div>
                             </div>
                         </div>

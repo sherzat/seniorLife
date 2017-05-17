@@ -74,7 +74,6 @@ class MySurvey extends Component {
                     <div>
 
                         <NewSurvey handleOnclick={this.handleOnclick} categories={this.state.mysurveyData.categories}/>
-                        <SurveyResult data={this.state.mysurveyData.SurveyResult}/>
                     </div>
                     ) : (
                         <div>
@@ -95,3 +94,5 @@ class MySurvey extends Component {
 }
 
 export default MySurvey;
+
+// <SurveyResult data={this.state.mysurveyData.SurveyResult}/>

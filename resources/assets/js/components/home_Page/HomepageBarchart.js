@@ -32,7 +32,7 @@ class HomepageBarchart extends Component {
                 <ResponsiveContainer width="100%" height={300}>
                     <BarChart data={data} margin={{top: 50, right: 80, left: 0, bottom: 40}}>
                         <XAxis dataKey="name" unit="catagory"/>
-                        <YAxis label="Average Score" />
+                        <YAxis label="Average Score" type="number" domain={[0, 5]} ticks={[0,1,2,3,4,5]}  />
                         <CartesianGrid strokeDasharray="5 5"/>
                         <Tooltip/>
                         <Legend />
@@ -46,6 +46,3 @@ class HomepageBarchart extends Component {
 }
 
 export default HomepageBarchart;
-
-
-

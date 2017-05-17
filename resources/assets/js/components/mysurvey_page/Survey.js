@@ -243,19 +243,21 @@ class Survey extends Component {
 
           <div className="col-md-3">
 
-            <div className="card my-flex-card bg-faded">
-              <div className="card-block ">
+            <ul className="list-group">
+              <div className="list-group-item">
+                <div className="w-100">
                 <small>{this.state.currentQuestion}/{survey_question.length}</small>
                 <ProgressBar percent={(this.state.currentQuestion/survey_question.length)*100}/>
+                </div>
               </div>
-              <div className="card-block">
-                <dt>Category:</dt> <dd className="ml-auto">{this.props.selectedCategory}</dd>
-              </div>
+              <li className="list-group-item">
+                <strong>Category:</strong> <p className="m-auto">{this.props.selectedCategory}</p>
+              </li>
 
-              <div className="card-block">
+              <li className="list-group-item">
                 <a href="#" className="btn button" onClick={this.handleGoBackBtn}>back to categories</a>
-              </div>
-            </div>
+              </li>
+            </ul>
 
 
           </div>
