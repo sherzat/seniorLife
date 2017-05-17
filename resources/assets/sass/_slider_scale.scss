@@ -127,7 +127,7 @@
   font-size: 16px;
   cursor: pointer;
   display: inline-block;
-  top: 75px;
+  // top: 75px;
 }
 .slider{
   width: 60%;
@@ -135,24 +135,54 @@
 }
 
 .slider > div > ul > li:nth-child(5){
-  left:-42px !important;
-  top: -60px;
+  left:0px !important;
+  top: -50px;
+}
+
+.slider > div > ul > li:nth-child(3){
+  left: 170px;
+  top: -60px !important;
+}
+.slider > div > ul > li:nth-child(1){
+  left: 170px;
+  top: -60px !important;
 }
 .slider > div > ul > li:nth-child(1),
 .slider > div > ul > li:nth-child(3),
 .slider > div > ul > li:nth-child(5) {
 
   /* Safari */
-  -webkit-transform: rotate(30deg);
+  -webkit-transform: rotate(-20deg);
 
   /* Firefox */
-  -moz-transform: rotate(30deg);
+  -moz-transform: rotate(-20deg);
 
   /* IE */
-  -ms-transform: rotate(30deg);
+  -ms-transform: rotate(-20deg);
 
   /* Opera */
-  -o-transform: rotate(30deg);
+  -o-transform: rotate(-20deg);
+
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+}
+
+.slider > div > ul > li:nth-child(2),
+.slider > div > ul > li:nth-child(4) {
+  top:40px;
+
+  /* Safari */
+  -webkit-transform: rotate(20deg);
+
+  /* Firefox */
+  -moz-transform: rotate(20deg);
+
+  /* IE */
+  -ms-transform: rotate(20deg);
+
+  /* Opera */
+  -o-transform: rotate(20deg);
 
   /* Internet Explorer */
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);

@@ -12,6 +12,7 @@
     <!-- Bootstrap 4 core CSS -->
     <!-- Custom styles for this template -->
     <link href="/css/new_app.css" rel="stylesheet">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
 </head>
