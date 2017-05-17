@@ -27,7 +27,6 @@ class HomepageBarchart extends Component {
 
     render() {
         const data = this.state.data;
-        const customLabel=["bad","good","better"];
         return (
             <div>
                 <ResponsiveContainer width="100%" height={300}>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddLevelToUsersTable extends Migration
+class AddPriceToAchievementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddLevelToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-          $table->integer('level')->default(1);
+        Schema::table('achievements', function (Blueprint $table) {
+            $table->integer('price');
         });
     }
 
@@ -25,9 +25,8 @@ class AddLevelToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('level');
-
+        Schema::table('achievements', function (Blueprint $table) {
+            $table->dropColumn('price');
         });
     }
 }

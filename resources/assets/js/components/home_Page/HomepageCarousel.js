@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Coverflow from 'react-coverflow';
-import StyleRoot from 'radium';
 
 class HomepageCarousel extends Component {
 
@@ -21,7 +20,7 @@ class HomepageCarousel extends Component {
                     enableHeading={false}
                     className="w-100"
                     height={250}>
-                    />
+
                     {collectedBadges}
 
                 </Coverflow>
