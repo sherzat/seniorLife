@@ -159,9 +159,6 @@ class HomePage extends  Component {
                                     <PlayerStatus
                                       playerStatus={this.state.home.playerStatus}/>
                                 </div>
-                                <div className="card-block p-1 pb-3 mx-auto">
-                                    Get 70 more points to level up
-                                </div>
 
                                 {/*<!-- Text Content -->*/}
 

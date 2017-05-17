@@ -9,7 +9,7 @@ function startIntro(source) {
             },
             {
                 element: '#step2',
-                intro: "under development",
+                intro: "Includes your individual category result in a Barchart form",
                 position: 'left'
             },
             {
@@ -19,7 +19,7 @@ function startIntro(source) {
             },
             {
                 element: '#step4',
-                intro: "This is where you see at which level you are and how many points you collected and how many points left for next level",
+                intro: "Displays your level and how many points you collected and how many points left for next level",
                 position: 'left'
             },
             {
@@ -33,14 +33,15 @@ function startIntro(source) {
     var mysurvey = introJs();
     mysurvey.setOptions({
         steps: [
-            {
+
+            /*{
                 element: '#step6',
                 intro: "This graph shows you the over all activities you have made through the year",
                 position: 'bottom'
-            },
+            },*/
 
             {
-                element: '#step7',
+                element: '#step6',
                 intro: "On the right side there are different types of surveys organized by category select " +
                 "one and continue your survey",
                 position: 'bottom'
@@ -65,7 +66,12 @@ function startIntro(source) {
         steps: [
             {
                 element: '#step9',
-                intro: "By comparing with your friends and others you will be ranked based on the total points you collected",
+                intro: "Displays rank in descending form based on the total points collected",
+                position: 'left'
+            },
+            {
+                element: '#step6',
+                intro: "See your level and others",
                 position: 'left'
             },
             {
@@ -81,13 +87,13 @@ function startIntro(source) {
         steps: [
             {
                 element: '#step11',
-                intro: "All the badges you win will be collected here",
+                intro: "All the badges you win will be displayed here",
                 position: 'bottom'
             },
             {
                 element: '#step12',
-                intro: "The following badges are you future badges, you can win them by filling surveys and you can also see how" +
-                "many points left to win the badges",
+                intro: "badges you can win in the future if you fill more survey, see the description what you have to do to win them " +
+                "and your progress is also indicated on the progress bar",
                 position: 'bottom'
             },
         ]

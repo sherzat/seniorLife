@@ -57,7 +57,7 @@ class SurveyResult extends Component {
 							<div className="row ">
 								<div className="col-md-4 ">
 									<div className="card-block ">
-										<h4 id="step6" className="card-title">
+										<h4 id="step7" className="card-title">
 											Quality of life over the year
 										</h4>
 										<p className="card-text">

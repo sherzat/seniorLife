@@ -53,12 +53,13 @@
                         </a>
                     </li>
 
-                    <li class="nav-item {{ ends_with(Request::url(), 'challenges') ? "active" : "" }}">
+                    {{--<li class="nav-item {{ ends_with(Request::url(), 'challenges') ? "active" : "" }}">
                         <a class="nav-link " href={{url("challenges")}}>
                             <i class="fa fa-certificate" aria-hidden="true"></i>
                             Challenges
                         </a>
-                    </li>
+                    </li>--}}
+
                     <li id="id4" class="{{ ends_with(Request::url(), 'rank') ? "active" : "" }}">
                         <a class="nav-link " href={{url("rank")}} data-step="1" data-intro="This is a tooltip!">
                             <i class="fa fa-trophy" aria-hidden="true"></i>
