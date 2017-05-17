@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Coverflow from 'react-coverflow';
-import StyleRoot from 'radium';
 
 class HomepageCarousel extends Component {
 
@@ -15,6 +14,7 @@ class HomepageCarousel extends Component {
             <div>
 
                 <Coverflow
+                    style={{width: "100vw", height:"300px"}}
                     displayQuantityOfSide={2}
                     navigation={false}
                     enableHeading={false}

@@ -53,7 +53,6 @@ class HomeController extends Controller
     {
         $user = Auth::user();
 
-
         // level and points pair
         $player_status = $user->getPlayerStatus();
 

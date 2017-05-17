@@ -39,7 +39,7 @@ class QuestionsTableSeeder extends Seeder
         ['question'=>"Do you find you can’t think of anything to say?", 'category_id' => 1],
 
 
-         ['question'=>"Selecting appropriate foor for your meals, according to your taste and particular needs (quantity, type of food)", 'category_id' => 2],
+         ['question'=>"Selecting appropriate food for your meals, according to your taste and particular needs (quantity, type of food)", 'category_id' => 2],
          ['question'=>"preparing your meals (including using electric kitchen appliances)", 'category_id' => 2],
          ['question'=>"eating in restaurants (table service and fast-food)", 'category_id' => 2],
 
