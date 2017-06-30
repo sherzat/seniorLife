@@ -19,7 +19,7 @@ class HomepageCarousel extends Component {
                     navigation={false}
                     enableHeading={false}
                     className="w-100"
-                    height={250}>
+                    height={200}>
 
                     {collectedBadges}
 

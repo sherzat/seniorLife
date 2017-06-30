@@ -53,12 +53,7 @@
                         </a>
                     </li>
 
-                    {{--<li class="nav-item {{ ends_with(Request::url(), 'challenges') ? "active" : "" }}">
-                        <a class="nav-link " href={{url("challenges")}}>
-                            <i class="fa fa-certificate" aria-hidden="true"></i>
-                            Challenges
-                        </a>
-                    </li>--}}
+
 
                     <li id="id4" class="{{ ends_with(Request::url(), 'rank') ? "active" : "" }}">
                         <a class="nav-link " href={{url("rank")}} data-step="1" data-intro="This is a tooltip!">
@@ -152,7 +147,7 @@
         </div>
     </nav>
 
-<div class="jumbotron">
+<div class="container mt-5">
     @yield('content')
 </div>
 </div>

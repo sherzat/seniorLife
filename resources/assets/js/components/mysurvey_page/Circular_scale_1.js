@@ -14,7 +14,7 @@ class Circular_scale_1 extends Component {
     //   (each)=>
     //     each.id
     // );
-    const clicked_item= event.target.parentElement.id;
+    const clicked_item= event.currentTarget.id;
     var choice_index="";
     if(clicked_item == "item-1"){
       choice_index = 0;
@@ -38,17 +38,26 @@ class Circular_scale_1 extends Component {
       (each)=>
         each.choice
     );
-
+    var rotate_degree= "rotate(-180 350,323.01281127929693)";
+    if(this.props.answered == 0)
+      rotate_degree = "rotate(-18 350,323.01281127929693)" ;
+    if(this.props.answered == 1)
+      rotate_degree = "rotate(-54 350,323.01281127929693)" ;
+    if(this.props.answered == 2)
+      rotate_degree = "rotate(-90 350,323.01281127929693)" ;
+    if(this.props.answered == 3)
+      rotate_degree = "rotate(-126 350,323.01281127929693)" ;
+    if(this.props.answered == 4)
+      rotate_degree = "rotate(-162 350,323.01281127929693)" ;
     return (
       <div className="svg-container">
 
-        <svg viewBox="20 0 650 380 " preserveAspectRatio="xMinYMin meet"
+        <svg viewBox="-40 0 800 380 " preserveAspectRatio="xMinYMin meet"
           className="svg-content" id="menu" xmlns="http://www.w3.org/2000/svg" version="1.1">
           <g>
             <title>Layer 1</title>
             <g id="symbolsContainer">
               <symbol viewBox="0 0 69 69" id="icon-1" className="icon icon-">
-                <text id="svg_2" fontSize="30px" textAnchor="middle" y="-80%" x="50%" fill="#222">{choices[0]}</text>
                 <g>
                   <path d="M 32,0 C 14.355,0 0,14.355 0,32 0,49.645 14.355,64 32,64 49.645,64 64,49.645 64,32 64,14.355 49.645,0 32,0 Z m 0,60 C 16.561,60 4,47.439 4,32 4,16.561 16.561,4 32,4 47.439,4 60,16.561 60,32 60,47.439 47.439,60 32,60 Z" fill="#FFFFFF"/>
                   <circle cx="20.518" cy="21.361" r="4.3379998" fill="#FFFFFF"/>
@@ -57,7 +66,6 @@ class Circular_scale_1 extends Component {
                 </g>
               </symbol>
               <symbol viewBox="0 0 69 69" id="icon-2" className="icon icon-">
-                <text id="svg_4" fontSize="30px" textAnchor="middle" y="-80%" x="50%" fill="#222">{choices[1]}</text>
                 <g>
                   <path fill="#FFFFFF" d="M32,0C14.355,0,0,14.355,0,32s14.355,32,32,32s32-14.355,32-32S49.645,0,32,0z M32,60    C16.561,60,4,47.439,4,32S16.561,4,32,4s28,12.561,28,28S47.439,60,32,60z" />
                   <circle fill="#FFFFFF" r="4.338" cy="21.361" cx="20.518" />
@@ -66,7 +74,6 @@ class Circular_scale_1 extends Component {
                 </g>
               </symbol>
               <symbol viewBox="0 0 69 69" id="icon-3" className="icon icon-">
-                <text id="svg_6" fontSize="30px" textAnchor="middle" y="-80%" x="50%" fill="#222">{choices[2]}</text>
                 <g fill="#1D1D1B">
                   <path fill="#FFFFFF" d="M32,0C14.355,0,0,14.355,0,32s14.355,32,32,32s32-14.355,32-32S49.645,0,32,0z M32,60    C16.561,60,4,47.439,4,32S16.561,4,32,4s28,12.561,28,28S47.439,60,32,60z" />
                   <circle fill="#FFFFFF" r="4.338" cy="21.361" cx="20.518" />
@@ -75,7 +82,6 @@ class Circular_scale_1 extends Component {
                 </g>
               </symbol>
               <symbol viewBox="0 0 69 69" id="icon-4" className="icon icon-">
-                <text id="svg_8" fontSize="30px" textAnchor="middle" y="-80%" x="50%" fill="#222">{choices[3]}</text>
                 <g fill="#1D1D1B">
                   <path fill="#FFFFFF" d="M32,0C14.355,0,0,14.355,0,32s14.355,32,32,32s32-14.355,32-32S49.645,0,32,0z M32,60    C16.561,60,4,47.439,4,32S16.561,4,32,4s28,12.561,28,28S47.439,60,32,60z" />
                   <circle fill="#FFFFFF" r="4.338" cy="21.361" cx="20.518" />
@@ -84,7 +90,6 @@ class Circular_scale_1 extends Component {
                 </g>
               </symbol>
               <symbol viewBox="0 0 69 69" id="icon-5" className="icon icon-">
-                <text id="svg_10" fontSize="30px" textAnchor="middle" y="-80%" x="50%" fill="#222">{choices[4]}</text>
                 <g fill="#1D1D1B">
                   <path d="M32,0C14.355,0,0,14.355,0,32s14.355,32,32,32s32-14.355,32-32S49.645,0,32,0z M32,60    C16.561,60,4,47.439,4,32S16.561,4,32,4s28,12.561,28,28S47.439,60,32,60z" fill="#FFFFFF"/>
                   <circle cx="20.518" cy="21.361" r="5" fill="#FFFFFF"/>
@@ -94,28 +99,46 @@ class Circular_scale_1 extends Component {
               </symbol>
             </g>
             <g id="itemsContainer">
+
               <a id="item-1" className="item" role="button" onClick={this.handleClick}>
-                <path id="svg_11" className="sector" d="m454.62421,323.170522l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#ecbd8e" fill="#eb4841"/>
-                <use id="svg_12" transform="rotate(72 539.8355712890624,261.3672790527344) " y="226.867131" x="505.335514" height="69" width="69" href="#icon-1"/>
+                <text id="svg_2" fontSize="30px" textAnchor="middle" y="250" x="670"  fill="#222">{choices[0]}</text>
+                <g>
+                  <path id="svg_11" className="sector" d="m454.62421,323.170522l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#ecbd8e" fill="#eb4841"/>
+                  <use id="svg_12" transform="rotate(72 539.8355712890624,261.3672790527344) " y="226.867131" x="505.335514" height="69" width="69" href="#icon-1"/>
+                </g>
               </a>
-              <a transform="matrix(0.80901,-0.58778,0.58778,0.80901,-99.20056166685515,194.69206447938143) " id="item-2" className="item" role="button" onClick={this.handleClick}>
-                <path id="svg_13" className="sector" d="m392.589471,367.75486l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#ecbd8e" fill="#f48847"/>
-                <use id="svg_14" transform="rotate(72 477.80078125,305.9515686035156) " y="271.45147" x="443.300775" height="69" width="69" href="#icon-2"/>
+
+              <a  id="item-2" className="item" role="button" onClick={this.handleClick}>
+                <text id="svg_4" fontSize="30px" textAnchor="middle" y="115" x="590" fill="#222">{choices[1]}</text>
+                <g transform="matrix(0.80901,-0.58778,0.58778,0.80901,-99.20056166685515,194.69206447938143) ">
+                  <path id="svg_13" className="sector" d="m392.589471,367.75486l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#ecbd8e" fill="#f48847"/>
+                  <use id="svg_14" transform="rotate(72 477.80078125,305.9515686035156) " y="271.45147" x="443.300775" height="69" width="69" href="#icon-2"/>
+                </g>
               </a>
-              <a transform="matrix(0.30901,-0.95105,0.95105,0.30901,-65.01837766752521,410.5098804800515) " id="item-3" className="item" role="button" onClick={this.handleClick}>
-                <path id="svg_15" className="sector" d="m316.195403,367.359987l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#ecbd8e" fill="#ffc84a"/>
-                <use id="svg_16" transform="rotate(72 401.4067687988282,305.55664062500006) " y="271.056597" x="366.906707" height="69" width="69" href="#icon-3"/>
+
+              <a  id="item-3" className="item" role="button" onClick={this.handleClick}>
+                <text id="svg_6" fontSize="30px" textAnchor="middle" y="50" x="350" fill="#222">{choices[2]}</text>
+                <g transform="matrix(0.30901,-0.95105,0.95105,0.30901,-65.01837766752521,410.5098804800515) ">
+                  <path id="svg_15" className="sector" d="m316.195403,367.359987l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#ecbd8e" fill="#ffc84a"/>
+                  <use id="svg_16" transform="rotate(72 401.4067687988282,305.55664062500006) " y="271.056597" x="366.906707" height="69" width="69" href="#icon-3"/>
+                </g>
               </a>
-              <a transform="matrix(-0.30901,-0.95105,0.95105,-0.30901,89.49011951994842,565.0183776675252) " id="item-4" className="item" role="button" onClick={this.handleClick}>
-                <path id="svg_17" className="sector" d="m254.624614,322.138391l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#ecbd8e" fill="#a6c34c"/>
-                <use id="svg_18" transform="rotate(72 339.83590698242193,260.3349914550781) " y="225.835001" x="305.335918" height="69" width="69" href="#icon-4"/>
+              <a  id="item-4" className="item" role="button" onClick={this.handleClick}>
+                <text id="svg_8" fontSize="30px" textAnchor="middle" y="115" x="100" fill="#222">{choices[3]}</text>
+                <g transform="matrix(-0.30901,-0.95105,0.95105,-0.30901,89.49011951994842,565.0183776675252) ">
+                  <path id="svg_17" className="sector" d="m254.624614,322.138391l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#ecbd8e" fill="#a6c34c"/>
+                  <use id="svg_18" transform="rotate(72 339.83590698242193,260.3349914550781) " y="225.835001" x="305.335918" height="69" width="69" href="#icon-4"/>
+                </g>
               </a>
-              <a transform="matrix(-0.80901,-0.58778,0.58778,-0.80901,305.3079355206185,599.2005616668552) " id="item-5" className="item" role="button" onClick={this.handleClick}>
-                <path id="svg_19" className="sector" d="m231.392693,249.361427l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#ecbd8e" fill="#4dbf4d"/>
-                <use id="svg_20" transform="rotate(72 316.6041259765625,187.55796813964844) " y="153.058037" x="282.103996" height="69" width="69" href="#icon-5"/>
+              <a  id="item-5" className="item" role="button" onClick={this.handleClick}>
+                <text id="svg_10" fontSize="30px" textAnchor="middle" y="250" x="50" fill="#222">{choices[4]}</text>
+                <g transform="matrix(-0.80901,-0.58778,0.58778,-0.80901,305.3079355206185,599.2005616668552) ">
+                  <path id="svg_19" className="sector" d="m231.392693,249.361427l145,0a250,250 0 0 0 -47.74575,-146.94631l-117.30747,85.22886a105,105 0 0 1 20.05322,61.71745" stroke="#ecbd8e" fill="#4dbf4d"/>
+                  <use id="svg_20" transform="rotate(72 316.6041259765625,187.55796813964844) " y="153.058037" x="282.103996" height="69" width="69" href="#icon-5"/>
+                </g>
               </a>
             </g>
-            <g transform={this.props.answered} id="svg_27">
+            <g transform={rotate_degree} id="svg_27">
               <path
                 stroke="#000" transform="rotate(1.1317607164382935 401.0000305175724,323.0167541503895) " d="m350.50002,322.744793c0.09386,-5.2407 -0.06006,-10.4884 0.77188,-15.71988c20.44239,1.72093 40.64368,4.53679 60.74161,7.06908c1.07894,-2.56973 0.57111,-4.70135 1.50855,-7.07724c12.91175,4.99953 25.70706,10.07025 37.97798,15.38244c-11.77275,6.02584 -25.27652,11.25888 -38.53361,16.61756c-0.42929,-2.49546 -0.85866,-4.9909 -1.28796,-7.48636c-19.539,2.41424 -40.20213,4.91033 -59.86745,7.11741c-1.33734,-5.09275 -1.29803,-10.63889 -1.311,-15.90301z"
                 strokeWidth="1.5" fill="#d50000"/>
