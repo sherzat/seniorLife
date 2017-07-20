@@ -42,16 +42,82 @@ symbol{overflow:visible;}
 	font-size: 24px !important;
 }
 
-
-/*
-.my-flex-card-width{
-        float: left;
-        width: 100%;
-        border: 1px solid #ccc;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        margin-left: 1.75438%;
-        overflow: hidden;
+.likert-scale{
+  width: 60%;
+  margin:auto;
 }
-*/
+
+
+//style for buttons scale
+$tint: darken(#BC8D06, 5);
+$colors: #4dbf4d,#a6c34c,#ffc84a,#f48847,#eb4841;
+.radioPad{
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+
+
+
+  &-wrapper{
+    display: block;
+    cursor: pointer;
+
+    color: $midnight-blue;
+    // text-transform: uppercase;
+    font-size: 1.5rem;
+    margin: 0.5rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-right: 0.7rem;
+    padding-left: 0.7rem;
+    border-style: solid;
+    border-color: white;
+    text-align: center;
+    @for $i from 1 through length($colors) {
+      &:nth-child(#{$i}) {
+        background: lighten(nth($colors, $i),0);
+
+        &:hover{
+          background: darken(nth($colors, $i), 12);
+        }
+      }
+    }
+
+  &-0{
+      background: darken(nth($colors, 1), 12) !important;
+      border-style: solid;
+      border-color: $midnight-blue;
+      color:$cloud;
+  }
+  &-1{
+      background: darken(nth($colors, 2), 12) !important;
+      border-style: solid;
+      border-color: $midnight-blue;
+      color:$cloud;
+  }
+  &-2{
+      background: darken(nth($colors, 3), 12) !important;
+      border-style: solid;
+      border-color: $midnight-blue;
+      color:$cloud;
+  }
+  &-3{
+      background: darken(nth($colors, 4), 12) !important;
+      border-style: solid;
+      border-color: $midnight-blue;
+      color:$cloud;
+  }
+  &-4{
+      background: darken(nth($colors, 5), 12) !important;
+      border-style: solid;
+      border-color: $midnight-blue;
+      color:$cloud;
+  }
+}
+  &-radio {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    opacity: 0;
+  }
+}

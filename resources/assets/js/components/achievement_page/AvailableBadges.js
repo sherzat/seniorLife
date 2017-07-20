@@ -8,7 +8,7 @@ class AvailableBadges extends Component {
                     <li className="list-group-item justify-content-between ">
                         <div className="col-md-4 col-sm-4">
                             <div className="card-block">
-                                <img className="card-img-top  img-responsive"
+                                <img className="card-img-top  img-responsive grayscale"
                                      src={this.props.img_src}
                                      alt="Card image cap" width={150} height={150}></img>
                             </div>
@@ -24,7 +24,7 @@ class AvailableBadges extends Component {
                         <div className="col-md-4 col-sm-4">
 
 
-                            <small>1/{this.props.price}</small>
+                            <small>1/{this.props.steps}</small>
 
                             <ProgressBar percent={33} className={"progressbar"}/>
 

@@ -84,7 +84,7 @@ class RegisterController extends Controller
         event(new Registered($user = $this->create($request->all())));
         $this->guard()->login($user);
         // Success redirection - which will be attribute `$redirectTo`
-        event(new OnRegister());
+        // event(new OnRegister());
         return redirect($this->redirectPath());
     }
 }

@@ -22,7 +22,17 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\Points' => [
             'App\Listeners\AddPoints',
         ],
+        
 
+    ];
+
+    /**
+     * The subscriber classes to register.
+     *
+     * @var array
+     */
+    protected $subscribe = [
+        'App\Listeners\AchievementEventSubscriber',
     ];
 
     /**

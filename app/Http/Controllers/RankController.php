@@ -15,7 +15,7 @@ class RankController extends Controller
 
     public function getRankData()
     {
-        $rankUsers= \App\User::all();
+        $rankUsers= \App\User::orderBy('point','desc')->get();
 
 
         $rankData =array(
