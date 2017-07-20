@@ -77,8 +77,7 @@ class MySurvey extends Component {
                     </div>
                     ) : (
                         <div>
-                            <Survey url="/survey/new"
-                              scale="Circular_scale"
+                            <Survey
                               handleOnclick={this.handleOnclick}
                               selectedCategory={this.state.selectedCategory.name}
                               categoryDescription={this.state.selectedCategory.description}

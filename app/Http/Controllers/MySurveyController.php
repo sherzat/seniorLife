@@ -12,6 +12,7 @@ class MySurveyController extends Controller
         return view('pages.mysurvey' , ['current_page' => $current_page]);
     }
 
+//set first visit flag after app tour.
     public function getMysurveyData()
     {
         $mysurveyData =array(

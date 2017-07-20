@@ -61,32 +61,7 @@ class RankPage extends Component {
             <div>
                 <div className="card">
 
-                    <div className="card-header p-0">
-                        <div className="row">
-                            <div className="col-md-3 col-sm-12 col-lg-3">
-                                <div className="card-block text-center">
-                                    <h4>Pictures</h4>
-                                </div>
-                            </div>
-                            <div className="col-md-3 col-sm-12 col-lg-3">
-                                <div className="card-block text-center">
-                                    <h4 id="step10">Name</h4>
-                                </div>
-                            </div>
-
-                            <div className="col-md-3 col-sm-12 col-lg-3">
-                                <div className="card-block text-center">
-                                    <h4 id="step6">Level</h4>
-                                </div>
-                            </div>
-
-                            <div className="col-md-3 col-sm-12 col-lg-3">
-                                <div className="card-block text-center">
-                                    <h4 id="step9">Rank</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     {rankUsers}
                 </div>
             </div>

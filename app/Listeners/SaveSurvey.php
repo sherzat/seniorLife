@@ -42,6 +42,7 @@ class SaveSurvey
         }
       });
         event(new Points($answers->count()));
+        event(new FirstSurvey);
 
       // //create a new survey
       // $survey = new \App\Survey;

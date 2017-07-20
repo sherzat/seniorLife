@@ -15,6 +15,8 @@ class SurveyController extends Controller
   {
     $this->middleware('auth');
   }
+
+  //returns the survey result for the chart.
   public function survey_result()
   {
     $user=Auth::user();
@@ -24,7 +26,7 @@ class SurveyController extends Controller
     return json_encode($mySurveyData);
   }
 
-
+ //return qustoins by category
   public function create_survey($category)
   {
 

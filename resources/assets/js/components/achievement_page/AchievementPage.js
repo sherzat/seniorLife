@@ -63,7 +63,7 @@ class AchievementPage extends Component {
                                  img_src={availableBadges.badge}
                                  title={availableBadges.title}
                                  description={availableBadges.description}
-                                 price={availableBadges.price}/>
+                                 steps={availableBadges.steps}/>
         )
 console.log(availableBadges);
         return (

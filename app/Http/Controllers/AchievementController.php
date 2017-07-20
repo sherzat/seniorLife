@@ -15,14 +15,20 @@ class AchievementController extends Controller
     public function getAchievementData()
     {
         $user = Auth::user();
-
-        $collectedbadges = $user->achievements;
-
-        $badges = [];
-        foreach ($collectedbadges as $badge) {
+        $array=[];
+        $relatedbadges = $user->achievements;
+        if ($relatedbadges->isEmpty()){
+          $collectedbadges=[];
+        }else{
+          
+          $badges = [];
+          foreach ($collectedbadges as $badge) {
 
             $array = array_prepend( $badges, $badge->id);
+          }
         }
+
+
 
 
         $availableBadges = DB::table('achievements')
