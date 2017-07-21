@@ -59,9 +59,8 @@ class RankPage extends Component {
         )
         return (
             <div>
-                <div className="card">
 
-                    
+                <div className="card ">
                     {rankUsers}
                 </div>
             </div>

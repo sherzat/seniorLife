@@ -10,7 +10,7 @@
                 <!-- the default color is changed and it is found in apps.scss -->
                 <div class="input-group">
                     <div class="input-group-addon">
-                        <i class="fa fa-user-o" aria-hidden="true"></i>
+                        <i class="fa fa-user-o" style="width:16px;" aria-hidden="true"></i>
                     </div>
                     <input id="name" type="text" class="form-control input-group-sm input-registration-settings"
                            placeholder="User name" name="name" value="{{ old('name') }}" required autofocus>

@@ -48,21 +48,16 @@
             <!-- setting-for-paragraphs are used to change the size and font while background color changes the background color -->
             <!-- both are found in apps.scss -->
             <button type="submit"
-                    class="btn btn-success form-control lead">
+                    class="btn btn-success Regestor-bg-color form-control lead">
                 Sign In
             </button>
         </form>
         <div class="form-group mt-5">
-            <h1></h1>
 
-            <h5 class="text-center Rail-way-font">New to SeniorLife?</h5>
-            <!-- setting-for-registration-button is found in apps.scss file -->
-            <a href="/register" role="button">
-                <button type="submit"
-                        class="btn btn-success form-control Regestor-bg-color lead border-0 Rail-way-font">
-                    Sign Up Now
-                </button>
-            </a>
+            <div class="mt-4 text-center">
+                <a href="/register" class="Font-dark" style="">Sign Up Now </a>
+            </div>
+
         </div>
     </div></div>
    <div class="d-flex justify-content-center align-items-center h-100 hidden-sm-down">

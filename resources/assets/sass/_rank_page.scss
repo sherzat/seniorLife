@@ -6,3 +6,20 @@
     height: calc(100% - 15px);
     margin-bottom: 15px;
 }
+
+.resize-card{
+
+    height: 88px;
+
+}
+.color{
+    &-1 {
+        background-color: lighten($orage-color, 20);
+    }
+    &-2 {
+        background-color: lighten($orage-color, 35) ;
+    }
+    &-3 {
+        background-color: lighten($orage-color, 45) ;
+    }
+}

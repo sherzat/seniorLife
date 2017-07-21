@@ -42,13 +42,13 @@
             </div>
 
             <button type="submit"
-                    class="btn btn-success form-control settins-for-paragraphs lead signin-background-color lead">Sign In
+                    class="btn Regestor-bg-color form-control settins-for-paragraphs lead signin-background-color lead">Sign In
             </button>
 
         </form>
 
-            <div class="mt-4 text-center">
-                <a href="/register" class="Font-dark" style="">Create an Account</a>
+            <div class="mt-5 text-center">
+                <a href="/register" class="Font-dark" style="">Sign Up Now </a>
             </div>
 
 

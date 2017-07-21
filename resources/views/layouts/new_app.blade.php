@@ -20,8 +20,8 @@
 <body>
 <div class="container-fluid w-100 h-100 Rail-way-font">
 
-    <nav class="navbar py-0 navbar-toggleable-md navbar-light fixed-top bg-nav" >
-      <div class="container">
+    <nav class="navbar py-0 navbar-toggleable-md fixed-top bg-nav" >
+      <div class="container" style="height: 56px">
 
           {{--navbar content for small screen--}}
 
@@ -70,8 +70,8 @@
                     {{-- PROFILE is in the collapsed meneu in sm screen --}}
                     <li class="nav-item profile hidden-lg-up">
                         <a class="nav-link" data-toggle="dropdown" href="#">
-                            <img src={{ Auth::user()->avatar }} class="rounded" width="20" height="20">
-                            {{ title_case(Auth::user()->name )}} <b class="caret"></b></a>
+                            <img src={{ Auth::user()->avatar }} class="rounded" style="width:20px;height: 20px;">
+                            {{ title_case(Auth::user()->name )}} <b class="caret" ></b></a>
                         <ul class="dropdown-menu dropdown-menu-right">
 
                             <button class="dropdown-item Bg-color-cloud list-group-item border-0 pt-2 pb-2"
@@ -100,8 +100,8 @@
 
                 <div class="navbar-nav ml-auto hidden-md-down">
                     <a class="nav-link" data-toggle="dropdown" href="#">
-                        <img src={{ Auth::user()->avatar }} class="rounded" width="20" height="20"
-                             style="margin-bottom: 4px">
+                        <img src={{ Auth::user()->avatar }} class="rounded"
+                             style="width: 20px;height: 20px;">
                         {{ title_case(Auth::user()->name )}} <b class="caret"></b></a>
                     <ul class="dropdown-menu p-3 m-2 dropdown-menu-right">
                         <li class="dropdown-item list-group-item border-0">
@@ -109,7 +109,7 @@
                                 <div class="row">
                                     <div class="col-lg-5 p-0">
                                         <p class="text-center">
-                                            <img src={{ Auth::user()->avatar }} class="rounded" width="100" height="100">
+                                            <img src={{ Auth::user()->avatar }} class="rounded" style="width:100px; height: 100px;" >
                                         </p>
                                     </div>
                                     <div class="col-lg-7">

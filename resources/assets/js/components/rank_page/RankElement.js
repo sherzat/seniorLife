@@ -1,39 +1,57 @@
 import React, {Component} from 'react';
 
 class RankElement extends Component {
+
     render() {
+        var rank_class= '';
+        if(this.props.ranking == 1) {
+            rank_class= "color-1 card rounded-0 border-right-0 border-left-0 border-top-0"
+        } else if (this.props.ranking == 2){
+            rank_class= "color-2 card rounded-0 border-right-0 border-left-0 border-top-0"
+        } else if (this.props.ranking == 3){
+            rank_class= "color-3 card rounded-0 border-right-0 border-left-0 border-top-0"
+        } else {
+            rank_class= "card rounded-0 border-top-0  border-right-0 border-left-0"
+        }
         return (
+
             <div>
-                <div className="card">
+
+
+                <div className={rank_class} >
                     <div className="row">
-                        <div className="col-md-3 col-sm-3 col-lg-3">
-                            <div className="card-block text-center">
-                                <img className="card-img-top img-fluid img-responsive"
+
+                        <div className=" w-25  d-flex align-items-center">
+                            <div className="card-block pt-3 resize-card d-flex align-items-center justify-content-center">
+                                <p className="my-auto">{this.props.ranking}</p>
+                            </div>
+                        </div>
+
+
+                        <div className=" w-25 ">
+                            <div
+                                className="card-block pt-3 resize-card d-flex align-items-center">
+
+                                <img className="card-img-top rounded img-fluid img-responsive mr-3"
                                      src={this.props.user_avatar}
-                                     alt={this.props.user_avatar}></img>
+                                     alt={this.props.user_avatar}
+                                     width={23} height={23}/>{this.props.user_name}
+
                             </div>
+
                         </div>
-                        <div className="col-md-3 col-sm-6 col-lg-3 d-flex align-items-center">
-                            <div className="card-block">
-                                <h3 className="card-title Lato-font">{this.props.user_name}</h3>
-                                <dl className="row Rail-way-font">
-                                    <dt className=" ">Total Points: </dt>
-                                    <dd className="ml-2">{this.props.points}</dd>
-                                </dl>
+
+                        <div className=" w-50  d-flex align-items-center">
+
+                            <div className="card-block pt-3 resize-card d-flex align-items-center justify-content-center">
+                                <div className="mb-0 row Rail-way-font">
+                                    <p className="mb-0">Total Points:</p>
+                                    <p className=" ml-2 mb-0">{this.props.points}</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="col-md-3 col-sm-3 col-lg-3 d-flex align-items-center">
-                            <div className="card-block text-center">
-                                <h4 className="my-auto">Level <span style={{color: "#f39c12"}}>{this.props.level}</span></h4>
-                            </div>
-                        </div>
 
-                        <div className="col-md-3 col-sm-3 col-lg-3 d-flex align-items-center">
-                            <div className="card-block text-center">
-                                <h4 className="my-auto">{this.props.ranking}</h4>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -42,3 +60,21 @@ class RankElement extends Component {
 }
 
 export default RankElement;
+
+
+{/* <div className="list">
+ <div className="row">
+ <div className="col-sm-2 col-md-2"><p>{this.props.ranking}</p></div>
+ <div className="col-sm-6 col-md-6"><img className="image" src={this.props.user_avatar}/>{this.props.user_name}
+ </div>
+ <div className="col-sm-2 col-md-2">
+ <dl className="mb-0 row Rail-way-font">
+ <dt className=" ">Total Points: </dt>
+ <dd className="">{this.props.points}</dd>
+ </dl>
+ </div>
+ <div className="col-sm-2 col-md-2"><p>{this.props.level}</p></div>
+
+ </div>
+ </div>*/
+}
