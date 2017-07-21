@@ -16,23 +16,17 @@ class AchievementController extends Controller
     {
         $user = Auth::user();
         $array=[];
-        $relatedbadges = $user->achievements;
-        if ($relatedbadges->isEmpty()){
-          $collectedbadges=[];
-        }else{
-          
-          $badges = [];
-          foreach ($collectedbadges as $badge) {
-
-            $array = array_prepend( $badges, $badge->id);
-          }
-        }
 
 
+        $collectedbadges= $user->achievements()->where('is_achieved',1)->orderBy('achievement_user.updated_at', 'desc')->get();
+        $inProgressBadges= $user->achievements()->where('is_achieved',0)->get();
 
 
-        $availableBadges = DB::table('achievements')
-            ->whereNotIn('id', $array)
+        $arrays = $user->achievements()->where('is_achieved',1)->pluck('achievements.id')->toArray();
+
+
+        $availableBadges = \App\Achievement::where('is_hidden', '0')
+            ->whereNotIn('id', $arrays)
             ->get();
 
         $achievementData = array(
@@ -40,6 +34,7 @@ class AchievementController extends Controller
             'flag' =>  Auth::user()->achievementflag,
             'badges' =>$collectedbadges,
             'level' =>Auth::user()->level,
+            'inProgressBadges'=>$inProgressBadges,
             'availableBadges' =>$availableBadges,
         );
 

@@ -24,9 +24,9 @@ class AvailableBadges extends Component {
                         <div className="col-md-4 col-sm-4">
 
 
-                            <small>1/{this.props.steps}</small>
+                            <small>{this.props.complete_rate}/{this.props.steps}</small>
 
-                            <ProgressBar percent={33} className={"progressbar"}/>
+                            <ProgressBar percent={(this.props.complete_rate/this.props.steps)*100} className={"progressbar"}/>
 
                         </div>
                     </li>

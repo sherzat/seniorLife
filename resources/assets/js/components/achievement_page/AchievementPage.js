@@ -56,6 +56,16 @@ class AchievementPage extends Component {
                                  description={badges.description}/>
         )
 
+        const inProgressBadges = this.state.achievementData.inProgressBadges.map(
+             (inProgressBadges) =>
+
+                 <AvailableBadges key={inProgressBadges.id}
+                                  img_src={inProgressBadges.badge}
+                                  title={inProgressBadges.title}
+                                  description={inProgressBadges.description}
+                                  complete_rate={inProgressBadges.pivot.complete_rate}
+                                  steps={inProgressBadges.steps}/>
+         )
        const availableBadges = this.state.achievementData.availableBadges.map(
             (availableBadges) =>
 
@@ -63,6 +73,7 @@ class AchievementPage extends Component {
                                  img_src={availableBadges.badge}
                                  title={availableBadges.title}
                                  description={availableBadges.description}
+                                 complete_rate={0}
                                  steps={availableBadges.steps}/>
         )
 console.log(availableBadges);
@@ -82,13 +93,13 @@ console.log(availableBadges);
                     </div>
                 </div>
 
-
                 <div className="card ">
                     <div className="card-header Bg-color text-center Lato-font"><h4 id="step12">In the future you can
                         also collect this
                         badges</h4></div>
                     <div className="card-block">
                         <div className="list-group list-group-flush">
+                            {inProgressBadges}
                             {availableBadges}
                         </div>
                     </div>

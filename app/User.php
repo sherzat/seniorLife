@@ -38,7 +38,7 @@ class User extends Authenticatable
     //many to many
     public function achievements()
     {
-        return $this->belongsToMany('App\Achievement');
+        return $this->belongsToMany('App\Achievement')->withPivot('complete_rate','is_achieved')->withTimestamps();
     }
 
     public function getSurveyResult()

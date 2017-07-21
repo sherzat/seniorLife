@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import Circular_scale_1 from './Circular_scale_1';
 import Question from './Question';
 import Slider_scale from './Slider_scale';
-import HomePageSlider from '../home_Page/HomePageSlider';
 import HomePageRadioButton from './HomepageRadioButton';
 import ProgressBar from './ProgressBar';
 import {ModalContainer, ModalDialog} from 'react-modal-dialog';

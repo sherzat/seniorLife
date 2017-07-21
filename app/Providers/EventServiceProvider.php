@@ -13,16 +13,16 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\OnRegister' => [
-            'App\Listeners\AttachAchievement',
-        ],
         'App\Events\NewSurvey' => [
             'App\Listeners\SaveSurvey',
         ],
         'App\Events\Points' => [
             'App\Listeners\AddPoints',
         ],
-        
+        'App\Events\IncreaseSurvey' => [
+            'App\Listeners\AchievementEventSubscriber',
+        ],
+
 
     ];
 
@@ -44,6 +44,5 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        //
     }
 }

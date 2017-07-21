@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react';
-import HomepageProgressBar from './HomepageProgressBar';
 import PlayerStatus from '../components/PlayerStatus';
 import HomepageCircularPiechart from './HomepageCircularPiechart';
 import HomepageCarousel from './HomepageCarousel';

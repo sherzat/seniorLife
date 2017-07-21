@@ -6,11 +6,11 @@
         <!-- font family and font size -->
 
             <!-- email form starts here -->
-            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+            <div class="form-group">
                 <!-- the default color is changed and it is found in apps.scss -->
                 <div class="input-group">
                     <div class="input-group-addon">
-                        <i class="fa fa-user-o" aria-hidden="true"></i>
+                        <i class="fa fa-user-o" style="width: 16px"  aria-hidden="true"></i>
                     </div>
                     <input id="name" type="text" class="form-control input-group-sm input-registration-settings"
                            placeholder="User name" name="name" value="{{ old('name') }}" required autofocus>

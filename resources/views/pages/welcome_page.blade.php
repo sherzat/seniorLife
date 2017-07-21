@@ -88,7 +88,7 @@
                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }} customizing-form-horizontal">
                    <div class="input-group">
                        <div class="input-group-addon">
-                           <i class="fa fa-user-o" aria-hidden="true"></i>
+                           <i class="fa fa-user-o"  aria-hidden="true"></i>
                        </div>
                        <input id="name" type="text" class="form-control input-group-sm input-registration-settings"
                               placeholder="User name" name="name" value="{{ old('name') }}" required autofocus>
@@ -166,5 +166,3 @@
 
 @section('footer')
 @endsection
-
-

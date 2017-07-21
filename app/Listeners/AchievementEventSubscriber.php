@@ -1,9 +1,14 @@
 <?php
 
 namespace App\Listeners;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AchievementEventSubscriber
 {
+    public function handle($event ) {
+          //
+    }
     /**
      * Handle user login events.
      */
@@ -11,21 +16,100 @@ class AchievementEventSubscriber
       $id = \App\Achievement::select('id')
           ->where('title','Welcome aboard')
           ->get();
-      Auth::user()->achievements()->attach($id);
+          $event->user->achievements()->attach($id, ['complete_rate'=>1, 'is_achieved'=>true ]);
     }
 
     /**
      * Handle user logout events.
      */
-    public function onFirstSurvey($event) {
-      $achievement_id = \App\Achievement::select('id')
-          ->where('title','First survey')
-          ->get();
-      $user_id = Auth::id();
+    public function onIncreaseSurvey($event) {
 
-      DB::table('achievement_user')->insert(
-        ['user_id' => $user_id, 'achievement_id' => $achievement_id, 'complete_rate'=>1, 'is_achieved'=>true ]
-      );
+      $user = Auth::user();
+
+      //check if the first survey is achieved?
+      $collected_badges= $user->achievements()
+      ->where('is_achieved',1)
+      ->get();
+      $inProgress_badges=$user->achievements()
+      ->where('is_achieved',0)
+      ->get();
+
+      if($collected_badges->contains('title','First survey') != true) {
+        $first_survey_badge = \App\Achievement::where('title','First survey')->first();
+        $user->achievements()->attach($first_survey_badge->id, ['complete_rate'=>1, 'is_achieved'=>true ]);
+
+        $badges = \App\Achievement::where('title', 'Beginner')->first();
+        $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>1]]);
+      } else if($collected_badges->contains('title','Keep it up') != true) {
+        $badges = \App\Achievement::where('title', 'Keep it up')->first();
+
+        if($inProgress_badges->contains('title','Keep it up')!= true){
+          $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>1]]);
+        } else{
+          $complete_rate = $inProgress_badges->where('title', 'Keep it up')->first()->pivot->complete_rate;
+          $steps = $inProgress_badges->where('title', 'Keep it up')->first()->steps;
+          $complete_rate += 1;
+          if ($complete_rate < $steps) {
+            $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate]]);
+          }else {
+            $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate, 'is_achieved'=>true]]);
+          }
+        }
+      } else if($collected_badges->contains('title','Beginner') != true) {
+        $badges = \App\Achievement::where('title', 'Beginner')->first();
+
+        if($inProgress_badges->contains('title','Beginner')!= true){
+          $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>1]]);
+        }else{
+          $complete_rate = $inProgress_badges->where('title', 'Beginner')->first()->pivot->complete_rate;
+          $steps = $inProgress_badges->where('title', 'Beginner')->first()->steps;
+          $complete_rate += 1;
+          if ($complete_rate < $steps) {
+            $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate]]);
+          }else {
+            $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate, 'is_achieved'=>true]]);
+          }
+        }
+      }else if($collected_badges->contains('title','Intermediate') != true) {
+        $badges = \App\Achievement::where('title', 'Intermediate')->first();
+
+        if($inProgress_badges->contains('title','Intermediate')!= true){
+          $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>1]]);
+        }else{
+          $complete_rate = $inProgress_badges->where('title', 'Intermediate')->first()->pivot->complete_rate;
+          $steps = $inProgress_badges->where('title', 'Intermediate')->first()->steps;
+          $complete_rate += 1;
+          if ($complete_rate < $steps) {
+            $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate]]);
+          }else {
+            $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate, 'is_achieved'=>true]]);
+          }
+        }
+      }else if($collected_badges->contains('title','Master') != true) {
+        $badges = \App\Achievement::where('title', 'Master')->first();
+
+        if($inProgress_badges->contains('title','Master')!= true){
+          $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>1]]);
+        }else{
+          $complete_rate = $inProgress_badges->where('title', 'Master')->first()->pivot->complete_rate;
+          $steps = $inProgress_badges->where('title', 'Master')->first()->steps;
+          $complete_rate += 1;
+          if ($complete_rate < $steps) {
+            $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate]]);
+          }else {
+            $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate, 'is_achieved'=>true]]);
+          }
+        }
+      }
+
+      $num_category = \App\Category::count();
+      $num_finished_category = $user->responses()->join('questions', 'responses.question_id', '=', 'questions.id')->distinct('category_id')->count('category_id');
+      $badges = \App\Achievement::where('title', 'Complete')->first();
+      if ($num_finished_category < $num_category){ //not finished
+        $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$num_finished_category]]);
+      }else {
+        $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$num_finished_category, 'is_achieved'=>true]]);
+      }
     }
 
     /**
@@ -36,14 +120,15 @@ class AchievementEventSubscriber
     public function subscribe($events)
     {
         $events->listen(
-            'App\Events\Registered',
+            'Illuminate\Auth\Events\Registered',
             'App\Listeners\AchievementEventSubscriber@onRegister'
         );
 
         $events->listen(
-            'App\Events\FirstSurvey',
-            'App\Listeners\AchievementEventSubscriber@onFirstSurvey'
+            'App\Events\IncreaseSurvey',
+            'App\Listeners\AchievementEventSubscriber@onIncreaseSurvey'
         );
+
     }
 
 }

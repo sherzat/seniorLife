@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\NewSurvey;
+use App\Events\IncreaseSurvey;
 use App\Events\Points;
 
 use Illuminate\Queue\InteractsWithQueue;
@@ -42,7 +43,7 @@ class SaveSurvey
         }
       });
         event(new Points($answers->count()));
-        event(new FirstSurvey);
+        event(new IncreaseSurvey($event->user));
 
       // //create a new survey
       // $survey = new \App\Survey;
