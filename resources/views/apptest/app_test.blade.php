@@ -2,6 +2,6 @@
 
 @section('content')
 
-    <div id="profile_page"></div>
+    <div id="apptest"></div>
 
 @endsection

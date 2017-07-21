@@ -6,7 +6,6 @@ class Category extends Component {
     constructor(props) {
         super(props);
 
-
         this.handleOnclick = this.handleOnclick.bind(this);
     }
     handleOnclick() {
@@ -16,7 +15,7 @@ class Category extends Component {
     }
   render() {
     return (
-      <div className="col-xs-2 mx-2 my-2">
+      <div className="col-md-3 col-lg-2  col-sm-4 col-6 mt-3">
         <button className="card text-center" onClick={this.handleOnclick} >
           <div className="card-block p-1">
             <img className="card-img-top"
@@ -52,20 +51,16 @@ class NewSurvey extends Component {
       <div className="row mt-2 Rail-way-font">
         <div className="col-md-12 col-xs-12">
           <div className="card mb-4">
-            <div className="row">
-              <div className="col-md-4 ">
-                  <div className="card-block ">
-                    <h4 id="step6" className="card-title">
-                      Start a new survey
-                    </h4>
-                    <p className="card-text">
-                      You can select one category to start your survey.
-                    </p>
-                  </div>
-              </div>
 
-              <div className="col-md-8">
-                <div className="card-block">
+          <div className="card-header">
+              <h4 id="step1"className="card-title">Survey</h4>
+              <h6 className="card-subtitle">You can select one category to start</h6>
+          </div>
+
+            <div className="row">
+
+              <div className="col-md-12">
+                <div className="card-block pt-3">
                     <div className="row justify-content-wrap ">
                       {toReturns}
                     </div>

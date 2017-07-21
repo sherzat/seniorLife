@@ -39,6 +39,8 @@ Route::get('survey/create/{new}', 'SurveyController@create_survey')->name('new.s
 Route::post('survey/store', 'SurveyController@store_survey')->name('store.survey');
 Route::get('survey/result', 'SurveyController@survey_result');
 
+Route::get('apptest','TestController@getApp_test')->name("Apptest");
+
 Route::get('databaseTest', function(){
 	if (DB::connection()->getDatabaseName())
 	{

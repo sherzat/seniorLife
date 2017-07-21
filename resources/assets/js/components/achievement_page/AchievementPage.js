@@ -81,9 +81,13 @@ console.log(availableBadges);
 
             <div>
 
-                <div className="card mb-4">
-                    <div className="card-header Bg-color text-center Lato-font"><h4 id="step11"> You have collected this
-                        badges</h4></div>
+                <div className="card mb-5">
+
+                    <div className="card-header">
+                        <h4 id="step11"className="card-title">Collected Badges</h4>
+                        <h6 className="card-subtitle">You have collected this badges</h6>
+                    </div>
+
                     <div className="card-block">
                         <div className="row  justify-content-around">
 
@@ -93,10 +97,14 @@ console.log(availableBadges);
                     </div>
                 </div>
 
-                <div className="card ">
-                    <div className="card-header Bg-color text-center Lato-font"><h4 id="step12">In the future you can
-                        also collect this
-                        badges</h4></div>
+
+                <div className="card">
+
+                    <div className="card-header">
+                        <h4 id="step11"className="card-title">Future Badges</h4>
+                        <h6 className="card-subtitle">You may also collecte this badges</h6>
+                    </div>
+
                     <div className="card-block">
                         <div className="list-group list-group-flush">
                             {inProgressBadges}

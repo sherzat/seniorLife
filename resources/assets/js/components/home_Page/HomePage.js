@@ -49,76 +49,76 @@ class HomePage extends  Component {
 
         return (
             <div>
-
-
-                    <h3 className="mb-4"> Make daily self-assessment for better quality of life! </h3>
-
-
                 <div className="Rail-way-font">
+                <div className="row mt-2 Rail-way-font">
+                    <div className="col-md-12 col-xs-12">
+                        <div className="card mb-5">
 
-                    <div className="row d-flex ">
-                        <div className="col-md-6 align-self-stretch mb-4">
-                            <div className="card h-100">
-
-                                {/*<!-- Heading -->*/}
-
-                                <div className="card-block pt-1 pb-2">
-                                    <h4 id="step1"className="card-title">Your Quality of Life</h4>
-                                    <h6 className="card-subtitle">Overall score of your last survey</h6>
-                                </div>
-
-                                {/* <!-- Image -->*/}
-
-                                <div className="card-block p-1" style={{textAlign: "center"}}>
-
-                                    <HomepageCircularPiechart percentage={this.state.home.qol ? this.state.home.qol.score : 0}/>
-
-                                </div>
-
-                                {/* <!-- Text Content -->*/}
-
-                                <div className="card-block p-1 mx-auto">
-                                    <p className="card-text">You have completed {this.state.home.survey} surveys this week</p>
-                                </div>
-
-                                {/*  <!-- button -->*/}
-
-                                <div className="card-block p-1 pb-3 mx-auto">
-                                    <button className="btn btn-success">Read Detail</button>
-                                </div>
+                            <div className="card-header">
+                                <h4 id="step1"className="card-title">Quality of Life</h4>
+                                <h6 className="card-subtitle">Overall score of your last survey</h6>
                             </div>
-                        </div>
-                        <div className="col-md-6 align-self-stretch mb-4">
 
-                            {/* <!-- Heading -->*/}
+                            <div className="row">
+                                <div className="col-md-6 ">
+                                    <div className="card-block mx-auto">
 
-                            <div className="card h-100">
 
-                                {/*<!-- Heading -->*/}
+                                        {/* <!-- Image -->*/}
 
-                                <div className="card-block pt-1 pb-2">
-                                    <h4 id="step2" className="card-title">Health Card </h4>
-                                    <h6 className="card-subtitle text-muted">see result of individual category survey</h6>
+                                        <div className="card-block" style={{textAlign: "center"}}>
+
+                                            <HomepageCircularPiechart percentage={this.state.home.qol ? this.state.home.qol.score : 0}/>
+
+                                        </div>
+
+                                        {/* <!-- Text Content -->*/}
+
+                                        <div className="card-block  mx-auto">
+                                            <p className="card-text">You have completed {this.state.home.survey} surveys this week</p>
+                                        </div>
+
+                                        {/*  <!-- button -->*/}
+
+                                        {/*<div className="card-block  mx-auto">
+                                            <button className="btn btn-success">Read Detail</button>
+                                        </div>*/}
+
+                                    </div>
+
                                 </div>
 
-                              <HomepageBarchart />
+                                <div className="col-md-6">
+                                    <div className="card-block">
+                                        <div className="card-block ">
+                                            <h6 className="card-subtitle text-muted">see result of individual category survey</h6>
+                                        </div>
 
+                                        <HomepageBarchart />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                </div>
+
+
                     <div className="row d-flex ">
 
                         {/*<!-- your achevments -->*/}
 
                         <div className="col-md-6 align-self-stretch mb-4">
+
                             <div className="card h-100">
 
                                 {/*<!-- Heading -->*/}
 
-                                <div className="card-block pt-1 pb-2">
-                                    <h4 id="step3" className="card-title">Your achevemnts</h4>
-                                    <h6 className="card-subtitle text-muted">Your collection</h6>
+                                <div className="card-header">
+                                    <h4 id="step1"className="card-title">Achievement</h4>
+                                    <h6 className="card-subtitle">Your collection</h6>
                                 </div>
+
 
                                 {/*<!-- Image -->*/}
 
@@ -146,29 +146,17 @@ class HomePage extends  Component {
                             {/*<!-- Heading -->*/}
 
                             <div className="card h-100">
-                                <div className="card-block pt-1 pb-2">
-                                    <h4 id="step4" className="card-title">Player status </h4>
+
+                                <div className="card-header">
+                                    <h4 id="step1"className="card-title">Player status</h4>
+                                    <h6 className="card-subtitle">level up</h6>
                                 </div>
 
-                                {/*<!-- Image -->*/}
 
-                                <div className="card-block pb-0">
-                                    <PlayerStatus
-                                      playerStatus={this.state.home.playerStatus}/>
-                                </div>
+                                <div className="card-block ">
 
-                                {/*<!-- Text Content -->*/}
 
-                                <div className="card-block p-1 mx-auto">
-                                    <p className="card-text">
-                                      Fill in surveys to level up.
-                                  </p>
-                                </div>
 
-                                {/*<!-- Button -->*/}
-
-                                <div className="card-block p-1 pb-3 mx-auto">
-                                    <a className="btn btn-success" href="/mysurvey">Go to surveys</a>
                                 </div>
                             </div>
                         </div>

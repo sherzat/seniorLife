@@ -20,10 +20,13 @@
 
 <div class="container-fluid  background-img w-100 h-100 Rail-way-font">
 
-    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top Nav-bg-color">
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top Nav-bg-color" style="
+    height: 56px;
+">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand Title-light Lato-font" href="#">{{ config('app.name', 'SeniorLife') }}</a>
+                <a class="navbar-brand Lato-font" href="#">
+                    {{ config('app.name', 'SeniorLife') }}</a>
 
             </div>
 
@@ -57,7 +60,7 @@
 
                     </div>
 
-                    <button type="submit" class="btn btn-success Rail-way-font" data-step="1"
+                    <button type="submit" class="btn btn-success Regestor-bg-color Rail-way-font" data-step="1"
                             data-intro="Get it, use it.">Sign In
                     </button>
 

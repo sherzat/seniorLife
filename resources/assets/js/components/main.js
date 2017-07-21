@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import RankPage from './rank_page/RankPage';
 
 import MySurvey  from './mysurvey_page/MySurvey';
-
+import ApptestPage from './apptest_page/ApptestPage';
 
 import AchievementPage from './achievement_page/AchievementPage'; //update the progress bar in achievement_page
 import HomePage from './home_Page/HomePage';
@@ -58,4 +58,11 @@ if (document.getElementById('footer')) {
     ReactDOM.render(
         <FooterComponent/>,
         document.getElementById('footer'));
+}
+
+if (document.getElementById('apptest')){
+    ReactDOM.render(
+        <ApptestPage/>,
+        document.getElementById('apptest')
+    );
 }

@@ -11,6 +11,36 @@
 
 // Variables
 @import "variables";
+body {
+  padding-top: 56px;
+  font-family: 'Raleway', sans-serif;
+}
+.card-block{
+  padding-bottom: 16px;
+  padding-top: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.input-group-addon{
+  border: 0px;
+  width: 40px;
+}
+.form-control{
+  border: 0px;
+  line-height: 24px;
+}
+.btn{
+  font-size: 16px;
+  border: 0px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  line-height: 24px;
+}
+.btn-success{
+  background-color: $orage-color !important;
+  color: #212121;
+}
+
 .Rail-way-font{
   font-family: 'Raleway', sans-serif !important;
 }
@@ -18,7 +48,7 @@
   font-family: $font-family-Lato !important;
 }
 .Font-dark{
-  color:$midnight-blue !important;
+  color:#212121 !important;
 }
 
 .Font-light{
@@ -55,8 +85,6 @@
 
 // Stylings for profile_page
 @import "profile_page";
-
-
 
 
 //tour image
