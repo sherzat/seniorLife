@@ -61,6 +61,10 @@ class RankPage extends Component {
             <div>
 
                 <div className="card ">
+                  <div className="card-header">
+                      <h4 id="step1"className="card-title">Ranking </h4>
+                      <h6 className="card-subtitle">Ranking is ased on the overall score</h6>
+                  </div>
                     {rankUsers}
                 </div>
             </div>
