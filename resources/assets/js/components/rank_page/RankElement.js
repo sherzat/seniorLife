@@ -3,26 +3,29 @@ import React, {Component} from 'react';
 class RankElement extends Component {
 
     render() {
-        var rank_class= '';
-        if(this.props.ranking == 1) {
-            rank_class= "color-1 card rounded-0 border-right-0 border-left-0 border-top-0"
-        } else if (this.props.ranking == 2){
-            rank_class= "color-2 card rounded-0 border-right-0 border-left-0 border-top-0"
-        } else if (this.props.ranking == 3){
-            rank_class= "color-3 card rounded-0 border-right-0 border-left-0 border-top-0"
-        } else {
-            rank_class= "card rounded-0 border-top-0  border-right-0 border-left-0"
+        var rank_class = '';
+        if (this.props.ranking == 1) {
+            rank_class = "color-1 card rounded-0 border-right-0 border-left-0 border-top-0"
+        } else if (this.props.ranking == 2) {
+            rank_class = "color-2 card rounded-0 border-right-0 border-left-0 border-top-0"
+        } else if (this.props.ranking == 3) {
+            rank_class = "color-3 card rounded-0 border-right-0 border-left-0 border-top-0"
+        } else if (this.props.current_userId == this.props.user_id) {
+            rank_class = "color-user card rounded-0 border-right-0 border-left-0 border-top-0"
+        }else {
+            rank_class = "card rounded-0 border-top-0  border-right-0 border-left-0"
         }
         return (
 
             <div>
 
 
-                <div className={rank_class} >
+                <div className={rank_class}>
                     <div className="row">
 
                         <div className=" w-25  d-flex align-items-center">
-                            <div className="card-block pt-3 resize-card d-flex align-items-center justify-content-center">
+                            <div
+                                className="card-block pt-3 resize-card d-flex align-items-center justify-content-center">
                                 <p className="my-auto">{this.props.ranking}</p>
                             </div>
                         </div>
@@ -43,7 +46,8 @@ class RankElement extends Component {
 
                         <div className=" w-50  d-flex align-items-center">
 
-                            <div className="card-block pt-3 resize-card d-flex align-items-center justify-content-center">
+                            <div
+                                className="card-block pt-3 resize-card d-flex align-items-center justify-content-center">
                                 <div className="mb-0 row Rail-way-font">
                                     <p className="mb-0">Total Points:</p>
                                     <p className=" ml-2 mb-0">{this.props.points}</p>
@@ -60,21 +64,3 @@ class RankElement extends Component {
 }
 
 export default RankElement;
-
-
-{/* <div className="list">
- <div className="row">
- <div className="col-sm-2 col-md-2"><p>{this.props.ranking}</p></div>
- <div className="col-sm-6 col-md-6"><img className="image" src={this.props.user_avatar}/>{this.props.user_name}
- </div>
- <div className="col-sm-2 col-md-2">
- <dl className="mb-0 row Rail-way-font">
- <dt className=" ">Total Points: </dt>
- <dd className="">{this.props.points}</dd>
- </dl>
- </div>
- <div className="col-sm-2 col-md-2"><p>{this.props.level}</p></div>
-
- </div>
- </div>*/
-}

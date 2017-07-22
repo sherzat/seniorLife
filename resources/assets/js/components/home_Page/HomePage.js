@@ -5,6 +5,7 @@ import PlayerStatus from '../components/PlayerStatus';
 import HomepageCircularPiechart from './HomepageCircularPiechart';
 import HomepageCarousel from './HomepageCarousel';
 import HomepageBarchart from './HomepageBarchart';
+import RankElement from '../rank_page/RankElement.js';
 
 class HomePage extends  Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class HomePage extends  Component {
         this.getData=this.getData.bind(this);
     }
 
-    /*//sending request to to set  flag to 1 value*/
+    /*//sending request to  set  flag to 1 value*/
 
     getData() {
         var url ="/home/1";
@@ -35,6 +36,21 @@ class HomePage extends  Component {
                 });
 
             }.bind(this))
+
+        var url1 ="/getRankData";
+        $.ajax({
+            method: "GET",
+            url: url1,
+        })
+            .done(function( result ) {
+
+                console.log(result)
+                this.setState({rankData:result} ,function () {
+                    this.setState({loaded:true})
+                });
+
+            }.bind(this))
+
     }
     componentWillMount(){
         this.getData();
@@ -46,7 +62,28 @@ class HomePage extends  Component {
         if(!this.state.loaded)
             return (<h>loading</h>);
 
+        var rankId=1;
+        var userId = this.state.rankData.currentUser.id;
 
+            const rankUsers = this.state.rankData.rankUsers.map(
+
+                (rank) =>
+
+                    <RankElement
+                        key={rank.id}
+                        ranking={rankId++}
+                        user_avatar={rank.avatar}
+                        user_name={rank.name}
+                        level={rank.level}
+                        points={rank.point} />
+
+            )
+
+        var userIndex = this.state.rankData.rankUsers.findIndex(
+            function (element) {
+                return element.id == userId;
+            }
+        );
 
         return (
             <div>
@@ -150,13 +187,16 @@ class HomePage extends  Component {
 
                                 <div className="card-header">
                                     <h4 id="step1"className="card-title">Player status</h4>
-                                    <h6 className="card-subtitle">level up</h6>
+                                    <h6 className="card-subtitle">Rank</h6>
                                 </div>
 
+                                <div className="card-block">
 
-                                <div className="card-block ">
+                                    <div className="pb-2 userRank-font">{rankUsers[userIndex]}</div>
 
-
+                                    {rankUsers[0]}
+                                    {rankUsers[1]}
+                                    {rankUsers[2]}
 
                                 </div>
                             </div>

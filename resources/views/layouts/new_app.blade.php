@@ -67,6 +67,14 @@
                             Achievement
                         </a>
                     </li>
+
+                    <li id="id1" class="nav-item {{ ends_with(Request::url(), 'achievement') ? "active" : "" }}">
+                        <a class="nav-link " href={{url("achievement")}}>
+                            <i class="fa fa-question-circle" aria-hidden="true"></i>
+                            Help
+                        </a>
+                    </li>
+
                     {{-- PROFILE is in the collapsed meneu in sm screen --}}
                     <li class="nav-item profile hidden-lg-up">
                         <a class="nav-link" data-toggle="dropdown" href="#">

@@ -21,6 +21,7 @@ class RankController extends Controller
         $rankData =array(
             'flag' =>  Auth::user()->rankflag,//thisis fr fist time visit
             'rankUsers' => $rankUsers,
+            'currentUser' =>Auth::user(),
 //            'playerStatus'=> $playerStatus,
         );
 
