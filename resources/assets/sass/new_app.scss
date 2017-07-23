@@ -46,7 +46,9 @@ body {
   background-color: $orage-color !important;
   color: #212121;
 }
-
+.Line-height-profile{
+  line-height: 16px;
+}
 .Rail-way-font{
   font-family: 'Raleway', sans-serif !important;
 }
@@ -60,7 +62,28 @@ body {
 .Font-light{
   color: $cloud !important;
 }
+.fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+}
+.fileUpload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
 
+.uploadCustom{
+  width: 40px;
+  height: 33px;
+  background-color: $orage-color;
+}
 .Bg-color-midnight{
   background-color: $midnight-blue !important;
 }

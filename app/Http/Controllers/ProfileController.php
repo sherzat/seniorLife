@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Image;
 class ProfileController extends Controller
 {
     /**
@@ -33,11 +34,33 @@ class ProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function upload_avatar(Request $request)
+    {
+        //handle upload user avatar
+
+        if($request->hasFile('avatar')){
+            $avatar = $request->file('avatar');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300, 300)->save( public_path('/img/avatars/upload/' . $filename ) );
+
+            $user = Auth::user();
+            $user->avatar = '/img/avatars/upload/' . $filename ;
+            $user->save();
+        }
+        return  "success";
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
        ;
         $user = Auth::user();
-
         $user =\App\User::find($user->id);
         $user->avatar =  $request->avatar;
         $user->save();

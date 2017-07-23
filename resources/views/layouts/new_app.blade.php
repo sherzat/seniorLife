@@ -68,8 +68,8 @@
                         </a>
                     </li>
 
-                    <li id="id1" class="nav-item {{ ends_with(Request::url(), 'achievement') ? "active" : "" }}">
-                        <a class="nav-link " href={{url("achievement")}}>
+                    <li class="nav-item {{ ends_with(Request::url(), 'help') ? "active" : "" }}">
+                        <a class="nav-link " href="javascript:void(0);" onclick="startIntro('{{Route::currentRouteName()}}');">
                             <i class="fa fa-question-circle" aria-hidden="true"></i>
                             Help
                         </a>
@@ -79,16 +79,23 @@
                     <li class="nav-item profile hidden-lg-up">
                         <a class="nav-link" data-toggle="dropdown" href="#">
                             <img src={{ Auth::user()->avatar }} class="rounded" style="width:20px;height: 20px;">
-                            {{ title_case(Auth::user()->name )}} <b class="caret" ></b></a>
+                            {{ title_case(Auth::user()->name )}} <b class="caret"></b>
+                        </a>
+
                         <ul class="dropdown-menu dropdown-menu-right">
 
-                            <button class="dropdown-item Bg-color-cloud list-group-item border-0 pt-2 pb-2"
-                                    onclick="window.location.href='/profile'"><a class="mr-auto">Change profile
-                                </a>
-                                <i class="fa fa-cog" aria-hidden="true"></i>
+                            <button class="dropdown-item border-0 Bg-color-cloud list-group-item border-0 pt-2 pb-2"
+                                    onclick="window.location.href='/profile'"><a class="mr-auto">Upload picture</a>
+                                <i class="fa fa-upload" aria-hidden="true"></i>
                             </button>
 
                             <div class="dropdown-divider Bg-color-midnight"></div>
+
+                            <button class="dropdown-item Bg-color-cloud list-group-item border-0 pt-2 pb-2"
+                                    onclick="window.location.href='#'"><a class="mr-auto">Profile setting
+                                </a>
+                                <i class="fa fa-upload" aria-hidden="true"></i>
+                            </button>
 
                             <button class="dropdown-item border-0 Bg-color-cloud list-group-item border-0 pt-2 pb-2"
                                     href="{{ url('logout') }}"
@@ -116,9 +123,13 @@
                             <div class="navbar-login">
                                 <div class="row">
                                     <div class="col-lg-5 p-0">
-                                        <p class="text-center">
-                                            <img src={{ Auth::user()->avatar }} class="rounded" style="width:100px; height: 100px;" >
+
+                                        <p class="text-center mb-2">
+                                            <img src={{ Auth::user()->avatar }} class="rounded" style="width:100px; height: 100px;"/>
                                         </p>
+
+                                        <button class="btn btn-success btn-block btn-sm Line-height-profile" onclick="window.location.href='/profile'">Upload picture</button>
+
                                     </div>
                                     <div class="col-lg-7">
                                         <p class="text-left"><strong> {{ title_case(Auth::user()->name )}}</strong></p>
@@ -131,7 +142,7 @@
 
 
                         <button class="dropdown-item list-group-item border-0 pt-2 pb-2"
-                                onclick="window.location.href='/profile'"><a class="mr-auto">Change profile
+                                onclick="window.location.href='#'"><a class="mr-auto">Profile setting
                                  </a>
                             <i class="fa fa-cog" aria-hidden="true"></i>
                         </button>

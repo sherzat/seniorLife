@@ -2,6 +2,49 @@ import React, {Component} from 'react';
 import ProfileImage from './ProfileImage';
 
 class ProfilePage extends Component {
+    constructor(props) {
+        super(props);
+
+            this.state = {file: '',imagePreviewUrl: '',}
+
+        // This binding is necessary to make `this` work in the callback
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleImageChange = this.handleImageChange.bind(this);
+    }
+
+    handleSubmit(e) {
+        // e.preventDefault();
+        let data = new FormData();
+        console.log(this.state.file);
+        data.append('avatar', this.state.file);
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: "/uploadFile",
+            type: "POST",
+            data: data,
+            processData: false,
+            contentType: false,
+            success: function (res) {
+                console.log(res);
+            }.bind(this)
+        });
+    }
+    handleImageChange(e) {
+        e.preventDefault();
+
+        let reader = new FileReader();
+        let file = e.target.files[0];
+
+        reader.onloadend = () => {
+            this.setState({
+                file: file,
+                imagePreviewUrl: reader.result,
+            });
+        }
+        reader.readAsDataURL(file)
+    }
     render() {
         var img_src_paths = [
             "/img/avatars/adults/adult-man.PNG",
@@ -22,11 +65,42 @@ class ProfilePage extends Component {
             <div>
 
                 <div className="card mb-4">
-                    <div className="card-header text-center bg-faded Bg-color">Select Your Profile Picture</div>
+
+                    <div className="card-header">
+                        <h4 id="step1"className="card-title">Profile Picture</h4>
+                        <h6 className="card-subtitle">Select or upload your profile picture</h6>
+                    </div>
+
                     <div className="card-block">
-                        <div className="row  justify-content-around">
-                            {profilePictures}
+
+                        <div className="row">
+
+                            <div className="col-md-12">
+
+                                    <form onSubmit={this.handleSubmit}>
+
+                                        <div className="input-group">
+
+                                        <label className="">
+                                            <input className="" type="file" onChange={this.handleImageChange}/>
+                                        </label>
+
+                                        <button className="submitButton uploadCustom" type="submit" ><i className="fa fa-upload" aria-hidden="true"></i></button>
+                                        </div>
+                                    </form>
+
+
+                                <div className="card-block pt-3">
+
+                                    <div className="row justify-content-wrap ">
+                                        {profilePictures}
+                                    </div>
+
+                                </div>
+
+                            </div>
                         </div>
+
                     </div>
                     
                 </div>
