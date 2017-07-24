@@ -47,14 +47,14 @@ class ProfilePage extends Component {
     }
     render() {
         var img_src_paths = [
-            "/img/avatars/adults/adult-man.PNG",
-            "/img/avatars/adults/adult-women.PNG",
-            "/img/avatars/animal/animal-duck.PNG",
-            "/img/avatars/children/child-man-avatar.PNG",
-            "/img/avatars/children/Child-women-avatar.PNG",
-            "/img/avatars/material/material-lump.PNG",
-            "/img/avatars/older/old-man.PNG",
-            "/img/avatars/older/old-women.PNG"];
+            "/img/avatars/adults/adult-man.png",
+            "/img/avatars/adults/adult-women.png",
+            "/img/avatars/animal/animal-duck.png",
+            "/img/avatars/children/child-man-avatar.png",
+            "/img/avatars/children/child-women-avatar.png",
+            "/img/avatars/material/material-lump.png",
+            "/img/avatars/older/old-man.png",
+            "/img/avatars/older/old-women.png"];
 
 
         const profilePictures = img_src_paths.map(
@@ -102,7 +102,7 @@ class ProfilePage extends Component {
                         </div>
 
                     </div>
-                    
+
                 </div>
 
 

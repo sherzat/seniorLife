@@ -33,7 +33,6 @@ Route::get('getRankData','RankController@getRankData');
 Route::get('achievement','AchievementController@getAchievement')->name("Achievement");
 Route::get('getAchievementData','AchievementController@getAchievementData');
 
-Route::get('empatica', 'PagesController@getEmpatica')->name("Empatica");
 
 Route::get('survey/create/{new}', 'SurveyController@create_survey')->name('new.survey');
 Route::post('survey/store', 'SurveyController@store_survey')->name('store.survey');

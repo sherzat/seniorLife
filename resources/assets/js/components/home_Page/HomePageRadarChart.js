@@ -15,7 +15,7 @@ class HomePageRadarChart extends Component {
     return (
       <div>
         <ResponsiveContainer width="100%" height={300}>
-          <RadarChart   data={data} innerRaduis={10}  margin={{top: 0, right: 48, bottom: 0}}>
+          <RadarChart   data={data} innerRaduis={20}  margin={{top: 0, right: 48, bottom: 0}}>
             <Radar name="Latest survey result" dataKey="score_a" stroke="#FF9800" fill="#FF9800" fillOpacity={0.3}/>
             <Radar name="Average result" dataKey="score_b" stroke="#82ca9d" fill="#82ca9d" fillOpacity={0.3} />
             <PolarGrid />

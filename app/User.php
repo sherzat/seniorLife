@@ -82,6 +82,7 @@ class User extends Authenticatable
          ->join('survey_user', 'survey_user.id', '=', 'responses.survey_user_id')
          ->join('categorys', 'categorys.id', '=', 'questions.category_id')
          ->join('choices', 'choices.id', '=', 'responses.choice_id')
+         ->where('responses.user_id', $this->id)
          ->where('survey_user_id', '=', DB::raw('ANY (SELECT s1.id FROM survey_user s1 LEFT JOIN survey_user s2 ON (s1.survey_id = s2.survey_id AND s1.id < s2.id) WHERE s2.id IS NULL)' ))
         ->groupBy('name')
         ->orderBy('name')

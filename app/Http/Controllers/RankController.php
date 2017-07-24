@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 class RankController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
     public function getRank()
     {
 
