@@ -90,8 +90,9 @@ console.log(availableBadges);
 
                     <div className="card-block">
                         <div className="row  justify-content-around">
-
+                          <div className="wrapper">
                             {collectedBadges}
+                          </div>
 
                         </div>
                     </div>

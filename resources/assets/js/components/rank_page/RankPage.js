@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import RankElement from './RankElement.js';
+import Ranking from './Ranking.js';
 
 class RankPage extends Component {
     constructor(props) {
@@ -9,15 +10,10 @@ class RankPage extends Component {
             rankData:[],
             loaded:false,
         };
-        this.handleOnclick = this.handleOnclick.bind(this);
+
         this.getData = this.getData.bind(this);
     }
-    handleOnclick(){
 
-    }
-    componentWillMount() {
-
-    }
     componentWillMount(){
         this.getData();
         console.log('in rank')
@@ -46,27 +42,23 @@ class RankPage extends Component {
         if(this.state.rankData.flag==0){
             startIntro('rank');
         }
-        var rankId=1;
-        const rankUsers = this.state.rankData.rankUsers.map(
-            (rank) =>
-                <RankElement
-                    key={rank.id}
-                    ranking={rankId++}
-                    user_avatar={rank.avatar}
-                    user_name={rank.name}
-                    level={rank.level}
-                    points={rank.point} />
-        )
+
         return (
             <div>
+
 
                 <div className="card ">
                   <div className="card-header">
                       <h4 id="step1"className="card-title">Ranking </h4>
                       <h6 className="card-subtitle">Ranking is ased on the overall score</h6>
                   </div>
-                    {rankUsers}
+                    <Ranking
+                      rankUsers = {this.state.rankData.rankUsers}
+                      currentUser = {this.state.rankData.currentUser}
+                      />
+                    
                 </div>
+
             </div>
         );
     }

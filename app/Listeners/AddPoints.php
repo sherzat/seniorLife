@@ -34,25 +34,25 @@ class AddPoints
       $user->update(['point' => $new_point]); //update the new point for user
 
 
-      $level_score = array( );
-      for($i=1;$i<51;$i++){
-        $nextscore = $i*($i + 2)*10;
-        array_push($level_score, array("level"=>$i, "score"=>$nextscore));
-      }
-
-      $current_level = array_first($level_score, function ($value, $key) use($new_point){
-        return $value["score"] > $new_point;
-      });
-
-
-
-      $user =  Auth::user();
-      if ($user->level < $current_level['level']) {   // level up
-
-        $user->level = $current_level['level'];
-
-        $user->save();
-      }
+      // $level_score = array( );
+      // for($i=1;$i<51;$i++){
+      //   $nextscore = $i*($i + 2)*10;
+      //   array_push($level_score, array("level"=>$i, "score"=>$nextscore));
+      // }
+      //
+      // $current_level = array_first($level_score, function ($value, $key) use($new_point){
+      //   return $value["score"] > $new_point;
+      // });
+      //
+      //
+      //
+      // $user =  Auth::user();
+      // if ($user->level < $current_level['level']) {   // level up
+      //
+      //   $user->level = $current_level['level'];
+      //
+      //   $user->save();
+      // }
 
 
       // $prev_level = array_last($level_score, function ($value, $key) use($new_point) {

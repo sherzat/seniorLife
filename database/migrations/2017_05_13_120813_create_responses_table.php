@@ -19,10 +19,12 @@ class CreateResponsesTable extends Migration
           $table->integer('question_id')->unsigned();
           $table->integer('user_id')->unsigned();
           $table->integer('choice_id')->unsigned();
+          $table->integer('survey_user_id')->unsigned();
 
-          $table->foreign('question_id')->references('id')->on('questions');
-          $table->foreign('user_id')->references('id')->on('users');
-          $table->foreign('choice_id')->references('id')->on('choices');
+          $table->foreign('question_id')->references('id')->on('questions')->onUpdate('cascade')->onDelete('cascade');
+          $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+          $table->foreign('choice_id')->references('id')->on('choices')->onUpdate('cascade')->onDelete('cascade');
+          $table->foreign('survey_user_id')->references('id')->on('survey_user')->onUpdate('cascade')->onDelete('cascade');
           $table->timestamps();
       });
   }

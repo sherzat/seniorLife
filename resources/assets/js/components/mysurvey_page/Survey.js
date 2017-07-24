@@ -20,6 +20,8 @@ class Survey extends Component {
       isShowingModal: false,
       playerStatus:null,
       answered: null,
+      survey_id:0,
+      loaded: false,
     };
     this.handleNextButton= this.handleNextButton.bind(this);
     this.handlePrevButton= this.handlePrevButton.bind(this);
@@ -116,7 +118,7 @@ class Survey extends Component {
 
   sendAnswers(){
 
-    //remove the not answered the questions from the list
+    //remove the not answered questions from the list
     var answers = this.answers.filter((each)=>
       Object.values(each)!=""
     );
@@ -132,7 +134,7 @@ class Survey extends Component {
       type: "POST",
       url: "/survey/store",
       dataType: 'json',
-      data: {data: this.answers},
+      data: {data: this.answers, survey_id: this.state.survey_id},
       success: function (response) {
         this.setState({playerStatus: response},function(){
           console.log(this.state.playerStatus);
@@ -158,8 +160,9 @@ class Survey extends Component {
       dataType:"json",
     })
     .done(function( result ) {
-
-      this.setState({data:result, currentQuestion:0,}, function(){
+      console.log(result);
+      this.setState({data:result.prepare_questions, currentQuestion:0, survey_id:result.survey_id}, function(){
+        this.setState({loaded: true});
       });
     }.bind(this))
   }
@@ -171,13 +174,12 @@ class Survey extends Component {
 
 
   render(){
-
-    var description = this.props.selectedCategory !== 'cognition'?  this.props.categoryDescription: "" ;
+    if(!this.state.loaded)
+      return (<h>loading</h>);
 
     const survey_question= this.state.data.map((each)=>
       <Question key={each.id}
-         question={each.question}
-         description={description}/>
+         question={each.question}/>
     );
     var choices_for_q=null;
     if(this.props.selectedCategoryId ==1){

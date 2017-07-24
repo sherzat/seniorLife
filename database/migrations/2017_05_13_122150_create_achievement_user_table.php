@@ -17,9 +17,11 @@ class CreateAchievementUserTable extends Migration
           $table->increments('id');
           $table->integer('user_id')->unsigned();
           $table->integer('achievement_id')->unsigned();
+          $table->integer('complete_rate')->default(0);
+          $table->boolean('is_achieved')->default(false);
 
-          $table->foreign('user_id')->references('id')->on('users');
-          $table->foreign('achievement_id')->references('id')->on('achievements');
+          $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+          $table->foreign('achievement_id')->references('id')->on('achievements')->onUpdate('cascade')->onDelete('cascade');
           $table->timestamps();
       });
   }

@@ -10,7 +10,6 @@ class CollectedBadges extends Component {
                     <img className="card-img-top  img-responsive"
                          src={this.props.img_src}
                          alt="Card image cap" width={150} height={150}></img>
-                    <p className="card-text Rail-way-font text-center">{this.props.description}</p>
                 </div>
 
             </div>
@@ -19,4 +18,3 @@ class CollectedBadges extends Component {
 }
 
 export default CollectedBadges;
-

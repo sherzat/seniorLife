@@ -15,9 +15,15 @@ body {
   padding-top: 56px;
   font-family: 'Raleway', sans-serif;
 }
+
+.userRank-font{
+  font-weight: bold;
+  font-family: 'Lato', sans-serif;
+}
+
 .card-block{
   padding-bottom: 16px;
-  padding-top: 32px;
+  padding-top: 16px;
   padding-left: 16px;
   padding-right: 16px;
 }
@@ -65,6 +71,27 @@ body {
 .Bg-color-cloud{
   background-color: $cloud !important;
 }
+
+::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+}
+.wrapper {
+  width: auto;
+      height:210px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+      & div {
+        display: inline-block;
+        vertical-align: middle;
+      }
+}
+
+
+
+
+
 //Stylings for welcome page
 @import "welcome_page";
 

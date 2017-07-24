@@ -2,41 +2,25 @@ import React, {Component} from 'react';
 import {BarChart, Bar, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 
 class HomepageBarchart extends Component {
-    constructor(props) {
-        super(props);
-        this.state={
-            data:null,
-            noData: true,
-        };
-    }
-    componentWillMount(){
-        $.ajax({
-            method: "GET",
-            url: "getResultByCatagory",
-            dataType:"json",
-        })
-            .done(function( result ) {
-
-                this.setState({data:result}, function(){
-                    if(this.state.data.length != 0){
-                        this.setState({noData:false})
-                    }
-                });
-            }.bind(this))
-    }
-
+  constructor(props) {
+    super(props);
+    this.handleOnclick=this.handleOnclick.bind(this);
+  }
+  handleOnclick(event){
+    console.log(event);
+  }
     render() {
-        const data = this.state.data;
+        const data = this.props.chartData;
         return (
             <div>
                 <ResponsiveContainer width="100%" height={300}>
-                    <BarChart data={data} margin={{top: 50, right: 80, left: 0, bottom: 40}}>
+                    <BarChart data={data} margin={{top:40, right: 48}}>
                         <XAxis dataKey="name" unit="catagory"/>
-                        <YAxis label="Average Score" type="number" domain={[0, 5]} ticks={[0,1,2,3,4,5]}  />
+                        <YAxis label="Score" type="number" domain={[0, 5]} ticks={[0,1,2,3,4,5]}  />
                         <CartesianGrid strokeDasharray="5 5"/>
                         <Tooltip/>
                         <Legend />
-                        <Bar dataKey="score" unit="" stackId="a" fill="#2ecc71"/>
+                        <Bar name="Latest survey result" dataKey="score_b" unit="" label fill="#2ecc71" onClick={this.handleOnclick}/>
                     </BarChart>
                 </ResponsiveContainer>
             </div>

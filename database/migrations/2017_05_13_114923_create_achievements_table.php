@@ -19,6 +19,8 @@ class CreateAchievementsTable extends Migration
           $table->string('title');
           $table->string('description', 100);
           $table->string('badge', 100);
+          $table->boolean('is_hidden')->default(false);
+          $table->integer('steps')->default(0); //the number of steps needed to complete achievement.
           $table->timestamps();
       });
   }

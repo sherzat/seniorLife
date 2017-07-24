@@ -35,7 +35,7 @@ class Category extends Component {
 
 class NewSurvey extends Component {
   render () {
-    var url="/survey/new";
+    //var url="/survey/new";
     var categorys = this.props.categories;
     //
     // [

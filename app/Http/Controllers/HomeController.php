@@ -59,11 +59,14 @@ class HomeController extends Controller
 
         $qol=$user->getSurveyResult()->last();
 
+        $getRadarChartData = $user->getRadarChartData();
+
         $badges =array(
             'flag' =>  $user->flag,
             'qol' => $qol,
             'playerStatus'=>$player_status,
             'badges' => $user->achievements()->select('badge')->get(),
+            'chartData'=>$getRadarChartData,
         );
         Auth::user()->flag = 1;
         Auth::user()->save();
@@ -111,5 +114,10 @@ class HomeController extends Controller
         $user=Auth::user();
         $getResultByCatagory = $user->getResultByCatagory();
         return json_encode($getResultByCatagory);
+    }
+    public function getRadarChartData(){
+      $user=Auth::user();
+      $getRadarChartData = $user->getRadarChartData();
+      return json_encode($getRadarChartData);
     }
 }

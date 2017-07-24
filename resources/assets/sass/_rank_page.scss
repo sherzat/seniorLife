@@ -7,6 +7,7 @@
     margin-bottom: 15px;
 }
 
+
 .resize-card{
 
     height: 88px;
@@ -21,5 +22,8 @@
     }
     &-3 {
         background-color: lighten($orage-color, 45) ;
+    }
+    &-user {
+        background-color: lighten($light-primary-color, 0) ;
     }
 }

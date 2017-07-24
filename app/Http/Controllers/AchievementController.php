@@ -22,8 +22,7 @@ class AchievementController extends Controller
         $inProgressBadges= $user->achievements()->where('is_achieved',0)->get();
 
 
-        $arrays = $user->achievements()->where('is_achieved',1)->pluck('achievements.id')->toArray();
-
+        $arrays = $user->achievements()->pluck('achievements.id')->toArray();
 
         $availableBadges = \App\Achievement::where('is_hidden', '0')
             ->whereNotIn('id', $arrays)

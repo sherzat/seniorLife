@@ -18,10 +18,11 @@ class NewSurvey
      *
      * @return void
      */
-    public function __construct(User $user, $answers)
+    public function __construct(User $user, $answers, $survey_id)
     {
         $this->user = $user;
         $this->answers=$answers;
+        $this->survey_id=$survey_id;
     }
 
     /**

@@ -38,7 +38,7 @@ class AchievementEventSubscriber
         $first_survey_badge = \App\Achievement::where('title','First survey')->first();
         $user->achievements()->attach($first_survey_badge->id, ['complete_rate'=>1, 'is_achieved'=>true ]);
 
-        $badges = \App\Achievement::where('title', 'Beginner')->first();
+        $badges = \App\Achievement::where('title', 'Keep it up')->first();
         $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>1]]);
       } else if($collected_badges->contains('title','Keep it up') != true) {
         $badges = \App\Achievement::where('title', 'Keep it up')->first();

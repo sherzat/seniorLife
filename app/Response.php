@@ -22,9 +22,9 @@ class Response extends Model
         return $this->belongsTo('\App\Choice', 'choice_id');
     }
 
-    public function surveys()
+    public function survey_user()
     {
-        return $this->belongsTo('\App\Survey', 'survey_id');
+        return $this->belongsTo('\App\Survey_user', 'survey_user_id');
     }
 
 
