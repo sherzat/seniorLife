@@ -43,10 +43,10 @@ class ProfileImage extends Component {
             <div>
                 <div className="col-md-3 col-sm-12 card-block">
 
-                    <a className="card-block text-center" onClick={this.handleClick}>
-                        <img className="card-img-top rounded img-responsive"
+                    <a className="" onClick={this.handleClick}>
+                        <img className="rounded img-responsive"
                              src={this.props.img_src}
-                             alt="Card image cap" width={150} height={150}></img>
+                             alt="Card image cap" width={100} height={100}></img>
                     </a>
 
                     {
@@ -55,7 +55,7 @@ class ProfileImage extends Component {
                             <ModalContainer onClose={this.handleClose}>
                                 <ModalDialog onClose={this.handleClose}>
                                 <div className="btn-group btn-group-vertical">
-                                    <button className="btn-group-lg"><img className="card-img-top  img-responsive"
+                                    <button className="btn-group-lg"><img className="img-responsive"
                                                                           width={200}
                                                                           height={200}
                                                                           src={this.props.img_src}

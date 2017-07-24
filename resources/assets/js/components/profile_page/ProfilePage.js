@@ -81,16 +81,16 @@ class ProfilePage extends Component {
 
                                         <div className="input-group">
 
-                                        <label className="">
-                                            <input className="" type="file" onChange={this.handleImageChange}/>
-                                        </label>
+                                            <label><input className="fileInput" type="file" size="200" onChange={this.handleImageChange}/></label>
 
-                                        <button className="submitButton uploadCustom" type="submit" ><i className="fa fa-upload" aria-hidden="true"></i></button>
+                                            <span class="input-group-addon">
+                                            <button className="submitButton customUpload" type="submit" ><i className="fa fa-upload uploadCustom" aria-hidden="true"></i></button>
+                                            </span>
                                         </div>
                                     </form>
 
 
-                                <div className="card-block pt-3">
+                                <div className="">
 
                                     <div className="row justify-content-wrap ">
                                         {profilePictures}

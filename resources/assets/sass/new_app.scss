@@ -78,11 +78,22 @@ body {
   opacity: 0;
   filter: alpha(opacity=0);
 }
-
+.fileInput{
+  width: 230px;
+}
+.customUpload{
+  width: 48px;
+  height: 30px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
 .uploadCustom{
-  width: 40px;
-  height: 33px;
-  background-color: $orage-color;
+  width: 30px;
+  height: 23px;
+  border-top: 3px;
+  border-bottom: 1px;
+  border-left:1px;
+  border-right: 1px;
 }
 .Bg-color-midnight{
   background-color: $midnight-blue !important;

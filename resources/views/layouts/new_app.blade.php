@@ -91,11 +91,11 @@
 
                             <div class="dropdown-divider Bg-color-midnight"></div>
 
-                            <button class="dropdown-item Bg-color-cloud list-group-item border-0 pt-2 pb-2"
+                            {{--<button class="dropdown-item Bg-color-cloud list-group-item border-0 pt-2 pb-2"
                                     onclick="window.location.href='#'"><a class="mr-auto">Profile setting
                                 </a>
                                 <i class="fa fa-upload" aria-hidden="true"></i>
-                            </button>
+                            </button>--}}
 
                             <button class="dropdown-item border-0 Bg-color-cloud list-group-item border-0 pt-2 pb-2"
                                     href="{{ url('logout') }}"
@@ -141,7 +141,7 @@
                         <div class="dropdown-divider"></div>
 
 
-                        <button class="dropdown-item list-group-item border-0 pt-2 pb-2"
+                        {{--<button class="dropdown-item list-group-item border-0 pt-2 pb-2"
                                 onclick="window.location.href='#'"><a class="mr-auto">Profile setting
                                  </a>
                             <i class="fa fa-cog" aria-hidden="true"></i>
@@ -150,6 +150,9 @@
                         <div class="dropdown-divider"></div>
 
                         <div class="dropdown-divider"></div>
+                        --}}
+
+
 
                         <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="{{ url('/logout') }}"
                                 onclick="event.preventDefault();
