@@ -104,7 +104,7 @@ function startIntro(source) {
             window.location.href = '/mysurvey';
         });
 
-    if (source == 'home_clicked')
+    if (source == 'Home')
         intro.start();
 
     else if (source == 'mysurvey')
@@ -112,7 +112,7 @@ function startIntro(source) {
             window.location.href = '/challenges';
         });
 
-    if (source == 'mysurvey_clicked')
+    if (source == 'My Survey')
         mysurvey.start();
 
     else if (source == 'challenges')
@@ -128,7 +128,7 @@ function startIntro(source) {
             window.location.href = '/achievement';
         });
 
-    if (source == 'rank_clicked')
+    if (source == 'Rank')
         rank.start();
 
     else if (source == 'achievement')
@@ -136,7 +136,7 @@ function startIntro(source) {
             window.location.href = '/home';
         });
 
-    if (source == 'achievement_clicked')
+    if (source == 'Achievement')
         achievement.start();
 }
 

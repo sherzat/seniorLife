@@ -48,9 +48,11 @@ Route::get('databaseTest', function(){
 	}
 });
 
+//profile
 Auth::routes();
 Route::resource('profile', 'ProfileController');
 Route::get('profile', 'ProfileController@index')->name("Profile");
+Route::post('uploadFile','ProfileController@upload_avatar');
 
 Route::resource('home', 'HomeController');
 Route::get('home', 'HomeController@index')->name("Home");

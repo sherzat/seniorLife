@@ -11,8 +11,6 @@ class ProfileImage extends Component {
         this.handleSave = this.handleSave.bind(this);
     }
 
-
-
     handleClick = () => this.setState({isShowingModal: true})
     handleClose = () => this.setState({isShowingModal: false})
     handleSave() {
@@ -45,11 +43,11 @@ class ProfileImage extends Component {
             <div>
                 <div className="col-md-3 col-sm-12 card-block">
 
-                    <button className="card-block text-center" onClick={this.handleClick}>
-                        <img className="card-img-top  img-responsive"
+                    <a className="" onClick={this.handleClick}>
+                        <img className="rounded img-responsive"
                              src={this.props.img_src}
-                             alt="Card image cap" width={150} height={150}></img>
-                    </button>
+                             alt="Card image cap" width={100} height={100}></img>
+                    </a>
 
                     {
                         this.state.isShowingModal &&
@@ -57,9 +55,9 @@ class ProfileImage extends Component {
                             <ModalContainer onClose={this.handleClose}>
                                 <ModalDialog onClose={this.handleClose}>
                                 <div className="btn-group btn-group-vertical">
-                                    <button className="btn-group-lg"><img className="card-img-top  img-responsive"
-                                                                          width={250}
-                                                                          height={250}
+                                    <button className="btn-group-lg"><img className="img-responsive"
+                                                                          width={200}
+                                                                          height={200}
                                                                           src={this.props.img_src}
                                                                           alt="Card image cap"></img></button>
                                     <button className="btn btn-success" onClick={this.handleSave}>Save</button>
