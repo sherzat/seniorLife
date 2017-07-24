@@ -22,7 +22,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\IncreaseSurvey' => [
             'App\Listeners\AchievementEventSubscriber',
         ],
-
+        'App\Events\AvatarUpload' => [
+            'App\Listeners\AchievementEventSubscriber',
+        ],
 
     ];
 

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import PlayerStatus from '../components/PlayerStatus';
 import HomepageCarousel from './HomepageCarousel';
-import HomepageBarchart from './HomepageBarchart';
+import HomepageLineChart from './HomepageLineChart';
 import HomePageRadarChart from './HomePageRadarChart';
 import RankElement from '../rank_page/RankElement.js';
 import Ranking from '../rank_page/Ranking.js';
@@ -10,12 +10,21 @@ import Ranking from '../rank_page/Ranking.js';
 class HomePage extends  Component {
   constructor(props) {
     super(props);
-    this.state = {home:[],rankData:[],loaded:false};
+    this.state = {
+      home:[],
+      rankData:[],
+      loaded:false,
+      showLineChart: false,
+      category:"",
+    };
     this.getData=this.getData.bind(this);
+    this.showLineChart=this.showLineChart.bind(this);
   }
 
   /*//sending request to  set  flag to 1 value*/
-
+  showLineChart(category_name){
+    this.setState({showLineChart:true ,category:category_name});
+  }
   getData() {
     var url ="/home/1";
     $.ajax({
@@ -31,23 +40,23 @@ class HomePage extends  Component {
 
     var url ="/getRankData";
     $.ajax({
-        method: "GET",
-        url: url,
+      method: "GET",
+      url: url,
     })
-        .done(function( result ) {
+    .done(function( result ) {
 
-            console.log(result)
-            this.setState({rankData:result}, function(){
-              this.setState({loaded:true}, function(){
-                if(this.state.home.flag==0){
-                  sessionStorage.setItem('firstvisit', this.state.home.flag);
-                  startIntro('home');
-                }
-              });
+      console.log(result)
+      this.setState({rankData:result}, function(){
+        this.setState({loaded:true}, function(){
+          if(this.state.home.flag==0){
+            sessionStorage.setItem('firstvisit', this.state.home.flag);
+            startIntro('home');
+          }
+        });
 
-            } );
+      });
 
-        }.bind(this))
+    }.bind(this))
   }
 
   componentWillMount(){
@@ -76,13 +85,16 @@ class HomePage extends  Component {
                 <div className="row">
                   <div className="col-md-6 ">
                     <div className="card-block pt-0">
-                        <HomePageRadarChart chartData={this.state.home.chartData}/>
+                        <HomePageRadarChart chartData={this.state.home.surveyResult}  showLineChart={this.showLineChart}/>
                       </div>
                     </div>
 
                     <div className="col-md-6">
                       <div className="card-block pt-0">
-                        <HomepageBarchart chartData={this.state.home.chartData} />
+                        {this.state.showLineChart ?
+                          <HomepageLineChart chartData={this.state.home.surveyResult} category={this.state.category} />
+                          :
+                         <p>Click on a category to see result over time</p> }
                       </div>
                     </div>
                   </div>

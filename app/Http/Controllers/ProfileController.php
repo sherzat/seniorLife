@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\AvatarUpload;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Image;
@@ -51,6 +52,7 @@ class ProfileController extends Controller
             $user->avatar = '/img/avatars/upload/' . $filename ;
             $user->save();
         }
+        event(new AvatarUpload(Auth::user()));
         return  "success";
 
     }

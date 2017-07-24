@@ -53,20 +53,14 @@ class HomeController extends Controller
     {
         $user = Auth::user();
 
-        // level and points pair
-        $player_status = $user->getPlayerStatus();
+        $surveyResult=$user->getSurveyResult();
 
 
-        $qol=$user->getSurveyResult()->last();
-
-        $getRadarChartData = $user->getRadarChartData();
 
         $badges =array(
             'flag' =>  $user->flag,
-            'qol' => $qol,
-            'playerStatus'=>$player_status,
+            'surveyResult' => $surveyResult,
             'badges' => $user->achievements()->select('badge')->get(),
-            'chartData'=>$getRadarChartData,
         );
         Auth::user()->flag = 1;
         Auth::user()->save();

@@ -4,7 +4,6 @@ import Coverflow from 'react-coverflow';
 class HomepageCarousel extends Component {
 
     render() {
-        console.log(this.props.badges);
         const collectedBadges = this.props.badges.map(
             (img_src_path) =>
                 <img key={img_src_path.badge} src={img_src_path.badge}/>

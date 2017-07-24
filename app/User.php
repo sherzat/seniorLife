@@ -47,22 +47,41 @@ class User extends Authenticatable
 
     public function getSurveyResult()
     {
-    //  ->select(DB::raw("cast(avg(weight)/0.5 as decimal(2,1)) as score, time_format((time(responses.created_at)), '%H:00:00') as hour" ))
-
-        $result= $this->responses()
-        ->select(DB::raw("cast(avg(weight)/0.5 as decimal(2,1)) as score, date(responses.created_at) as hour" ))
-        ->join('choices', 'responses.choice_id', '=', 'choices.id')
-        ->groupBy(DB::raw("hour" ))
-        // ->orderBy(DB::raw("hour"))
-        ->get();
-
-        $result->transform(function ($item) {
-          return ['score'=>(float)$item->score, 'hour'=>$item->hour]  ;
-        });
+    // //  ->select(DB::raw("cast(avg(weight)/0.5 as decimal(2,1)) as score, time_format((time(responses.created_at)), '%H:00:00') as hour" ))
+    //
+    //     $result= $this->responses()
+    //     ->select(DB::raw("cast(avg(weight) as decimal(2,1)) as score, date(responses.created_at) as hour" ))
+    //     ->join('choices', 'responses.choice_id', '=', 'choices.id')
+    //     ->groupBy(DB::raw("hour" ))
+    //     // ->orderBy(DB::raw("hour"))
+    //     ->get();
+    //
+    //     $result->transform(function ($item) {
+    //       return ['score'=>(float)$item->score, 'hour'=>$item->hour]  ;
+    //     });
+      $result['resultEachCategoryByHour']=$this->getResultEachCategoryByHour();
+      // $result['resultEachCategoryByHour']=$this->getResultByCatagory();
+        $result['resultLatestAndOverall']=$this->getRadarChartData();
 
       return $result;
     }
+    public function getResultEachCategoryByHour()
+    {
+      $responses = \App\Category::select('name')->get();
+      $responses->each(function ($item, $key){
+        $item->dataset = \App\Response::select(DB::raw("cast(avg(weight) as decimal(2,1)) as score, date_format( responses.created_at, '%Y-%m-%d %H:00' ) as hour" ))
+            ->join('questions', 'questions.id', '=', 'responses.question_id')
+            ->join('categorys', 'categorys.id', '=', 'questions.category_id')
+            ->join('choices', 'choices.id', '=', 'responses.choice_id')
+            ->where('user_id', $this->id)
+            ->where('categorys.name', $item->name)
+            ->groupBy('hour')
+            ->get();
+      });
 
+
+      return $responses;
+    }
     public function getResultByCatagory(){
         // average score over all time of each category
         $responses = \App\Response::select('name', DB::raw('cast(avg(weight) as decimal(2,1)) as score'))

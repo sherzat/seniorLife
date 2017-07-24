@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Listeners;
+use App\Events\Points;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -12,11 +13,23 @@ class AchievementEventSubscriber
     /**
      * Handle user login events.
      */
-    public function onRegister($event) {
-      $id = \App\Achievement::select('id')
-          ->where('title','Welcome aboard')
-          ->get();
-          $event->user->achievements()->attach($id, ['complete_rate'=>1, 'is_achieved'=>true ]);
+     public function onRegister($event) {
+       $badge = \App\Achievement::where('title','Welcome aboard')->first();
+
+       $event->user->achievements()->attach($badge->id, ['complete_rate'=>1, 'is_achieved'=>true ]);
+       event(new Points($badge->point));
+     }
+
+    public function onAvatarUpload($event )
+    {
+      $collected_badges= $event->user->achievements()
+      ->where('is_achieved',1)
+      ->get();
+      if($collected_badges->contains('title','Avatar') != true) {
+        $badge = \App\Achievement::where('title','Avatar')->first();
+        $event->user->achievements()->attach($badge->id, ['complete_rate'=>1, 'is_achieved'=>true ]);
+        event(new Points($badge->point));
+      }
     }
 
     /**
@@ -37,6 +50,7 @@ class AchievementEventSubscriber
       if($collected_badges->contains('title','First survey') != true) {
         $first_survey_badge = \App\Achievement::where('title','First survey')->first();
         $user->achievements()->attach($first_survey_badge->id, ['complete_rate'=>1, 'is_achieved'=>true ]);
+        event(new Points($first_survey_badge->point));
 
         $badges = \App\Achievement::where('title', 'Keep it up')->first();
         $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>1]]);
@@ -53,6 +67,7 @@ class AchievementEventSubscriber
             $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate]]);
           }else {
             $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate, 'is_achieved'=>true]]);
+            event(new Points($badges->point));
           }
         }
       } else if($collected_badges->contains('title','Beginner') != true) {
@@ -68,6 +83,7 @@ class AchievementEventSubscriber
             $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate]]);
           }else {
             $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate, 'is_achieved'=>true]]);
+            event(new Points($badges->point));
           }
         }
       }else if($collected_badges->contains('title','Intermediate') != true) {
@@ -83,6 +99,7 @@ class AchievementEventSubscriber
             $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate]]);
           }else {
             $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate, 'is_achieved'=>true]]);
+            event(new Points($badges->point));
           }
         }
       }else if($collected_badges->contains('title','Master') != true) {
@@ -98,6 +115,7 @@ class AchievementEventSubscriber
             $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate]]);
           }else {
             $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate, 'is_achieved'=>true]]);
+            event(new Points($badges->point));
           }
         }
       }
@@ -109,6 +127,7 @@ class AchievementEventSubscriber
         $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$num_finished_category]]);
       }else {
         $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$num_finished_category, 'is_achieved'=>true]]);
+        event(new Points($badges->point));
       }
     }
 
@@ -127,6 +146,11 @@ class AchievementEventSubscriber
         $events->listen(
             'App\Events\IncreaseSurvey',
             'App\Listeners\AchievementEventSubscriber@onIncreaseSurvey'
+        );
+
+        $events->listen(
+            'App\Events\AvatarUpload',
+            'App\Listeners\AchievementEventSubscriber@onAvatarUpload'
         );
 
     }
