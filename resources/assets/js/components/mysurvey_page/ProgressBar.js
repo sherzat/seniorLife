@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import 'rc-progress/assets/index.css';
-import { Line, Circle } from 'rc-progress';
+import { Line } from 'rc-progress';
 
 class ProgressBar extends  Component {
 
@@ -14,14 +14,14 @@ class ProgressBar extends  Component {
     }
 
     render() {
-        const containerStyle = {
-            width: '290px',
+        const lineStyle = {
+            width: 100
         };
 
         return (
             <div>
 
-                <Line percent={this.props.percent}  strokeWidth="6" strokeColor={this.state.color} />
+                <Line percent={this.props.percent}  style={lineStyle} strokeWidth="5" strokeColor={this.state.color} />
 
             </div>
 

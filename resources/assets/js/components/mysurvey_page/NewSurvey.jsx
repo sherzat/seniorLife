@@ -60,7 +60,7 @@ class NewSurvey extends Component {
             <div className="row">
 
               <div className="col-md-12">
-                <div className="card-block pt-3">
+                <div className="card-block pt-0">
                     <div className="row justify-content-wrap ">
                       {toReturns}
                     </div>

@@ -199,50 +199,54 @@ class Survey extends Component {
     return(
       <div>
 
-        <div className="row">
-          <div className="col-md-9">
-            <div className="row card card-group Bg-color-midnight">
-              <div className="col-md-12 p-0">
-                <div className="card-block Card-Height vertical-align">
-                  {survey_question[this.state.currentQuestion]}
-                </div>
-              </div>
-            </div>
-
             <div className="row card">
-              <li className="list-group-item justify-content-between Set-width">
 
-                <div style={{width:"91px"}}>
-                  <button
-                    className="btn btn-success btn-lg"
-                    hidden={this.state.currentQuestion == 0? true:false}
-                    onClick={this.handlePrevButton}>Prev</button>
+                <div className="card-header">
+                  <h4 id="step1"className="card-title">Survey</h4>
+                  <h6 className="card-subtitle d-flex justify-content-start ">You are filling category {this.props.selectedCategory}
+                  <div className="text-color ml-1">{this.state.currentQuestion}/{survey_question.length}</div>
+                  </h6>
                 </div>
 
+                <div className="card-block Card-Height vertical-align">
+                    {survey_question[this.state.currentQuestion]}
+                </div>
 
-                {this.state.currentQuestion<this.state.data.length? (choices_for_q[this.state.currentQuestion])
-                  : (
-                    <div style={{width:"60%"}} className="text-center">
-                      <p style={{fontSize: "18px"}}>You have made it till the end!! Please submit your answers.</p>
-                      <button className="btn btn-success btn-lg" onClick={this.sendAnswers}>
-                        submit
-                      </button>
-                    </div>
-
-                  )}
+                <li className="list-group-item justify-content-between Set-width">
 
                   <div style={{width:"91px"}}>
                     <button
-                      className="btn btn-success btn-lg"
-                      hidden={this.state.currentQuestion == this.state.data.length? true:false}
-                      onClick={this.handleNextButton}>Next</button>
+                        className="btn btn-success btn-lg"
+                        hidden={this.state.currentQuestion == 0? true:false}
+                        onClick={this.handlePrevButton}>Prev</button>
                   </div>
 
-              </li>
-            </div>
-          </div>
 
-          <div className="col-md-3">
+                    {this.state.currentQuestion<this.state.data.length? (choices_for_q[this.state.currentQuestion])
+                        : (
+                            <div style={{width:"60%"}} className="text-center">
+                              <p style={{fontSize: "18px"}}>You have made it till the end!! Please submit your answers.</p>
+                              <button className="btn btn-success btn-lg" onClick={this.sendAnswers}>
+                                submit
+                              </button>
+                            </div>
+
+                        )}
+
+                  <div style={{width:"91px"}}>
+                    <button
+                        className="btn btn-success btn-lg"
+                        hidden={this.state.currentQuestion == this.state.data.length? true:false}
+                        onClick={this.handleNextButton}>Next</button>
+                  </div>
+
+                </li>
+
+              <button  className="btn btn-success mt-3" onClick={this.handleGoBackBtn}>Quit</button>
+
+            </div>
+
+         {/* <div className="col-md-3">
 
             <ul className="list-group">
               <div className="list-group-item">
@@ -261,8 +265,8 @@ class Survey extends Component {
             </ul>
 
 
-          </div>
-        </div>
+          </div>*/}
+
         {
           this.state.isShowingModal &&
         <ModalContainer>
