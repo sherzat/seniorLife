@@ -16,7 +16,9 @@ class HomePage extends  Component {
       loaded:false,
       showLineChart: false,
       category:"",
+      achievement:[],
     };
+
     this.getData=this.getData.bind(this);
     this.showLineChart=this.showLineChart.bind(this);
   }
@@ -37,6 +39,18 @@ class HomePage extends  Component {
       this.setState({home:result});
 
     }.bind(this))
+
+      var url ="/getAchievementData";
+      $.ajax({
+          method: "GET",
+          url: url,
+      })
+          .done(function( result ) {
+
+              console.log(result)
+              this.setState({achievement:result});
+
+          }.bind(this))
 
     var url ="/getRankData";
     $.ajax({
@@ -116,26 +130,18 @@ class HomePage extends  Component {
 
                   <div className="card-header">
                     <h4 id="step1"className="card-title">Achievement</h4>
-                    <h6 className="card-subtitle">Your collection</h6>
+                    <h6 className="card-subtitle">In progress badges</h6>
                   </div>
 
 
                   {/*<!-- Image -->*/}
+                  <div className="card-block">
+                      <HomepageCarousel badges={this.state.achievement} />
 
-                  <HomepageCarousel badges={this.state.home.badges} />
-
-
-                  {/*<!-- Text Content -->*/}
-
-                  <div className="card-block p-1 mx-auto">
-                    <p className="card-text">You can earn more badges by completing tasks</p>
-                  </div>
-
-                  {/* <!-- button -->*/}
-
-                  <div className="card-block p-1 pb-3 mx-auto">
-                    <a className="btn btn-success" href="/achievement">See more achevement badges</a>
-                  </div>
+                      <div className="card-block p-0  my-0 mt-2 d-flex justify-content-around">
+                        <a  className="btn btn-success " href="/achievement">More achievements</a>
+                      </div>
+                    </div>
                 </div>
               </div>
 
