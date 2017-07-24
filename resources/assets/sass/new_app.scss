@@ -8,6 +8,8 @@
 @import "node_modules/font-awesome/scss/font-awesome";
 
 @import 'node_modules/rc-slider/assets/index';
+@import "node_modules/slick-carousel/slick/slick.scss";
+@import "node_modules/slick-carousel/slick/slick-theme.scss";
 
 // Variables
 @import "variables";
@@ -21,6 +23,14 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.custumSlick{
+  margin: 0;
+  padding: 0px;
+  width: 100%;
+}
+.text-color{
+  color: orange;
+}
 .card-block{
   padding-bottom: 16px;
   padding-top: 16px;
