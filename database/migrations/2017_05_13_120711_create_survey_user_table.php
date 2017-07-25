@@ -17,6 +17,7 @@ class CreateSurveyUserTable extends Migration
           $table->increments('id');
             $table->integer('survey_id')->unsigned();
             $table->integer('user_id')->unsigned();
+            $table->integer('elapsedSeconds')->default(0)->nullable();
             $table->foreign('survey_id')->references('id')->on('surveys')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
