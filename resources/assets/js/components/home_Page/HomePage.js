@@ -129,7 +129,7 @@ class HomePage extends  Component {
                   {/*<!-- Heading -->*/}
 
                   <div className="card-header">
-                    <h4 id="step1"className="card-title">Achievement</h4>
+                    <h4 id="step2"className="card-title">Achievement</h4>
                     <h6 className="card-subtitle">In progress badges</h6>
                   </div>
 
@@ -154,7 +154,7 @@ class HomePage extends  Component {
                 <div className="card h-100">
 
                   <div className="card-header">
-                    <h4 id="step1"className="card-title">Player status</h4>
+                    <h4 id="step3"className="card-title">Player status</h4>
                     <h6 className="card-subtitle">Rank</h6>
                   </div>
 

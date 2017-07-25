@@ -39,6 +39,7 @@ class ProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function upload_avatar(Request $request)
     {
         //handle upload user avatar

@@ -36,17 +36,17 @@
                 {{Route::currentRouteName()}}
             </a>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse bg-nav" id="navbarSupportedContent">
 
                 {{--navbar content for middle screen--}}
-                <ul class="navbar-nav">
-                    <li  class="nav-item  {{ ends_with(Request::url(), 'home') ? "active" : "" }}">
+                <ul class="navbar-nav pl-2">
+                    <li id="id1" class="nav-item  {{ ends_with(Request::url(), 'home') ? "active" : "" }}">
                         <a  class="nav-link" href={{url("home")}} >
                             <i class="fa fa-home" aria-hidden="true"></i>
                             Home
                         </a>
                     </li>
-                    <li class="nav-item {{ ends_with(Request::url(), 'mysurvey') ? "active" : "" }}">
+                    <li id="id2" class="nav-item {{ ends_with(Request::url(), 'mysurvey') ? "active" : "" }}">
                         <a  class="nav-link " href={{url("mysurvey")}} >
                             <i class="fa fa-wpforms" aria-hidden="true"></i>
                             MySurvey
@@ -55,20 +55,20 @@
 
 
 
-                    <li id="id4" class="{{ ends_with(Request::url(), 'rank') ? "active" : "" }}">
+                    <li id="id3" class="{{ ends_with(Request::url(), 'rank') ? "active" : "" }}">
                         <a class="nav-link " href={{url("rank")}} data-step="1" data-intro="This is a tooltip!">
                             <i class="fa fa-trophy" aria-hidden="true"></i>
                             Rank
                         </a>
                     </li>
-                    <li id="id1" class="nav-item {{ ends_with(Request::url(), 'achievement') ? "active" : "" }}">
+                    <li id="id4" class="nav-item {{ ends_with(Request::url(), 'achievement') ? "active" : "" }}">
                         <a class="nav-link " href={{url("achievement")}}>
                             <i class="fa fa-diamond" aria-hidden="true"></i>
                             Achievement
                         </a>
                     </li>
 
-                    <li class="nav-item {{ ends_with(Request::url(), 'help') ? "active" : "" }}">
+                    <li id="id5" class="nav-item {{ ends_with(Request::url(), 'help') ? "active" : "" }}">
                         <a class="nav-link " href="javascript:void(0);" onclick="startIntro('{{Route::currentRouteName()}}');">
                             <i class="fa fa-question-circle" aria-hidden="true"></i>
                             Help
@@ -76,7 +76,7 @@
                     </li>
 
                     {{-- PROFILE is in the collapsed meneu in sm screen --}}
-                    <li class="nav-item profile hidden-lg-up">
+                    <li id="id6" class="nav-item profile hidden-lg-up">
                         <a class="nav-link" data-toggle="dropdown" href="#">
                             <img src={{ Auth::user()->avatar }} class="rounded" style="width:20px;height: 20px;">
                             {{ title_case(Auth::user()->name )}} <b class="caret"></b>
@@ -128,7 +128,7 @@
                                             <img src={{ Auth::user()->avatar }} class="rounded" style="width:100px; height: 100px;"/>
                                         </p>
 
-                                        <button class="btn btn-success btn-block btn-sm Line-height-profile" onclick="window.location.href='/profile'">Upload picture</button>
+                                        <button class="btn btn-success btn-sm Line-height-profile" onclick="window.location.href='/profile'">Upload picture</button>
 
                                     </div>
                                     <div class="col-lg-7">
@@ -139,20 +139,6 @@
                             </div>
                         </li>
                         <div class="dropdown-divider"></div>
-
-
-                        {{--<button class="dropdown-item list-group-item border-0 pt-2 pb-2"
-                                onclick="window.location.href='#'"><a class="mr-auto">Profile setting
-                                 </a>
-                            <i class="fa fa-cog" aria-hidden="true"></i>
-                        </button>
-
-                        <div class="dropdown-divider"></div>
-
-                        <div class="dropdown-divider"></div>
-                        --}}
-
-
 
                         <button class="dropdown-item list-group-item border-0 pt-2 pb-2" href="{{ url('/logout') }}"
                                 onclick="event.preventDefault();

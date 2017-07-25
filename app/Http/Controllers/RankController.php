@@ -17,21 +17,34 @@ class RankController extends Controller
         return view('pages.rank');
     }
 
+    public function getRankFlag()
+    {
+
+
+
+        $rankFlag =array(
+            'flag' =>  Auth::user()->rankflag,//thisis for fist time visit
+        );
+
+        Auth::user()->rankflag = 1;
+        Auth::user()->save();
+
+
+
+        return response()
+            ->json($rankFlag);
+    }
+
     public function getRankData()
     {
         $rankUsers= \App\User::orderBy('point','desc')->get();
 
 
         $rankData =array(
-            'flag' =>  Auth::user()->rankflag,//thisis fr fist time visit
             'rankUsers' => $rankUsers,
             'currentUser' =>Auth::user(),
 //            'playerStatus'=> $playerStatus,
         );
-
-        Auth::user()->rankflag = 1;
-        Auth::user()->save();
-
 
 
         return response()

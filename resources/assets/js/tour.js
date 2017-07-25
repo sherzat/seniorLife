@@ -4,27 +4,18 @@ function startIntro(source) {
         steps: [
             {
                 element: '#step1',
-                intro: "This shows you the average score of your survey result and indicates your quality of life",
-                position: 'right'
+                intro: "Below you can see result of overall or individual category",
+                position: 'bottom'
             },
             {
                 element: '#step2',
-                intro: "Includes your individual category result in a Barchart form",
-                position: 'left'
+                intro: "This badges below are in progress badges you can win them if you complete the challenge",
+                position: 'bottom'
             },
             {
                 element: '#step3',
-                intro: 'Now you have one badge for successfully registered to our app. if you get more badges they will be displayed here',
-                position: 'right'
-            },
-            {
-                element: '#step4',
-                intro: "Displays your level and how many points you collected and how many points left for next level",
-                position: 'left'
-            },
-            {
-                element: '#step5',
-                intro: 'If you want to read this messages again click me. THANK YOU'
+                intro: 'This is leader board where you can see your rank and others',
+                position: 'bottom'
             }
         ]
     });
@@ -34,29 +25,22 @@ function startIntro(source) {
     mysurvey.setOptions({
         steps: [
 
-            /*{
-                element: '#step6',
-                intro: "This graph shows you the over all activities you have made through the year",
-                position: 'bottom'
-            },*/
-
             {
-                element: '#step6',
-                intro: "On the right side there are different types of surveys organized by category select " +
-                "one and continue your survey",
+                element: '#step1',
+                intro: "Select one category to start your survey",
                 position: 'bottom'
             },
         ]
     });
 
-    var challenges = introJs();
-    challenges.setOptions({
+    var profile = introJs();
+    profile.setOptions({
         steps: [
             {
-                element: '#step8',
-                intro: "This is where you see your challenges start the challenge" +
-                " and fill one survey, Note you have to finish all the questions if you want to get the points.",
-                position: 'left'
+                element: '#step1',
+                intro: "You can select one of the pictures or upload your own to change your " +
+                "profile picture",
+                position: 'bottom'
             },
         ]
     });
@@ -65,20 +49,10 @@ function startIntro(source) {
     rank.setOptions({
         steps: [
             {
-                element: '#step9',
-                intro: "Displays rank in descending form based on the total points collected",
-                position: 'left'
-            },
-            {
-                element: '#step6',
-                intro: "See your level and others",
-                position: 'left'
-            },
-            {
-                element: '#step10',
-                intro: "You can see the name and total points they collected",
-                position: 'left'
-            },
+                element: '#step1',
+                intro: "This is where you will see your rank and others",
+                position: 'bottom'
+            }
         ]
     });
 
@@ -86,14 +60,13 @@ function startIntro(source) {
     achievement.setOptions({
         steps: [
             {
-                element: '#step11',
+                element: '#step1',
                 intro: "All the badges you win will be displayed here",
                 position: 'bottom'
             },
             {
-                element: '#step12',
-                intro: "badges you can win in the future if you fill more survey, see the description what you have to do to win them " +
-                "and your progress is also indicated on the progress bar",
+                element: '#step2',
+                intro: "This are badges you can win in the future, see the description and the progress bar what you have to do to win the badge ",
                 position: 'bottom'
             },
         ]
@@ -109,19 +82,11 @@ function startIntro(source) {
 
     else if (source == 'mysurvey')
         mysurvey.start().oncomplete(function () {
-            window.location.href = '/challenges';
+            window.location.href = '/rank';
         });
 
     if (source == 'My Survey')
         mysurvey.start();
-
-    else if (source == 'challenges')
-        challenges.start().oncomplete(function () {
-            window.location.href = '/rank';
-        });
-
-    if (source == 'challenges_clicked')
-        challenges.start();
 
     else if (source == 'rank')
         rank.start().oncomplete(function () {
@@ -138,5 +103,13 @@ function startIntro(source) {
 
     if (source == 'Achievement')
         achievement.start();
+
+    /*else if (source == 'profile')
+     challenges.start().oncomplete(function () {
+     window.location.href = '/home';
+     });*/
+
+    if (source == 'Profile')
+        profile.start();
 }
 
