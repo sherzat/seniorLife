@@ -9,7 +9,7 @@ class Question extends Component {
 
         return(
             <div>
-              <p className="text-white Text-font-size ">{this.props.question}</p>
+              <p className="Text-font-size ">{this.props.question}</p>
             </div>
         );
     }
