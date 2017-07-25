@@ -4,7 +4,7 @@ import Survey from './Survey';
 class ApptestPage extends Component {
     constructor(props) {
         super(props);
-        this.state = {likertscale:'',withNext:true, showLikertScale:false};
+        this.state = {likertscale:'',withNext:true, showLikertScale:false, start:"", stop:""};
         this.renderLikertScale=this.renderLikertScale.bind(this);
         this.handleOnclickQuit=this.handleOnclickQuit.bind(this);
     }
@@ -19,6 +19,8 @@ class ApptestPage extends Component {
             likertscale: likertscale,
             withNext:withNext,
         })
+        this.setState({start: Date()});
+        console.log(this.state.start);
     }
     handleOnclickQuit(target) {
         if (target == 'survey'){

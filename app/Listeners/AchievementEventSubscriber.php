@@ -15,9 +15,8 @@ class AchievementEventSubscriber
      */
      public function onRegister($event) {
        $badge = \App\Achievement::where('title','Welcome aboard')->first();
-
        $event->user->achievements()->attach($badge->id, ['complete_rate'=>1, 'is_achieved'=>true ]);
-       event(new Points($badge->point));
+       event(new Points($event->user, $badge->point));
      }
 
     public function onAvatarUpload($event )
@@ -28,7 +27,7 @@ class AchievementEventSubscriber
       if($collected_badges->contains('title','Avatar') != true) {
         $badge = \App\Achievement::where('title','Avatar')->first();
         $event->user->achievements()->attach($badge->id, ['complete_rate'=>1, 'is_achieved'=>true ]);
-        event(new Points($badge->point));
+        event(new Points($event->user,$badge->point));
       }
     }
 
@@ -50,7 +49,7 @@ class AchievementEventSubscriber
       if($collected_badges->contains('title','First survey') != true) {
         $first_survey_badge = \App\Achievement::where('title','First survey')->first();
         $user->achievements()->attach($first_survey_badge->id, ['complete_rate'=>1, 'is_achieved'=>true ]);
-        event(new Points($first_survey_badge->point));
+        event(new Points($event->user,$first_survey_badge->point));
 
         $badges = \App\Achievement::where('title', 'Keep it up')->first();
         $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>1]]);
@@ -67,7 +66,7 @@ class AchievementEventSubscriber
             $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate]]);
           }else {
             $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate, 'is_achieved'=>true]]);
-            event(new Points($badges->point));
+            event(new Points($event->user,$badges->point));
           }
         }
       } else if($collected_badges->contains('title','Beginner') != true) {
@@ -83,7 +82,7 @@ class AchievementEventSubscriber
             $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate]]);
           }else {
             $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate, 'is_achieved'=>true]]);
-            event(new Points($badges->point));
+            event(new Points($event->user,$badges->point));
           }
         }
       }else if($collected_badges->contains('title','Intermediate') != true) {
@@ -99,7 +98,7 @@ class AchievementEventSubscriber
             $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate]]);
           }else {
             $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate, 'is_achieved'=>true]]);
-            event(new Points($badges->point));
+            event(new Points($event->user,$badges->point));
           }
         }
       }else if($collected_badges->contains('title','Master') != true) {
@@ -115,7 +114,7 @@ class AchievementEventSubscriber
             $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate]]);
           }else {
             $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$complete_rate, 'is_achieved'=>true]]);
-            event(new Points($badges->point));
+            event(new Points($event->user,$badges->point));
           }
         }
       }
@@ -127,7 +126,7 @@ class AchievementEventSubscriber
         $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$num_finished_category]]);
       }else {
         $user->achievements()->syncWithoutDetaching([$badges->id => ['complete_rate'=>$num_finished_category, 'is_achieved'=>true]]);
-        event(new Points($badges->point));
+        event(new Points($event->user,$badges->point));
       }
     }
 

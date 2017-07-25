@@ -76,7 +76,7 @@ class SaveSurvey
 
 
 
-      event(new Points($answers->count()));
+      event(new Points($user, $answers->count()));
       event(new IncreaseSurvey($event->user));
     }
 }

@@ -27,7 +27,7 @@ class AddPoints
      */
     public function handle(Points $event)
     {
-      $user= Auth::user();
+      $user= $event->user;
 
       $new_point= $user->point + $event->points;
 

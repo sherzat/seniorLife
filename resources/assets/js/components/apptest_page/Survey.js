@@ -76,6 +76,10 @@ class Survey extends Component {
     if(choice_index == null){
       this.setState({answered: null });
     }
+    var that= this;
+    setTimeout(function() {
+
+    }, 4000);
   }
 
   handleNextButton(){
@@ -102,13 +106,22 @@ class Survey extends Component {
 
   handleAnswer(choice_index, question_id){
     this.changeChildstate(choice_index);
+    setTimeout(function() {
+      console.log("fished waiting");
+    }, 3000);
     var answer = this.state.data[this.state.currentQuestion].choices[choice_index].id;
     for (var i = 0; i < this.answers.length; i++) {
       if (i == this.state.currentQuestion){
         this.answers.splice(i, 1, {c_id:answer, q_id: question_id, index:choice_index});
         console.log(this.answers);
+
         if(this.props.withNext == false){
-          this.handleNextButton();
+          var that=this;
+          setTimeout(function() {
+            console.log("fished waiting");
+            that.handleNextButton();
+          }, 3000);
+
         }
         return
       }
@@ -116,7 +129,11 @@ class Survey extends Component {
     this.answers.push({c_id:answer, q_id: question_id, index:choice_index});
     console.log(this.answers);
     if(this.props.withNext == false){
-      this.handleNextButton();
+      var that=this;
+      setTimeout(function() {
+        console.log("fished waiting");
+        that.handleNextButton();
+      }, 3000);
     }
   }
 

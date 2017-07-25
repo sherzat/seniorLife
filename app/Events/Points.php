@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Events;
+use App\User;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
@@ -18,9 +19,10 @@ class Points
      *
      * @return void
      */
-    public function __construct($points)
+    public function __construct(User $user, $points)
     {
-      $this->points= $points;  
+      $this->user = $user;
+      $this->points= $points;
     }
 
     /**
