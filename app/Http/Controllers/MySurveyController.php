@@ -21,6 +21,7 @@ class MySurveyController extends Controller
     {
         $mysurveyData =array(
             'flag' =>  Auth::user()->mysurveyflag,
+            'categories'=>\App\Category::whereNotIn('id', [11])->get(),
         );
 
         Auth::user()->mysurveyflag = 1;

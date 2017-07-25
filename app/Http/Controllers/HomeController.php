@@ -56,11 +56,21 @@ class HomeController extends Controller
         $surveyResult=$user->getSurveyResult();
 
 
+        $rankUsers= \App\User::orderBy('point','desc')->get();
+
+
+        $inProgressBadges= $user->achievements()->where('is_achieved',0)->get();
+
+
+
+
 
         $badges =array(
             'flag' =>  $user->flag,
             'surveyResult' => $surveyResult,
-            'badges' => $user->achievements()->select('badge')->get(),
+            'inProgressBadges'=>$inProgressBadges,
+            'rankUsers' => $rankUsers,
+            'currentUser' =>$user,
         );
         Auth::user()->flag = 1;
         Auth::user()->save();

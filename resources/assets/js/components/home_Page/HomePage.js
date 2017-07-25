@@ -12,11 +12,9 @@ class HomePage extends  Component {
     super(props);
     this.state = {
       home:[],
-      rankData:[],
       loaded:false,
       showLineChart: false,
       category:"",
-      achievement:[],
     };
 
     this.getData=this.getData.bind(this);
@@ -34,42 +32,15 @@ class HomePage extends  Component {
       url: url,
     })
     .done(function( result ) {
-
       console.log(result)
-      this.setState({home:result});
-
-    }.bind(this))
-
-      var url ="/getAchievementData";
-      $.ajax({
-          method: "GET",
-          url: url,
-      })
-          .done(function( result ) {
-
-              console.log(result)
-              this.setState({achievement:result});
-
-          }.bind(this))
-
-    var url ="/getRankData";
-    $.ajax({
-      method: "GET",
-      url: url,
-    })
-    .done(function( result ) {
-
-      console.log(result)
-      this.setState({rankData:result}, function(){
+      this.setState({home:result},function(){
         this.setState({loaded:true}, function(){
           if(this.state.home.flag==0){
             sessionStorage.setItem('firstvisit', this.state.home.flag);
             startIntro('home');
           }
         });
-
       });
-
     }.bind(this))
   }
 
@@ -136,7 +107,7 @@ class HomePage extends  Component {
 
                   {/*<!-- Image -->*/}
                   <div className="card-block">
-                      <HomepageCarousel badges={this.state.achievement} />
+                      <HomepageCarousel badges={this.state.home} />
 
                       <div className="card-block p-0  my-0 mt-2 d-flex justify-content-around">
                         <a  className="btn btn-success " href="/achievement">More achievements</a>
@@ -160,8 +131,8 @@ class HomePage extends  Component {
 
                   <div className="card-block pt-3">
                     <Ranking
-                      rankUsers = {this.state.rankData.rankUsers}
-                      currentUser = {this.state.rankData.currentUser}
+                      rankUsers = {this.state.home.rankUsers}
+                      currentUser = {this.state.home.currentUser}
                       mode = 'short'
                       />
 

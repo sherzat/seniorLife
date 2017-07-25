@@ -43,7 +43,6 @@ class RankController extends Controller
         $rankData =array(
             'rankUsers' => $rankUsers,
             'currentUser' =>Auth::user(),
-//            'playerStatus'=> $playerStatus,
         );
 
 
