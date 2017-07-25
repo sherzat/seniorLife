@@ -36,10 +36,10 @@
                 {{Route::currentRouteName()}}
             </a>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse bg-nav" id="navbarSupportedContent">
 
                 {{--navbar content for middle screen--}}
-                <ul class="navbar-nav">
+                <ul class="navbar-nav pl-2">
                     <li id="id1" class="nav-item  {{ ends_with(Request::url(), 'home') ? "active" : "" }}">
                         <a  class="nav-link" href={{url("home")}} >
                             <i class="fa fa-home" aria-hidden="true"></i>
