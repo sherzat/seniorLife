@@ -1,30 +1,36 @@
 import React, {Component} from 'react';
-import Survey from '../mysurvey_page/Survey';
+import Survey from './Survey';
 
 class ApptestPage extends Component {
     constructor(props) {
         super(props);
         this.state = {likertscale:'',withNext:true, showLikertScale:false};
         this.renderLikertScale=this.renderLikertScale.bind(this);
+        this.handleOnclickQuit=this.handleOnclickQuit.bind(this);
     }
     componentWillMount(){
-        
+
     }
 
     renderLikertScale(likertscale, withNext){
         // console.log([likertscale,withNext]);
         this.setState({
             showLikertScale:true,
-
+            likertscale: likertscale,
+            withNext:withNext,
         })
     }
-
+    handleOnclickQuit(target) {
+        if (target == 'survey'){
+          this.setState({showLikertScale: false})
+        }
+    }
     render() {
         var likertScale =
         <Survey
-            handleOnclick={this.handleOnclick}
+            handleOnclickQuit={this.handleOnclickQuit}
             selectedCategory={"Test"}
-
+            withNext={this.state.withNext}
             selectedCategoryId={this.state.likertscale}
         />
 

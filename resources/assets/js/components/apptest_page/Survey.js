@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 
-import Circular_scale_1 from './Circular_scale_1';
-import Question from './Question';
-import Slider_scale from './Slider_scale';
-import HomePageRadioButton from './HomepageRadioButton';
-import ProgressBar from './ProgressBar';
+import Circular_scale_1 from '../mysurvey_page/Circular_scale_1';
+import Question from '../mysurvey_page/Question';
+import Slider_scale from '../mysurvey_page/Slider_scale';
+import HomePageRadioButton from '../mysurvey_page/HomepageRadioButton';
+
 import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 import PlayerStatus from '../components/PlayerStatus';
-
 
 class Survey extends Component {
   constructor(props) {
@@ -39,7 +38,7 @@ class Survey extends Component {
   handleModalClick = () => this.setState({isShowingModal: true})
   handleModalClose () {
     this.setState({isShowingModal: false})
-    this.props.handleOnclick("survey");
+    this.props.handleOnclickQuit("survey");
   }
 
   handlePrevButton() {
@@ -108,11 +107,17 @@ class Survey extends Component {
       if (i == this.state.currentQuestion){
         this.answers.splice(i, 1, {c_id:answer, q_id: question_id, index:choice_index});
         console.log(this.answers);
+        if(this.props.withNext == false){
+          this.handleNextButton();
+        }
         return
       }
     }
     this.answers.push({c_id:answer, q_id: question_id, index:choice_index});
     console.log(this.answers);
+    if(this.props.withNext == false){
+      this.handleNextButton();
+    }
   }
 
 
@@ -169,7 +174,7 @@ class Survey extends Component {
 
   handleGoBackBtn(completeState) {
 
-    this.props.handleOnclick("survey");
+    this.props.handleOnclickQuit("survey");
   }
 
 
@@ -190,79 +195,63 @@ class Survey extends Component {
       choices_for_q= this.state.data.map((each)=>
       <Slider_scale key={each.id} question_id={each.id} choices={each.choices} answered={this.state.answered} handleAnswer={this.handleAnswer}/>
       );
-    }else if (this.props.selectedCategoryId =="listbutton"){
+    }else {
       choices_for_q= this.state.data.map((each)=>
       <HomePageRadioButton key={each.id} question_id={each.id} choices={each.choices} answered={this.state.answered} handleAnswer={this.handleAnswer}/>
       );
     }
-    console.log(survey_question.length);
+    // console.log(survey_question.length);
     return(
       <div>
 
-        <div className="row">
-          <div className="col-md-9">
-            <div className="row card card-group Bg-color-midnight">
-              <div className="col-md-12 p-0">
-                <div className="card-block Card-Height vertical-align">
-                  {survey_question[this.state.currentQuestion]}
-                </div>
-              </div>
-            </div>
-
             <div className="row card">
-              <li className="list-group-item justify-content-between Set-width">
 
-                <div style={{width:"91px"}}>
-                  <button
-                    className="btn btn-success btn-lg"
-                    hidden={this.state.currentQuestion == 0? true:false}
-                    onClick={this.handlePrevButton}>Prev</button>
+                <div className="card-header">
+                  <h4 id="step1"className="card-title">Survey</h4>
+                  <h6 className="card-subtitle d-flex justify-content-start ">You are filling category {this.props.selectedCategory}
+                  <div className="text-color ml-1">{this.state.currentQuestion}/{survey_question.length}</div>
+                  </h6>
                 </div>
 
+                <div className="card-block Card-Height vertical-align">
+                    {survey_question[this.state.currentQuestion]}
+                </div>
 
-                {this.state.currentQuestion<this.state.data.length? (choices_for_q[this.state.currentQuestion])
-                  : (
-                    <div style={{width:"60%"}} className="text-center">
-                      <p style={{fontSize: "18px"}}>You have made it till the end!! Please submit your answers.</p>
-                      <button className="btn btn-success btn-lg" onClick={this.sendAnswers}>
-                        submit
-                      </button>
-                    </div>
-
-                  )}
+                <li className="list-group-item justify-content-between Set-width">
 
                   <div style={{width:"91px"}}>
                     <button
-                      className="btn btn-success btn-lg"
-                      hidden={this.state.currentQuestion == this.state.data.length? true:false}
-                      onClick={this.handleNextButton}>Next</button>
+                        className="btn btn-success btn-lg"
+                        hidden={this.state.currentQuestion == 0? true:false}
+                        onClick={this.handlePrevButton}>Prev</button>
                   </div>
 
-              </li>
+
+                    {this.state.currentQuestion<this.state.data.length? (choices_for_q[this.state.currentQuestion])
+                        : (
+                            <div style={{width:"60%"}} className="text-center">
+                              <p style={{fontSize: "18px"}}>You have made it till the end!! Please submit your answers.</p>
+                              <button className="btn btn-success btn-lg" onClick={this.sendAnswers}>
+                                submit
+                              </button>
+                            </div>
+
+                        )}
+
+                  <div style={{width:"91px"}}>
+                    <button
+                        className="btn btn-success btn-lg"
+                        hidden={this.state.currentQuestion == this.state.data.length? true:false}
+                        onClick={this.handleNextButton}>Next</button>
+                  </div>
+
+                </li>
+
+              <button  className="btn btn-success mt-3" onClick={this.handleGoBackBtn}>Quit</button>
+
             </div>
-          </div>
-
-          <div className="col-md-3">
-
-            <ul className="list-group">
-              <div className="list-group-item">
-                <div className="w-100">
-                <small>{this.state.currentQuestion}/{survey_question.length}</small>
-                <ProgressBar percent={(this.state.currentQuestion/survey_question.length)*100}/>
-                </div>
-              </div>
-              <li className="list-group-item">
-                <strong>Category:</strong> <p className="m-auto">{this.props.selectedCategory}</p>
-              </li>
-
-              <li className="list-group-item">
-                <a href="#" className="btn button" onClick={this.handleGoBackBtn}>back to categories</a>
-              </li>
-            </ul>
 
 
-          </div>
-        </div>
         {
           this.state.isShowingModal &&
         <ModalContainer>

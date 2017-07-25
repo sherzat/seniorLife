@@ -36,7 +36,7 @@ class HomepageRadioButton extends Component {
     );
 
     return (
-      <div className=".likert-scale">
+      <div className="likert-scale">
         {choices}
       </div>
     )
