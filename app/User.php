@@ -47,20 +47,7 @@ class User extends Authenticatable
 
     public function getSurveyResult()
     {
-    // //  ->select(DB::raw("cast(avg(weight)/0.5 as decimal(2,1)) as score, time_format((time(responses.created_at)), '%H:00:00') as hour" ))
-    //
-    //     $result= $this->responses()
-    //     ->select(DB::raw("cast(avg(weight) as decimal(2,1)) as score, date(responses.created_at) as hour" ))
-    //     ->join('choices', 'responses.choice_id', '=', 'choices.id')
-    //     ->groupBy(DB::raw("hour" ))
-    //     // ->orderBy(DB::raw("hour"))
-    //     ->get();
-    //
-    //     $result->transform(function ($item) {
-    //       return ['score'=>(float)$item->score, 'hour'=>$item->hour]  ;
-    //     });
       $result['resultEachCategoryByHour']=$this->getResultEachCategoryByHour();
-      // $result['resultEachCategoryByHour']=$this->getResultByCatagory();
         $result['resultLatestAndOverall']=$this->getRadarChartData();
 
       return $result;
@@ -74,6 +61,7 @@ class User extends Authenticatable
             ->join('categorys', 'categorys.id', '=', 'questions.category_id')
             ->join('choices', 'choices.id', '=', 'responses.choice_id')
             ->where('user_id', $this->id)
+            ->whereNotIn('categorys.id', [11])
             ->where('categorys.name', $item->name)
             ->groupBy('hour')
             ->get();
@@ -89,19 +77,21 @@ class User extends Authenticatable
             ->join('categorys', 'categorys.id', '=', 'questions.category_id')
             ->join('choices', 'choices.id', '=', 'responses.choice_id')
             ->where('user_id', $this->id)
+            ->whereNotIn('categorys.id', [11])
             ->groupBy('name')
             ->get();
 
         return $responses;
     }
     public function getRadarChartData(){
-        $names = \App\Category::select('name')->get();
+        $names = \App\Category::select('name')->whereNotIn('categorys.id', [11])->get();
         $results_a = \App\Response::select('name', DB::raw('cast(avg(weight) as decimal(2,1)) as score'))
          ->join('questions', 'questions.id', '=', 'responses.question_id')
          ->join('survey_user', 'survey_user.id', '=', 'responses.survey_user_id')
          ->join('categorys', 'categorys.id', '=', 'questions.category_id')
          ->join('choices', 'choices.id', '=', 'responses.choice_id')
          ->where('responses.user_id', $this->id)
+         ->whereNotIn('categorys.id', [11])
          ->where('survey_user_id', '=', DB::raw('ANY (SELECT s1.id FROM survey_user s1 LEFT JOIN survey_user s2 ON (s1.survey_id = s2.survey_id AND s1.id < s2.id) WHERE s2.id IS NULL)' ))
         ->groupBy('name')
         ->orderBy('name')

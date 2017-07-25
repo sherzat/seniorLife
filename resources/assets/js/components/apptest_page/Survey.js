@@ -21,6 +21,7 @@ class Survey extends Component {
       answered: null,
       survey_id:0,
       loaded: false,
+      secondsElapsed: 0,
     };
     this.handleNextButton= this.handleNextButton.bind(this);
     this.handlePrevButton= this.handlePrevButton.bind(this);
@@ -32,13 +33,22 @@ class Survey extends Component {
     this.handleModalClose = this.handleModalClose.bind(this);
   }
 
+  tick() {
+    this.setState((prevState) => ({
+      secondsElapsed: prevState.secondsElapsed + 1
+    }));
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
   //this contains the answers the user responded and will be send to server when all survey questions are finished
   answers = [];
 
   handleModalClick = () => this.setState({isShowingModal: true})
   handleModalClose () {
     this.setState({isShowingModal: false})
-    this.props.handleOnclickQuit("survey");
+    this.props.handleOnclickQuit("survey" , this.state.secondsElapsed,this.props.selectedCategoryId);
   }
 
   handlePrevButton() {
@@ -76,10 +86,7 @@ class Survey extends Component {
     if(choice_index == null){
       this.setState({answered: null });
     }
-    var that= this;
-    setTimeout(function() {
 
-    }, 4000);
   }
 
   handleNextButton(){
@@ -106,9 +113,7 @@ class Survey extends Component {
 
   handleAnswer(choice_index, question_id){
     this.changeChildstate(choice_index);
-    setTimeout(function() {
-      console.log("fished waiting");
-    }, 3000);
+
     var answer = this.state.data[this.state.currentQuestion].choices[choice_index].id;
     for (var i = 0; i < this.answers.length; i++) {
       if (i == this.state.currentQuestion){
@@ -120,7 +125,7 @@ class Survey extends Component {
           setTimeout(function() {
             console.log("fished waiting");
             that.handleNextButton();
-          }, 3000);
+          }, 2000);
 
         }
         return
@@ -133,7 +138,7 @@ class Survey extends Component {
       setTimeout(function() {
         console.log("fished waiting");
         that.handleNextButton();
-      }, 3000);
+      }, 2000);
     }
   }
 
@@ -156,7 +161,7 @@ class Survey extends Component {
       type: "POST",
       url: "/survey/store",
       dataType: 'json',
-      data: {data: this.answers, survey_id: this.state.survey_id},
+      data: {data: this.answers, survey_id: this.state.survey_id, secondsElapsed: this.state.secondsElapsed},
       success: function (response) {
         this.setState({playerStatus: response},function(){
           console.log(this.state.playerStatus);
@@ -173,6 +178,7 @@ class Survey extends Component {
 
   }
   componentDidMount(){
+    this.interval = setInterval(() => this.tick(), 1000);
     var url_prefix = "survey/create/";
     var url = url_prefix.concat(this.props.selectedCategory);   //get qustoins by category
     console.log(url);
@@ -191,7 +197,7 @@ class Survey extends Component {
 
   handleGoBackBtn(completeState) {
 
-    this.props.handleOnclickQuit("survey");
+    this.props.handleOnclickQuit("survey", this.state.secondsElapsed, this.props.selectedCategoryId);
   }
 
 
@@ -227,6 +233,7 @@ class Survey extends Component {
                   <h4 id="step1"className="card-title">Survey</h4>
                   <h6 className="card-subtitle d-flex justify-content-start ">You are filling category {this.props.selectedCategory}
                   <div className="text-color ml-1">{this.state.currentQuestion}/{survey_question.length}</div>
+                  <div>Seconds Elapsed: {this.state.secondsElapsed}</div>
                   </h6>
                 </div>
 
@@ -237,10 +244,13 @@ class Survey extends Component {
                 <li className="list-group-item justify-content-between Set-width">
 
                   <div style={{width:"91px"}}>
+                    {this.props.withNext ?
                     <button
                         className="btn btn-success btn-lg"
                         hidden={this.state.currentQuestion == 0? true:false}
                         onClick={this.handlePrevButton}>Prev</button>
+                      : ""
+                    }
                   </div>
 
 
@@ -256,10 +266,13 @@ class Survey extends Component {
                         )}
 
                   <div style={{width:"91px"}}>
+                    {this.props.withNext ?
                     <button
                         className="btn btn-success btn-lg"
                         hidden={this.state.currentQuestion == this.state.data.length? true:false}
                         onClick={this.handleNextButton}>Next</button>
+                        : ""
+                      }
                   </div>
 
                 </li>

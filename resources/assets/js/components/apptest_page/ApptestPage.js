@@ -4,7 +4,11 @@ import Survey from './Survey';
 class ApptestPage extends Component {
     constructor(props) {
         super(props);
-        this.state = {likertscale:'',withNext:true, showLikertScale:false, start:"", stop:""};
+        this.state = {
+          likertscale:'',
+          withNext:true,
+          showLikertScale:false,
+        };
         this.renderLikertScale=this.renderLikertScale.bind(this);
         this.handleOnclickQuit=this.handleOnclickQuit.bind(this);
     }
@@ -18,13 +22,14 @@ class ApptestPage extends Component {
             showLikertScale:true,
             likertscale: likertscale,
             withNext:withNext,
-        })
-        this.setState({start: Date()});
-        console.log(this.state.start);
+        });
+
     }
     handleOnclickQuit(target) {
         if (target == 'survey'){
-          this.setState({showLikertScale: false})
+          this.setState({
+            showLikertScale: false,
+          });
         }
     }
     render() {
@@ -41,7 +46,7 @@ class ApptestPage extends Component {
             <div>
                 {this.state.showLikertScale ? likertScale:
                     <div>
-                        <TestBlock withNext={true} renderLikertScale={this.renderLikertScale}/>
+                        <TestBlock withNext={true} renderLikertScale={this.renderLikertScale} />
                         <TestBlock withNext={false} renderLikertScale={this.renderLikertScale}/>
                     </div>
                 }
@@ -73,7 +78,7 @@ class TestBlock extends Component {
                     <div className="Rail-way-font">
                         <div className="row mt-2 Rail-way-font">
                             <div className="col-md-12 col-xs-12">
-                                <div className="card mb-5 mt-5">
+                                <div className="card">
 
                                     <div className="card-header">
                                         <h4 id="step1"className="card-title">Likert Scale {this.props.withNext ? "With" : "Without" } Next Button</h4>
@@ -85,6 +90,7 @@ class TestBlock extends Component {
                                         <div className="card-block pt-0">
                                             <div className="card-block p-0  my-0 mt-2 d-flex justify-content-around">
                                                 <button name="circular" className="btn btn-success" style={style} onClick={this.handleOnClick}>Circular Likert Scale</button>
+
                                             </div>
 
                                             <div className="card-block p-0  my-0 mt-2 d-flex justify-content-around">
