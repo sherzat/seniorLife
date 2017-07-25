@@ -37,6 +37,7 @@ class MySurvey extends Component {
 
     }
     getData() {
+
         var url ="/survey/result";
         $.ajax({
             method: "GET",
@@ -46,12 +47,24 @@ class MySurvey extends Component {
             .done(function( data ) {
 
                 console.log(data)
-                this.setState({mysurveyData:data}, function () {
-                  this.setState({loaded: true}, function () {
-                    if(this.state.mysurveyData.flag==0){
-                      startIntro('mysurvey')
-                    }
-                  });
+                this.setState({mysurveyData:data});
+
+            }.bind(this))
+
+        var url1 ="/getMysurveyData";
+        $.ajax({
+            method: "GET",
+            url: url1,
+        })
+            .done(function( result ) {
+
+                console.log(result)
+                this.setState({mysurveyFlag:result}, function () {
+                    this.setState({loaded: true}, function () {
+                        if(this.state.mysurveyFlag.flag==0){
+                            startIntro('mysurvey')
+                        }
+                    });
                 });
 
             }.bind(this))

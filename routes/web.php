@@ -28,10 +28,12 @@ Route::get('getChallengesData','ChallengesController@getChallengesData');
 //rank
 Route::get('rank','RankController@getRank')->name("Rank");
 Route::get('getRankData','RankController@getRankData');
+Route::get('getRankFlag','RankController@getRankFlag');
 
 //achievement
 Route::get('achievement','AchievementController@getAchievement')->name("Achievement");
 Route::get('getAchievementData','AchievementController@getAchievementData');
+Route::get('getAchievementFlag','AchievementController@getAchievementFlag');
 
 
 Route::get('survey/create/{new}', 'SurveyController@create_survey')->name('new.survey');
@@ -51,6 +53,7 @@ Route::get('databaseTest', function(){
 Auth::routes();
 Route::resource('profile', 'ProfileController');
 Route::get('profile', 'ProfileController@index')->name("Profile");
+
 Route::post('uploadFile','ProfileController@upload_avatar');
 
 Route::resource('home', 'HomeController');

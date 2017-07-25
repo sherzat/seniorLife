@@ -28,8 +28,29 @@ class RankPage extends Component {
             .done(function( result ) {
 
                 console.log(result)
-                this.setState({rankData:result} ,function () {
-                    this.setState({loaded:true})
+                this.setState({rankData:result} , function () {
+                    this.setState({loaded: true}, function () {
+                        if(this.state.rankData.flag==0){
+                            startIntro('rank')
+                        }
+                    });
+                });
+
+            }.bind(this))
+
+        var url ="/getRankFlag";
+        $.ajax({
+            method: "GET",
+            url: url,
+        })
+            .done(function( result ) {
+                console.log(result)
+                this.setState({rankFlag:result} , function () {
+                    this.setState({loaded: true}, function () {
+                        if(this.state.rankFlag.flag==0){
+                            startIntro('rank')
+                        }
+                    });
                 });
 
             }.bind(this))
@@ -49,8 +70,8 @@ class RankPage extends Component {
 
                 <div className="card ">
                   <div className="card-header">
-                      <h4 id="step1"className="card-title">Ranking </h4>
-                      <h6 className="card-subtitle">Ranking is ased on the overall score</h6>
+                      <h4 id="step1"className="card-title">Rank</h4>
+                      <h6 className="card-subtitle">Ranking is based on total points collected</h6>
                   </div>
                     <Ranking
                       rankUsers = {this.state.rankData.rankUsers}

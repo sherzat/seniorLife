@@ -32,9 +32,21 @@ class AchievementPage extends Component {
             .done(function (result) {
 
                 console.log(result)
-                this.setState({achievementData: result}, function () {
+                this.setState({achievementData: result});
+
+            }.bind(this))
+
+        var url = "/getAchievementFlag";
+        $.ajax({
+            method: "GET",
+            url: url,
+        })
+            .done(function (result) {
+
+                console.log(result)
+                this.setState({achievementFlag: result}, function () {
                     this.setState({loaded: true}, function () {
-                        if (this.state.achievementData.flag == 0) {
+                        if (this.state.achievementFlag.flag == 0) {
                             startIntro('achievement').start();
                         }
                     });
@@ -84,7 +96,7 @@ console.log(availableBadges);
                 <div className="card mb-5">
 
                     <div className="card-header">
-                        <h4 id="step11"className="card-title">Collected Badges</h4>
+                        <h4 id="step1"className="card-title">Collected Badges</h4>
                         <h6 className="card-subtitle">You have collected this badges</h6>
                     </div>
 
@@ -102,7 +114,7 @@ console.log(availableBadges);
                 <div className="card">
 
                     <div className="card-header">
-                        <h4 id="step11"className="card-title">Future Badges</h4>
+                        <h4 id="step2"className="card-title">Future Badges</h4>
                         <h6 className="card-subtitle">You may also collecte this badges</h6>
                     </div>
 
