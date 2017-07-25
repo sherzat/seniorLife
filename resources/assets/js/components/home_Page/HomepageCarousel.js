@@ -18,7 +18,7 @@ class HomepageCarousel extends Component {
         const collectedBadges = this.props.badges.inProgressBadges.map(
             (inProgressBadge,index) =>
             <div className="" key={index}>
-                <img className="m-auto" key={inProgressBadge.badge} src={inProgressBadge.badge}/>
+                <img className="m-auto grayscale" key={inProgressBadge.badge} src={inProgressBadge.badge}/>
                 <p className="text-center pb-2 mb-0">{inProgressBadge.description}</p>
                 <h6 className="text-center text-color">{inProgressBadge.steps - inProgressBadge.pivot.complete_rate} more to go</h6>
             </div>
