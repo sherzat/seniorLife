@@ -26,6 +26,12 @@ class ChoicesTableSeeder extends Seeder
             ["choice"=>"Not accomplished", "weight"=>2],
             ["choice"=>"Not applicable", "weight"=>1],
 
+            ["choice"=>"one", "weight"=>5],
+            ["choice"=>"tow", "weight"=>4],
+            ["choice"=>"three", "weight"=>3],
+            ["choice"=>"four", "weight"=>2],
+            ["choice"=>"five", "weight"=>1],
+
 
         ]);
     }

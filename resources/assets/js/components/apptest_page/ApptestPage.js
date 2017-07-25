@@ -8,31 +8,9 @@ class ApptestPage extends Component {
         this.renderLikertScale=this.renderLikertScale.bind(this);
     }
     componentWillMount(){
-        this.getData();
-        console.log('in mysyrvey')
-
-
+        
     }
-    getData() {
-        var url ="/survey/result";
-        $.ajax({
-            method: "GET",
-            url: url,
-            dataType: 'json',
-        })
-            .done(function( data ) {
 
-                console.log(data)
-                this.setState({mysurveyData:data}, function () {
-                    this.setState({loaded: true}, function () {
-                        if(this.state.mysurveyData.flag==0){
-                            startIntro('mysurvey')
-                        }
-                    });
-                });
-
-            }.bind(this))
-    }
     renderLikertScale(likertscale, withNext){
         // console.log([likertscale,withNext]);
         this.setState({
@@ -45,7 +23,7 @@ class ApptestPage extends Component {
         var likertScale =
         <Survey
             handleOnclick={this.handleOnclick}
-            selectedCategory={test}
+            selectedCategory={"Test"}
 
             selectedCategoryId={this.state.likertscale}
         />

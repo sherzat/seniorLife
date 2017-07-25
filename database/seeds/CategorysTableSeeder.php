@@ -23,7 +23,7 @@ class CategorysTableSeeder extends Seeder
             ["img_src"=>'/img/categorys/003-people.svg', "name"=>"community life", "description"=>"How do you generally accomplish the following activities"],
             ["img_src"=>'/img/categorys/006-learning.svg', "name"=>"education", "description"=>"How do you generally accomplish the following activities"],
             ["img_src"=>'/img/categorys/002-businessman.svg', "name"=>"recreation", "description"=>"How do you generally accomplish the following activities"],
-
+            ["img_src"=>'', "name"=>"test", "description"=>"This questions are only for test"],
         ]);
     }
 }

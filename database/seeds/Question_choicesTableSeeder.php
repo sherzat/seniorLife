@@ -28,7 +28,7 @@ class Question_choicesTableSeeder extends Seeder
         });
 
 
-        $questions = DB::table('questions')->where('category_id','>=',2)->get();
+        $questions = DB::table('questions')->whereBetween('category_id',[2,10])->get();
 
         $questions->each(function($question){
             DB::table('question_choice')->insert([
@@ -37,6 +37,18 @@ class Question_choicesTableSeeder extends Seeder
                 ["choice_id"=>8, 'question_id'=>$question->id],
                 ["choice_id"=>9, 'question_id'=>$question->id],
                 ["choice_id"=>10, 'question_id'=>$question->id],
+
+            ]);
+        });
+
+        $questions = DB::table('questions')->where('category_id','=',11)->get();
+        $questions->each(function($question){
+            DB::table('question_choice')->insert([
+                ["choice_id"=>11, 'question_id'=>$question->id],
+                ["choice_id"=>12, 'question_id'=>$question->id],
+                ["choice_id"=>13, 'question_id'=>$question->id],
+                ["choice_id"=>14, 'question_id'=>$question->id],
+                ["choice_id"=>15, 'question_id'=>$question->id],
 
             ]);
         });
