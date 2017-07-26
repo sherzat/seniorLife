@@ -56,7 +56,7 @@
                     <li id="id4" class="nav-item {{ ends_with(Request::url(), 'achievement') ? "active" : "" }}">
                         <a class="nav-link " href={{url("achievement")}}>
                             <i class="fa fa-diamond" aria-hidden="true"></i>
-                            Badges
+                            Badge
                         </a>
                     </li>
 
