@@ -11,7 +11,7 @@ class Survey_questionTableSeeder extends Seeder
      */
     public function run()
     {
-      for($i=0;$i<10;$i++){
+      for($i=0;$i<11;$i++){
         $questions = DB::table('questions')->where('category_id','=',$i+1)->get();
         $questions->each(function($question) use ($i){
             DB::table('survey_question')->insert([

@@ -66,7 +66,6 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-       ;
         $user = Auth::user();
         $user =\App\User::find($user->id);
         $user->avatar =  $request->avatar;

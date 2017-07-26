@@ -49,7 +49,7 @@
                     <li id="id2" class="nav-item {{ ends_with(Request::url(), 'mysurvey') ? "active" : "" }}">
                         <a  class="nav-link " href={{url("mysurvey")}} >
                             <i class="fa fa-wpforms" aria-hidden="true"></i>
-                            MySurvey
+                            Survey
                         </a>
                     </li>
 

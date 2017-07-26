@@ -25,25 +25,20 @@
 ">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand Lato-font" href="#">
+                <a class="navbar-brand p-0" href="#">
                     {{ config('app.name', 'SeniorLife') }}</a>
-
-            </div>
-
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav mr-auto">
-
-                </ul>
 
             </div>
         </div>
     </nav>
 
-    @yield('content')
+    <div class="container mt-5">
+        @yield('content')
+    </div>
 
 </div>
 
-@yield('footer')
+
 
 
 

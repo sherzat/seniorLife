@@ -12,12 +12,8 @@
 */
 Route::get('/', 'WelcomeController@welcome');
 
-Route::get('rank', 'PagesController@getRank')->name("Rank");
-Route::get('contact', 'PagesController@getContact');
-Route::get('survey_cake', 'PagesController@getSurvey_cake');
-
-//mysurvey
-Route::get('mysurvey','MySurveyController@getMysurvey')->name("My Survey");
+//survey
+Route::get('mysurvey','MySurveyController@getMysurvey')->name("Survey");
 Route::get('getMysurveyData','MySurveyController@getMysurveyData');
 
 
@@ -40,7 +36,7 @@ Route::get('survey/create/{new}', 'SurveyController@create_survey')->name('new.s
 Route::post('survey/store', 'SurveyController@store_survey')->name('store.survey');
 Route::get('survey/result', 'SurveyController@survey_result');
 
-Route::get('apptest','TestController@getApp_test')->name("Apptest");
+
 
 Route::get('databaseTest', function(){
 	if (DB::connection()->getDatabaseName())
@@ -60,3 +56,7 @@ Route::resource('home', 'HomeController');
 Route::get('home', 'HomeController@index')->name("Home");
 Route::get('getResultByCatagory','HomeController@getResultByCatagory');
 Route::get('getRadarChartData','HomeController@getRadarChartData');
+
+//apptest
+Route::get('apptest','TestController@getApp_test')->name("Apptest");
+Route::get('create_testpage','HomeController@create_testpage');

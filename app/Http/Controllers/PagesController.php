@@ -14,7 +14,7 @@ class PagesController extends Controller
     }
 
 
-    public function getOverView()
+    public function getHome()
     {
 
     }
@@ -34,11 +34,6 @@ class PagesController extends Controller
         return view('pages.survey_cake');
     }
 
-    public function getEmpatica()
-    {
-        $current_page="empatica";
-        return view('pages.empatica' , ['current_page' => $current_page]);
 
-    }
 
 }

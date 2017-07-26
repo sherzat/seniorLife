@@ -11,11 +11,14 @@ class ApptestPage extends Component {
         };
         this.renderLikertScale=this.renderLikertScale.bind(this);
         this.handleOnclickQuit=this.handleOnclickQuit.bind(this);
+        this.handleOnClick=this.handleOnClick.bind(this);
     }
     componentWillMount(){
 
     }
-
+    handleOnClick(event) {
+        console.log({timeStamp:event.timeStamp, id: event.currentTarget.id, name: event.currentTarget.name, onClickEvent:event.currentTarget }.onClickEvent);
+    }
     renderLikertScale(likertscale, withNext){
         // console.log([likertscale,withNext]);
         this.setState({
@@ -36,9 +39,10 @@ class ApptestPage extends Component {
         var likertScale =
         <Survey
             handleOnclickQuit={this.handleOnclickQuit}
-            selectedCategory={"Test"}
+            selectedCategory={"test"}
             withNext={this.state.withNext}
             selectedCategoryId={this.state.likertscale}
+            onClick={this.handleOnClick}
         />
 
 
@@ -46,8 +50,8 @@ class ApptestPage extends Component {
             <div>
                 {this.state.showLikertScale ? likertScale:
                     <div>
-                        <TestBlock withNext={true} renderLikertScale={this.renderLikertScale} />
-                        <TestBlock withNext={false} renderLikertScale={this.renderLikertScale}/>
+                        <TestBlock withNext={true} renderLikertScale={this.renderLikertScale} onClick={this.handleOnClick}/>
+                        <TestBlock withNext={false} renderLikertScale={this.renderLikertScale} onClick={this.handleOnClick}/>
                     </div>
                 }
 
@@ -68,6 +72,7 @@ class TestBlock extends Component {
     handleOnClick(event){
         // console.log(event.target.name);
         this.props.renderLikertScale(event.target.name,this.props.withNext);
+        this.props.onClick(event);
     }
     render() {
         var style = {

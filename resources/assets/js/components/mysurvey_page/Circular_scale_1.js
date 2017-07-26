@@ -10,10 +10,9 @@ class Circular_scale_1 extends Component {
   }
 
   handleClick(event){
-    // const choices= this.props.choices.map(
-    //   (each)=>
-    //     each.id
-    // );
+
+    this.props.onClick(event);
+
     const clicked_item= event.currentTarget.id;
     var choice_index="";
     if(clicked_item == "item-1"){
