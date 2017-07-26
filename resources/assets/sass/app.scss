@@ -5,7 +5,9 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
 // Font-awesome
+$fa-font-path:        "../../fonts" ;
 @import "node_modules/font-awesome/scss/font-awesome";
+
 
 @import 'node_modules/rc-slider/assets/index';
 @import "node_modules/slick-carousel/slick/slick.scss";
