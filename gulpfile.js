@@ -17,8 +17,8 @@ require('laravel-elixir-webpack-react');
 elixir((mix) => {
 
     mix.sass('app.scss')     // compile app.scss to public/css/app.css
-       .webpack('app.js'); // compile app.js to public/js/app.js
-    mix.sass('new_app.scss');
+       .webpack('app.js')
+       .version(['public/css/app.css','public/js/app.js']); // compile app.js to public/js/app.js
     mix.copy('node_modules/font-awesome/fonts/','public/fonts'); //copy font awesome to public/fonts from moudles
     mix.copy('resources/assets/sass/*.css','public/css'); //copy introjs files  to public/css
     mix.copy('resources/assets/js/intro.js','public/js'); //copy introjs files  to public/js

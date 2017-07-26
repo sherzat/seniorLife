@@ -11,7 +11,7 @@
 
     <!-- Bootstrap 4 core CSS -->
     <!-- Custom styles for this template -->
-    <link href="/css/new_app.css" rel="stylesheet">
+    <link href={{ elixir("css/app.css")}} rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
@@ -46,7 +46,7 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 
-<script src="/js/app.js"></script>
+<script src={{ elixir("js/app.js")}}></script>
 
 </body>
 </html>

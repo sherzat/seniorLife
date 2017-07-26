@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/new_app.css">
+    <link rel="stylesheet" href={{ elixir("css/app.css")}}>
 
 
     <link href="/css/introjs.css" rel="stylesheet">
@@ -160,7 +160,7 @@
 </div>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
-<script src="/js/app.js"></script>
+<script src={{ elixir("js/app.js")}}></script>
 
 <script src="/js/intro.js"></script>
 <script src="/js/tour.js"></script>
