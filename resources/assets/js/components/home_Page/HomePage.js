@@ -86,7 +86,9 @@ class HomePage extends  Component {
                             </div>
                         </div>
 
+
                     </div>
+
 
 
                     <div className="row d-flex ">
@@ -140,6 +142,7 @@ class HomePage extends  Component {
                             </div>
                         </div>
                     </div>
+
 
             </div>
         );

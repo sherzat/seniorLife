@@ -3,15 +3,13 @@ import ProgressBar from '../mysurvey_page/ProgressBar';
 class AvailableBadges extends Component {
     render() {
         return (
+
             <div>
-                <div className="card">
                     <li className="list-group-item justify-content-between ">
                         <div className="col-md-4 col-sm-4">
-                            <div className="card-block">
                                 <img className="card-img-top  img-responsive grayscale"
                                      src={this.props.img_src}
                                      alt="Card image cap" width={150} height={150}></img>
-                            </div>
                         </div>
                         <div className="col-md-4 col-sm-4">
                             <div className="card-block">
@@ -30,7 +28,6 @@ class AvailableBadges extends Component {
 
                         </div>
                     </li>
-                </div>
             </div>
         );
     }

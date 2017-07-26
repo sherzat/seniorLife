@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
          $table->string('name');
          $table->string('email')->unique();
          $table->string('password');
-         $table->string('avatar')->default('/img/avatars/animal/animal-duck.png');
+         $table->string('avatar')->default('/img/avatars/default/default-user.png');
          $table->bigInteger('point')->default(0);
          $table->boolean('flag')->default(0);
          $table->boolean('mysurveyflag')->default(0);
