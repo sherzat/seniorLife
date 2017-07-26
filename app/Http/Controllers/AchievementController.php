@@ -20,7 +20,7 @@ class AchievementController extends Controller
     {
 
 
-        $achievementData = array(
+        $achievementFlag = array(
 
             'flag' =>  Auth::user()->achievementflag,
         );
@@ -29,7 +29,7 @@ class AchievementController extends Controller
         Auth::user()->save();
 
         return response()
-            ->json($achievementData);
+            ->json($achievementFlag);
     }
 
     public function getAchievementData()

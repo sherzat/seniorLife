@@ -50,7 +50,7 @@ function startIntro(source) {
         steps: [
             {
                 element: '#step1',
-                intro: "This is where you will see your rank and others",
+                intro: "This is where you can see your rank position",
                 position: 'bottom'
             }
         ]
@@ -73,41 +73,28 @@ function startIntro(source) {
     });
 
     if (source == 'home')
-        intro.start().oncomplete(function () {
-            window.location.href = '/mysurvey';
-        });
+        intro.start().oncomplete();
 
     if (source == 'Home')
         intro.start();
 
     else if (source == 'mysurvey')
-        mysurvey.start().oncomplete(function () {
-            window.location.href = '/rank';
-        });
+        mysurvey.start().oncomplete();
 
     if (source == 'My Survey')
         mysurvey.start();
 
     else if (source == 'rank')
-        rank.start().oncomplete(function () {
-            window.location.href = '/achievement';
-        });
+        rank.start().oncomplete();
 
     if (source == 'Rank')
         rank.start();
 
     else if (source == 'achievement')
-        achievement.start().oncomplete(function () {
-            window.location.href = '/home';
-        });
+        achievement.start().oncomplete();
 
     if (source == 'Achievement')
         achievement.start();
-
-    /*else if (source == 'profile')
-     challenges.start().oncomplete(function () {
-     window.location.href = '/home';
-     });*/
 
     if (source == 'Profile')
         profile.start();

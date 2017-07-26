@@ -66,7 +66,6 @@ class HomePage extends  Component {
                   <h4 id="step1"className="card-title">Quality of Life</h4>
                   <h6 className="card-subtitle">Overall score of your last survey</h6>
                 </div>
-
                 <div className="row">
                   <div className="col-md-6 ">
                     <div className="card-block pt-0">
@@ -85,7 +84,6 @@ class HomePage extends  Component {
                   </div>
                 </div>
               </div>
-
             </div>
 
 
@@ -135,7 +133,6 @@ class HomePage extends  Component {
                       currentUser = {this.state.home.currentUser}
                       mode = 'short'
                       />
-
                   </div>
                 </div>
               </div>

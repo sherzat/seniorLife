@@ -15,7 +15,8 @@ class ProgressBar extends  Component {
 
     render() {
         const lineStyle = {
-            width: 100
+            width: 250,
+            height:15
         };
 
         return (

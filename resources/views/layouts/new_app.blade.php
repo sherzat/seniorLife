@@ -53,18 +53,17 @@
                         </a>
                     </li>
 
-
+                    <li id="id4" class="nav-item {{ ends_with(Request::url(), 'achievement') ? "active" : "" }}">
+                        <a class="nav-link " href={{url("achievement")}}>
+                            <i class="fa fa-diamond" aria-hidden="true"></i>
+                            Badges
+                        </a>
+                    </li>
 
                     <li id="id3" class="{{ ends_with(Request::url(), 'rank') ? "active" : "" }}">
                         <a class="nav-link " href={{url("rank")}} data-step="1" data-intro="This is a tooltip!">
                             <i class="fa fa-trophy" aria-hidden="true"></i>
                             Rank
-                        </a>
-                    </li>
-                    <li id="id4" class="nav-item {{ ends_with(Request::url(), 'achievement') ? "active" : "" }}">
-                        <a class="nav-link " href={{url("achievement")}}>
-                            <i class="fa fa-diamond" aria-hidden="true"></i>
-                            Achievement
                         </a>
                     </li>
 
