@@ -50,9 +50,8 @@ class SaveSurvey
       //attach user to the survey
       $user=$event->user;
       $survey_id = $event->survey_id;
-      $elapsedSeconds = $event->elapsedSeconds;
 
-      $user->surveys()->attach($survey_id, ['elapsedSeconds'=>$elapsedSeconds]);
+      $user->surveys()->attach($survey_id);
 
       $survey_user=\App\Survey_user::where('user_id', $user->id)->get()->last();
 
@@ -68,6 +67,8 @@ class SaveSurvey
           $response->questions()->associate($answer['q_id']);
           $response->choices()->associate($answer['c_id']);
           $response->survey_user()->associate($survey_user->id);
+          if (array_has($answer, 'secondsElapsed'))
+            $response->seconds_elapsed = $answer['secondsElapsed'];
           $response->save();
         }
       });

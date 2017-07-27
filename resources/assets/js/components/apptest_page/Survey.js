@@ -14,7 +14,8 @@ class Survey extends Component {
         this.state = {
             data:[],
             currentQuestion: null,
-            answer:null,
+            isCorrect:false,
+            isAnswered:false,
             question_id:null,
             isShowingModal: false,
             playerStatus:null,
@@ -33,7 +34,7 @@ class Survey extends Component {
 
     tick() {
         this.setState((prevState) => ({
-            secondsElapsed: prevState.secondsElapsed + 1
+            secondsElapsed: prevState.secondsElapsed + 0.1
         }));
     }
     handleOnClick(event){
@@ -68,6 +69,9 @@ class Survey extends Component {
 
         this.setState({
             currentQuestion: this.state.currentQuestion+1,
+            secondsElapsed:0,
+            isCorrect:false,
+            isAnswered: false,
         }, function () {
             if(this.state.currentQuestion >= this.state.data.length-1){
                 console.log("time to send answers")
@@ -87,12 +91,23 @@ class Survey extends Component {
     }
 
     handleAnswer(choice_index, question_id){
-        this.setState({answered: choice_index});
+        this.setState({
+            answered: choice_index,
+            isAnswered: true,
+
+        });
 
         var answer = this.state.data[this.state.currentQuestion].choices[choice_index].id;
+
+        if(answer + 64 == question_id){
+            this.setState({isCorrect: true})
+        }else {
+            this.setState({isCorrect: false})
+        }
+
         for (var i = 0; i < this.answers.length; i++) {
             if (i == this.state.currentQuestion){
-                this.answers.splice(i, 1, {c_id:answer, q_id: question_id, index:choice_index});
+                this.answers.splice(i, 1, {c_id:answer, q_id: question_id, index:choice_index, secondsElapsed: this.state.secondsElapsed.toFixed(1)});
                 console.log(this.answers);
 
                 if(this.props.withNext == false){
@@ -106,7 +121,7 @@ class Survey extends Component {
                 return
             }
         }
-        this.answers.push({c_id:answer, q_id: question_id, index:choice_index});
+        this.answers.push({c_id:answer, q_id: question_id, index:choice_index, secondsElapsed: this.state.secondsElapsed.toFixed(1)});
         console.log(this.answers);
         if(this.props.withNext == false){
             var that=this;
@@ -136,12 +151,12 @@ class Survey extends Component {
         type: "POST",
         url: "/survey/store",
         dataType: 'json',
-        data: {data: this.answers, survey_id: this.state.survey_id, secondsElapsed: this.state.secondsElapsed},
+        data: {data: this.answers, survey_id: this.state.survey_id},
         success: function (response) {
             this.setState({playerStatus: response},function(){
                 console.log(this.state.playerStatus);
 
-                this.props.handleOnclickQuit("survey" , this.state.secondsElapsed,this.props.selectedCategoryId);
+                this.props.handleOnclickQuit("survey" );
             });
 
         }.bind(this),
@@ -165,7 +180,7 @@ componentDidMount(){
         console.log(result);
         this.setState({data:result.prepare_questions, currentQuestion:0, survey_id:result.survey_id}, function(){
             this.setState({loaded: true});
-            this.interval = setInterval(() => this.tick(), 1000);
+            this.interval = setInterval(() => this.tick(), 100);
         });
     }.bind(this))
 }
@@ -207,7 +222,8 @@ return(
             <div className="card-header">
                 <h4 id="step1"className="card-title">Survey</h4>
                 <h6 className="card-subtitle d-flex justify-content-start ">You are filling category {this.props.selectedCategory}.
-                    <div className="ml-2">Seconds Elapsed: {this.state.secondsElapsed}</div>
+
+                    {/*<div className="ml-2">Seconds Elapsed: {this.state.secondsElapsed.toFixed(1)}</div>*/}
 
                     <div className="text-color ml-auto">Progress: {this.state.currentQuestion }/{survey_question.length}</div>
                 </h6>
@@ -217,7 +233,7 @@ return(
                 {survey_question[this.state.currentQuestion]}
             </div>
 
-            <li className="list-group-item justify-content-between Set-width pb-3 mb-4">
+            <li className="list-group-item justify-content-between Set-width pb-3">
 
                 <div style={{width:"91px"}}>
                     {
@@ -246,6 +262,7 @@ return(
                         this.props.withNext ?
                         <button
                             className="btn btn-success btn-lg"
+                            disabled={this.state.isCorrect ? false : true}
                             hidden={this.state.currentQuestion == this.state.data.length? true:false}
                             onClick={this.handleNextButton}>Next</button>
                         : ""
@@ -253,10 +270,9 @@ return(
                 </div>
 
             </li>
-
-
+            {this.state.isAnswered ?
+                this.state.isCorrect ?  <p className="text-center text-success">Correct</p> : <p className="text-center text-danger">Wrong</p> : <p className="mb-3 pb-4"></p> }
             </div>
-
         </div>
     );
 }

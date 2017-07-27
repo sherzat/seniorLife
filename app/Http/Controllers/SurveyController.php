@@ -46,10 +46,10 @@ class SurveyController extends Controller
         //get the current answered question_id and choice_id
         $answers = $request->input("data");
         $survey_id = $request->input("survey_id");
-        $elapsedSeconds = $request->input("secondsElapsed");
+//        $elapsedSeconds = $request->input("secondsElapsed");
 
         //fire the NewSurvey event to save response
-        event(new NewSurvey($user, $answers, $survey_id, $elapsedSeconds));
+        event(new NewSurvey($user, $answers, $survey_id));
 
 
         // level and points pair

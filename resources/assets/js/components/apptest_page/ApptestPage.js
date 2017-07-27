@@ -17,7 +17,7 @@ class ApptestPage extends Component {
 
     }
     handleOnClick(event) {
-        console.log({timeStamp:event.timeStamp, id: event.currentTarget.id, name: event.currentTarget.name, onClickEvent:event.currentTarget }.onClickEvent);
+        // console.log({timeStamp:event.timeStamp, id: event.currentTarget.id, name: event.currentTarget.name, onClickEvent:event.currentTarget });
     }
     renderLikertScale(likertscale, withNext){
         // console.log([likertscale,withNext]);
