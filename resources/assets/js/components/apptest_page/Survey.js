@@ -217,7 +217,7 @@ return(
                 {survey_question[this.state.currentQuestion]}
             </div>
 
-            <li className="list-group-item justify-content-between Set-width">
+            <li className="list-group-item justify-content-between Set-width pb-3 mb-4">
 
                 <div style={{width:"91px"}}>
                     {
