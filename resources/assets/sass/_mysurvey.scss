@@ -30,17 +30,17 @@ symbol{overflow:visible;}
 }
 
 .Set-width {
-	padding-bottom: 5%;
+	padding-bottom: 0%;
     border:0px;
     min-height: 262px;
 }
 
 .Card-Height{
-	height: 180px !important;
+	height: 200px !important;
 }
 
 .Text-font-size{
-	font-size: 24px !important;
+	font-size: 30px !important;
 }
 
 .likert-scale{
@@ -51,7 +51,7 @@ symbol{overflow:visible;}
 
 //style for buttons scale
 $tint: darken(#BC8D06, 5);
-$colors: #B2DFDB,#a6c34c,#ffc84a,#f48847,#eb4841;
+$colors: #4dbf4d,#a6c34c,#ffc84a,#f48847,#eb4841;
 .radioPad{
   display: inline-block;
   width: 100%;
@@ -79,31 +79,31 @@ $colors: #B2DFDB,#a6c34c,#ffc84a,#f48847,#eb4841;
         background: lighten(nth($colors, $i),0);
 
         &:hover{
-          background: darken(nth($colors, $i), 12);
+          background: darken(nth($colors, $i), 15);
         }
       }
     }
 
   &-0{
-      background: darken(nth($colors, 1), 12) !important;
+      background: darken(nth($colors, 1), 15) !important;
       border-style: solid;
       border-color: $midnight-blue;
       color:$cloud;
   }
   &-1{
-      background: darken(nth($colors, 2), 12) !important;
+      background: darken(nth($colors, 2), 15) !important;
       border-style: solid;
       border-color: $midnight-blue;
       color:$cloud;
   }
   &-2{
-      background: darken(nth($colors, 3), 12) !important;
+      background: darken(nth($colors, 3), 15) !important;
       border-style: solid;
       border-color: $midnight-blue;
       color:$cloud;
   }
   &-3{
-      background: darken(nth($colors, 4), 12) !important;
+      background: darken(nth($colors, 4), 15) !important;
       border-style: solid;
       border-color: $midnight-blue;
       color:$cloud;

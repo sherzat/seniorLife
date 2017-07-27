@@ -18,7 +18,7 @@ class HomepageRadioButton extends Component {
         <label
            key={index}
             className={
-              this.props.answered === index ?
+              this.props.answered == index ?
                 'radioPad-wrapper radioPad-wrapper-'+index :
                 'radioPad-wrapper'
               }

@@ -56,40 +56,30 @@ class Slider_scale extends Component {
           (each)=>
             each.choice
         );
+        var lable_style={
+          top:30,
+          fontSize: 18,
+          marginLeft:"-9%"
+        }
         const horizontalLabels = {
           0: {
-            style: {
-              top:30,
-              fontSize: 12,
-            },
+            style: lable_style,
             label: choices[0],
           },
           25: {
-            style: {
-                top:30,
-                fontSize: 12,
-            },
+            style: lable_style,
             label: choices[1],
           },
           50: {
-            style: {
-                top:30,
-                fontSize: 12,
-            },
+            style: lable_style,
             label: choices[2],
           },
           75: {
-            style: {
-                top:30,
-                fontSize: 12,
-            },
+            style: lable_style,
             label: choices[3],
           },
           100: {
-            style: {
-                top:30,
-                fontSize: 12,
-            },
+            style: lable_style,
             label: choices[4],
           },
         }

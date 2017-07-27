@@ -15,13 +15,13 @@
 }
 .color{
     &-1 {
-        background-color: lighten($orage-color, 20);
+        background-color: lighten($orange-color, 20);
     }
     &-2 {
-        background-color: lighten($orage-color, 35) ;
+        background-color: lighten($orange-color, 35) ;
     }
     &-3 {
-        background-color: lighten($orage-color, 45) ;
+        background-color: lighten($orange-color, 45) ;
     }
     &-user {
         background-color: lighten($light-primary-color, 0) ;

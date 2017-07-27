@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="d-flex justify-content-center align-items-center h-100 hidden-md-up">
+    <div class="d-flex justify-content-center align-items-center h-100 hidden-lg-up">
     <div class=" ">
         <form class="navbar-form navbar-right" role="form" method="POST" action="{{ url('/login')}}">
         {{ csrf_field() }}

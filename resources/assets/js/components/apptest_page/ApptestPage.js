@@ -95,16 +95,12 @@ class TestBlock extends Component {
                                         <div className="card-block pt-0">
                                             <div className="card-block p-0  my-0 mt-2 d-flex justify-content-around">
                                                 <button name="circular" className="btn btn-success" style={style} onClick={this.handleOnClick}>Circular Likert Scale</button>
-
-                                            </div>
-
-                                            <div className="card-block p-0  my-0 mt-2 d-flex justify-content-around">
                                                 <button  name="slider" className="btn btn-success " style={style} onClick={this.handleOnClick}>Slider Likert Scale</button>
+                                                <button  name="listbutton" className="btn btn-success " style={style} onClick={this.handleOnClick}>List Likert Scale</button>
+
+
                                             </div>
 
-                                            <div className="card-block p-0  my-0 mt-2 d-flex justify-content-around">
-                                                <button  name="listbutton" className="btn btn-success " style={style} onClick={this.handleOnClick}>List Likert Scale</button>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>

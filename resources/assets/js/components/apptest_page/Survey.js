@@ -28,7 +28,6 @@ class Survey extends Component {
         this.handleAnswer= this.handleAnswer.bind(this);
         this.sendAnswers=this.sendAnswers.bind(this);
         this.handleGoBackBtn = this.handleGoBackBtn.bind(this);
-        this.handleModalClose = this.handleModalClose.bind(this);
         this.handleOnClick=this.handleOnClick.bind(this);
     }
 
@@ -46,11 +45,9 @@ class Survey extends Component {
     //this contains the answers the user responded and will be send to server when all survey questions are finished
     answers = [];
 
-    handleModalClick = () => this.setState({isShowingModal: true})
-    handleModalClose () {
-        this.setState({isShowingModal: false})
-        this.props.handleOnclickQuit("survey" , this.state.secondsElapsed,this.props.selectedCategoryId);
-    }
+
+
+
 
     handlePrevButton() {
         this.setState({
@@ -144,7 +141,7 @@ class Survey extends Component {
             this.setState({playerStatus: response},function(){
                 console.log(this.state.playerStatus);
 
-                this.handleModalClick();
+                this.props.handleOnclickQuit("survey" , this.state.secondsElapsed,this.props.selectedCategoryId);
             });
 
         }.bind(this),
@@ -224,12 +221,12 @@ return(
 
                 <div style={{width:"91px"}}>
                     {
-                        this.props.withNext ?
-                        <button
-                            className="btn btn-success btn-lg"
-                            hidden={this.state.currentQuestion == 0? true:false}
-                            onClick={this.handlePrevButton}>Prev</button>
-                        : ""
+                        // this.props.withNext ?
+                        // <button
+                        //     className="btn btn-success btn-lg"
+                        //     hidden={this.state.currentQuestion == 0? true:false}
+                        //     onClick={this.handlePrevButton}>Prev</button>
+                        // : ""
                     }
                 </div>
 
@@ -238,7 +235,6 @@ return(
                     this.state.currentQuestion<this.state.data.length ?
                     (choices_for_q[this.state.currentQuestion])
                     : <div style={{width:"60%"}} className="text-center">
-                            <p style={{fontSize: "18px"}}>You have made it till the end, please submit your answers.</p>
                             <button className="btn btn-success btn-lg" onClick={this.sendAnswers}>
                                 submit
                             </button>
@@ -260,18 +256,7 @@ return(
 
 
             </div>
-            {
-                this.state.isShowingModal &&
-                <ModalContainer>
-                    <ModalContainer onClose={this.handleModalClose}>
-                        <ModalDialog onClose={this.handleModalClose}>
-                            <div className="card" style={{width:"300px"}}>
-                                    <h2 className="text-center">Thank you.</h2>
-                            </div>
-                        </ModalDialog>
-                    </ModalContainer>
-                </ModalContainer>
-            }
+
         </div>
     );
 }
