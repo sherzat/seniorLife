@@ -51,6 +51,7 @@ class SaveSurvey
       $user=$event->user;
       $survey_id = $event->survey_id;
       $elapsedSeconds = $event->elapsedSeconds;
+
       $user->surveys()->attach($survey_id, ['elapsedSeconds'=>$elapsedSeconds]);
 
       $survey_user=\App\Survey_user::where('user_id', $user->id)->get()->last();
@@ -61,7 +62,7 @@ class SaveSurvey
 
 
       $answers->each(function ($answer) use($user, $survey_user){
-        if($answer['q_id']!=null && $answer['c_id']!=0){
+        if($answer['q_id']!=null && $answer['c_id']!=0 && $answer['c_id']!=6){
           $response = new \App\Response;
           $response->users()->associate($user);
           $response->questions()->associate($answer['q_id']);

@@ -117,11 +117,22 @@ class Survey extends Component {
 
 
   sendAnswers(){
+      //remove the not answered questions from the list
+    //   if(this.props.selectedCategoryId < 11 && this.props.selectedCategoryId > 1){
+    //       var answers = this.answers.filter((each)=>
+    //       (Object.values(each)!="" && each.index != 0)
+    //       );
+    //   }else{
+    //       var answers = this.answers.filter((each)=>
+    //         Object.values(each)!=""
+    //       );
+    //   }
 
-    //remove the not answered questions from the list
+
     var answers = this.answers.filter((each)=>
-      Object.values(each)!=""
-    );
+            Object.values(each)!=""
+          );
+
     console.log(answers);
     this.answers = answers;
 

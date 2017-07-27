@@ -13,24 +13,23 @@ class ChoicesTableSeeder extends Seeder
     {
         //
         DB::table('choices')->insert([
-            ["choice"=>"very often", "weight"=>1],
-            ["choice"=>"quite often", "weight"=>2],
-            ["choice"=>"occasionally", "weight"=>3],
-            ["choice"=>"very rarely", "weight"=>4],
-            ["choice"=>"never", "weight"=>5],
+            ["choice"=>"Very often", "weight"=>1],
+            ["choice"=>"Quite often", "weight"=>2],
+            ["choice"=>"Occasionally", "weight"=>3],
+            ["choice"=>"Very rarely", "weight"=>4],
+            ["choice"=>"Never", "weight"=>5],
 
+            ["choice"=>"Not applicable", "weight"=>0],
+            ["choice"=>"No difficulty", "weight"=>5],
+            ["choice"=>"With difficulty", "weight"=>3.75],
+            ["choice"=>"Accomplished by a proxy", "weight"=>2.5],
+            ["choice"=>"Not accomplished", "weight"=>1.25],
 
-            ["choice"=>"no difficulty", "weight"=>5],
-            ["choice"=>"with difficulty", "weight"=>4],
-            ["choice"=>"Accomplished by a proxy", "weight"=>3],
-            ["choice"=>"Not accomplished", "weight"=>2],
-            ["choice"=>"Not applicable", "weight"=>1],
-
-            ["choice"=>"one", "weight"=>5],
-            ["choice"=>"tow", "weight"=>4],
-            ["choice"=>"three", "weight"=>3],
-            ["choice"=>"four", "weight"=>2],
-            ["choice"=>"five", "weight"=>1],
+            ["choice"=>"One", "weight"=>5],
+            ["choice"=>"Two", "weight"=>4],
+            ["choice"=>"Three", "weight"=>3],
+            ["choice"=>"Four", "weight"=>2],
+            ["choice"=>"Five", "weight"=>1],
 
 
         ]);

@@ -20,8 +20,8 @@
 <body>
 <div class="container-fluid w-100 h-100 Rail-way-font">
 
-    <nav class="navbar py-0 navbar-toggleable-md fixed-top bg-nav" >
-      <div class="container" style="height: 56px">
+    <nav class="navbar  navbar-toggleable-md fixed-top bg-nav" >
+      <div class="container" >
 
           {{--navbar content for small screen--}}
 
@@ -84,7 +84,7 @@
                         <ul class="dropdown-menu dropdown-menu-right">
 
                             <button class="dropdown-item border-0 Bg-color-cloud list-group-item border-0 pt-2 pb-2"
-                                    onclick="window.location.href='/profile'"><a class="mr-auto">Upload picture</a>
+                                    onclick="window.location.href='/profile'"><a class="mr-auto">Change picture</a>
                                 <i class="fa fa-upload" aria-hidden="true"></i>
                             </button>
 
@@ -127,7 +127,7 @@
                                             <img src={{ Auth::user()->avatar }} class="rounded" style="width:100px; height: 100px;"/>
                                         </p>
 
-                                        <button class="btn btn-success btn-sm Line-height-profile" onclick="window.location.href='/profile'">Upload picture</button>
+                                        <button class="btn btn-success btn-sm Line-height-profile" onclick="window.location.href='/profile'">Change picture</button>
 
                                     </div>
                                     <div class="col-lg-7">

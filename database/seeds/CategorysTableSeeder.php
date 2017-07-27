@@ -13,17 +13,17 @@ class CategorysTableSeeder extends Seeder
     {
         DB::table('categorys')->insert([
 
-            ["img_src"=>'/img/categorys/001-mind.svg', "name"=>"cognition", "description"=>"this is cognition failer questions"],
-            ["img_src"=>'/img/categorys/010-fruit-salad.svg', "name"=>"nutrition", "description"=>"How do you generally accomplish the following activities"],
-            ["img_src"=>'/img/categorys/008-dumbbell.svg', "name"=>"fitness", "description"=>"How do you generally accomplish the following activities"],
-            ["img_src"=>'/img/categorys/005-doctor.svg', "name"=>"personal care", "description"=>"How do you generally accomplish the following activities"],
-            ["img_src"=>'/img/categorys/001-chat.svg', "name"=>"communication", "description"=>"How do you generally accomplish the following activities"],
-            ["img_src"=>'/img/categorys/004-construction.svg', "name"=>"housing", "description"=>"How do you generally accomplish the following activities"],
-            ["img_src"=>'/img/categorys/001-bike.svg', "name"=>"mobility", "description"=>"How do you generally accomplish the following activities"],
-            ["img_src"=>'/img/categorys/003-people.svg', "name"=>"community life", "description"=>"How do you generally accomplish the following activities"],
-            ["img_src"=>'/img/categorys/006-learning.svg', "name"=>"education", "description"=>"How do you generally accomplish the following activities"],
-            ["img_src"=>'/img/categorys/002-businessman.svg', "name"=>"recreation", "description"=>"How do you generally accomplish the following activities"],
-            ["img_src"=>'', "name"=>"test", "description"=>"This questions are only for test"],
+            ["img_src"=>'/img/categorys/001-mind.svg', "name"=>"Cognition", "description"=>"this is cognition failer questions"],
+            ["img_src"=>'/img/categorys/010-fruit-salad.svg', "name"=>"Nutrition", "description"=>"How do you generally accomplish the following activities"],
+            ["img_src"=>'/img/categorys/008-dumbbell.svg', "name"=>"Fitness", "description"=>"How do you generally accomplish the following activities"],
+            ["img_src"=>'/img/categorys/005-doctor.svg', "name"=>"Personal care", "description"=>"How do you generally accomplish the following activities"],
+            ["img_src"=>'/img/categorys/001-chat.svg', "name"=>"Communication", "description"=>"How do you generally accomplish the following activities"],
+            ["img_src"=>'/img/categorys/004-construction.svg', "name"=>"Housing", "description"=>"How do you generally accomplish the following activities"],
+            ["img_src"=>'/img/categorys/001-bike.svg', "name"=>"Mobility", "description"=>"How do you generally accomplish the following activities"],
+            ["img_src"=>'/img/categorys/003-people.svg', "name"=>"Community life", "description"=>"How do you generally accomplish the following activities"],
+            ["img_src"=>'/img/categorys/006-learning.svg', "name"=>"Education", "description"=>"How do you generally accomplish the following activities"],
+            ["img_src"=>'/img/categorys/002-businessman.svg', "name"=>"Recreation", "description"=>"How do you generally accomplish the following activities"],
+            ["img_src"=>'', "name"=>"Test", "escription"=>"This questions are only for test"],
         ]);
     }
 }

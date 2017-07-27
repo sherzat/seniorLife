@@ -78,6 +78,9 @@ body > nav > div > button:focus{
   padding-bottom: 16px;
 
 }
+nav > div.container{
+    height:40px;
+}
 @media screen and (max-width: 991px){
   .navbar-toggleable-md .navbar-nav .dropdown-menu {
     position: static;
@@ -88,9 +91,11 @@ body > nav > div > button:focus{
   .navbar-toggleable-md .navbar-nav .dropdown-menu a {
     color: $midnight-blue;
   }
+ nav > div.container{
+     height:40px;
+ }
 
 
-  
 }
 @media screen and (max-width: 576px){
   .container {

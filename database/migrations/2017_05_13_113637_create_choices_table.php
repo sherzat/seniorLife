@@ -16,7 +16,7 @@ class CreateChoicesTable extends Migration
       Schema::create('choices', function (Blueprint $table) {
           $table->increments('id');
           $table->string('choice', 100)->nullable();
-          $table->integer('weight')->nullable();
+          $table->float('weight', 8, 2)->nullable();
           $table->timestamps();
       });
   }
