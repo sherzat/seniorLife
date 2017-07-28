@@ -263,15 +263,11 @@ class Survey extends Component {
         <ModalContainer>
             <ModalContainer onClose={this.handleModalClose}>
                 <ModalDialog onClose={this.handleModalClose}>
-                  <div className="card" style={{width:"300px"}}>
-                    <div className="card-title text-center">Congratulations</div>
-                    <div className="card-block">
-
-                      <dl className="d-flex justify-content-around mt-4">
-                      <dt className="">you earned:</dt>
-                      <dd className="">{this.answers.length} points</dd>
-                      </dl>
-                    </div>
+                  <div className="card-block" style={{width:"300px"}}>
+                      <div className="d-flex justify-content-around align-items-center ">
+                      <h3 className="">You earned:</h3>
+                      <h3 className="">{this.answers.length} points</h3>
+                      </div>
                   </div>
                 </ModalDialog>
             </ModalContainer>
