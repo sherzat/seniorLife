@@ -219,13 +219,13 @@ class Survey extends Component {
                   </h6>
                 </div>
 
-                <div className="card-block Card-Height vertical-align">
+                <div className="card-block pb-0 Card-Height vertical-align">
                     {survey_question[this.state.currentQuestion]}
                 </div>
 
-                <li className="list-group-item justify-content-between Set-width">
+                <div className="card-block d-flex justify-content-between align-items-center Set-width">
 
-                  <div style={{width:"91px"}}>
+                  <div style={{width:"81px"}}>
                     <button
                         className="btn btn-success btn-lg"
                         hidden={this.state.currentQuestion == 0? true:false}
@@ -244,39 +244,19 @@ class Survey extends Component {
 
                         )}
 
-                  <div style={{width:"91px"}}>
+                  <div style={{width:"81px"}}>
                     <button
                         className="btn btn-success btn-lg"
                         hidden={this.state.currentQuestion == this.state.data.length? true:false}
                         onClick={this.handleNextButton}>Next</button>
                   </div>
 
-                </li>
+                </div>
 
-              <button  className="btn btn-success mt-3" onClick={this.handleGoBackBtn}>Quit</button>
+              <button  className="btn btn-success m-3" onClick={this.handleGoBackBtn}>Quit</button>
 
             </div>
 
-         {/* <div className="col-md-3">
-
-            <ul className="list-group">
-              <div className="list-group-item">
-                <div className="w-100">
-                <small>{this.state.currentQuestion}/{survey_question.length}</small>
-                <ProgressBar percent={(this.state.currentQuestion/survey_question.length)*100}/>
-                </div>
-              </div>
-              <li className="list-group-item">
-                <strong>Category:</strong> <p className="m-auto">{this.props.selectedCategory}</p>
-              </li>
-
-              <li className="list-group-item">
-                <a href="#" className="btn button" onClick={this.handleGoBackBtn}>back to categories</a>
-              </li>
-            </ul>
-
-
-          </div>*/}
 
         {
           this.state.isShowingModal &&

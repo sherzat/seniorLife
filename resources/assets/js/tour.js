@@ -4,17 +4,18 @@ function startIntro(source) {
         steps: [
             {
                 element: '#step1',
-                intro: "Below you can see result of overall or individual category",
+                intro: "In this block you can see results of overall or individual category," +
+                " after filling surveys",
                 position: 'bottom'
             },
             {
                 element: '#step2',
-                intro: "This badges below are in progress badges you can win them if you complete the challenge",
+                intro: "The badges you see below are in progress badges you can win them only if you complete the task",
                 position: 'bottom'
             },
             {
                 element: '#step3',
-                intro: 'This is leader board where you can see your rank and others',
+                intro: 'This leader board is where you can see your ranking',
                 position: 'bottom'
             }
         ]
@@ -38,8 +39,7 @@ function startIntro(source) {
         steps: [
             {
                 element: '#step1',
-                intro: "You can select one of the pictures or upload your own to change your " +
-                "profile picture",
+                intro: "Upload or select a picture to change your profile picture",
                 position: 'bottom'
             },
         ]
@@ -50,7 +50,7 @@ function startIntro(source) {
         steps: [
             {
                 element: '#step1',
-                intro: "This is where you can see your rank position",
+                intro: "your name is highlighted, your ranking is on the left side of your profile picture",
                 position: 'bottom'
             }
         ]
@@ -61,12 +61,12 @@ function startIntro(source) {
         steps: [
             {
                 element: '#step1',
-                intro: "All the badges you win will be displayed here",
+                intro: "All your collected badges will be displayed here",
                 position: 'bottom'
             },
             {
                 element: '#step2',
-                intro: "This are badges you can win in the future, see the description and the progress bar what you have to do to win the badge ",
+                intro: "These badges are future badges, you can collect them if you complete the task. Read the name of the badge and challenge on the description.",
                 position: 'bottom'
             },
         ]
