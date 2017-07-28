@@ -20,6 +20,7 @@ class CreateResponsesTable extends Migration
           $table->integer('user_id')->unsigned();
           $table->integer('choice_id')->unsigned();
           $table->integer('survey_user_id')->unsigned();
+          $table->string('seconds_elapsed')->nullable();
 
           $table->foreign('question_id')->references('id')->on('questions')->onUpdate('cascade')->onDelete('cascade');
           $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
