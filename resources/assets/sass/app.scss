@@ -33,6 +33,26 @@ body {
 .text-color{
   color: orange;
 }
+
+.card-header{
+  background-color: $primary-color;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  padding-right: 16px;
+  padding-left: 16px;
+  border: 0px;
+}
+.card-title{
+  line-height: 24px;
+  padding-bottom: 14px;
+  margin-bottom: 0px;
+  color: $cloud;
+}
+.card-subtitle{
+  line-height: 16px;
+  color: $secondary-text;
+}
+
 .card-block{
   padding-bottom: 16px;
   padding-top: 16px;

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import PlayerStatus from '../components/PlayerStatus';
 import HomepageCarousel from './HomepageCarousel';
-import HomepageLineChart from './HomepageLineChart';
+import HomepageBarchart from './HomepageBarchart';
 import HomePageRadarChart from './HomePageRadarChart';
 import RankElement from '../rank_page/RankElement.js';
 import Ranking from '../rank_page/Ranking.js';
@@ -69,16 +69,16 @@ class HomePage extends  Component {
 
                 <div className="row">
                   <div className="col-md-6 ">
-                    <div className="card-block pt-0">
+                    <div className="card-block ">
                         <HomePageRadarChart chartData={this.state.home.surveyResult}  showLineChart={this.showLineChart}/>
                     </div>
 
                   </div>
 
                   <div className="col-md-6">
-                        <div className="card-block pt-0">
+                        <div className="card-block ">
                             {this.state.showLineChart ?
-                                <HomepageLineChart chartData={this.state.home.surveyResult} category={this.state.category} />
+                                <HomepageBarchart chartData={this.state.home.surveyResult} category={this.state.category} />
                                 :
                                 <p>Click on a category to see result over time</p> }
                         </div>

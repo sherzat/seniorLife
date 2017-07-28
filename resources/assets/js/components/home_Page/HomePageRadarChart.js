@@ -23,7 +23,7 @@ class HomePageRadarChart extends Component {
             <PolarGrid />
             <Legend  />
             <PolarAngleAxis dataKey="name" onClick={this.handleOnclick} />
-            <PolarRadiusAxis angle={54} text={0} domain={[0, 5]} />
+            <PolarRadiusAxis angle={54}  domain={[0, 5]} />
           </RadarChart>
         </ResponsiveContainer>
       </div>

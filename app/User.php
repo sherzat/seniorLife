@@ -54,21 +54,35 @@ class User extends Authenticatable
     }
     public function getResultEachCategoryByHour()
     {
-      $responses = \App\Category::select('name')->get();
-      $responses->each(function ($item, $key){
-        $item->dataset = \App\Response::select(DB::raw("cast(avg(weight) as decimal(2,1)) as score, date_format( responses.created_at, '%Y-%m-%d %H:00' ) as hour" ))
+        $responses = \App\Category::select('name')->get();
+        //   $responses->each(function ($item, $key){
+        //     $item->dataset = \App\Response::select(DB::raw("cast(avg(weight) as decimal(2,1)) as score, date_format( responses.created_at, '%Y-%m-%d %H:00' ) as hour" ))
+        //         ->join('questions', 'questions.id', '=', 'responses.question_id')
+        //         ->join('categorys', 'categorys.id', '=', 'questions.category_id')
+        //         ->join('choices', 'choices.id', '=', 'responses.choice_id')
+        //         ->where('user_id', $this->id)
+        //         ->whereNotIn('categorys.id', [11])
+        //         ->where('categorys.name', $item->name)
+        //         ->groupBy('hour')
+        //         ->get();
+        //   });
+
+
+        $responses->each(function ($item, $key){
+
+            $item->dataset = \App\Response::select( DB::raw("cast(avg(weight) as decimal(2,1)) as score, date_format( survey_user.created_at, '%Y-%m-%d %H:%i' ) as hour" ))
             ->join('questions', 'questions.id', '=', 'responses.question_id')
+            ->join('survey_user', 'survey_user.id', '=', 'responses.survey_user_id')
             ->join('categorys', 'categorys.id', '=', 'questions.category_id')
             ->join('choices', 'choices.id', '=', 'responses.choice_id')
-            ->where('user_id', $this->id)
-            ->whereNotIn('categorys.id', [11])
+            ->where('responses.user_id', $this->id)
             ->where('categorys.name', $item->name)
-            ->groupBy('hour')
+            ->whereNotIn('categorys.id', [11])
+            ->groupBy('survey_user.id')
+            ->groupBy('survey_user.created_at')
             ->get();
-      });
-
-
-      return $responses;
+        });
+        return $responses;
     }
     public function getResultByCatagory(){
         // average score over all time of each category

@@ -11,7 +11,6 @@ class Circular_scale_1 extends Component {
 
   handleClick(event){
 
-    this.props.onClick(event);
 
     const clicked_item= event.currentTarget.id;
     var choice_index="";
