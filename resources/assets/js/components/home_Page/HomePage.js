@@ -107,7 +107,7 @@ class HomePage extends  Component {
                                   <HomepageCarousel badges={this.state.home} />
 
                                   <div className="card-block p-0  my-0 mt-2 d-flex justify-content-around">
-                                      <a  className="btn btn-success " href="/achievement">More achievements</a>
+                                      <a  className="btn btn-success " href="/achievement">More badges</a>
                                   </div>
 
                                   {/*<!-- your progress -->*/}
