@@ -236,7 +236,7 @@ class Survey extends Component {
                     {this.state.currentQuestion<this.state.data.length? (choices_for_q[this.state.currentQuestion])
                         : (
                             <div style={{width:"60%"}} className="text-center">
-                              <p style={{fontSize: "18px"}}>You have made it till the end!! Please submit your answers.</p>
+                              <p style={{fontSize: "18px"}}>Please submit your answer.</p>
                               <button className="btn btn-success btn-lg" onClick={this.sendAnswers}>
                                 submit
                               </button>

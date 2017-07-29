@@ -13,11 +13,12 @@ class ApptestPage extends Component {
         this.handleOnclickQuit=this.handleOnclickQuit.bind(this);
     }
 
-    renderLikertScale(likertScale, withNext) {
+    renderLikertScale(likertScale_v, withNext) {
         this.setState({
-            showLikertScale: true,
-            likertScale: likertScale,
+            likertScale: likertScale_v,
             withNext: withNext,
+        },function () {
+            this.setState({showLikertScale: true})
         });
     }
 
@@ -64,13 +65,16 @@ class TestBlock extends Component {
 
     render() {
         var style = {
-            width : 176,
+            width : 243,
+            height:57,
+            fontSize:24
         }
+
         return (
             <div>
                 <div className="Rail-way-font">
                     <div className="row mt-2 Rail-way-font">
-                        <div className="col-md-12 col-xs-12">
+                        <div className="col-md-12 mb-5 col-xs-12">
                             <div className="card">
                                 <div className="card-header">
                                     <h4 id="step1"className="card-title">Likert Scale {this.props.withNext ? "With" : "Without" } Next Button</h4>

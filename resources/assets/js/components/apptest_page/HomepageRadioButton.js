@@ -13,6 +13,9 @@ class HomepageRadioButton extends Component {
   }
 
   render() {
+      var stylelist = {
+            width:169,
+      }
     const choices= this.props.choices.map(
       (each,index)=>
         <label
@@ -27,7 +30,7 @@ class HomepageRadioButton extends Component {
 
           type='radio'
           value={index}
-          className='radioPad-radio'
+          className='radioPad-radio card-block'
           name = 'choices'
           onChange={this.handleRadio.bind(this)}
           />
@@ -36,7 +39,7 @@ class HomepageRadioButton extends Component {
     );
 
     return (
-      <div className="likert-scale">
+      <div className="likert-scale" style={stylelist}>
         {choices}
       </div>
     )

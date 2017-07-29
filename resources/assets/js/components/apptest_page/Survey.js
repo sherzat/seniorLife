@@ -150,6 +150,14 @@ class Survey extends Component {
 }
 
 render(){
+        var stylewarning ={
+            height:80
+        }
+
+        var nextstyle = {
+            height:57,
+            fontSize:24
+        }
     if(!this.state.loaded)
     return (<h>loading</h>);
 
@@ -187,10 +195,11 @@ return(
                 </h6>
             </div>
 
-            <div className="card-block Card-Height vertical-align">
+            <div className="card-block vertical-align">
                 {survey_question[this.state.currentQuestion]}
             </div>
-
+            <div style={stylewarning}>{this.state.isAnswered ?
+                this.state.isCorrect ?  <h1 className="text-center text-success">Correct</h1> : <h1 className="text-center text-danger">Wrong</h1> : <h1 className="mb-4 pb-4"></h1> }</div>
             <li className="list-group-item justify-content-between Set-width pb-3">
 
                 <div style={{width:"91px"}}></div>
@@ -207,10 +216,11 @@ return(
                 }
 
                 <div style={{width:"91px"}}>
+
                     {
                         this.props.withNext ?
                         <button
-                            className="btn btn-success btn-lg"
+                            className="btn btn-success" style={nextstyle}
                             disabled={this.state.isCorrect ? false : true}
                             hidden={this.state.currentQuestion == this.state.data.length? true:false}
                             onClick={this.handleNextButton}>Next</button>
@@ -219,8 +229,7 @@ return(
                 </div>
 
             </li>
-            {this.state.isAnswered ?
-                this.state.isCorrect ?  <p className="text-center text-success">Correct</p> : <p className="text-center text-danger">Wrong</p> : <p className="mb-3 pb-4"></p> }
+
             </div>
         </div>
     );
