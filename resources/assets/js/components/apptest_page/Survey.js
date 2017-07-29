@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 
-import Circular_scale_1 from '../mysurvey_page/Circular_scale_1';
-import Question from '../mysurvey_page/Question';
-import Slider_scale from '../mysurvey_page/Slider_scale';
-import HomePageRadioButton from '../mysurvey_page/HomepageRadioButton';
-
+import Circular_scale_1 from './Circular_scale_1';
+import Slider_scale from './Slider_scale';
+import Question from './Question';
+import HomePageRadioButton from './HomepageRadioButton';
 import {ModalContainer, ModalDialog} from 'react-modal-dialog';
-import PlayerStatus from '../components/PlayerStatus';
 
 class Survey extends Component {
+    //this contains the answers the user responded and will be send to server when all survey questions are finished
+    answers = [];
+
     constructor(props) {
         super(props);
         this.state = {
@@ -25,11 +26,8 @@ class Survey extends Component {
             secondsElapsed: 0,
         };
         this.handleNextButton= this.handleNextButton.bind(this);
-        this.handlePrevButton= this.handlePrevButton.bind(this);
         this.handleAnswer= this.handleAnswer.bind(this);
         this.sendAnswers=this.sendAnswers.bind(this);
-        this.handleGoBackBtn = this.handleGoBackBtn.bind(this);
-        this.handleOnClick=this.handleOnClick.bind(this);
     }
 
     tick() {
@@ -37,32 +35,26 @@ class Survey extends Component {
             secondsElapsed: prevState.secondsElapsed + 0.1
         }));
     }
-    handleOnClick(event){
-        this.props.onClick(event);
-    }
+
     componentWillUnmount() {
         clearInterval(this.interval);
     }
-    //this contains the answers the user responded and will be send to server when all survey questions are finished
-    answers = [];
 
-
-
-
-
-    handlePrevButton() {
-        this.setState({
-            currentQuestion: this.state.currentQuestion-1,
-        }, function () {
-            for (var i = 0; i < this.answers.length; i++) {
-                if (i == this.state.currentQuestion){
-                    // this.setState({answer:this.answers[i].c_id})
-                    this.setState({answered: this.answers[i].index});
-                    return
-                }
-            }
-        });
-        this.setState({answered: null});
+    componentDidMount(){
+        var url = "/getTestSurvey";
+        console.log(url);
+        $.ajax({
+            method: "GET",
+            url: url,
+            dataType:"json",
+        })
+        .done(function( result ) {
+            console.log(result);
+            this.setState({data:result.prepare_questions, currentQuestion:0}, function(){
+                this.setState({loaded: true});
+                this.interval = setInterval(() => this.tick(), 100);
+            });
+        }.bind(this))
     }
 
     handleNextButton(){
@@ -77,14 +69,14 @@ class Survey extends Component {
                 console.log("time to send answers")
             }
             console.log(this.state.currentQuestion)
-            for (var i = 0; i < this.answers.length; i++) {
-                if (i == this.state.currentQuestion){
-                    this.setState({answered: this.answers[i].index});
-                    return
-                }
-            }
-
-            this.answers.push({});
+            // for (var i = 0; i < this.answers.length; i++) {
+            //     if (i == this.state.currentQuestion){
+            //         this.setState({answered: this.answers[i].index});
+            //         return
+            //     }
+            // }
+            //
+            // this.answers.push({});
             this.setState({answered: null});
         });
 
@@ -105,24 +97,39 @@ class Survey extends Component {
             this.setState({isCorrect: false})
         }
 
+        // for (var i = 0; i < this.answers.length; i++) {
+        //     if (i == this.state.currentQuestion){
+        //         this.answers.splice(i, 1, {c_id:answer, q_id: question_id, index:choice_index, secondsElapsed: this.state.secondsElapsed.toFixed(1), survey_id:survey_id});
+        //         console.log(this.answers);
+        //
+        //         if(this.props.withNext == false){
+        //             var that=this;
+        //             setTimeout(function() {
+        //                 console.log("fished waiting");
+        //                 that.handleNextButton();
+        //             }, 2000);
+        //
+        //         }
+        //         return
+        //     }
+        // }
+
         for (var i = 0; i < this.answers.length; i++) {
-            if (i == this.state.currentQuestion){
-                this.answers.splice(i, 1, {c_id:answer, q_id: question_id, index:choice_index, secondsElapsed: this.state.secondsElapsed.toFixed(1)});
-                console.log(this.answers);
-
-                if(this.props.withNext == false){
-                    var that=this;
-                    setTimeout(function() {
-                        console.log("fished waiting");
-                        that.handleNextButton();
-                    }, 2000);
-
-                }
+            if (this.answers[i].q_id == question_id){
+                this.answers[i].answers.push({c_id:answer,index:choice_index,secondsElapsed:this.state.secondsElapsed.toFixed(1)})
+                console.log( this.answers);
                 return
             }
         }
-        this.answers.push({c_id:answer, q_id: question_id, index:choice_index, secondsElapsed: this.state.secondsElapsed.toFixed(1)});
-        console.log(this.answers);
+        this.answers.push({
+            q_id: question_id,
+            answers:   [{
+                c_id:answer,
+                index:choice_index,
+                secondsElapsed: this.state.secondsElapsed.toFixed(1),
+            }]
+        });
+        console.log( this.answers);
         if(this.props.withNext == false){
             var that=this;
             setTimeout(function() {
@@ -149,16 +156,12 @@ class Survey extends Component {
         },
 
         type: "POST",
-        url: "/survey/store",
+        url: "/storeTestSurvey",
         dataType: 'json',
         data: {data: this.answers, survey_id: this.state.survey_id},
         success: function (response) {
-            this.setState({playerStatus: response},function(){
-                console.log(this.state.playerStatus);
-
-                this.props.handleOnclickQuit("survey" );
-            });
-
+            console.log(response);
+            this.props.handleOnclickQuit();
         }.bind(this),
         error: function(jqXHR, textStatus, errorThrown) {
             console.log(textStatus, errorThrown);
@@ -167,29 +170,6 @@ class Survey extends Component {
     });
 
 }
-componentDidMount(){
-    var url_prefix = "survey/create/";
-    var url = url_prefix.concat(this.props.selectedCategory);   //get qustoins by category
-    console.log(url);
-    $.ajax({
-        method: "GET",
-        url: url,
-        dataType:"json",
-    })
-    .done(function( result ) {
-        console.log(result);
-        this.setState({data:result.prepare_questions, currentQuestion:0, survey_id:result.survey_id}, function(){
-            this.setState({loaded: true});
-            this.interval = setInterval(() => this.tick(), 100);
-        });
-    }.bind(this))
-}
-
-handleGoBackBtn(completeState) {
-
-    this.props.handleOnclickQuit("survey", this.state.secondsElapsed, this.props.selectedCategoryId);
-}
-
 
 render(){
     if(!this.state.loaded)
@@ -200,11 +180,11 @@ render(){
         question={each.question}/>
 );
 var choices_for_q=null;
-if(this.props.selectedCategoryId =="circular"){
+if(this.props.likertScale =="circular"){
     choices_for_q= this.state.data.map((each)=>
     <Circular_scale_1 key={each.id} question_id={each.id} choices={each.choices} answered={this.state.answered} handleAnswer={this.handleAnswer} onClick={this.handleOnClick}/>
 );
-}else if (this.props.selectedCategoryId =="slider") {
+}else if (this.props.likertScale =="slider") {
     choices_for_q= this.state.data.map((each)=>
     <Slider_scale key={each.id} question_id={each.id} choices={each.choices} answered={this.state.answered} handleAnswer={this.handleAnswer}/>
 );
@@ -235,16 +215,7 @@ return(
 
             <li className="list-group-item justify-content-between Set-width pb-3">
 
-                <div style={{width:"91px"}}>
-                    {
-                        // this.props.withNext ?
-                        // <button
-                        //     className="btn btn-success btn-lg"
-                        //     hidden={this.state.currentQuestion == 0? true:false}
-                        //     onClick={this.handlePrevButton}>Prev</button>
-                        // : ""
-                    }
-                </div>
+                <div style={{width:"91px"}}></div>
 
 
                 {

@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 use Illuminate\Http\Request;
 
@@ -16,9 +19,34 @@ class TestController extends Controller
         return view('apptest.app_test' , ['current_page' => $current_page]);
     }
 
-    public function create_testpage()
+    public function create_survey()
     {
-        $mySurveyData['categories'] = \App\Category::where('id', 11)->get();
-        return json_encode($mySurveyData);
+
+        $survey = \App\Survey::where('name', '=', "test")->first();
+        $prepare_questions= $survey->questions()
+        ->with('choices')
+        ->get();
+        $new_survey['prepare_questions'] = $prepare_questions;
+
+        return  json_encode($new_survey);
+
+    }
+
+    public function store_survey(Request $request )
+    {
+        //get the current user
+        $user = Auth::user();
+        //get the current answered question_id and choice_id
+        $answers = $request->input("data");
+        $answers=collect($answers);
+        $answers->each(function ($answer) use ($user){
+            DB::table('testResponses')->insert([
+            ['user_id' => $user->id, 'question_id' => $answer['q_id'], 'responses' => serialize($answer['answers'])],
+            ]);
+        });
+
+
+        return response()->json("sucess");
+
     }
 }
