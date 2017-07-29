@@ -69,14 +69,7 @@ class Survey extends Component {
                 console.log("time to send answers")
             }
             console.log(this.state.currentQuestion)
-            // for (var i = 0; i < this.answers.length; i++) {
-            //     if (i == this.state.currentQuestion){
-            //         this.setState({answered: this.answers[i].index});
-            //         return
-            //     }
-            // }
-            //
-            // this.answers.push({});
+
             this.setState({answered: null});
         });
 
@@ -92,27 +85,18 @@ class Survey extends Component {
         var answer = this.state.data[this.state.currentQuestion].choices[choice_index].id;
 
         if(answer + 64 == question_id){
-            this.setState({isCorrect: true})
+            this.setState({isCorrect: true},function(){
+                if(this.props.withNext == false){
+                    var that=this;
+                    setTimeout(function() {
+                        console.log("fished waiting");
+                        that.handleNextButton();
+                    }, 2000);
+                }
+            })
         }else {
             this.setState({isCorrect: false})
         }
-
-        // for (var i = 0; i < this.answers.length; i++) {
-        //     if (i == this.state.currentQuestion){
-        //         this.answers.splice(i, 1, {c_id:answer, q_id: question_id, index:choice_index, secondsElapsed: this.state.secondsElapsed.toFixed(1), survey_id:survey_id});
-        //         console.log(this.answers);
-        //
-        //         if(this.props.withNext == false){
-        //             var that=this;
-        //             setTimeout(function() {
-        //                 console.log("fished waiting");
-        //                 that.handleNextButton();
-        //             }, 2000);
-        //
-        //         }
-        //         return
-        //     }
-        // }
 
         for (var i = 0; i < this.answers.length; i++) {
             if (this.answers[i].q_id == question_id){
@@ -130,13 +114,7 @@ class Survey extends Component {
             }]
         });
         console.log( this.answers);
-        if(this.props.withNext == false){
-            var that=this;
-            setTimeout(function() {
-                console.log("fished waiting");
-                that.handleNextButton();
-            }, 2000);
-        }
+
     }
 
 

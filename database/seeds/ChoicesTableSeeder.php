@@ -25,11 +25,11 @@ class ChoicesTableSeeder extends Seeder
             ["choice"=>"Accomplished by a proxy", "weight"=>2.5],
             ["choice"=>"Not accomplished", "weight"=>1.25],
 
-            ["choice"=>"One", "weight"=>5],
-            ["choice"=>"Two", "weight"=>4],
-            ["choice"=>"Three", "weight"=>3],
-            ["choice"=>"Four", "weight"=>2],
-            ["choice"=>"Five", "weight"=>1],
+            ["choice"=>"1", "weight"=>5],
+            ["choice"=>"2", "weight"=>4],
+            ["choice"=>"3", "weight"=>3],
+            ["choice"=>"4", "weight"=>2],
+            ["choice"=>"5", "weight"=>1],
 
 
         ]);

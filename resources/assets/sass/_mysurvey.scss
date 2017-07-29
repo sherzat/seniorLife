@@ -61,6 +61,11 @@ symbol{overflow:visible;}
 .rc-slider-mark-text{
     color:#2c3e50
 }
+.rc-slider {
+    height: 80px;
+    padding: 0px;
+    // width:118%;
+}
 //style for buttons scale
 $tint: darken(#BC8D06, 5);
 $colors: #4dbf4d,#a6c34c,#ffc84a,#f48847,#eb4841;

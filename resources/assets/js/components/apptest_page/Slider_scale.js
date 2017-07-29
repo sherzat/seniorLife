@@ -8,15 +8,22 @@ class Slider_scale extends Component {
   constructor (props, context) {
         super(props, context)
         this.state = {
-            value: 0,
+            value: null,
             color: '#4dbf4d',
         }
-        this.handleChange=this.handleChange.bind(this);
+        this.handleOnAfterChange=this.handleOnAfterChange.bind(this);
         // this.handleChangeComplete=this.handleChangeComplete.bind(this);
+        this.handleOnChange=this.handleOnChange.bind(this);
 
     }
-
-    handleChange (value) {
+    handleOnChange(value){
+        this.setState({value: value})
+        console.log(this.state.value);
+    }
+    handleOnAfterChange (value) {
+        if (this.state.value != null){
+            value = this.state.value
+        }
       var choice_index =null;
       if(value == 0) {
         choice_index = 0;
@@ -57,9 +64,9 @@ class Slider_scale extends Component {
             each.choice
         );
         var lable_style={
-          top:30,
+          bottom:-100,
           fontSize: 18,
-          marginLeft:"-9%"
+          marginLeft:"-11%"
         }
         const horizontalLabels = {
           0: {
@@ -126,30 +133,32 @@ class Slider_scale extends Component {
               step={25}
               value={value}
               dotStyle={{
-                width: 10,
-                height: 10,
-                bottom: -16,
-                marginLeft:8,
+                width: 60,
+                height: 60,
+                bottom: -66,
+                marginLeft:-29,
               }}
               marks={horizontalLabels}
               handleStyle={{
                 borderColor: handlecolor,
-                height: 28,
-                width: 28,
-                marginLeft: 0,
-                marginTop: 1,
+                height: 70,
+                width: 70,
+                marginLeft: -34,
+                marginTop: 5,
                 backgroundColor: color,
-                opacity:handleOpacity
+                opacity:handleOpacity,
+                borderWidth:3,
               }}
               railStyle={{
                 backgroundColor: color,
-                height: 30,
-                width:"107%",
-                borderRadius: 15,
+                right:-47,
+                height: 80,
+                width:"116%",
+                borderRadius: 40,
                }}
 
-              onChange={this.handleChange}
-              onAfterChange={this.handleChange}
+              onChange={this.handleOnChange}
+              onAfterChange={this.handleOnAfterChange}
               included={false}
               />
           </div>

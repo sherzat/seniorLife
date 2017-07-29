@@ -98,11 +98,11 @@ class QuestionsTableSeeder extends Seeder
           ['question'=>"How do you generally accomplish using your neighbourhood recreational services (library, municipal recreation centre, etc)", 'category_id' => 10],
 
 
-          ['question'=>"Please select answer one", 'category_id' => 11],
-          ['question'=>"Please select answer two", 'category_id' => 11],
-          ['question'=>"Please select answer three", 'category_id' => 11],
-          ['question'=>"Please select answer four", 'category_id' => 11],
-          ['question'=>"Please select answer five", 'category_id' => 11],
+          ['question'=>"Please select answer 1", 'category_id' => 11],
+          ['question'=>"Please select answer 2", 'category_id' => 11],
+          ['question'=>"Please select answer 3", 'category_id' => 11],
+          ['question'=>"Please select answer 4", 'category_id' => 11],
+          ['question'=>"Please select answer 5", 'category_id' => 11],
 
 
 
