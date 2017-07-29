@@ -175,6 +175,11 @@ render(){
         var stylewarning ={
             height:80
         }
+
+        var nextstyle = {
+            height:57,
+            fontSize:24
+        }
     if(!this.state.loaded)
     return (<h>loading</h>);
 
@@ -237,7 +242,7 @@ return(
                     {
                         this.props.withNext ?
                         <button
-                            className="btn btn-success btn-lg"
+                            className="btn btn-success" style={nextstyle}
                             disabled={this.state.isCorrect ? false : true}
                             hidden={this.state.currentQuestion == this.state.data.length? true:false}
                             onClick={this.handleNextButton}>Next</button>

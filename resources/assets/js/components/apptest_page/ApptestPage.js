@@ -13,11 +13,12 @@ class ApptestPage extends Component {
         this.handleOnclickQuit=this.handleOnclickQuit.bind(this);
     }
 
-    renderLikertScale(likertScale, withNext) {
+    renderLikertScale(likertScale_v, withNext) {
         this.setState({
-            showLikertScale: true,
-            likertScale: likertScale,
+            likertScale: likertScale_v,
             withNext: withNext,
+        },function () {
+            this.setState({showLikertScale: true})
         });
     }
 
@@ -65,8 +66,10 @@ class TestBlock extends Component {
     render() {
         var style = {
             width : 243,
-            height:57
+            height:57,
+            fontSize:24
         }
+
         return (
             <div>
                 <div className="Rail-way-font">
@@ -80,9 +83,9 @@ class TestBlock extends Component {
                                 <div className="row">
                                     <div className="card-block pt-0">
                                         <div className="card-block p-0  my-0 mt-2 d-flex justify-content-around">
-                                            <button name="circular" className="btn btn-success" style={style} onClick={this.handleOnClick}><h4>Circular Likert Scale</h4></button>
-                                            <button  name="slider" className="btn btn-success " style={style} onClick={this.handleOnClick}><h4>Slider Likert Scale</h4></button>
-                                            <button  name="listbutton" className="btn btn-success " style={style} onClick={this.handleOnClick}><h4>List Likert Scale</h4></button>
+                                            <button name="circular" className="btn btn-success" style={style} onClick={this.handleOnClick}>Circular Likert Scale</button>
+                                            <button  name="slider" className="btn btn-success " style={style} onClick={this.handleOnClick}>Slider Likert Scale</button>
+                                            <button  name="listbutton" className="btn btn-success " style={style} onClick={this.handleOnClick}>List Likert Scale</button>
                                         </div>
                                     </div>
                                 </div>
