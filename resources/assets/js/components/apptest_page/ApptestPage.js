@@ -64,13 +64,14 @@ class TestBlock extends Component {
 
     render() {
         var style = {
-            width : 176,
+            width : 243,
+            height:57
         }
         return (
             <div>
                 <div className="Rail-way-font">
                     <div className="row mt-2 Rail-way-font">
-                        <div className="col-md-12 col-xs-12">
+                        <div className="col-md-12 mb-5 col-xs-12">
                             <div className="card">
                                 <div className="card-header">
                                     <h4 id="step1"className="card-title">Likert Scale {this.props.withNext ? "With" : "Without" } Next Button</h4>
@@ -79,9 +80,9 @@ class TestBlock extends Component {
                                 <div className="row">
                                     <div className="card-block pt-0">
                                         <div className="card-block p-0  my-0 mt-2 d-flex justify-content-around">
-                                            <button name="circular" className="btn btn-success" style={style} onClick={this.handleOnClick}>Circular Likert Scale</button>
-                                            <button  name="slider" className="btn btn-success " style={style} onClick={this.handleOnClick}>Slider Likert Scale</button>
-                                            <button  name="listbutton" className="btn btn-success " style={style} onClick={this.handleOnClick}>List Likert Scale</button>
+                                            <button name="circular" className="btn btn-success" style={style} onClick={this.handleOnClick}><h4>Circular Likert Scale</h4></button>
+                                            <button  name="slider" className="btn btn-success " style={style} onClick={this.handleOnClick}><h4>Slider Likert Scale</h4></button>
+                                            <button  name="listbutton" className="btn btn-success " style={style} onClick={this.handleOnClick}><h4>List Likert Scale</h4></button>
                                         </div>
                                     </div>
                                 </div>
