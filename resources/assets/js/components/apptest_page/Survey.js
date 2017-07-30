@@ -24,6 +24,7 @@ class Survey extends Component {
             survey_id:0,
             loaded: false,
             secondsElapsed: 0,
+            isSubmit:false,
         };
         this.handleNextButton= this.handleNextButton.bind(this);
         this.handleAnswer= this.handleAnswer.bind(this);
@@ -99,7 +100,7 @@ class Survey extends Component {
         }
 
         for (var i = 0; i < this.answers.length; i++) {
-            if (this.answers[i].q_id == question_id){
+            if (this.state.currentQuestion == i){  //same question
                 this.answers[i].answers.push({c_id:answer,index:choice_index,secondsElapsed:this.state.secondsElapsed.toFixed(1)})
                 console.log( this.answers);
                 return
@@ -119,6 +120,9 @@ class Survey extends Component {
 
 
     sendAnswers(){
+        this.setState({
+            submit:true,
+        })
 
         //remove the not answered questions from the list
         var answers = this.answers.filter((each)=>
@@ -209,7 +213,8 @@ return(
                     this.state.currentQuestion<this.state.data.length ?
                     (choices_for_q[this.state.currentQuestion])
                     : <div style={{width:"60%"}} className="text-center">
-                            <button className="btn btn-success btn-lg" onClick={this.sendAnswers}>
+                            {this.state.isSubmit}
+                            <button className="btn btn-success btn-lg " disable={this.state.isSubmit} onClick={this.sendAnswers}>
                                 submit
                             </button>
                         </div>
