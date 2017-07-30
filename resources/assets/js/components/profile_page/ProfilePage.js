@@ -13,7 +13,7 @@ class ProfilePage extends Component {
     }
 
     handleSubmit(e) {
-        // e.preventDefault();
+        e.preventDefault();
         let data = new FormData();
         console.log(this.state.file);
         data.append('avatar', this.state.file);
@@ -27,7 +27,7 @@ class ProfilePage extends Component {
             processData: false,
             contentType: false,
             success: function (res) {
-                console.log(res);
+                location.reload()
             }.bind(this)
         });
     }
