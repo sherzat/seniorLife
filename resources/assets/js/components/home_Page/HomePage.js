@@ -6,6 +6,8 @@ import HomepageBarchart from './HomepageBarchart';
 import HomePageRadarChart from './HomePageRadarChart';
 import RankElement from '../rank_page/RankElement.js';
 import Ranking from '../rank_page/Ranking.js';
+import {ModalContainer, ModalDialog} from 'react-modal-dialog';
+
 
 class HomePage extends  Component {
   constructor(props) {
@@ -15,10 +17,17 @@ class HomePage extends  Component {
       loaded:false,
       showLineChart: false,
       category:"",
+      isShowingModal: false,
     };
 
     this.getData=this.getData.bind(this);
     this.showLineChart=this.showLineChart.bind(this);
+    this.handleModalClose = this.handleModalClose.bind(this);
+  }
+
+  handleModalClick = () => this.setState({isShowingModal: true})
+  handleModalClose () {
+    this.setState({isShowingModal: false})
   }
 
   /*//sending request to  set  flag to 1 value*/
@@ -35,6 +44,7 @@ class HomePage extends  Component {
       console.log(result)
       this.setState({home:result},function(){
         this.setState({loaded:true}, function(){
+            // this.setState({isShowingModal: true})
           if(this.state.home.flag==0){
             sessionStorage.setItem('firstvisit', this.state.home.flag);
             startIntro('home');
@@ -142,7 +152,20 @@ class HomePage extends  Component {
 
           </div>
         </div>
-
+        {
+          this.state.isShowingModal &&
+        <ModalContainer>
+            <ModalContainer onClose={this.handleModalClose}>
+                <ModalDialog onClose={this.handleModalClose}>
+                  <div className="card-block" style={{width:"300px"}}>
+                      <div className="d-flex justify-content-around align-items-center ">
+                      <h3 className="">hello</h3>
+                      </div>
+                  </div>
+                </ModalDialog>
+            </ModalContainer>
+        </ModalContainer>
+        }
       </div>
         );
     }

@@ -19,7 +19,7 @@ class Circular_scale_1 extends Component {
             (each)=>
             each.choice
         );
-        var rotate_degree= "-180 350,323.01281127929693";
+        var rotate_degree= "-190 350,323.01281127929693";
         if(this.props.answered == 4)
         rotate_degree = "-18 350,323.01281127929693" ;
         if(this.props.answered == 3)
@@ -73,13 +73,7 @@ class Circular_scale_1 extends Component {
                         <path
                             stroke="#000" transform="rotate(1.1317607164382935 401.0000305175724,323.0167541503895) " d="m350.50002,322.744793c0.09386,-5.2407 -0.06006,-10.4884 0.77188,-15.71988c20.44239,1.72093 40.64368,4.53679 60.74161,7.06908c1.07894,-2.56973 0.57111,-4.70135 1.50855,-7.07724c12.91175,4.99953 25.70706,10.07025 37.97798,15.38244c-11.77275,6.02584 -25.27652,11.25888 -38.53361,16.61756c-0.42929,-2.49546 -0.85866,-4.9909 -1.28796,-7.48636c-19.539,2.41424 -40.20213,4.91033 -59.86745,7.11741c-1.33734,-5.09275 -1.29803,-10.63889 -1.311,-15.90301z"
                             strokeWidth="1.5" fill="#d50000"/>
-                        <animateTransform attributeType="xml"
-                            attributeName="transform"
-                            type="rotate"
-                            from="-180 350,323.01281127929693"
-                            to={rotate_degree}
-                            dur="1.5s"
-                            repeatCount={1}/>
+
                     </g>
                 </g>
             </svg>

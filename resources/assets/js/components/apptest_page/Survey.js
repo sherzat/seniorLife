@@ -59,6 +59,13 @@ class Survey extends Component {
     }
 
     handleNextButton(){
+        for (var i = 0; i < this.answers.length; i++) {
+            if (this.state.currentQuestion == i){  //same question
+                this.answers[i].answers.push({c_id:"next", secondsElapsed:this.state.secondsElapsed.toFixed(1)})
+                console.log( this.answers);
+                break
+            }
+        }
 
         this.setState({
             currentQuestion: this.state.currentQuestion+1,

@@ -5,7 +5,6 @@ class HomepageCarousel extends Component {
 
     render() {
 
-        console.log(this.props.badges);
         var length = this.props.badges.inProgressBadges.length;
         var slide_to_display;
 

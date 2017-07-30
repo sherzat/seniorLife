@@ -22,7 +22,7 @@ class HomepageBarchart extends Component {
         var chartContent
         if(barChart_data.dataset.length ==0){
           console.log('there is noo data');
-            chartContent = <p>The survey is not filled for <b>{category}</b></p>
+            chartContent = <p>Fill out the survey for <b>{category}</b> to see your results or select another category” </p>
         } else{
             chartContent = <ResponsiveContainer width="100%" height={300}>
               <BarChart data={barChart_data.dataset} margin={{top:40, right: 48}}>
