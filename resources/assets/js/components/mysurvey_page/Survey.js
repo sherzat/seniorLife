@@ -22,6 +22,7 @@ class Survey extends Component {
       answered: null,
       survey_id:0,
       loaded: false,
+      isSubmit:false,
     };
     this.handleNextButton= this.handleNextButton.bind(this);
     this.handlePrevButton= this.handlePrevButton.bind(this);
@@ -117,48 +118,40 @@ class Survey extends Component {
 
 
   sendAnswers(){
-      //remove the not answered questions from the list
-    //   if(this.props.selectedCategoryId < 11 && this.props.selectedCategoryId > 1){
-    //       var answers = this.answers.filter((each)=>
-    //       (Object.values(each)!="" && each.index != 0)
-    //       );
-    //   }else{
-    //       var answers = this.answers.filter((each)=>
-    //         Object.values(each)!=""
-    //       );
-    //   }
 
-
-    var answers = this.answers.filter((each)=>
+    this.setState({
+        isSubmit:true,
+    }, function() {
+        //remove the not answered questions from the list
+        var answers = this.answers.filter((each)=>
             Object.values(each)!=""
-          );
+        );
 
-    console.log(answers);
-    this.answers = answers;
-
-    $.ajax({
-
-      headers: {
-       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      },
-
-      type: "POST",
-      url: "/survey/store",
-      dataType: 'json',
-      data: {data: this.answers, survey_id: this.state.survey_id},
-      success: function (response) {
-        this.setState({playerStatus: response},function(){
-          console.log(this.state.playerStatus);
-
-          this.handleModalClick();
+        console.log(answers);
+        this.answers = answers;
+        $.ajax({
+          headers: {
+           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          },
+          type: "POST",
+          url: "/survey/store",
+          dataType: 'json',
+          data: {data: this.answers, survey_id: this.state.survey_id},
+          success: function (response) {
+            this.setState({playerStatus: response},function(){
+              console.log(this.state.playerStatus);
+              this.handleModalClick();
+            });
+          }.bind(this),
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+          }.bind(this),
         });
+    })
 
-      }.bind(this),
-      error: function(jqXHR, textStatus, errorThrown) {
-        console.log(textStatus, errorThrown);
-      }.bind(this),
 
-    });
+
+
 
   }
   componentDidMount(){
@@ -236,10 +229,11 @@ class Survey extends Component {
                     {this.state.currentQuestion<this.state.data.length? (choices_for_q[this.state.currentQuestion])
                         : (
                             <div style={{width:"60%"}} className="text-center">
-                              <p style={{fontSize: "18px"}}>Please submit your answer.</p>
-                              <button className="btn btn-success btn-lg" onClick={this.sendAnswers}>
-                                submit
-                              </button>
+                                  <p style={{fontSize: "18px"}}>Please submit your answer.</p>
+                                  {this.state.isSubmit}
+                                  <button className="btn btn-success btn-lg " disabled={this.state.isSubmit} onClick={this.sendAnswers}>
+                                      submit
+                                  </button>
                             </div>
 
                         )}

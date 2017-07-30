@@ -52,4 +52,9 @@ class TestController extends Controller
         return response()->json("sucess");
 
     }
+    public function showResult()
+    {
+        $testResponses=DB::table('testResponses')->paginate(15);
+        return view('apptest.testResponses', ['testResponses' => $testResponses]);
+    }
 }
