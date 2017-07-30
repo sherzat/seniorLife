@@ -21,12 +21,13 @@ class TestController extends Controller
 
     public function create_survey()
     {
+        $user = Auth::user();
 
         $survey = \App\Survey::where('name', '=', "test")->first();
         $prepare_questions= $survey->questions()
         ->with('choices')
         ->get();
-        $new_survey['prepare_questions'] = $prepare_questions;
+        $new_survey['prepare_questions'] = $prepare_questions->shuffle($user->id);
 
         return  json_encode($new_survey);
 
@@ -40,6 +41,7 @@ class TestController extends Controller
         $answers = $request->input("data");
         $answers=collect($answers);
         $answers->each(function ($answer) use ($user){
+            echo serialize($answer['answers'])->length;
             DB::table('testResponses')->insert([
             ['user_id' => $user->id, 'question_id' => $answer['q_id'], 'responses' => serialize($answer['answers'])],
             ]);

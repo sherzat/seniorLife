@@ -91,7 +91,7 @@ class Survey extends Component {
                     setTimeout(function() {
                         console.log("fished waiting");
                         that.handleNextButton();
-                    }, 2000);
+                    }, 1000);
                 }
             })
         }else {

@@ -17,7 +17,7 @@ class CreateTestResponsesTable extends Migration
             $table->increments('id');
             $table->integer('question_id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->text('responses')->default(0);;
+            $table->text('responses');
             $table->timestamps();
 
             $table->foreign('question_id')->references('id')->on('questions')->onUpdate('cascade')->onDelete('cascade');
