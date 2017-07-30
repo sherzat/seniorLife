@@ -154,9 +154,9 @@ body {
       }
 }
 
-
-
-
+.btn-success:disabled{
+  color: $primary-text-color;
+}
 
 //Stylings for welcome page
 @import "welcome_page";
@@ -178,11 +178,6 @@ body {
 
 // Stylings for profile_page
 @import "profile_page";
-
-
-
-
-
 
 // Stylings for rank_page
 @import "rank_page";
