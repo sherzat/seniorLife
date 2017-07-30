@@ -7,6 +7,7 @@ class HomepageRadioButton extends Component {
        this.state = {
         yourPick:''
        };
+       this.handleRadio=this.handleRadio.bind(this);
    }
   handleRadio(e) {
     this.props.handleAnswer(e.target.value, this.props.question_id);
@@ -32,7 +33,7 @@ class HomepageRadioButton extends Component {
           value={index}
           className='radioPad-radio card-block'
           name = 'choices'
-          onChange={this.handleRadio.bind(this)}
+          onClick={this.handleRadio.bind(this)}
           />
         {each.choice}
         </label>
