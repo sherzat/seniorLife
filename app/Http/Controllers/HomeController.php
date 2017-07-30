@@ -56,7 +56,7 @@ class HomeController extends Controller
         $surveyResult=$user->getSurveyResult();
 
 
-        $rankUsers= \App\User::orderBy('point','desc')->get();
+        $rankUsers= \App\User::where('name', 'not like','testuser%')->orderBy('point','desc')->get();
 
 
         $inProgressBadges= $user->achievements()->where('is_achieved',0)->get();
