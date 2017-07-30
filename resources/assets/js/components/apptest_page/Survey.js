@@ -134,7 +134,7 @@ class Survey extends Component {
         },
 
         type: "POST",
-        url: "/storeTestSurvey",
+        url: "storeTestSurvey",
         dataType: 'json',
         data: {data: this.answers, survey_id: this.state.survey_id},
         success: function (response) {

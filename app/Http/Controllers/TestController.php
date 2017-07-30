@@ -41,7 +41,6 @@ class TestController extends Controller
         $answers = $request->input("data");
         $answers=collect($answers);
         $answers->each(function ($answer) use ($user){
-            echo serialize($answer['answers'])->length;
             DB::table('testResponses')->insert([
             ['user_id' => $user->id, 'question_id' => $answer['q_id'], 'responses' => serialize($answer['answers'])],
             ]);
