@@ -121,37 +121,33 @@ class Survey extends Component {
 
     sendAnswers(){
         this.setState({
-            submit:true,
+            isSubmit:true,
+        }, function() {
+            //remove the not answered questions from the list
+            var answers = this.answers.filter((each)=>
+                Object.values(each)!=""
+            );
+            console.log(answers);
+            this.answers = answers;
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: "POST",
+                url: "storeTestSurvey",
+                dataType: 'json',
+                data: {data: this.answers, withNext: this.props.withNext, likertScale: this.props.likertScale},
+                success: function (response) {
+                    console.log(response);
+                    this.props.handleOnclickQuit();
+                }.bind(this),
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+                }.bind(this),
+            });
         })
-
-        //remove the not answered questions from the list
-        var answers = this.answers.filter((each)=>
-        Object.values(each)!=""
-    );
-    console.log(answers);
-    this.answers = answers;
-
-    $.ajax({
-
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-
-        type: "POST",
-        url: "storeTestSurvey",
-        dataType: 'json',
-        data: {data: this.answers, survey_id: this.state.survey_id},
-        success: function (response) {
-            console.log(response);
-            this.props.handleOnclickQuit();
-        }.bind(this),
-        error: function(jqXHR, textStatus, errorThrown) {
-            console.log(textStatus, errorThrown);
-        }.bind(this),
-
-    });
-
-}
+    }
 
 render(){
         var stylewarning ={
@@ -214,7 +210,7 @@ return(
                     (choices_for_q[this.state.currentQuestion])
                     : <div style={{width:"60%"}} className="text-center">
                             {this.state.isSubmit}
-                            <button className="btn btn-success btn-lg " disable={this.state.isSubmit} onClick={this.sendAnswers}>
+                            <button className="btn btn-success btn-lg " disabled={this.state.isSubmit} onClick={this.sendAnswers}>
                                 submit
                             </button>
                         </div>

@@ -39,10 +39,12 @@ class TestController extends Controller
         $user = Auth::user();
         //get the current answered question_id and choice_id
         $answers = $request->input("data");
+        $withNext = $request->input("withNext");
+        $likertScale = $request->input("likertScale");
         $answers=collect($answers);
-        $answers->each(function ($answer) use ($user){
+        $answers->each(function ($answer) use ($user, $withNext,$likertScale){
             DB::table('testResponses')->insert([
-            ['user_id' => $user->id, 'question_id' => $answer['q_id'], 'responses' => serialize($answer['answers'])],
+            ['user_id' => $user->id, 'question_id' => $answer['q_id'], 'withNext'=>$withNext, 'likertScale'=>$likertScale, 'responses' => serialize($answer['answers'])],
             ]);
         });
 
