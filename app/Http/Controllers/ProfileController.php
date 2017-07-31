@@ -46,12 +46,13 @@ class ProfileController extends Controller
 
         if($request->hasFile('avatar')){
             $avatar = $request->file('avatar');
-            $filename = Auth::user()->name . '.' . $avatar->getClientOriginalExtension();
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
             Image::make($avatar)->resize(300, 300)->save( public_path('/img/avatars/upload/' . $filename ) );
 
             $user = Auth::user();
             $user->avatar = '/img/avatars/upload/' . $filename ;
             $user->save();
+            
         }
         event(new AvatarUpload(Auth::user()));
         return  "success";
