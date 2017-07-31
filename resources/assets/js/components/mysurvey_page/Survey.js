@@ -178,6 +178,10 @@ class Survey extends Component {
 
 
   render(){
+      var nextstyle = {
+          height:57,
+          fontSize:24
+      }
     if(!this.state.loaded)
       return (<h>loading</h>);
 
@@ -218,7 +222,7 @@ class Survey extends Component {
 
                 <div className="card-block d-flex justify-content-between align-items-center Set-width">
 
-                  <div style={{width:"81px"}}>
+                  <div style={{width:"98px"}}>
                     <button
                         className="btn btn-success btn-lg"
                         hidden={this.state.currentQuestion == 0? true:false}
@@ -238,9 +242,9 @@ class Survey extends Component {
 
                         )}
 
-                  <div style={{width:"81px"}}>
+                  <div style={{width:"98px"}}>
                     <button
-                        className="btn btn-success btn-lg"
+                        className="btn btn-success btn-lg" style={nextstyle}
                         hidden={this.state.currentQuestion == this.state.data.length? true:false}
                         onClick={this.handleNextButton}>Next</button>
                   </div>

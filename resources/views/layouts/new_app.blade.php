@@ -63,7 +63,7 @@
                     <li id="id3" class="{{ ends_with(Request::url(), 'rank') ? "active" : "" }}">
                         <a class="nav-link " href={{url("rank")}} data-step="1" data-intro="This is a tooltip!">
                             <i class="fa fa-trophy" aria-hidden="true"></i>
-                            Rank
+                            Ranking
                         </a>
                     </li>
 

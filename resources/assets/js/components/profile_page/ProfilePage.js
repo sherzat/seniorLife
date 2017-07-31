@@ -77,21 +77,35 @@ class ProfilePage extends Component {
 
                             <div className="col-md-12">
 
+                                <div className="card-block">
+                                    <div className="my-4">
+                                        <h6 >Upload new profile picture or take a photo.</h6>
+                                    </div>
                                     <form onSubmit={this.handleSubmit}>
 
                                         <div className="input-group">
 
-                                            <label><input className="fileInput" type="file" size="200" onChange={this.handleImageChange}/></label>
+                                            <label className="custom-file-upload">
+                                                <input type="file" onChange={this.handleImageChange}/>
+                                                <i className="fa fa-cloud-upload"></i> Upload new picture
+                                                </label>
 
-                                            <span class="input-group-addon">
-                                            <button className="submitButton customUpload" type="submit" ><i className="fa fa-upload uploadCustom" aria-hidden="true"></i></button>
-                                            </span>
+
                                         </div>
                                     </form>
-
-
-                                <div className="">
-
+                                    {this.state.imagePreviewUrl=="" ? "":
+                                        <div>
+                                            <img className="rounded img-responsive"
+                                             src={this.state.imagePreviewUrl}
+                                             alt="Card image cap" width={100} height={100}></img>
+                                         <button className="btn btn-success ml-4" type="submit" onClick={this.handleSubmit}>Save</button>
+                                         </div>
+                                    }
+                                </div>
+                                <div className="card-block">
+                                    <div className="my-4">
+                                        <h6 >Choose from default pictures.</h6>
+                                    </div>
                                     <div className="row justify-content-wrap ">
                                         {profilePictures}
                                     </div>

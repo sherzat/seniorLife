@@ -22,7 +22,7 @@ Route::get('challenges','ChallengesController@getChallenges')->name("Challenges"
 Route::get('getChallengesData','ChallengesController@getChallengesData');
 
 //rank
-Route::get('rank','RankController@getRank')->name("Rank");
+Route::get('rank','RankController@getRank')->name("Ranking");
 Route::get('getRankData','RankController@getRankData');
 Route::get('getRankFlag','RankController@getRankFlag');
 

@@ -70,14 +70,14 @@ class RankPage extends Component {
 
                 <div className="card ">
                   <div className="card-header">
-                      <h4 id="step1"className="card-title">Rank</h4>
+                      <h4 id="step1"className="card-title">Ranking</h4>
                       <h6 className="card-subtitle">Ranking is based on total points collected</h6>
                   </div>
                     <Ranking
                       rankUsers = {this.state.rankData.rankUsers}
                       currentUser = {this.state.rankData.currentUser}
                       />
-                    
+
                 </div>
 
             </div>

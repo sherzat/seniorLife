@@ -132,8 +132,8 @@ class HomePage extends  Component {
                           <div className="card h-100">
 
                               <div className="card-header">
-                                  <h4 id="step3"className="card-title">Player status</h4>
-                                  <h6 className="card-subtitle">Rank</h6>
+                                  <h4 id="step3"className="card-title">Ranking</h4>
+                                  <h6 className="card-subtitle">Ranking is based on total points collected</h6>
                               </div>
 
                               <div className="card-block pt-3">

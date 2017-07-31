@@ -49,6 +49,8 @@ class SaveSurvey
       // $survey->save();
       //attach user to the survey
       $user=$event->user;
+      $user->survey_num = $user->survey_num+1;
+      $user->save();
       $survey_id = $event->survey_id;
 
       $user->surveys()->attach($survey_id);
