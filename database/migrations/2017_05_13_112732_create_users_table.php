@@ -25,6 +25,9 @@ class CreateUsersTable extends Migration
          $table->boolean('challengsflag')->default(0);
          $table->boolean('rankflag')->default(0);
          $table->boolean('achievementflag')->default(0);
+         $table->bigInteger('survey_num')->default(0);
+
+         
          $table->rememberToken();
          $table->timestamps();
      });

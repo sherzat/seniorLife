@@ -224,7 +224,7 @@ class Survey extends Component {
 
                   <div style={{width:"98px"}}>
                     <button
-                        className="btn btn-success btn-lg"
+                        className="btn btn-success btn-lg" style={nextstyle}
                         hidden={this.state.currentQuestion == 0? true:false}
                         onClick={this.handlePrevButton}>Prev</button>
                   </div>

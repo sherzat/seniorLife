@@ -152,7 +152,7 @@ class AchievementEventSubscriber
     //     }
     //   }
 
-      $num_category = \App\Category::count();
+      $num_category = \App\Category::where('name','not like','test')->count();
       $num_finished_category = $user->responses()->join('questions', 'responses.question_id', '=', 'questions.id')->distinct('category_id')->count('category_id');
       $badges = \App\Achievement::where('title', 'Complete')->first();
       if ($num_finished_category < $num_category){ //not finished

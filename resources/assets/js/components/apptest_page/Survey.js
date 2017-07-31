@@ -195,7 +195,7 @@ return(
 
             <div className="card-header">
                 <h4 id="step1"className="card-title">Survey</h4>
-                <h6 className="card-subtitle d-flex justify-content-start ">You are filling category {this.props.selectedCategory}.
+                <h6 className="card-subtitle d-flex justify-content-start ">You are filling category {this.props.category}.
 
                     {/*<div className="ml-2">Seconds Elapsed: {this.state.secondsElapsed.toFixed(1)}</div>*/}
 
