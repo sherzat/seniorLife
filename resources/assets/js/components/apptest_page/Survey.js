@@ -68,6 +68,7 @@ class Survey extends Component {
                 }
             }
         }
+
         this.setState({
             currentQuestion: this.state.currentQuestion+1,
             secondsElapsed:0,
@@ -94,15 +95,22 @@ class Survey extends Component {
         var answer = this.state.data[this.state.currentQuestion].choices[choice_index].id;
 
         if(answer + 64 == question_id){
-            this.setState({isCorrect: true},function(){
-                if(this.props.withNext == false){
-                    var that=this;
-                    setTimeout(function() {
-                        console.log("fished waiting");
-                        that.handleNextButton();
-                    }, 1000);
+            this.setState((prevState) => {
+                if (prevState.isCorrect != true){
+                    if(this.props.withNext == false){
+                        var that=this;
+                        setTimeout(function() {
+                            console.log("fished waiting");
+                            that.handleNextButton();
+                        }, 1000);
+                    }
+
+                    return {counter: true};
                 }
-            })
+            });
+            this.setState({isCorrect: true},function(){
+
+            }, this.answers)
         }else {
             this.setState({isCorrect: false})
         }

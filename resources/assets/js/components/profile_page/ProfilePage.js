@@ -92,15 +92,16 @@ class ProfilePage extends Component {
 
 
                                         </div>
+                                        {this.state.imagePreviewUrl=="" ? "":
+                                            <div>
+                                                <img className="rounded img-responsive"
+                                                 src={this.state.imagePreviewUrl}
+                                                 alt="Card image cap" width={100} height={100}></img>
+                                             <button className="btn btn-success ml-4" type="submit" >Save</button>
+                                             </div>
+                                        }
                                     </form>
-                                    {this.state.imagePreviewUrl=="" ? "":
-                                        <div>
-                                            <img className="rounded img-responsive"
-                                             src={this.state.imagePreviewUrl}
-                                             alt="Card image cap" width={100} height={100}></img>
-                                         <button className="btn btn-success ml-4" type="submit" onClick={this.handleSubmit}>Save</button>
-                                         </div>
-                                    }
+
                                 </div>
                                 <div className="card-block">
                                     <div className="my-4">

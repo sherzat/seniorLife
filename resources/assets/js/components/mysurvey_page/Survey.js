@@ -212,7 +212,7 @@ class Survey extends Component {
                 <div className="card-header">
                   <h4 id="step1"className="card-title">Survey</h4>
                   <h6 className="card-subtitle d-flex justify-content-start ">You are filling category {this.props.selectedCategory}
-                  <div className="text-color ml-1">{this.state.currentQuestion}/{survey_question.length}</div>
+                  <div className="text-color ml-auto">Progress: {this.state.currentQuestion }/{survey_question.length}</div>
                   </h6>
                 </div>
 
