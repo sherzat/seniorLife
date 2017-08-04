@@ -54,7 +54,7 @@ class TestController extends Controller
     }
     public function showResult()
     {
-        $testResponses=DB::table('testResponses')->paginate(10000);
+        $testResponses=DB::table('testResponses')->paginate(5000);
         return view('apptest.testResponses', ['testResponses' => $testResponses]);
     }
 }
