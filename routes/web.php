@@ -61,4 +61,4 @@ Route::get('getRadarChartData','HomeController@getRadarChartData');
 Route::get('apptest','TestController@getApp_test')->name("Apptest");
 Route::get('getTestSurvey','TestController@create_survey');
 Route::post('storeTestSurvey','TestController@store_survey');
-Route::get('showResult','TestController@showResult');
+Route::post('showResult','TestController@showResult');
