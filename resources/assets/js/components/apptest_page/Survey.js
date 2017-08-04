@@ -59,7 +59,7 @@ class Survey extends Component {
     }
 
     handleNextButton(){
-        if(this.state.withNext == true) {
+        if(this.props.withNext == true) {
             for (var i = 0; i < this.answers.length; i++) {
                 if (this.state.currentQuestion == i){  //same question
                     this.answers[i].answers.push({c_id:"next", secondsElapsed:this.state.secondsElapsed.toFixed(1)})
